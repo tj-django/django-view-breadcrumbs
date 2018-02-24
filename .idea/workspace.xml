@@ -2,33 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5090be2c-83ce-41b2-97f2-c58740fd38a4" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/.name" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/django-vew-breacrumbs.iml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/emacs.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/django_view_breadcrumbs.egg-info/PKG-INFO" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/django_view_breadcrumbs.egg-info/SOURCES.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/django_view_breadcrumbs.egg-info/dependency_links.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/django_view_breadcrumbs.egg-info/not-zip-safe" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/django_view_breadcrumbs.egg-info/requires.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/django_view_breadcrumbs.egg-info/top_level.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/django_view_breadcrumbs/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/django_view_breadcrumbs/settings.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/django_view_breadcrumbs/urls.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/django_view_breadcrumbs/wsgi.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/manage.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/requirements.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/setup.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/view_breadcrumbs/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/view_breadcrumbs/admin.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/view_breadcrumbs/apps.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/view_breadcrumbs/migrations/__init__.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/view_breadcrumbs/models.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/view_breadcrumbs/tests.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/view_breadcrumbs/views.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -56,7 +30,7 @@
         <entry file="file://$PROJECT_DIR$/setup.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
-              <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+              <caret line="5" column="1" lean-forward="false" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -112,8 +86,18 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SOURCES.txt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SOURCES.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/django_view_breadcrumbs.egg-info/SOURCES.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -124,16 +108,6 @@
       </file>
       <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
         <entry file="jar://$USER_HOME$/.virtualenvs/untitled/lib/python3.6/site-packages/setuptools-28.8.0-py3.6.egg!/setuptools/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/django_view_breadcrumbs/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -164,6 +138,7 @@
       <list>
         <option value="$PROJECT_DIR$/django_view_breadcrumbs/settings.py" />
         <option value="$PROJECT_DIR$/setup.py" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -605,7 +580,7 @@
     <entry file="file://$PROJECT_DIR$/setup.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
-          <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+          <caret line="5" column="1" lean-forward="false" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -651,6 +626,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/django_view_breadcrumbs.egg-info/SOURCES.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
