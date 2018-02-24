@@ -1,2 +1,2 @@
-idea/*
-*.egg.info
+idea/
+*.egg.info/
