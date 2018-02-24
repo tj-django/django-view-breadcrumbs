@@ -1,0 +1,17 @@
+django_view_breadcrumbs/__init__.py
+django_view_breadcrumbs/settings.py
+django_view_breadcrumbs/urls.py
+django_view_breadcrumbs/wsgi.py
+django_view_breadcrumbs.egg-info/PKG-INFO
+django_view_breadcrumbs.egg-info/SOURCES.txt
+django_view_breadcrumbs.egg-info/dependency_links.txt
+django_view_breadcrumbs.egg-info/not-zip-safe
+django_view_breadcrumbs.egg-info/requires.txt
+django_view_breadcrumbs.egg-info/top_level.txt
+view_breadcrumbs/__init__.py
+view_breadcrumbs/admin.py
+view_breadcrumbs/apps.py
+view_breadcrumbs/models.py
+view_breadcrumbs/tests.py
+view_breadcrumbs/views.py
+view_breadcrumbs/migrations/__init__.py
