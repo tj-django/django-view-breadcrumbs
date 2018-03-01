@@ -7,7 +7,7 @@ notifications:
       - jtonye@ymail.com
 
 install:
-  - pip install -e .'[test]' -r requirements.txt
+  - pip3 install -e .'[test]' -r requirements.txt
 
 script:
   - tox
