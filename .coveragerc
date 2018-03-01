@@ -1,0 +1,3 @@
+[run]
+source = view_breadcrumbs
+omit = view_breadcrumbs/test*
