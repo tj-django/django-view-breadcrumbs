@@ -6,6 +6,9 @@ notifications:
     recipients:
       - jtonye@ymail.com
 
+env:
+  - DJANGO_SETTINGS_MODULE=django_view_breadcrumbs.settings
+
 install:
   - pip install -e .[test] -r requirements.txt
 
