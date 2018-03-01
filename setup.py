@@ -7,6 +7,7 @@ install_requires = [
 
 test_requires = [
     'tox==2.9.1',
+    'pytest==3.4.1',
     'mock==2.0.0',
 ]
 
@@ -33,6 +34,7 @@ extras_require = {
         lint_requires,
     ],
     'docs': doc_requires,
+    'test': test_requires,
 }
 
 
