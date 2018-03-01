@@ -1,0 +1,2 @@
+recursive-include view_breadcrumbs *.py *.html *.css *.js
+recursive-include django_view_breadcrumbs *.py
