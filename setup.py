@@ -46,7 +46,7 @@ def read(fname):
 setup(
     name='django_view_breadcrumbs',
     python_requires='>=3.5',
-    version='0.3.0',
+    version='0.1.0',
     author='Tonye Jack',
     author_email='jtonye@ymail.com',
     long_description=read('README.md'),
