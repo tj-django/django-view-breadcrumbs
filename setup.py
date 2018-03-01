@@ -54,7 +54,6 @@ setup(
     classifiers=[
         'Development Status :: 1 - Planning',
         'Topics :: Django breadcrumbs',
-        'Category ::  Django Breadcrumbs',
     ],
     keywords=[
         'django breadcrumbs',
