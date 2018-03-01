@@ -1,5 +1,8 @@
 language: python
 sudo: enabled
+python:
+  - "3.6"
+  - "3.6-dev"
 
 notifications:
   email:
@@ -7,7 +10,7 @@ notifications:
       - jtonye@ymail.com
 
 install:
-  - pip3 install -e .'[test]' -r requirements.txt
+  - pip install -e .'[test]' -r requirements.txt
 
 script:
   - tox
