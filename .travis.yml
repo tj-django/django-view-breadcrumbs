@@ -1,0 +1,13 @@
+language: python
+sudo: enabled
+
+notifications:
+  email:
+    recipients:
+      - jtonye@ymail.com
+
+install:
+  - pip install -e .[test] -r requirements.txt
+
+script:
+  - tox
