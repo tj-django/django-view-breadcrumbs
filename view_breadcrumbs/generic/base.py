@@ -43,11 +43,7 @@ class BaseBreadcrumbMixin(object):
     def update_breadcrumbs(self, context):
         crumbs = self.crumbs
         if self.add_home:
-            crumbs = [
-                (
-                    _(mark_safe('<span>Home</span>')), '/',
-                ),
-            ] + crumbs
+            crumbs = [(_('<span>Home</span>'), '/')] + crumbs
         for crumb in crumbs:
             try:
                 label, view_name = crumb
