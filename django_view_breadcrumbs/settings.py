@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'view_breadcrumbs.apps.ViewBreadcrumbsConfig',
+    'view_breadcrumbs',
+    'django_bootstrap_breadcrumbs',
 ]
 
 MIDDLEWARE = [
