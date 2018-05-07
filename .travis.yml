@@ -14,7 +14,7 @@ matrix:
       env: TOXENV=ALL
     
     - python: pypy
-      env: TOXENV=ALL
+      env: TOXENV=py35-django11,py36-django11
 
     - python: pypy3
       env: TOXENV=ALL
