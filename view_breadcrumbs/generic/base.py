@@ -13,6 +13,12 @@ from ..utils import get_app_name
 log = logging.getLogger(__name__)
 
 
+def add_breadcrumb(context, label, view_name, **kwargs):
+    return django_bootstrap_breadcrumbs.append_breadcrumb(
+        context, label, view_name, (), kwargs,
+    )
+
+
 class BaseBreadcrumbMixin(object):
     add_home = True
     model = None
@@ -55,12 +61,7 @@ class BaseBreadcrumbMixin(object):
                         label = label(self.object)
                     if callable(view_name):
                         view_name = view_name(self.object)
-                self.add_breadcrumb(context, label, view_name)
-
-    def add_breadcrumb(self, context, label, view_name, **kwargs):
-        return django_bootstrap_breadcrumbs.append_breadcrumb(
-            context, label, view_name, (), kwargs,
-        )
+                add_breadcrumb(context, label, view_name)
 
     def get_context_data(self, **kwargs):
         ctx = {'request': self.request}

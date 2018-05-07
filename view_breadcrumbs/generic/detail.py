@@ -11,5 +11,11 @@ class DetailBreadcrumbMixin(BaseBreadcrumbMixin):
     def crumbs(self):
         return [
             ('{}s'.format(self.model_name_title), self.list_view_name),
-            (lambda o: force_str(o), lambda o: reverse(action_view_name(o, 'detail'), kwargs={'pk': o.pk})),
+            (self._model_repr, self._detail_view_name),
         ]
+
+    def _model_repr(self, instance):
+        return force_str(instance)
+
+    def _detail_view_name(self, instance):
+        return reverse(action_view_name(instance, 'detail'), kwargs={'pk': instance.pk})
