@@ -1,7 +1,6 @@
 import logging
 
 from django.urls import reverse
-from django.utils.safestring import mark_safe
 from django.utils.translation import ugettext as _
 from django_bootstrap_breadcrumbs.templatetags import (
     django_bootstrap_breadcrumbs
