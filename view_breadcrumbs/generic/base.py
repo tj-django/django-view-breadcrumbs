@@ -26,7 +26,7 @@ class BaseBreadcrumbMixin(object):
 
     @property
     def crumbs(self):
-        raise NotImplementedError(f'{type(self).__name__} should have a crumbs property.')
+        raise NotImplementedError('{} should have a crumbs property.'.format(type(self).__name__))
 
     @property
     def model_name_title(self):

@@ -9,7 +9,11 @@ register = template.Library()
 @register.filter
 def action_view_name(value, action):
     return (
-        f'{get_app_name()}:{getattr(value._meta, "verbose_name", "").replace(" ", "_")}_{action}'
+        '{0}:{1}_{2}'.format(
+            get_app_name(),
+            getattr(value._meta, "verbose_name", "").replace(" ", "_"),
+            action,
+        )
     )
 
 
