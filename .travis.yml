@@ -1,8 +1,20 @@
 language: python
-sudo: enabled
-python:
-  - "3.6"
-  - "3.6-dev"
+sudo: false
+
+matrix:
+  include:
+    - python: 3.5
+      env: TOXENV=py35
+    - python: 3.5-dev
+      env: TOXENV=py35
+
+    - python: 3.6
+      env: TOXENV=ALL
+    - python: 3.6-dev
+      env: TOXENV=ALL
+
+    - python: pypy3
+      env: TOXENV=ALL
 
 notifications:
   email:
