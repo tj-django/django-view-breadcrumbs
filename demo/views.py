@@ -1,5 +1,10 @@
-from django.shortcuts import render
+from django.views.generic import ListView
 
-# Create your views here.
+from django_view_breadcrumbs import ListBreadcrumbMixin
+from .models import TestModel
 
 
+class TestView(ListBreadcrumbMixin, ListView):
+    model = TestModel
+    template_name = 'demo/test-list.html'
+    crumbs = [('My Test Breadcrumb', 'test_view')]
