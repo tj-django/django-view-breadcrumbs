@@ -5,16 +5,75 @@ This extends [django-bootstrap-breadcrumbs](http://django-bootstrap-breadcrumbs.
 This will replace having to add ```{% breadcrumb $label $viewname [*args] [**kwargs] %}``` to every template.
 
 
-Using the generic breadcumb mixin each page breadcrumbs are added for each view dynamically using the `model` and can be 
-overridding by providing a `crumbs` property to the class. 
+
+Breadcrumb mixin classes provided.
+----------------------------------
+
+- `BaseBreadcrumbMixin`    - Base view requires a `crumbs` class property.
+- `CreateBreadcrumbMixin`  - For create views `Home \ Posts \ Add Post`
+- `DetailBreadcrumbMixin`  - For detail views `Home \ Posts \ Post 1`
+- `ListBreadcrumbMixin`    - For list views `Home \ Posts`
+- `UpdateBreadcrumbMixin`  - For Update views `Home \ Posts \ Post 1 \ Update Post 1`
 
 
-Usage:
+
+## Usage:
+
+Using the generic breadcumb mixin each page breadcrumbs are added for each view dynamically using the `model` and can be
+overridden by providing a `crumbs` property to the class.
+
+
+### Sample crumbs:  `Home \ Posts \ Test - Post`
+
 ```python
 from django.views.generic import DetailView
-from django_view_breadcrumbs.generic import DetailBreadcrumbMixin
+from django_view_breadcrumbs import DetailBreadcrumbMixin
+
 
 class PostDetail(DetailBreadcrumbMixin, DetailView):
     model = Post
     template_name = 'app/post/detail.html'
 ```
+
+
+> All crumbs use the home `\` view as the base this can be modified by specifying `add_home = False`
+
+### Sample crumbs: `Posts`
+
+```
+from django.views.generic import ListView
+from django_view_breadcrumbs import ListBreadcrumbMixin
+
+
+class PostList(ListBreadcrumbMixin, ListView):
+    model = Post
+    template_name = 'app/post/list.html'
+    add_home = False
+```
+
+
+
+> Can also override the view breadcrumb by specifying a list of tuples of Label and view name.
+
+### Custom crumbs: `Home \ My Test Breadcrumb`
+
+URL conf.
+```
+urlpatterns = [
+   path('my-test-view/', views.TestView.as_view(), name='test_view'),
+]
+```
+
+views.py
+
+```
+from django.views.generic import ListView
+from django_view_breadcrumbs import ListBreadcrumbMixin
+
+
+class TestView(ListBreadcrumbMixin, ListView):
+    model = TestModel
+    template_name = 'app/test/test-list.html'
+    crumbs = [('My Test Breadcrumb', 'test_view')]
+```
+
