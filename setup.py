@@ -42,17 +42,18 @@ extras_require = {
 }
 
 def read(fname):
-    return open(os.path.join(os.path.dirname(__file__), fname)).read()
+    with open(os.path.join(os.path.dirname(__file__), fname)) as f:
+        yield f.read()
 
 
 setup(
-    name='django_view_breadcrumbs',
+    name='django-view-breadcrumbs',
     python_requires='>=3.5',
     version='0.1.0',
     author='Tonye Jack',
     author_email='jtonye@ymail.com',
     long_description=read('README.md'),
-    packages=find_packages(),
+    packages=find_packages(exclude=['demo', 'demo.migrations.*']),
     classifiers=[
         'Development Status :: 1 - Planning',
         'Topics :: Django breadcrumbs',
