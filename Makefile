@@ -50,6 +50,7 @@ update-requirements:  ## Updates the requirement.txt adding missing package depe
 
 release-to-pypi: clean-build increase-version  ## Release project to pypi
 	@$(PYTHON_PIP) install -U twine pypandoc
+	@git tag $($(PYTHON) setup.py --version)
 	@$(PYTHON) setup.py sdist bdist_wheel
 	@twine upload dist/*
 
