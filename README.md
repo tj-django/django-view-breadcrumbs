@@ -36,7 +36,7 @@ class PostDetail(DetailBreadcrumbMixin, DetailView):
 ```
 
 
-In your `base.html` template simply add the ``render_breadcrumbs`` tag and any template that inherits should have the breadcrumbs included.
+In your `base.html` template simply add the ``render_breadcrumbs`` tag and any template that inherits the base should have breadcrumbs included.
 
 ```jinja2
 {% load django_bootstrap_breadcrumbs %}
