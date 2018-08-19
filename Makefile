@@ -59,3 +59,14 @@ increase-version: clean-build  ## Bump the project version (using the $PART env:
 	@echo "Increasing project '$(PART)' version..."
 	@$(PYTHON_PIP) install -q -e .'[deploy]'
 	@bumpversion --verbose $(PART)
+
+# ----------------------------------------------------------
+# --------- Run project Test -------------------------------
+# ----------------------------------------------------------
+tox: install-test
+	@tox
+
+clean-test-all: clean-build
+	@rm -rf .tox/
+	@rm -rf .pytest_cache/
+	@rm test.db
