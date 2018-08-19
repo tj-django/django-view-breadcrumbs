@@ -40,7 +40,7 @@ class PostDetail(DetailBreadcrumbMixin, DetailView):
 
 ### Sample crumbs: `Posts`
 
-```
+```python
 from django.views.generic import ListView
 from django_view_breadcrumbs import ListBreadcrumbMixin
 
@@ -57,7 +57,7 @@ class PostList(ListBreadcrumbMixin, ListView):
 ### Custom crumbs: `Home \ My Test Breadcrumb`
 
 URL conf.
-```
+```python
 urlpatterns = [
    path('my-test-list-view/', views.TestView.as_view(), name='test_list_view'),
    path('my-test-detail-view/<int:pk>/', views.TestView.as_view(), name='test_detail_view'),
@@ -66,7 +66,7 @@ urlpatterns = [
 
 views.py
 
-```
+```python
 from django.urls import reverse
 from django.views.generic import ListView
 from django_view_breadcrumbs import ListBreadcrumbMixin
@@ -80,7 +80,7 @@ class TestView(ListBreadcrumbMixin, ListView):
 
 OR
 
-```
+```python
 class TestView(ListBreadcrumbMixin, ListView):
     model = TestModel
     template_name = 'app/test/test-list.html'
