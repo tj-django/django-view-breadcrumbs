@@ -9,6 +9,7 @@ install_requires = [
 test_requires = [
     'tox==2.9.1',
     'pytest==3.7.2',
+    'pluggy>=0.7',
     'mock==2.0.0',
     'codacy-coverage==1.3.10',
 ]
