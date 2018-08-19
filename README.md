@@ -36,7 +36,7 @@ class PostDetail(DetailBreadcrumbMixin, DetailView):
 ```
 
 
-> All crumbs use the home `\` view as the base this can be excluded by specifying `add_home = False`
+> All crumbs use the home root path `\` as the base this can be excluded by specifying `add_home = False`
 
 ### Sample crumbs: `Posts`
 
