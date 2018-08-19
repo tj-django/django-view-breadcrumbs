@@ -48,9 +48,11 @@ update-requirements:  ## Updates the requirement.txt adding missing package depe
 	@echo "Syncing the package requirements.txt..."
 	@$(PIP_COMPILE)
 
-release-to-pypi: clean-build increase-version  ## Release project to pypi
+tag-build:
+	@git tag $($PYTHON setup.py --version)
+
+release-to-pypi: clean-build increase-version tag-build  ## Release project to pypi
 	@$(PYTHON_PIP) install -U twine pypandoc
-	@git tag $($(PYTHON) setup.py --version)
 	@$(PYTHON) setup.py sdist bdist_wheel
 	@twine upload dist/*
 
