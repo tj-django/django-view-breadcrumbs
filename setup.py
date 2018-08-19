@@ -61,7 +61,7 @@ except (IOError, ImportError):
     else:
         LONG_DESCRIPTION = ''
 
-'VERSION = (0, 0, 1)'
+VERSION = (0, 0, 0)
 
 version = '.'.join(map(str, VERSION))
 
