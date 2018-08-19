@@ -10,3 +10,11 @@ def get_app_name(model):
         )
     )
 
+def action_view_name(model, action):
+    return (
+        '{0}:{1}_{2}'.format(
+            get_app_name(model),
+            getattr(model._meta, 'verbose_name', '').replace(' ', '_'),
+            action,
+        )
+    )

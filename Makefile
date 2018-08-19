@@ -46,3 +46,16 @@ install-dev: clean-build  ## Install development extra dependencies.
 update-requirements:  ## Updates the requirement.txt adding missing package dependencies
 	@echo "Syncing the package requirements.txt..."
 	@$(PIP_COMPILE)
+
+release-to-pypi: clean-build ## Release project to pypi
+	@$(PYTHON_PIP) install -U twine pypandoc
+	@$(PYTHON) setup.py sdist bdist_wheel
+	@twine upload dist/*
+
+# ----------------------------------------------------------
+# ---------- Upgrade project version (bumpversion)  --------
+# ----------------------------------------------------------
+increase-version: clean-build  ## Bump the project version (using the $PART env: defaults to 'patch').
+	@echo "Increasing project '$(PART)' version..."
+	@$(PYTHON_PIP) install -q -e .'[deploy]'
+	@bumpversion --verbose $(PART)

@@ -7,8 +7,7 @@ from django_bootstrap_breadcrumbs.templatetags import (
     django_bootstrap_breadcrumbs
 )
 
-from ..templatetags.app_url import action_view_name
-from ..utils import get_app_name
+from ..utils import get_app_name, action_view_name
 
 log = logging.getLogger(__name__)
 

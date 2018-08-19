@@ -70,7 +70,7 @@ class PostList(ListBreadcrumbMixin, ListView):
 ```
 
 
-> Can also override the view breadcrumb by specifying a list of tuples of Label and view path.
+> Can also override the view breadcrumb by specifying a list of tuples `[(Label, view path)]`.
 
 ### Custom crumbs: `Home \ My Test Breadcrumb`
 
