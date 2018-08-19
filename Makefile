@@ -2,9 +2,9 @@
 
 .DEFAULT_GOAL := help
 
-PYTHON	:= /usr/bin/env python3.6
+PYTHON	:= /usr/bin/env python3
 MANAGE_PY   := $(PYTHON) manage.py
-PYTHON_PIP  := /usr/bin/env pip3.6
+PYTHON_PIP  := /usr/bin/env pip3
 PIP_COMPILE := /usr/bin/env pip-compile
 
 # Put it first so that "make" without argument is like "make help".
