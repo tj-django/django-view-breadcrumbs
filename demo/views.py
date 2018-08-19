@@ -1,6 +1,6 @@
 from django.views.generic import ListView
 
-from django_view_breadcrumbs import ListBreadcrumbMixin
+from view_breadcrumbs import ListBreadcrumbMixin
 from .models import TestModel
 
 

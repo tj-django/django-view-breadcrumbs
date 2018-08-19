@@ -36,11 +36,11 @@ class PostDetail(DetailBreadcrumbMixin, DetailView):
 ```
 
 
-> All crumbs use the home `\` view as the base this can be modified by specifying `add_home = False`
+> All crumbs use the home `\` view as the base this can be excluded by specifying `add_home = False`
 
 ### Sample crumbs: `Posts`
 
-```
+```python
 from django.views.generic import ListView
 from django_view_breadcrumbs import ListBreadcrumbMixin
 
@@ -52,21 +52,22 @@ class PostList(ListBreadcrumbMixin, ListView):
 ```
 
 
-
-> Can also override the view breadcrumb by specifying a list of tuples of Label and view name.
+> Can also override the view breadcrumb by specifying a list of tuples of Label and view path.
 
 ### Custom crumbs: `Home \ My Test Breadcrumb`
 
 URL conf.
-```
+```python
 urlpatterns = [
-   path('my-test-view/', views.TestView.as_view(), name='test_view'),
+   path('my-test-list-view/', views.TestView.as_view(), name='test_list_view'),
+   path('my-test-detail-view/<int:pk>/', views.TestView.as_view(), name='test_detail_view'),
 ]
 ```
 
 views.py
 
-```
+```python
+from django.urls import reverse
 from django.views.generic import ListView
 from django_view_breadcrumbs import ListBreadcrumbMixin
 
@@ -74,6 +75,21 @@ from django_view_breadcrumbs import ListBreadcrumbMixin
 class TestView(ListBreadcrumbMixin, ListView):
     model = TestModel
     template_name = 'app/test/test-list.html'
-    crumbs = [('My Test Breadcrumb', 'test_view')]
+    crumbs = [('My Test Breadcrumb', reverse('test_list_view')]
+```
+
+OR
+
+```python
+class TestView(ListBreadcrumbMixin, ListView):
+    model = TestModel
+    template_name = 'app/test/test-list.html'
+
+    @cached_property
+    def crumbs(self):
+        return super(TestView, self).crumbs + [
+            (self.object.name , reverse('test_detail_view', kwargs={'pk': self.object.pk})
+        ]
+
 ```
 

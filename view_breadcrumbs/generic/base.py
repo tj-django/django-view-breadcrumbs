@@ -1,7 +1,8 @@
 import logging
 
 from django.urls import reverse
-from django.utils.translation import ugettext as _
+from django.utils.functional import cached_property
+from django.utils.translation import ugettext_lazy as _
 from django_bootstrap_breadcrumbs.templatetags import (
     django_bootstrap_breadcrumbs
 )
@@ -21,11 +22,25 @@ def add_breadcrumb(context, label, view_name, **kwargs):
 class BaseBreadcrumbMixin(object):
     add_home = True
     model = None
-    app_name = get_app_name()
+
+    list_view_suffix = 'list'
+    change_view_suffix = 'change'
+    detail_view_suffix = 'detail'
+
+    home_path = '/'
+    home_label = _('<span>Home</span>')
+
+    @cached_property
+    def app_name(self):
+        return get_app_name(self.model)
 
     @property
     def crumbs(self):
         raise NotImplementedError('{} should have a crumbs property.'.format(type(self).__name__))
+
+    @property
+    def model_name_title_plural(self):
+        return getattr(self.model._meta, 'verbose_name_plural', '').title()
 
     @property
     def model_name_title(self):
@@ -33,22 +48,21 @@ class BaseBreadcrumbMixin(object):
 
     @property
     def list_view_name(self):
-        return reverse(action_view_name(self.model, 'list'))
+        return reverse(action_view_name(self.model, self.list_view_suffix))
 
-    @property
-    def edit_view_name(self):
-        return lambda o: reverse(action_view_name(self.model, 'change'), kwargs={'pk': o.pk})
+    def edit_view_name(self, instance):
+        return reverse(action_view_name(self.model, self.change_view_suffix), kwargs={'pk': instance.pk})
 
     def update_breadcrumbs(self, context):
         crumbs = self.crumbs
         if self.add_home:
-            crumbs = [(_('<span>Home</span>'), '/')] + crumbs
+            crumbs = [(self.home_label, self.home_path)] + crumbs
         for crumb in crumbs:
             try:
                 label, view_name = crumb
             except (TypeError, ValueError):
                 raise ValueError(
-                    'Breadrcumb requires a tuple of label and viewname.',
+                    'Breadcrumb requires a tuple of label and view name.',
                 )
             else:
                 if hasattr(self, 'object') and self.object:

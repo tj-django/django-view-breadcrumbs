@@ -2,13 +2,14 @@ import os
 from setuptools import setup, find_packages
 
 install_requires = [
-    'Django>=1.11.10<=2.0.2',
+    'Django>=1.11.10,<=2.0.2',
     'django-bootstrap-breadcrumbs==0.8.2',
 ]
 
 test_requires = [
     'tox==2.9.1',
-    'pytest==3.4.1',
+    'pytest==3.7.2',
+    'pluggy>=0.7',
     'mock==2.0.0',
     'codacy-coverage==1.3.10',
 ]
@@ -24,7 +25,7 @@ lint_requires = [
 ]
 
 local_dev_requires = [
-    'pip-tools==1.11.0',
+    'pip-tools==2.0.2',
 ]
 
 extras_require = {
@@ -37,6 +38,7 @@ extras_require = {
     ],
     'docs': doc_requires,
     'test': test_requires,
+    'lint': lint_requires,
 }
 
 def read(fname):

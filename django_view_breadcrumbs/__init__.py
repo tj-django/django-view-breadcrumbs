@@ -1,1 +1,0 @@
-from view_breadcrumbs import *  # noqa

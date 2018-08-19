@@ -10,8 +10,8 @@ register = template.Library()
 def action_view_name(value, action):
     return (
         '{0}:{1}_{2}'.format(
-            get_app_name(),
-            getattr(value._meta, "verbose_name", "").replace(" ", "_"),
+            get_app_name(value),
+            getattr(value._meta, 'verbose_name', '').replace(' ', '_'),
             action,
         )
     )
