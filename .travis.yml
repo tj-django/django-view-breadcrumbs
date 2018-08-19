@@ -1,5 +1,18 @@
 language: python
-sudo: enabled
+sudo: false
+
+matrix:
+  include:
+    - python: 3.5
+      env: TOXENV=py35
+    - python: 3.5-dev
+      env: TOXENV=py35
+    - python: 3.6
+      env: TOXENV=ALL
+    - python: 3.6-dev
+      env: TOXENV=ALL
+    - python: pypy3
+      env: TOXENV=ALL
 
 notifications:
   email:
@@ -10,7 +23,7 @@ env:
   - DJANGO_SETTINGS_MODULE=django_view_breadcrumbs.settings
 
 install:
-  - pip install -e .[test] -r requirements.txt
+  - make install-test
 
 script:
   - tox
