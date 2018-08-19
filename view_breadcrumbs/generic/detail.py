@@ -2,7 +2,7 @@ from django.urls import reverse
 from django.utils.encoding import force_str
 
 from .list import ListBreadcrumbMixin
-from ..templatetags.app_url import action_view_name
+from ..utils import action_view_name
 
 
 def _model_repr(instance):

@@ -16,11 +16,29 @@ Breadcrumb mixin classes provided.
 - `UpdateBreadcrumbMixin`  - For Update views `Home \ Posts \ Post 1 \ Update Post 1`
 
 
+## Installation:
+
+```bash
+$ pip install django-view-breadcrumbs
+
+```
+
+Add app to your INSTALLED_APPS
+
+```python
+
+INSTALLED_APPS = [
+    ...
+    'view-breadcrumbs',
+    ...
+]
+```
 
 ## Usage:
+`django-view-breadcrumbs` includes generic mixins that can be added to a class based view.
 
-Using the generic breadcumb mixin each page breadcrumbs are added for each view dynamically using the `model` and can be
-overridden by providing a `crumbs` property to the class.
+Using the generic breadcrumb mixin each breadcrumb will added for each view dynamically
+using the view `model` class and can be overridden by providing a `crumbs` property.
 
 
 ### Sample crumbs:  `Home \ Posts \ Test - Post`
@@ -63,7 +81,7 @@ class PostList(ListBreadcrumbMixin, ListView):
 ```
 
 
-> Can also override the view breadcrumb by specifying a list of tuples of Label and view path.
+> Can also override the view breadcrumb by specifying a list of tuples `[(Label, view path)]`.
 
 ### Custom crumbs: `Home \ My Test Breadcrumb`
 

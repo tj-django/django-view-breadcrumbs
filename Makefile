@@ -6,6 +6,7 @@ PYTHON	:= /usr/bin/env python3
 MANAGE_PY   := $(PYTHON) manage.py
 PYTHON_PIP  := /usr/bin/env pip3
 PIP_COMPILE := /usr/bin/env pip-compile
+PART := patch
 
 # Put it first so that "make" without argument is like "make help".
 help:
@@ -46,3 +47,27 @@ install-dev: clean-build  ## Install development extra dependencies.
 update-requirements:  ## Updates the requirement.txt adding missing package dependencies
 	@echo "Syncing the package requirements.txt..."
 	@$(PIP_COMPILE)
+
+release-to-pypi: clean-build  ## Release project to pypi
+	@$(PYTHON_PIP) install -U twine pypandoc
+	@$(PYTHON) setup.py sdist bdist_wheel
+	@twine upload dist/*
+
+# ----------------------------------------------------------
+# ---------- Upgrade project version (bumpversion)  --------
+# ----------------------------------------------------------
+increase-version: clean-build guard-PART  ## Bump the project version (using the $PART env: defaults to 'patch').
+	@echo "Increasing project '$(PART)' version..."
+	@$(PYTHON_PIP) install -q -e .'[deploy]'
+	@bumpversion --verbose $(PART)
+
+# ----------------------------------------------------------
+# --------- Run project Test -------------------------------
+# ----------------------------------------------------------
+tox: install-test  ## Run tox test
+	@tox
+
+clean-test-all: clean-build  ## Clean build and test assets.
+	@rm -rf .tox/
+	@rm -rf .pytest_cache/
+	@rm test.db
