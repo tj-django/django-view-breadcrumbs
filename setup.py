@@ -2,7 +2,7 @@ import os
 from setuptools import setup, find_packages
 
 install_requires = [
-    'Django>=1.11.10<=2.0.2',
+    'Django>=1.11.10,<=2.0.2',
     'django-bootstrap-breadcrumbs==0.8.2',
 ]
 
@@ -24,7 +24,7 @@ lint_requires = [
 ]
 
 local_dev_requires = [
-    'pip-tools==1.11.0',
+    'pip-tools==2.0.2',
 ]
 
 extras_require = {
@@ -37,6 +37,7 @@ extras_require = {
     ],
     'docs': doc_requires,
     'test': test_requires,
+    'lint': lint_requires,
 }
 
 def read(fname):
