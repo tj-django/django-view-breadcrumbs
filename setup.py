@@ -43,7 +43,7 @@ extras_require = {
 
 def read(fname):
     with open(os.path.join(os.path.dirname(__file__), fname)) as f:
-        yield f.read()
+        return f.read()
 
 
 setup(
