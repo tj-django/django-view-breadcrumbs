@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 install_requires = [
     'Django>=1.11.10,<=2.0.2',
-    'django-bootstrap-breadcrumbs==0.8.2',
+    'django-bootstrap-breadcrumbs==0.9.1',
 ]
 
 test_requires = [
