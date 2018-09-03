@@ -7,6 +7,7 @@ MANAGE_PY   := $(PYTHON) manage.py
 PYTHON_PIP  := /usr/bin/env pip3
 PIP_COMPILE := /usr/bin/env pip-compile
 PART := patch
+PACKAGE_VERSION = $(shell $(PYTHON) setup.py --version)
 
 # Put it first so that "make" without argument is like "make help".
 help:
@@ -48,8 +49,11 @@ update-requirements:  ## Updates the requirement.txt adding missing package depe
 	@echo "Syncing the package requirements.txt..."
 	@$(PIP_COMPILE)
 
-release-to-pypi: clean-build increase-version  ## Release project to pypi
-	@$(PYTHON_PIP) install -U twine pypandoc
+tag-build:
+	@git tag v$(PACKAGE_VERSION)
+
+release-to-pypi: clean-build increase-version tag-build  ## Release project to pypi
+	@$(PYTHON_PIP) install -U twine
 	@$(PYTHON) setup.py sdist bdist_wheel
 	@twine upload dist/*
 

@@ -1,8 +1,8 @@
-# django-view-breadcrumbs [![Build Status](https://travis-ci.org/jackton1/django-view-breadcrumbs.svg?branch=master)](https://travis-ci.org/jackton1/django-view-breadcrumbs) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/6b447e364bef4988bda95bd0965bb4bc)](https://www.codacy.com/app/jackton1/django-view-breadcrumbs?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=jackton1/django-view-breadcrumbs&amp;utm_campaign=Badge_Grade)
+# django-view-breadcrumbs [![Build Status](https://travis-ci.org/jackton1/django-view-breadcrumbs.svg?branch=master)](https://travis-ci.org/jackton1/django-view-breadcrumbs) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/6b447e364bef4988bda95bd0965bb4bc)](https://www.codacy.com/app/jackton1/django-view-breadcrumbs?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=jackton1/django-view-breadcrumbs&amp;utm_campaign=Badge_Grade) [![PyPI version](https://badge.fury.io/py/django-view-breadcrumbs.svg)](https://badge.fury.io/py/django-view-breadcrumbs)
 
 This extends [django-bootstrap-breadcrumbs](http://django-bootstrap-breadcrumbs.readthedocs.io/en/latest/) providing generic breadcrumb mixin classes.
 
-This will replace having to add ```{% breadcrumb $label $viewname [*args] [**kwargs] %}``` to every template.
+Replaces having to add ```{% breadcrumb $label $viewname [*args] [**kwargs] %}``` to every template.
 
 
 
@@ -37,8 +37,8 @@ INSTALLED_APPS = [
 ## Usage:
 `django-view-breadcrumbs` includes generic mixins that can be added to a class based view.
 
-Using the generic breadcrumb mixin each breadcrumb will added for each view dynamically
-using the view `model` class and can be overridden by providing a `crumbs` property.
+Using the generic breadcrumb mixin each breadcrumb will be added to the view dynamically
+and can be overridden by providing a `crumbs` property.
 
 
 ### Sample crumbs:  `Home \ Posts \ Test - Post`
@@ -54,7 +54,11 @@ class PostDetail(DetailBreadcrumbMixin, DetailView):
 ```
 
 
-In your `base.html` template simply add the ``render_breadcrumbs`` tag and any template that inherits the base should have breadcrumbs included.
+In your `base.html` template simply add the ``render_breadcrumbs`` tag and any template
+that inherits the base should have breadcrumbs included.
+i.e  
+
+In your ```base.html```
 
 ```jinja2
 {% load django_bootstrap_breadcrumbs %}
@@ -62,6 +66,12 @@ In your `base.html` template simply add the ``render_breadcrumbs`` tag and any t
 {% block breadcrumbs %}
     {% render_breadcrumbs %}
 {% endblock %}
+```
+
+And your ```create.html```.
+
+```jinja2
+{% extends 'base.html' %}
 ```
 
 
@@ -104,7 +114,7 @@ from django_view_breadcrumbs import ListBreadcrumbMixin
 class TestView(ListBreadcrumbMixin, ListView):
     model = TestModel
     template_name = 'app/test/test-list.html'
-    crumbs = [('My Test Breadcrumb', reverse('test_list_view')]
+    crumbs = [('My Test Breadcrumb', reverse('test_list_view')]  # OR reverse_lazy
 ```
 
 OR
