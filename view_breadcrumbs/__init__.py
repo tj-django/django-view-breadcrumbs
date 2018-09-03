@@ -3,8 +3,8 @@ from .generic  import (
     ListBreadcrumbMixin, UpdateBreadcrumbMixin,
 )
 
-
 __all__ = [
-    'BaseBreadcrumbMixin', 'CreateBreadcrumbMixin', 'DetailBreadcrumbMixin',
-    'ListBreadcrumbMixin', 'UpdateBreadcrumbMixin',
+    'BaseBreadcrumbMixin', 'CreateBreadcrumbMixin',
+    'DetailBreadcrumbMixin', 'ListBreadcrumbMixin',
+    'UpdateBreadcrumbMixin',
 ]

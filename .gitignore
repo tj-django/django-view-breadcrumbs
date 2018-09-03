@@ -4,4 +4,7 @@ __pycache__
 .pytest_cache
 *.pyc
 .tox/
-*.sqlite*
+build/
+dist/
+
+*.db
