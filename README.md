@@ -2,7 +2,7 @@
 
 This extends [django-bootstrap-breadcrumbs](http://django-bootstrap-breadcrumbs.readthedocs.io/en/latest/) providing generic breadcrumb mixin classes.
 
-This will replace having to add ```{% breadcrumb $label $viewname [*args] [**kwargs] %}``` to every template.
+Replaces having to add ```{% breadcrumb $label $viewname [*args] [**kwargs] %}``` to every template.
 
 
 
