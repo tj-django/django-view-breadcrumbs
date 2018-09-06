@@ -43,16 +43,32 @@ and can be overridden by providing a `crumbs` property.
 
 ### Sample crumbs:  `Home \ Posts \ Test - Post`
 
+> NOTE: All url config should use a pattern `view_name=model_verbose_name_{action}` i.e `view_name=post_detail` for detail view. 
+
+Actions include: 
+ - "list" - `ListView`
+ - "change" - `UpdateView`
+ - "detail" - `DetailView`
+
+In your `urls.py`
+```python
+  urlpatterns = [
+      ...
+      path('posts/<slug:slug>', views.PostDetail.as_view(), name='post_detail'),
+      ...
+  ]
+
+```
+`views.py`
 ```python
 from django.views.generic import DetailView
-from django_view_breadcrumbs import DetailBreadcrumbMixin
+from view_breadcrumbs import DetailBreadcrumbMixin
 
 
 class PostDetail(DetailBreadcrumbMixin, DetailView):
     model = Post
     template_name = 'app/post/detail.html'
 ```
-
 
 In your `base.html` template simply add the ``render_breadcrumbs`` tag and any template
 that inherits the base should have breadcrumbs included.
@@ -81,7 +97,7 @@ And your ```create.html```.
 
 ```python
 from django.views.generic import ListView
-from django_view_breadcrumbs import ListBreadcrumbMixin
+from view_breadcrumbs import ListBreadcrumbMixin
 
 
 class PostList(ListBreadcrumbMixin, ListView):
@@ -108,7 +124,7 @@ views.py
 ```python
 from django.urls import reverse
 from django.views.generic import ListView
-from django_view_breadcrumbs import ListBreadcrumbMixin
+from view_breadcrumbs import ListBreadcrumbMixin
 
 
 class TestView(ListBreadcrumbMixin, ListView):
