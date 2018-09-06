@@ -43,18 +43,18 @@ and can be overridden by providing a `crumbs` property.
 
 ### Sample crumbs:  `Home \ Posts \ Test - Post`
 
-> NOTE: All url config should use a `view_name=model_verbose_name_{action}` i.e `view_name=post_list` for list view 
+> NOTE: All url config should use a pattern `view_name=model_verbose_name_{action}` i.e `view_name=post_detail` for detail view. 
 
 Actions include: 
  - "list" - `ListView`
  - "change" - `UpdateView`
  - "detail" - `DetailView`
 
-`urls.py`
+In your `urls.py`
 ```python
   urlpatterns = [
       ...
-      path('posts-list/', views.TestView.as_view(), name='post_list'),
+      path('posts-list/', views.TestView.as_view(), name='post_detail'),
       ...
   ]
 
@@ -64,7 +64,7 @@ Actions include:
 from django.views.generic import DetailView
 from django_view_breadcrumbs import DetailBreadcrumbMixin
 
-
+# Renders ---> Home/ Posts/ My Test post using the `__str__` of the model instance.
 class PostDetail(DetailBreadcrumbMixin, DetailView):
     model = Post
     template_name = 'app/post/detail.html'
