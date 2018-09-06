@@ -54,7 +54,7 @@ In your `urls.py`
 ```python
   urlpatterns = [
       ...
-      path('posts-list/', views.TestView.as_view(), name='post_detail'),
+      path('posts/<slug:slug>', views.PostDetail.as_view(), name='post_detail'),
       ...
   ]
 
@@ -64,12 +64,12 @@ In your `urls.py`
 from django.views.generic import DetailView
 from django_view_breadcrumbs import DetailBreadcrumbMixin
 
-# Renders ---> Home/ Posts/ My Test post using the `__str__` of the model instance.
+
 class PostDetail(DetailBreadcrumbMixin, DetailView):
     model = Post
     template_name = 'app/post/detail.html'
 ```
- 
+
 In your `base.html` template simply add the ``render_breadcrumbs`` tag and any template
 that inherits the base should have breadcrumbs included.
 i.e  
