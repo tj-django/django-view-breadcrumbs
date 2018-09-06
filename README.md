@@ -62,7 +62,7 @@ In your `urls.py`
 `views.py`
 ```python
 from django.views.generic import DetailView
-from django_view_breadcrumbs import DetailBreadcrumbMixin
+from view_breadcrumbs import DetailBreadcrumbMixin
 
 
 class PostDetail(DetailBreadcrumbMixin, DetailView):
@@ -97,7 +97,7 @@ And your ```create.html```.
 
 ```python
 from django.views.generic import ListView
-from django_view_breadcrumbs import ListBreadcrumbMixin
+from view_breadcrumbs import ListBreadcrumbMixin
 
 
 class PostList(ListBreadcrumbMixin, ListView):
@@ -124,7 +124,7 @@ views.py
 ```python
 from django.urls import reverse
 from django.views.generic import ListView
-from django_view_breadcrumbs import ListBreadcrumbMixin
+from view_breadcrumbs import ListBreadcrumbMixin
 
 
 class TestView(ListBreadcrumbMixin, ListView):
