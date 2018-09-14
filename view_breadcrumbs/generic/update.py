@@ -11,7 +11,7 @@ def _update_view_label(instance, format_string):
 
 
 class UpdateBreadcrumbMixin(DetailBreadcrumbMixin):
-    # Home / object List / Update object
+    # Home / object List / object / Update object
     update_format_str = _('Update: {}')
 
     @property
