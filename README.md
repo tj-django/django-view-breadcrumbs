@@ -29,7 +29,8 @@ Add app to your INSTALLED_APPS
 
 INSTALLED_APPS = [
     ...
-    'view-breadcrumbs',
+    'django_bootstrap_breadcrumbs',
+    'view_breadcrumbs',
     ...
 ]
 ```
@@ -130,7 +131,7 @@ from view_breadcrumbs import ListBreadcrumbMixin
 class TestView(ListBreadcrumbMixin, ListView):
     model = TestModel
     template_name = 'app/test/test-list.html'
-    crumbs = [('My Test Breadcrumb', reverse('test_list_view')]  # OR reverse_lazy
+    crumbs = [('My Test Breadcrumb', reverse('test_list_view'))]  # OR reverse_lazy
 ```
 
 OR
