@@ -29,7 +29,7 @@ Add app to your INSTALLED_APPS
 
 INSTALLED_APPS = [
     ...
-    'view-breadcrumbs',
+    'view_breadcrumbs',
     ...
 ]
 ```
