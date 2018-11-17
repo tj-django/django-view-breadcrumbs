@@ -6,8 +6,8 @@ from django.conf import settings
 
 TEST_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'demo', 'templates')
 
-def pytest_configure():
-    settings.configure(
+def pytest_configure(debug=False):
+    base_settings = dict(
         DATABASES={
             'default': {
                 'ENGINE': 'django.db.backends.sqlite3',
@@ -25,11 +25,36 @@ def pytest_configure():
                 'BACKEND': 'django.template.backends.django.DjangoTemplates',
                 'DIRS': [TEST_DIR],
                 'APP_DIRS': True,
-            }
+                'OPTIONS': {
+                    'context_processors': [
+                        'django.template.context_processors.debug',
+                        'django.template.context_processors.request',
+                        'django.contrib.auth.context_processors.auth',
+                        'django.contrib.messages.context_processors.messages',
+                    ],
+                },
+            },
         ]
     )
+
+    if debug:
+        base_settings.update({
+            'DEBUG': debug,
+            'ALLOWED_HOSTS': ['127.0.0.1', 'localhost'],
+            'INSTALLED_APPS': [
+                'django.contrib.auth',
+                'django.contrib.contenttypes',
+                'django.contrib.sessions',
+                'django_bootstrap_breadcrumbs',
+                'view_breadcrumbs',
+                'demo'
+            ],
+
+        })
+    settings.configure(base_settings)
     setup()
-    create_db()
+    if not debug:
+        create_db()
 
 
 def create_db():
