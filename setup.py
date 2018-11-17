@@ -2,7 +2,7 @@ import os
 from setuptools import setup, find_packages
 
 install_requires = [
-    'Django>=1.11.10,<=2.0.2',
+    'Django>=1.11.10,>2.0.2,<3.0',
     'django-bootstrap-breadcrumbs==0.9.1',
 ]
 
@@ -56,7 +56,7 @@ if os.path.isfile(README_PATH):
 else:
     LONG_DESCRIPTION = ''
 
-VERSION = (0, 0, 3)
+VERSION = (0, 0, 5)
 
 version = '.'.join(map(str, VERSION))
 

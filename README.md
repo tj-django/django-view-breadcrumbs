@@ -2,7 +2,7 @@
 
 This extends [django-bootstrap-breadcrumbs](http://django-bootstrap-breadcrumbs.readthedocs.io/en/latest/) providing generic breadcrumb mixin classes.
 
-This will replace having to add ```{% breadcrumb $label $viewname [*args] [**kwargs] %}``` to every template.
+Replaces having to add ```{% breadcrumb $label $viewname [*args] [**kwargs] %}``` to every template.
 
 
 
@@ -37,15 +37,32 @@ INSTALLED_APPS = [
 ## Usage:
 `django-view-breadcrumbs` includes generic mixins that can be added to a class based view.
 
-Using the generic breadcrumb mixin each breadcrumb will added for each view dynamically
-using the view `model` class and can be overridden by providing a `crumbs` property.
+Using the generic breadcrumb mixin each breadcrumb will be added to the view dynamically
+and can be overridden by providing a `crumbs` property.
 
 
 ### Sample crumbs:  `Home \ Posts \ Test - Post`
 
+> NOTE: All url config should use a pattern `view_name=model_verbose_name_{action}` i.e `view_name=post_detail` for detail view. 
+
+Actions include: 
+ - "list" - `ListView`
+ - "change" - `UpdateView`
+ - "detail" - `DetailView`
+
+In your `urls.py`
+```python
+  urlpatterns = [
+      ...
+      path('posts/<slug:slug>', views.PostDetail.as_view(), name='post_detail'),
+      ...
+  ]
+
+```
+`views.py`
 ```python
 from django.views.generic import DetailView
-from django_view_breadcrumbs import DetailBreadcrumbMixin
+from view_breadcrumbs import DetailBreadcrumbMixin
 
 
 class PostDetail(DetailBreadcrumbMixin, DetailView):
@@ -53,8 +70,11 @@ class PostDetail(DetailBreadcrumbMixin, DetailView):
     template_name = 'app/post/detail.html'
 ```
 
+In the `base.html` template simply add the ``render_breadcrumbs`` tag and any template
+that inherits the base should have breadcrumbs included.
+i.e  
 
-In your `base.html` template simply add the ``render_breadcrumbs`` tag and any template that inherits the base should have breadcrumbs included.
+```base.html```
 
 ```jinja2
 {% load django_bootstrap_breadcrumbs %}
@@ -64,6 +84,12 @@ In your `base.html` template simply add the ``render_breadcrumbs`` tag and any t
 {% endblock %}
 ```
 
+And your ```create.html```.
+
+```jinja2
+{% extends 'base.html' %}
+```
+
 
 > All crumbs use the home root path `\` as the base this can be excluded by specifying `add_home = False`
 
@@ -71,7 +97,7 @@ In your `base.html` template simply add the ``render_breadcrumbs`` tag and any t
 
 ```python
 from django.views.generic import ListView
-from django_view_breadcrumbs import ListBreadcrumbMixin
+from view_breadcrumbs import ListBreadcrumbMixin
 
 
 class PostList(ListBreadcrumbMixin, ListView):
@@ -98,13 +124,13 @@ views.py
 ```python
 from django.urls import reverse
 from django.views.generic import ListView
-from django_view_breadcrumbs import ListBreadcrumbMixin
+from view_breadcrumbs import ListBreadcrumbMixin
 
 
 class TestView(ListBreadcrumbMixin, ListView):
     model = TestModel
     template_name = 'app/test/test-list.html'
-    crumbs = [('My Test Breadcrumb', reverse('test_list_view')]
+    crumbs = [('My Test Breadcrumb', reverse('test_list_view')]  # OR reverse_lazy
 ```
 
 OR
