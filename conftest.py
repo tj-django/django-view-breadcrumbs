@@ -33,7 +33,7 @@ def pytest_configure():
 
 
 def create_db():
-    if (sys.version_info < (3, 6)):
+    if (sys.version_info > (3, 5)):
         from django.db import connection
 
         with connection.cursor() as c:
