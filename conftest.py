@@ -8,6 +8,7 @@ TEST_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'demo', 'tem
 
 def pytest_configure(debug=False):
     base_settings = dict(
+        DEBUG=debug,
         DATABASES={
             'default': {
                 'ENGINE': 'django.db.backends.sqlite3',
@@ -39,7 +40,6 @@ def pytest_configure(debug=False):
 
     if debug:
         base_settings.update({
-            'DEBUG': debug,
             'ALLOWED_HOSTS': ['127.0.0.1', 'localhost'],
             'INSTALLED_APPS': [
                 'django.contrib.auth',
