@@ -51,7 +51,7 @@ def pytest_configure(debug=False):
             ],
 
         })
-    settings.configure(base_settings)
+    settings.configure(**base_settings)
     setup()
     if not debug:
         create_db()
