@@ -4,7 +4,7 @@ This extends [django-bootstrap-breadcrumbs](http://django-bootstrap-breadcrumbs.
 
 Replaces having to add ```{% breadcrumb $label $viewname [*args] [**kwargs] %}``` to every template.
 
-
+![Screenshot](breadcrumbs.png)
 
 Breadcrumb mixin classes provided.
 ----------------------------------

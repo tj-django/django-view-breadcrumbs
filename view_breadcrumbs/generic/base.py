@@ -1,6 +1,7 @@
 import logging
 
 from django.urls import reverse
+from django.utils.encoding import force_text
 from django.utils.functional import cached_property
 from django.utils.translation import ugettext_lazy as _
 from django_bootstrap_breadcrumbs.templatetags import (
@@ -39,11 +40,11 @@ class BaseBreadcrumbMixin(object):
 
     @property
     def model_name_title_plural(self):
-        return getattr(self.model._meta, 'verbose_name_plural', '').title()
+        return force_text(getattr(self.model._meta, 'verbose_name_plural', '')).title()
 
     @property
     def model_name_title(self):
-        return getattr(self.model._meta, 'verbose_name', '').title()
+        return force_text(getattr(self.model._meta, 'verbose_name', '')).title()
 
     @property
     def list_view_name(self):
@@ -60,9 +61,7 @@ class BaseBreadcrumbMixin(object):
             try:
                 label, view_name = crumb
             except (TypeError, ValueError):
-                raise ValueError(
-                    'Breadcrumb requires a tuple of label and view name.',
-                )
+                raise ValueError('Breadcrumb requires a tuple of label and view name.')
             else:
                 if hasattr(self, 'object') and self.object:
                     if callable(label):
