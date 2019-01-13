@@ -2,9 +2,31 @@
 
 This extends [django-bootstrap-breadcrumbs](http://django-bootstrap-breadcrumbs.readthedocs.io/en/latest/) providing generic breadcrumb mixin classes.
 
-Replaces having to add ```{% breadcrumb $label $viewname [*args] [**kwargs] %}``` to every template.
+Requires adding ```{% breadcrumb $label $viewname [*args] [**kwargs] %}``` to only the base template.
 
 ![Screenshot](breadcrumbs.png)
+
+
+In the `base.html` template simply add the ``render_breadcrumbs`` tag and any template
+that inherits the base should have breadcrumbs included.
+i.e  
+
+```base.html```
+
+```jinja2
+{% load django_bootstrap_breadcrumbs %}
+
+{% block breadcrumbs %}
+    {% render_breadcrumbs %}
+{% endblock %}
+```
+
+And your ```create.html```.
+
+```jinja2
+{% extends 'base.html' %}
+```
+
 
 Breadcrumb mixin classes provided.
 ----------------------------------
@@ -69,26 +91,6 @@ from view_breadcrumbs import DetailBreadcrumbMixin
 class PostDetail(DetailBreadcrumbMixin, DetailView):
     model = Post
     template_name = 'app/post/detail.html'
-```
-
-In the `base.html` template simply add the ``render_breadcrumbs`` tag and any template
-that inherits the base should have breadcrumbs included.
-i.e  
-
-```base.html```
-
-```jinja2
-{% load django_bootstrap_breadcrumbs %}
-
-{% block breadcrumbs %}
-    {% render_breadcrumbs %}
-{% endblock %}
-```
-
-And your ```create.html```.
-
-```jinja2
-{% extends 'base.html' %}
 ```
 
 
