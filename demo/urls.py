@@ -17,5 +17,5 @@ Examples:
 app_name = 'demo'
 
 urlpatterns = [
-   path('test-view/', views.TestView.as_view(), name='test_view'),
+   path('', views.TestView.as_view(), name='test_view'),
 ]

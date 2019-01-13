@@ -4,7 +4,7 @@ This extends [django-bootstrap-breadcrumbs](http://django-bootstrap-breadcrumbs.
 
 Replaces having to add ```{% breadcrumb $label $viewname [*args] [**kwargs] %}``` to every template.
 
-
+![Screenshot](breadcrumbs.png)
 
 Breadcrumb mixin classes provided.
 ----------------------------------
@@ -29,7 +29,8 @@ Add app to your INSTALLED_APPS
 
 INSTALLED_APPS = [
     ...
-    'view-breadcrumbs',
+    'django_bootstrap_breadcrumbs',
+    'view_breadcrumbs',
     ...
 ]
 ```
@@ -70,11 +71,11 @@ class PostDetail(DetailBreadcrumbMixin, DetailView):
     template_name = 'app/post/detail.html'
 ```
 
-In your `base.html` template simply add the ``render_breadcrumbs`` tag and any template
+In the `base.html` template simply add the ``render_breadcrumbs`` tag and any template
 that inherits the base should have breadcrumbs included.
 i.e  
 
-In your ```base.html```
+```base.html```
 
 ```jinja2
 {% load django_bootstrap_breadcrumbs %}
@@ -130,7 +131,7 @@ from view_breadcrumbs import ListBreadcrumbMixin
 class TestView(ListBreadcrumbMixin, ListView):
     model = TestModel
     template_name = 'app/test/test-list.html'
-    crumbs = [('My Test Breadcrumb', reverse('test_list_view')]  # OR reverse_lazy
+    crumbs = [('My Test Breadcrumb', reverse('test_list_view'))]  # OR reverse_lazy
 ```
 
 OR
