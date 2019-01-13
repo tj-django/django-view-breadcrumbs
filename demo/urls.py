@@ -1,7 +1,3 @@
-from django.urls import path
-
-from . import views
-
 """
 Examples:
     For the events LIST and CRUD views.
@@ -13,6 +9,10 @@ Examples:
         path('event/<int:pk>/delete_error', views.EventDeleteError.as_view(), name='event_delete_error'),
     ]
 """
+
+from django.urls import path
+
+from . import views
 
 app_name = 'demo'
 
