@@ -27,3 +27,10 @@ install:
 
 script:
   - tox
+
+addons:
+  apt:
+    sources:
+      - travis-ci/sqlite3
+    packages:
+      - sqlite3
