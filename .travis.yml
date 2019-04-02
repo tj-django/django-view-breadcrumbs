@@ -13,7 +13,7 @@ matrix:
     - python: 3.6-dev
       env: TOXENV='py36-django11, py36-django20, py36-django21'
     - python: pypy3
-      env: TOXENV='py36-django11, py36-django20, py36-django21'
+      env: TOXENV=ALL
 
 notifications:
   email:
