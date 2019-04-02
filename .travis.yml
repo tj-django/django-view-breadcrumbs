@@ -1,5 +1,6 @@
 language: python
 sudo: false
+cache: pip
 
 matrix:
   include:
@@ -30,6 +31,7 @@ script:
 
 addons:
   apt:
+    update: true
     sources:
       - travis-ci/sqlite3
     packages:
