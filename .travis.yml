@@ -4,18 +4,16 @@ cache: pip
 
 matrix:
   include:
-    - python: 3.4
-      env: TOXENV=py34
     - python: 3.5
-      env: TOXENV=py35
+      env: TOXENV='py35-django11, py35-django20'
     - python: 3.5-dev
-      env: TOXENV=py35
+      env: TOXENV='py35-django11, py35-django20'
     - python: 3.6
-      env: TOXENV=py36
+      env: TOXENV='py36-django11, py36-django20, py36-django21'
     - python: 3.6-dev
-      env: TOXENV=py36
+      env: TOXENV='py36-django11, py36-django20, py36-django21'
     - python: pypy3
-      env: TOXENV=py36
+      env: TOXENV='py36-django11, py36-django20, py36-django21'
 
 notifications:
   email:
