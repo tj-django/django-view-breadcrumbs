@@ -8,7 +8,7 @@ from django_bootstrap_breadcrumbs.templatetags import (
     django_bootstrap_breadcrumbs
 )
 
-from ..utils import get_app_name, action_view_name
+from ..utils import get_app_name, action_view_name, verbose_name_raw, verbose_name_plural_raw
 
 log = logging.getLogger(__name__)
 
@@ -40,11 +40,11 @@ class BaseBreadcrumbMixin(object):
 
     @property
     def model_name_title_plural(self):
-        return force_text(getattr(self.model._meta, 'verbose_name_plural', '')).title()
+        return verbose_name_plural_raw(self.model).title()
 
     @property
     def model_name_title(self):
-        return force_text(getattr(self.model._meta, 'verbose_name', '')).title()
+        return verbose_name_raw(self.model).title()
 
     @property
     def list_view_name(self):
