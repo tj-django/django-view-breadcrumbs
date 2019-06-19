@@ -1,5 +1,6 @@
 import logging
 
+from django.conf import settings
 from django.urls import reverse
 from django.utils.functional import cached_property
 from django.utils.translation import ugettext_lazy as _
@@ -29,7 +30,10 @@ class BaseBreadcrumbMixin(object):
     detail_view_suffix = 'detail'
 
     home_path = '/'
-    home_label = _('Home')
+
+    @cached_property
+    def home_label(self):
+        return _(getattr(settings, 'BREADCRUMBS_HOME_LABEL', 'Home'))
 
     @cached_property
     def app_name(self):
