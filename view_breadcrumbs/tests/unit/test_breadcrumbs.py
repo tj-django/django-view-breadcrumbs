@@ -17,6 +17,7 @@ from view_breadcrumbs.generic import (
 class ActionTestMixin(object):
     @override_settings(BREADCRUMBS_HOME_LABEL='Custom Home')
     def test_custom_home_label(self):
+        # TODO: Move this to use the defualt django client.
         instance = TestModel.objects.create(name='Test')
 
         TestViewClass = self.make_crumb_cls(
