@@ -1,21 +1,35 @@
 """
 Examples:
-    For the events LIST and CRUD views.
+    For the test LIST and CRUD views.
     [
-        path('events/', views.EventLists.as_view(), name='event_list'),
-        path('event/add/', views.EventCreate.as_view(), name='event_add'),
-        path('event/<int:pk>/change', views.EventUpdate.as_view(), name='event_change'),
-        path('event/<int:pk>/delete', views.EventDelete.as_view(), name='event_delete'),
-        path('event/<int:pk>/delete_error', views.EventDeleteError.as_view(), name='event_delete_error'),
+        path('test/', views.TestListsView.as_view(), name='test_list'),
+        path('test/add/', views.TestCreateView.as_view(), name='test_add'),
+        path('test/<int:pk>/change', views.TestUpdateView.as_view(), name='test_change'),
+        path('test/<int:pk>/delete', views.TestDeleteView.as_view(), name='test_delete'),
+        path('test/<int:pk>/delete_error', views.TestDeleteErrorView.as_view(), name='test_delete_error'),
     ]
 """
-
-from django.urls import path
+try:
+   from django.urls import re_path as path, include
+except ImportError:
+   from django.conf.urls import url as path, include
 
 from . import views
 
 app_name = 'demo'
 
-urlpatterns = [
+
+
+test_patterns = ([
+   # Custom view
    path('', views.TestView.as_view(), name='test_view'),
+   # CRUD views.
+   path('tests/', views.TestListsView.as_view(), name='testmodel_list'),
+   path('tests/(?P<pk>[0-9]+)/$', views.TestDetailView.as_view(), name='testmodel_detail'),
+], app_name)
+
+
+urlpatterns = [
+   path('', include(test_patterns, namespace=app_name))
 ]
+
