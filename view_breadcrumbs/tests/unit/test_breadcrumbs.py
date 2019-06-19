@@ -40,7 +40,7 @@ class ActionTestMixin(object):
         ]
 
         self.assertEqual(settings.BREADCRUMBS_HOME_LABEL, 'Custom Home')
-        self.assertIn('Home1', labels)
+        self.assertIn('Custom Home', labels)
 
 
 class BaseBreadcrumbTestCase(TestCase):
