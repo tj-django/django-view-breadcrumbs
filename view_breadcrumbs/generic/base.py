@@ -29,7 +29,7 @@ class BaseBreadcrumbMixin(object):
     detail_view_suffix = 'detail'
 
     home_path = '/'
-    home_label = _('<span>Home</span>')
+    home_label = _('Home')
 
     @cached_property
     def app_name(self):

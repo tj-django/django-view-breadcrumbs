@@ -20,7 +20,7 @@ test_patterns = ([
    # Custom view
    path('', views.TestView.as_view(), name='test_view'),
    # CRUD views.
-   path('test/', views.TestListsView.as_view(), name='testmodel_list'),
+   path('tests/', views.TestListsView.as_view(), name='testmodel_list'),
    path('tests/<int:pk>', views.TestDetailView.as_view(), name='testmodel_detail'),
 ], app_name)
 
