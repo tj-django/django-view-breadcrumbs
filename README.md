@@ -64,6 +64,11 @@ Using the generic breadcrumb mixin each breadcrumb will be added to the view dyn
 and can be overridden by providing a `crumbs` property.
 
 
+### Settings:
+
+`BREADCRUMBS_HOME_LABEL` - Sets the root label (default: `Home`)
+
+
 ### Sample crumbs:  `Home \ Posts \ Test - Post`
 
 > NOTE: All url config should use a pattern `view_name=model_verbose_name_{action}` i.e `view_name=post_detail` for detail view. 
@@ -128,6 +133,7 @@ views.py
 from django.urls import reverse
 from django.views.generic import ListView
 from view_breadcrumbs import ListBreadcrumbMixin
+from demo.models import TestModel
 
 
 class TestView(ListBreadcrumbMixin, ListView):
@@ -139,6 +145,13 @@ class TestView(ListBreadcrumbMixin, ListView):
 OR
 
 ```python
+from django.urls import reverse
+from django.views.generic import ListView
+from view_breadcrumbs import ListBreadcrumbMixin
+from demo.models import TestModel
+from django.utils.functional import cached_property
+
+
 class TestView(ListBreadcrumbMixin, ListView):
     model = TestModel
     template_name = 'app/test/test-list.html'
@@ -146,8 +159,36 @@ class TestView(ListBreadcrumbMixin, ListView):
     @cached_property
     def crumbs(self):
         return super(TestView, self).crumbs + [
-            (self.object.name , reverse('test_detail_view', kwargs={'pk': self.object.pk})
+            (self.object.name , reverse('test_detail_view', kwargs={'pk': self.object.pk})),
         ]
 
 ```
 
+### Overriding the Home label for a specific view
+
+```python
+from django.utils.translation import gettext_lazy as _
+from view_breadcrumbs import DetailBreadcrumbMixin
+from django.views.generic import DetailView
+from demo.models import TestModel
+
+
+class TestDetailView(DetailBreadcrumbMixin, DetailView):
+     model = TestModel
+     home_label = _('My custom home')
+     template_name = 'demo/test-detail.html'
+```
+
+
+> Refer to the demo app for more examples.
+
+## Running locally
+
+```bash
+$ make migrate
+$ make run
+```
+
+Spins up a django server running the demo app.
+
+Visit `http://127.0.0.1:8000`

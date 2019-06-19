@@ -57,6 +57,16 @@ release-to-pypi: clean-build increase-version tag-build  ## Release project to p
 	@$(PYTHON) setup.py sdist bdist_wheel
 	@twine upload dist/*
 
+
+# ----------------------------------------------------------
+# --------- Django manage.py commands ----------------------
+# ----------------------------------------------------------
+run:  ## Run the run_server using default host and port
+	@$(MANAGE_PY) runserver
+
+migrate:  ## Run the migrations
+	@$(MANAGE_PY) migrate
+
 # ----------------------------------------------------------
 # ---------- Upgrade project version (bumpversion)  --------
 # ----------------------------------------------------------
