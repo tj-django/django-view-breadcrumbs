@@ -9,19 +9,23 @@ Examples:
         path('test/<int:pk>/delete_error', views.TestDeleteErrorView.as_view(), name='test_delete_error'),
     ]
 """
-
-from django.urls import path, include
+try:
+   from django.urls import re_path as path, include
+except ImportError:
+   from django.conf.urls import url as path, include
 
 from . import views
 
 app_name = 'demo'
+
+
 
 test_patterns = ([
    # Custom view
    path('', views.TestView.as_view(), name='test_view'),
    # CRUD views.
    path('tests/', views.TestListsView.as_view(), name='testmodel_list'),
-   path('tests/<int:pk>', views.TestDetailView.as_view(), name='testmodel_detail'),
+   path('tests/(?P<pk>[0-9]+)/$', views.TestDetailView.as_view(), name='testmodel_detail'),
 ], app_name)
 
 
