@@ -32,10 +32,10 @@ Breadcrumb mixin classes provided.
 ----------------------------------
 
 - `BaseBreadcrumbMixin`    - Base view requires a `crumbs` class property.
-- `CreateBreadcrumbMixin`  - For create views `Home \ Posts \ Add Post`
-- `DetailBreadcrumbMixin`  - For detail views `Home \ Posts \ Post 1`
-- `ListBreadcrumbMixin`    - For list views `Home \ Posts`
-- `UpdateBreadcrumbMixin`  - For Update views `Home \ Posts \ Post 1 \ Update Post 1`
+- `CreateBreadcrumbMixin`  - For create views `Home / Posts / Add Post`
+- `DetailBreadcrumbMixin`  - For detail views `Home / Posts / Post 1`
+- `ListBreadcrumbMixin`    - For list views `Home / Posts`
+- `UpdateBreadcrumbMixin`  - For Update views `Home / Posts / Post 1 / Update Post 1`
 
 
 ## Installation:
@@ -83,7 +83,7 @@ Renders
 ![Screenshot](./custom-root-breadcrumb.png)
 
 
-#### Sample crumbs:  `Home \ Posts \ Test - Post`
+#### Sample crumbs:  `Home / Posts / Test - Post`
 
 > NOTE: All url config should use a pattern `view_name=model_verbose_name_{action}` i.e `view_name=post_detail` for detail view. 
 
@@ -113,7 +113,7 @@ class PostDetail(DetailBreadcrumbMixin, DetailView):
 ```
 
 
-> All crumbs use the home root path `\` as the base this can be excluded by specifying `add_home = False`
+> All crumbs use the home root path `/` as the base this can be excluded by specifying `add_home = False`
 
 ### Sample crumbs: `Posts`
 
@@ -131,7 +131,7 @@ class PostList(ListBreadcrumbMixin, ListView):
 
 > Can also override the view breadcrumb by specifying a list of tuples `[(Label, view path)]`.
 
-### Custom crumbs: `Home \ My Test Breadcrumb`
+### Custom crumbs: `Home / My Test Breadcrumb`
 
 URL conf.
 ```python
