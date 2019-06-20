@@ -19,17 +19,15 @@ from . import views
 app_name = 'demo'
 
 
-
 test_patterns = ([
    # Custom view
-   path('', views.TestView.as_view(), name='test_view'),
+   path('^$', views.TestView.as_view(), name='test_view'),
    # CRUD views.
-   path('tests/', views.TestListsView.as_view(), name='testmodel_list'),
-   path('tests/(?P<pk>[0-9]+)/$', views.TestDetailView.as_view(), name='testmodel_detail'),
+   path(r'^tests/$', views.TestListsView.as_view(), name='testmodel_list'),
+   path(r'^tests/(?P<pk>[0-9]+)/$', views.TestDetailView.as_view(), name='testmodel_detail'),
 ], app_name)
 
 
 urlpatterns = [
    path('', include(test_patterns, namespace=app_name))
 ]
-
