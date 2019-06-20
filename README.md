@@ -66,10 +66,24 @@ and can be overridden by providing a `crumbs` property.
 
 ### Settings:
 
+To modify the root label site wide use
+
 `BREADCRUMBS_HOME_LABEL` - Sets the root label (default: `Home`)
 
 
-### Sample crumbs:  `Home \ Posts \ Test - Post`
+#### Example 
+
+```python
+
+BREADCRUMBS_HOME_LABEL = 'My Site'
+```
+
+Renders
+
+
+
+
+#### Sample crumbs:  `Home \ Posts \ Test - Post`
 
 > NOTE: All url config should use a pattern `view_name=model_verbose_name_{action}` i.e `view_name=post_detail` for detail view. 
 
