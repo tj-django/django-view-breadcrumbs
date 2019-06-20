@@ -4,7 +4,7 @@ This extends [django-bootstrap-breadcrumbs](http://django-bootstrap-breadcrumbs.
 
 Requires adding ```{% breadcrumb $label $viewname [*args] [**kwargs] %}``` to only the base template.
 
-![Screenshot](breadcrumbs.png)
+![Screenshot](./breadcrumbs.png)
 
 
 In the `base.html` template simply add the ``render_breadcrumbs`` tag and any template
@@ -32,10 +32,10 @@ Breadcrumb mixin classes provided.
 ----------------------------------
 
 - `BaseBreadcrumbMixin`    - Base view requires a `crumbs` class property.
-- `CreateBreadcrumbMixin`  - For create views `Home \ Posts \ Add Post`
-- `DetailBreadcrumbMixin`  - For detail views `Home \ Posts \ Post 1`
-- `ListBreadcrumbMixin`    - For list views `Home \ Posts`
-- `UpdateBreadcrumbMixin`  - For Update views `Home \ Posts \ Post 1 \ Update Post 1`
+- `CreateBreadcrumbMixin`  - For create views `Home / Posts / Add Post`
+- `DetailBreadcrumbMixin`  - For detail views `Home / Posts / Post 1`
+- `ListBreadcrumbMixin`    - For list views `Home / Posts`
+- `UpdateBreadcrumbMixin`  - For Update views `Home / Posts / Post 1 / Update Post 1`
 
 
 ## Installation:
@@ -66,10 +66,24 @@ and can be overridden by providing a `crumbs` property.
 
 ### Settings:
 
+To modify the root label site wide use
+
 `BREADCRUMBS_HOME_LABEL` - Sets the root label (default: `Home`)
 
 
-### Sample crumbs:  `Home \ Posts \ Test - Post`
+#### Example 
+
+```python
+
+BREADCRUMBS_HOME_LABEL = 'My new home'
+```
+
+Renders
+
+![Screenshot](./custom-root-breadcrumb.png)
+
+
+#### Sample crumbs:  `Home / Posts / Test - Post`
 
 > NOTE: All url config should use a pattern `view_name=model_verbose_name_{action}` i.e `view_name=post_detail` for detail view. 
 
@@ -99,7 +113,7 @@ class PostDetail(DetailBreadcrumbMixin, DetailView):
 ```
 
 
-> All crumbs use the home root path `\` as the base this can be excluded by specifying `add_home = False`
+> All crumbs use the home root path `/` as the base this can be excluded by specifying `add_home = False`
 
 ### Sample crumbs: `Posts`
 
@@ -117,7 +131,7 @@ class PostList(ListBreadcrumbMixin, ListView):
 
 > Can also override the view breadcrumb by specifying a list of tuples `[(Label, view path)]`.
 
-### Custom crumbs: `Home \ My Test Breadcrumb`
+### Custom crumbs: `Home / My Test Breadcrumb`
 
 URL conf.
 ```python
@@ -191,4 +205,4 @@ $ make run
 
 Spins up a django server running the demo app.
 
-Visit `http://127.0.0.1:8000`
+Visit `http://127.0.0.1:8090`
