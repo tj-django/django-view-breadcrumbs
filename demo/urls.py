@@ -19,7 +19,6 @@ from . import views
 app_name = 'demo'
 
 
-
 test_patterns = ([
    # Custom view
    path('^$', views.TestView.as_view(), name='test_view'),
