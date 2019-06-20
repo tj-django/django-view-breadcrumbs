@@ -4,7 +4,7 @@ This extends [django-bootstrap-breadcrumbs](http://django-bootstrap-breadcrumbs.
 
 Requires adding ```{% breadcrumb $label $viewname [*args] [**kwargs] %}``` to only the base template.
 
-![Screenshot](breadcrumbs.png)
+![Screenshot](./breadcrumbs.png)
 
 
 In the `base.html` template simply add the ``render_breadcrumbs`` tag and any template
@@ -75,12 +75,12 @@ To modify the root label site wide use
 
 ```python
 
-BREADCRUMBS_HOME_LABEL = 'My Site'
+BREADCRUMBS_HOME_LABEL = 'My new home'
 ```
 
 Renders
 
-
+![Screenshot](./custom-root-breadcrumb.png)
 
 
 #### Sample crumbs:  `Home \ Posts \ Test - Post`
@@ -205,4 +205,4 @@ $ make run
 
 Spins up a django server running the demo app.
 
-Visit `http://127.0.0.1:8000`
+Visit `http://127.0.0.1:8090`

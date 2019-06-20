@@ -62,7 +62,7 @@ release-to-pypi: clean-build increase-version tag-build  ## Release project to p
 # --------- Django manage.py commands ----------------------
 # ----------------------------------------------------------
 run:  ## Run the run_server using default host and port
-	@$(MANAGE_PY) runserver
+	@$(MANAGE_PY) runserver 127.0.0.1:8090
 
 migrate:  ## Run the migrations
 	@$(MANAGE_PY) migrate
