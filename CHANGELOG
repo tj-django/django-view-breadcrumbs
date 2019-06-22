@@ -1,0 +1,47 @@
+v0.1.0
+======
+- Added support for site wide Home label
+- Updated test to include setting `BREADCRUMBS_HOME_LABEL`.
+- Updated the demo app to include CRUD views.
+
+v0.0.9
+======
+- Fixed verbose_name translation
+
+
+v0.0.8
+======
+
+
+v0.0.7
+======
+
+
+v0.0.6
+======
+
+
+v0.0.5
+======
+
+
+v0.0.4
+======
+
+
+v0.0.3
+======
+- Increased test coverage
+
+v0.0.2
+======
+-  Added a demo app with examples
+
+v0.0.1
+======
+-  Updated the test
+
+
+v0.0.0
+======
+- Initial release
