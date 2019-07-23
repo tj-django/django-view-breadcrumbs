@@ -19,7 +19,6 @@ from . import views
 app_name = 'demo'
 
 
-
 test_patterns = ([
    # Home view
    path('^$', views.TestHomeView.as_view(), name='test_root'),
@@ -34,4 +33,3 @@ test_patterns = ([
 urlpatterns = [
    path('', include(test_patterns, namespace=app_name))
 ]
-
