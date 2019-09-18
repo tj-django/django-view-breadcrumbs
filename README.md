@@ -172,9 +172,7 @@ class TestView(ListBreadcrumbMixin, ListView):
 
     @cached_property
     def crumbs(self):
-        return super(TestView, self).crumbs + [
-            (self.object.name , reverse('test_detail_view', kwargs={'pk': self.object.pk})),
-        ]
+        return [('My Test Breadcrumb', reverse('test_list_view'))]
 
 ```
 
