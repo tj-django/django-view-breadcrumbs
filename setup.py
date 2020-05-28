@@ -10,7 +10,7 @@ test_requires = [
     'pytest==3.7.2',
     'pluggy>=0.7',
     'mock==2.0.0',
-    'codacy-coverage==1.3.10',
+    'codacy-coverage==1.3.11',
 ]
 
 doc_requires = [
