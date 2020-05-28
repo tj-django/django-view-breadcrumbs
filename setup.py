@@ -18,7 +18,7 @@ doc_requires = [
 ]
 
 deploy_requires = [
-    'bumpversion==0.5.3',
+    'bumpversion==0.6.0',
 ]
 
 lint_requires = [
