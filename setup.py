@@ -14,11 +14,11 @@ test_requires = [
 ]
 
 doc_requires = [
-    'Sphinx==1.6.5',
+    'Sphinx==1.8.5',
 ]
 
 deploy_requires = [
-    'bumpversion==0.5.3',
+    'bumpversion==0.6.0',
 ]
 
 lint_requires = [
