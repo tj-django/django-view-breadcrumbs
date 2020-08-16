@@ -9,7 +9,7 @@ test_requires = [
     'tox==3.15.2',
     'pytest==6.0.1',
     'pluggy>=0.7',
-    'mock==2.0.0',
+    'mock==4.0.2',
     'codacy-coverage==1.3.11',
 ]
 
