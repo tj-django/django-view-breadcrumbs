@@ -4,10 +4,8 @@ from django.conf import settings
 from django.urls import reverse
 from django.utils.functional import cached_property
 from django.utils.translation import ugettext_lazy as _
-from django_bootstrap_breadcrumbs.templatetags import (
-    django_bootstrap_breadcrumbs
-)
 
+from ..templatetags.view_breadcrumbs import append_breadcrumb, CONTEXT_KEY, clear_breadcrumbs
 from ..utils import (
     get_app_name, action_view_name, verbose_name_raw, verbose_name_plural_raw,
 )
@@ -16,9 +14,7 @@ log = logging.getLogger(__name__)
 
 
 def add_breadcrumb(context, label, view_name, **kwargs):
-    return django_bootstrap_breadcrumbs.append_breadcrumb(
-        context, label, view_name, (), kwargs,
-    )
+    return append_breadcrumb(context, label, view_name, (), kwargs)
 
 
 class BaseBreadcrumbMixin(object):
@@ -77,8 +73,8 @@ class BaseBreadcrumbMixin(object):
 
     def get_context_data(self, **kwargs):
         ctx = {'request': self.request}
-        if django_bootstrap_breadcrumbs.CONTEXT_KEY in self.request.META:
-            django_bootstrap_breadcrumbs.clear_breadcrumbs(ctx)
+        if CONTEXT_KEY in self.request.META:
+            clear_breadcrumbs(ctx)
         self.update_breadcrumbs(ctx)
 
         return super(BaseBreadcrumbMixin, self).get_context_data(**kwargs)

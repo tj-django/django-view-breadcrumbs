@@ -17,7 +17,7 @@ i.e
 ```base.html```
 
 ```jinja2
-{% load django_bootstrap_breadcrumbs %}
+{% load view_breadcrumbs %}
 
 {% block breadcrumbs %}
     {% render_breadcrumbs %}
@@ -53,10 +53,9 @@ Add app to your INSTALLED_APPS
 ```python
 
 INSTALLED_APPS = [
-    ...
-    'django_bootstrap_breadcrumbs',
+    ...,
     'view_breadcrumbs',
-    ...
+    ...,
 ]
 ```
 

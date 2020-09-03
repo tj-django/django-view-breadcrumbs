@@ -4,7 +4,6 @@ from django.utils.encoding import force_str
 from django.views.generic.base import View
 from django.views.generic.detail import SingleObjectMixin
 from django.views.generic.list import MultipleObjectMixin
-from django_bootstrap_breadcrumbs.templatetags import django_bootstrap_breadcrumbs
 
 from demo.models import TestModel
 from demo.views import TestView
@@ -12,12 +11,13 @@ from view_breadcrumbs.generic import (
     BaseBreadcrumbMixin, ListBreadcrumbMixin, DetailBreadcrumbMixin,
     CreateBreadcrumbMixin, UpdateBreadcrumbMixin,
 )
+from view_breadcrumbs.templatetags.view_breadcrumbs import CONTEXT_KEY
 
 
 class ActionTestMixin(object):
     @override_settings(BREADCRUMBS_HOME_LABEL='Custom Home')
     def test_custom_home_label(self):
-        # TODO: Move this to use the defualt django client.
+        # TODO: Move this to use the default django client.
         instance = TestModel.objects.create(name='Test')
 
         TestViewClass = self.make_crumb_cls(
@@ -36,7 +36,7 @@ class ActionTestMixin(object):
 
         labels = [
           force_str(paths[0])
-          for paths in v.request.META[django_bootstrap_breadcrumbs.CONTEXT_KEY]
+          for paths in v.request.META[CONTEXT_KEY]
         ]
 
         self.assertEqual(settings.BREADCRUMBS_HOME_LABEL, 'Custom Home')
