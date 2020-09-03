@@ -10,12 +10,12 @@ from __future__ import unicode_literals
 import logging
 from inspect import ismethod
 
-from django.template.loader import render_to_string
-from django.utils.safestring import mark_safe
-from django.utils.encoding import smart_text
-from django.db.models import Model
-from django.conf import settings
 from django import template, VERSION
+from django.conf import settings
+from django.db.models import Model
+from django.template.loader import render_to_string
+from django.utils.encoding import smart_text
+from django.utils.safestring import SafeString
 from six import wraps
 
 if VERSION >= (2, 0):
@@ -110,7 +110,7 @@ def render_breadcrumbs(context, *args):
     context['breadcrumbs'] = links
     context['breadcrumbs_total'] = len(links)
 
-    return mark_safe(render_to_string(template_path, context))
+    return SafeString(render_to_string(template_path, context))
 
 
 @register.simple_tag(takes_context=True)
