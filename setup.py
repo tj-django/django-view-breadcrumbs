@@ -24,7 +24,7 @@ deploy_requires = [
 lint_requires = [
     'flake8==3.8.3',
     'yamllint==1.24.2',
-    'isort==5.4.2',
+    'isort',
 ]
 
 local_dev_requires = [
