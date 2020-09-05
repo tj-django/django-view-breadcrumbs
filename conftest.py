@@ -16,7 +16,6 @@ def pytest_configure(debug=False):
             }
         },
         INSTALLED_APPS=[
-            'django_bootstrap_breadcrumbs',
             'view_breadcrumbs',
             'demo'
         ],
@@ -45,7 +44,6 @@ def pytest_configure(debug=False):
                 'django.contrib.auth',
                 'django.contrib.contenttypes',
                 'django.contrib.sessions',
-                'django_bootstrap_breadcrumbs',
                 'view_breadcrumbs',
                 'demo'
             ],

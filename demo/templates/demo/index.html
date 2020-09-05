@@ -1,4 +1,4 @@
-{% load django_bootstrap_breadcrumbs %}
+{% load view_breadcrumbs %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +12,7 @@
 <body>
     {% block breadcrumbs %}
     <main>
-        {% render_breadcrumbs 'django_bootstrap_breadcrumbs/bootstrap4.html' %}
+        {% render_breadcrumbs 'view_breadcrumbs/bootstrap4.html' %}
     </main>
     {% endblock %}
     <section>

@@ -2,14 +2,14 @@ import os
 from setuptools import setup, find_packages
 
 install_requires = [
-    'django-bootstrap-breadcrumbs>=0.9.0,<1.0',
+    'Django<=3.0',
 ]
 
 test_requires = [
     'tox==3.20.0',
     'pytest==6.0.1',
     'pluggy>=0.7',
-    'mock==4.0.2',
+    'mock',
     'codacy-coverage==1.3.11',
 ]
 
@@ -24,7 +24,7 @@ deploy_requires = [
 lint_requires = [
     'flake8==3.8.3',
     'yamllint==1.24.2',
-    'isort==5.4.2',
+    'isort',
 ]
 
 local_dev_requires = [
