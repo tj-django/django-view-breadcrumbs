@@ -1,0 +1,153 @@
+# Changelog
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
+and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
+
+## [v1.0.0](https://github.com/tj-django/django-view-breadcrumbs/releases/tag/v1.0.0) - 2020-09-07
+
+<small>[Compare with v0.1.0](https://github.com/tj-django/django-view-breadcrumbs/compare/v0.1.0...v1.0.0)</small>
+
+### Added
+- Add renovate.json ([224e4b4](https://github.com/tj-django/django-view-breadcrumbs/commit/224e4b4d3ea62ac4a1bf4f6b4e68bae83d28bd22) by Renovate Bot).
+- Added and example for the home route. ([64859c3](https://github.com/tj-django/django-view-breadcrumbs/commit/64859c347d8b9e4cb8e3c74c824111b1ae68910b) by Tonye Jack).
+- Added the changelog. ([78643ec](https://github.com/tj-django/django-view-breadcrumbs/commit/78643ec8579f67ea29f5e56142457c7018737ead) by Tonye Jack).
+- Added sample for custom breadcrumb. ([c7f4c5d](https://github.com/tj-django/django-view-breadcrumbs/commit/c7f4c5d280a19a6754154c7b8e98687f881a4504) by Tonye Jack).
+
+### Fixed
+- Fixed error with test. ([e76be1f](https://github.com/tj-django/django-view-breadcrumbs/commit/e76be1f00b19e33578fd4b733e2e4e11d46c38c4) by Tonye Jack).
+- Fixed url config for demo routes. ([2445058](https://github.com/tj-django/django-view-breadcrumbs/commit/244505866bc9ebd354f5ace0da52e512e83d0bb5) by Tonye Jack).
+
+### Removed
+- Removed dependency on django-bootstrap-breaddcrumbs. ([1639945](https://github.com/tj-django/django-view-breadcrumbs/commit/1639945d8ca00d48f24f48bc1c4f5962efb562ca) by Tonye Jack).
+- Removed extra line. ([a4a3e89](https://github.com/tj-django/django-view-breadcrumbs/commit/a4a3e89c3084a358132c23732c6c707af9171e8f) by Tonye Jack).
+
+
+## [v0.1.0](https://github.com/tj-django/django-view-breadcrumbs/releases/tag/v0.1.0) - 2019-06-19
+
+<small>[Compare with v0.0.9](https://github.com/tj-django/django-view-breadcrumbs/compare/v0.0.9...v0.1.0)</small>
+
+### Added
+- Added todo. ([bc03e77](https://github.com/tj-django/django-view-breadcrumbs/commit/bc03e77bf306ac189632b1d4dfb66cff522bdf1b) by Tonye Jack).
+- Added setting breadcrumbs_home_label ([5f44273](https://github.com/tj-django/django-view-breadcrumbs/commit/5f4427393be8f1ed9cf516a54fdf92af3cccfe63) by Tonye Jack).
+- Added example for customizing home label. ([465a85a](https://github.com/tj-django/django-view-breadcrumbs/commit/465a85ad08dcab21e82c2cd4d4f39fb0b291fc29) by Tonye Jack).
+
+### Fixed
+- Fixed test. ([120d8f3](https://github.com/tj-django/django-view-breadcrumbs/commit/120d8f3dfea749ad2cc76ddeeac8a0a82f13f0ca) by Tonye Jack).
+- Fixed import errors. ([9a7470a](https://github.com/tj-django/django-view-breadcrumbs/commit/9a7470a753ab04696fb444aff11f092ee9e087ba) by Tonye Jack).
+
+### Removed
+- Removed unused span ([b3a883d](https://github.com/tj-django/django-view-breadcrumbs/commit/b3a883dcadc6e6d43fd022b3fb9aa21f84496e3d) by Tonye Jack).
+
+
+## [v0.0.9](https://github.com/tj-django/django-view-breadcrumbs/releases/tag/v0.0.9) - 2019-04-02
+
+<small>[Compare with v0.0.8](https://github.com/tj-django/django-view-breadcrumbs/compare/v0.0.8...v0.0.9)</small>
+
+### Fixed
+- Fixed config. ([368c611](https://github.com/tj-django/django-view-breadcrumbs/commit/368c611c8351cf3d29784aa41bf1f09372552c9b) by Tonye Jack).
+- Fixed indentation and unused imports. ([8ce311f](https://github.com/tj-django/django-view-breadcrumbs/commit/8ce311f34c3c3ce0bfb980dcb4e9586ae47fc095) by Tonye Jack).
+
+### Removed
+- Removed django dev installation. ([55f02e7](https://github.com/tj-django/django-view-breadcrumbs/commit/55f02e7750c706d9f11c6a14a0f0cee876c76dc6) by Tonye Jack).
+- Removed django 2.2 from python35 tox config. ([12c72ff](https://github.com/tj-django/django-view-breadcrumbs/commit/12c72ff91005f28ee6c6a80f7da1dfa6cb5e9cdc) by Tonye Jack).
+
+
+## [v0.0.8](https://github.com/tj-django/django-view-breadcrumbs/releases/tag/v0.0.8) - 2019-01-27
+
+<small>[Compare with v0.0.7](https://github.com/tj-django/django-view-breadcrumbs/compare/v0.0.7...v0.0.8)</small>
+
+### Fixed
+- Fixed tox errors. ([102bf1b](https://github.com/tj-django/django-view-breadcrumbs/commit/102bf1b4521ef01b971bbb874bbe786e513b4b81) by Tonye Jack).
+- Fixed ci errors. ([432ac14](https://github.com/tj-django/django-view-breadcrumbs/commit/432ac14bd0dd3924e7b09c2a0c780ae879e90e66) by Tonye Jack).
+- Fixed error with code quality. ([dad6cae](https://github.com/tj-django/django-view-breadcrumbs/commit/dad6cae3857f3d5cb2e14d1af4a503a1c7085c98) by Tonye Jack).
+- Fixed test. ([faf30cf](https://github.com/tj-django/django-view-breadcrumbs/commit/faf30cf8bb3c65eccee155eceeff576b33632cd6) by Tonye Jack).
+- Fixed attribute error. ([7fe937e](https://github.com/tj-django/django-view-breadcrumbs/commit/7fe937ea7604739de37e83c502031f0e3cd4257c) by Tonye Jack).
+- Fixed bug with translated verbose name. ([7d80c9b](https://github.com/tj-django/django-view-breadcrumbs/commit/7d80c9baf7c8de57fb1ab8a8fd5d7c610ef01012) by Tonye Jack).
+- Fixed tox test. ([ec83c49](https://github.com/tj-django/django-view-breadcrumbs/commit/ec83c49843f595621b9f7d2b374e4fa851fcc61b) by Tonye Jack).
+- Fixed tox config. ([8b37c73](https://github.com/tj-django/django-view-breadcrumbs/commit/8b37c7357ec44bc68213f877e9fafd2d9f611d85) by Tonye Jack).
+
+### Removed
+- Removed django dependency. ([bce8a69](https://github.com/tj-django/django-view-breadcrumbs/commit/bce8a695172c91bf358de4b2cd1059eea4bde472) by Tonye Jack).
+- Removed assert. ([b13d3f5](https://github.com/tj-django/django-view-breadcrumbs/commit/b13d3f5e5864d6ebd91db27eddbad177977f2d88) by Tonye Jack).
+
+
+## [v0.0.7](https://github.com/tj-django/django-view-breadcrumbs/releases/tag/v0.0.7) - 2018-11-17
+
+<small>[Compare with v0.0.6](https://github.com/tj-django/django-view-breadcrumbs/compare/v0.0.6...v0.0.7)</small>
+
+
+## [v0.0.6](https://github.com/tj-django/django-view-breadcrumbs/releases/tag/v0.0.6) - 2018-11-17
+
+<small>[Compare with v0.0.4](https://github.com/tj-django/django-view-breadcrumbs/compare/v0.0.4...v0.0.6)</small>
+
+### Fixed
+- Fix test app. ([febc4e0](https://github.com/tj-django/django-view-breadcrumbs/commit/febc4e0fc6de27d7f2b45e2dfeb011ae2702b4ce) by Tonye Jack).
+
+
+## [v0.0.4](https://github.com/tj-django/django-view-breadcrumbs/releases/tag/v0.0.4) - 2018-09-03
+
+<small>[Compare with v0.0.3](https://github.com/tj-django/django-view-breadcrumbs/compare/v0.0.3...v0.0.4)</small>
+
+
+## [v0.0.3](https://github.com/tj-django/django-view-breadcrumbs/releases/tag/v0.0.3) - 2018-09-03
+
+<small>[Compare with v0.0.2](https://github.com/tj-django/django-view-breadcrumbs/compare/v0.0.2...v0.0.3)</small>
+
+
+## [v0.0.2](https://github.com/tj-django/django-view-breadcrumbs/releases/tag/v0.0.2) - 2018-08-19
+
+<small>[Compare with v0.0.1](https://github.com/tj-django/django-view-breadcrumbs/compare/v0.0.1...v0.0.2)</small>
+
+### Removed
+- Remove pypandoc ([5991d54](https://github.com/tj-django/django-view-breadcrumbs/commit/5991d54a69dacfb62ee21cd2752e0ec330800686) by Tonye Jack).
+
+
+## [v0.0.1](https://github.com/tj-django/django-view-breadcrumbs/releases/tag/v0.0.1) - 2018-08-19
+
+<small>[Compare with v0.0.0](https://github.com/tj-django/django-view-breadcrumbs/compare/v0.0.0...v0.0.1)</small>
+
+
+## [v0.0.0](https://github.com/tj-django/django-view-breadcrumbs/releases/tag/v0.0.0) - 2018-08-19
+
+<small>[Compare with first commit](https://github.com/tj-django/django-view-breadcrumbs/compare/e3322229f74a7b038584734999425adb3397cce4...v0.0.0)</small>
+
+### Added
+- Added tag command ([08e9256](https://github.com/tj-django/django-view-breadcrumbs/commit/08e9256bef0dfcf9f8dafeb4e6376556d791aac3) by Tonye Jack).
+- Added tag line to release command ([0cf29eb](https://github.com/tj-django/django-view-breadcrumbs/commit/0cf29eb5faab69d52fcab4f247d3d5e29cc42a58) by Tonye Jack).
+- Added test command ([a366f05](https://github.com/tj-django/django-view-breadcrumbs/commit/a366f0587c19f72b1c19c2c324f73bcdf48896b8) by Tonye Jack).
+- Added conftest.py ([a35b5d7](https://github.com/tj-django/django-view-breadcrumbs/commit/a35b5d70c0588f83eec696eebac32631c7e0b6e4) by Tonye Jack).
+- Added django_bootstrap_breadcrumbs to installed apps ([439161e](https://github.com/tj-django/django-view-breadcrumbs/commit/439161e370ba4b52c38f397967dfbb75e019d168) by jackton12).
+- Added dummy ap ([e75e035](https://github.com/tj-django/django-view-breadcrumbs/commit/e75e035791ebefca21dd8e7217d67e1110d49afd) by jackton12).
+- Added breadcrumb mixins ([76fa0c3](https://github.com/tj-django/django-view-breadcrumbs/commit/76fa0c39215dac7985779cba57acac24fa994cf4) by jackton12).
+- Added python3.5 to test ([396dbd0](https://github.com/tj-django/django-view-breadcrumbs/commit/396dbd0be303b8150556dba7f6b43a83682efbcf) by Tonye Jack).
+- Added bumpversion config ([571e59b](https://github.com/tj-django/django-view-breadcrumbs/commit/571e59b481007bb1c83e06d5f9acf30e3c071996) by Tonye Jack).
+- Added django settings module to .travis ([b838bb6](https://github.com/tj-django/django-view-breadcrumbs/commit/b838bb68ec684167b8dd9bd594ed7d1a89fff0e5) by Tonye Jack).
+- Added codeacy badge ([1254061](https://github.com/tj-django/django-view-breadcrumbs/commit/125406127dfabb006166720882931ffb3e8f5e0a) by Tonye Jack).
+- Added travis build status. ([f013969](https://github.com/tj-django/django-view-breadcrumbs/commit/f01396915d3a3286cdfb70176e85f7990b1a1101) by Tonye Jack).
+- Added test config for tox, pytest, travis ci ([b1836f5](https://github.com/tj-django/django-view-breadcrumbs/commit/b1836f566b17807a55df4afc633650bd6ba035f9) by Tonye Jack).
+- Added __pycache__ to .gitignore ([2442394](https://github.com/tj-django/django-view-breadcrumbs/commit/2442394ea02c2719420ebc7df65e3b710acb1d67) by Tonye Jack).
+- Added .gitignore ([53aa741](https://github.com/tj-django/django-view-breadcrumbs/commit/53aa7415d7166dc94a63fc78421e30e8471930c2) by Tonye Jack).
+- Added readme.md ([bd6e47b](https://github.com/tj-django/django-view-breadcrumbs/commit/bd6e47b5d519392f9b7d5b8c15461cb46eae065a) by Tonye Jack).
+
+### Changed
+- Change the classifiers ([ea0f041](https://github.com/tj-django/django-view-breadcrumbs/commit/ea0f04133294fb2c3c933192cb4b3d3535b49393) by Tonye Jack).
+- Changed the .gitignore ([5b4b4fb](https://github.com/tj-django/django-view-breadcrumbs/commit/5b4b4fb8c98c6600cecfc405133f28c85bc6c736) by Tonye Jack).
+
+### Fixed
+- Fixed bug with tag ([40933c6](https://github.com/tj-django/django-view-breadcrumbs/commit/40933c6cf316ee0b45802fce82ec5823dea362df) by Tonye Jack).
+- Fixed bug with release ([cc5fd20](https://github.com/tj-django/django-view-breadcrumbs/commit/cc5fd20951cf7d409d0be8e424558e6bf71b35f7) by Tonye Jack).
+- Fixed using generator ([f0aceb1](https://github.com/tj-django/django-view-breadcrumbs/commit/f0aceb1ecd3c3db1af3eafd71682289f3a3ae33e) by Tonye Jack).
+- Fixed version conflict ([c5644cf](https://github.com/tj-django/django-view-breadcrumbs/commit/c5644cf8219732e842ec48bde570f4bd02a48a4c) by Tonye Jack).
+- Fixed test ([d8632a5](https://github.com/tj-django/django-view-breadcrumbs/commit/d8632a588188f6e2be5716b5942d1ea1b2875c48) by Tonye Jack).
+- Fixed unused import ([269eb62](https://github.com/tj-django/django-view-breadcrumbs/commit/269eb62a93918115a6f000e4fe24850ee3aa7e92) by Tonye Jack).
+- Fixed codeacacy errors ([ccfa9fe](https://github.com/tj-django/django-view-breadcrumbs/commit/ccfa9fe277df5ecc578defee0d0202d357f45f84) by jackton12).
+- Fixed format string ([41bd830](https://github.com/tj-django/django-view-breadcrumbs/commit/41bd83005a54823b04747e3fa7172fb8630e5f05) by jackton12).
+- Fix travis build ([3ea7996](https://github.com/tj-django/django-view-breadcrumbs/commit/3ea799628178545808b8049c6ee94846fdfb3744) by Tonye Jack).
+
+### Removed
+- Removed unversioned files ([82530a1](https://github.com/tj-django/django-view-breadcrumbs/commit/82530a161e6f0287cf7750154adec4d5a7c1b631) by Tonye Jack).
+- Removed egg.info ([5527f6a](https://github.com/tj-django/django-view-breadcrumbs/commit/5527f6a09426fc05414186a5b70eecaf7b48eaff) by Tonye Jack).
+- Removed untracked files ([21e77f2](https://github.com/tj-django/django-view-breadcrumbs/commit/21e77f2e6677907e8cddc05900695eaadfac4ce7) by Tonye Jack).
+
+

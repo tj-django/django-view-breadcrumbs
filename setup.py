@@ -18,7 +18,11 @@ doc_requires = [
 ]
 
 deploy_requires = [
-    'bumpversion==0.6.0',
+    "bump2version",
+    "readme_renderer[md]",
+    "changes",
+    "git-changelog",
+    "twine",
 ]
 
 lint_requires = [
