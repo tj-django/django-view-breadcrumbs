@@ -114,10 +114,9 @@ class PostDetail(DetailBreadcrumbMixin, DetailView):
     template_name = 'app/post/detail.html'
 ```
 
+### Sample crumbs: `Posts`
 
 > All crumbs use the home root path `/` as the base this can be excluded by specifying `add_home = False`
-
-### Sample crumbs: `Posts`
 
 ```python
 from django.views.generic import ListView
