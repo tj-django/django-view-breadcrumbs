@@ -194,7 +194,6 @@ class TestDetailView(DetailBreadcrumbMixin, DetailView):
      template_name = 'demo/test-detail.html'
 ```
 
-
 > Refer to the demo app for more examples.
 
 ## Running locally
@@ -207,6 +206,11 @@ $ make run
 Spins up a django server running the demo app.
 
 Visit `http://127.0.0.1:8090`
+
+
+## Credits
+- [django-bootstrap-breadcrumbs](https://github.com/prymitive/bootstrap-breadcrumbs)
+
 
 ## Contributors ✨
 
