@@ -87,14 +87,20 @@ Renders
 ![Screenshot](./custom-root-breadcrumb.png)
 
 
+
+### View Configuration:
+
+> NOTE: All url config should use a pattern `view_name=model_verbose_name_{action}`  
+
+
+|  Actions  |  View Class |  View name  | Sample Breadcrumb |
+|-----------|-------------|-------------|-------------------|  
+| `list`    | `ListView`  | `{model.verbose_name}`_list |  `Home / Posts`  |
+| `change`  | `UpdateView`| `{model.verbose_name}`_change | `Home / Posts / Test - Post / Update Test - Post` |
+| `detail`  | `DetailView`| `{model.verbose_name}`_detail | `Home / Posts / Test - Post` |
+
+
 #### Sample crumbs:  `Home / Posts / Test - Post`
-
-> NOTE: All url config should use a pattern `view_name=model_verbose_name_{action}` i.e `view_name=post_detail` for detail view. 
-
-Actions include: 
- - "list" - `ListView`
- - "change" - `UpdateView`
- - "detail" - `DetailView`
 
 In your `urls.py`
 ```python
