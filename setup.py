@@ -7,7 +7,7 @@ install_requires = [
 
 test_requires = [
     'tox==3.20.0',
-    'pytest==6.0.2',
+    'pytest==6.1.1',
     'pluggy>=0.7',
     'mock',
     'codacy-coverage==1.3.11',
