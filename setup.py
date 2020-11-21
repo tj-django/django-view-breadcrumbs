@@ -32,7 +32,7 @@ lint_requires = [
 ]
 
 local_dev_requires = [
-    'pip-tools==5.3.1',
+    'pip-tools==5.4.0',
 ]
 
 extras_require = {
