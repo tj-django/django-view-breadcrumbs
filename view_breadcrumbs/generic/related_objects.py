@@ -6,13 +6,13 @@ from ..utils import action_view_name
 
 
 class RelatedObjectBreadcrumb(BaseBreadcrumbMixin):
-
     """
     Breadcrumb for related objects.
 
     Notes:
         The self.object must be an instance of the parent object.
     """
+
     parent_breadcrumb_views = ()
     _crud_view_names = {'change', 'detail'}
     _list_view_names = {'list'}
