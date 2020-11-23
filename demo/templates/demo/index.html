@@ -1,0 +1,24 @@
+{% load view_breadcrumbs %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Test app</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    {% block breadcrumbs %}
+    <main>
+        {% render_breadcrumbs 'view_breadcrumbs/bootstrap4.html' %}
+    </main>
+    {% endblock %}
+    <section>
+        <ul>
+        <li><a href="{% url 'demo:test_view' %}">Custom view</a></li>
+        <li><a href="{% url 'demo:testmodel_list' %}">CRUD views</a></li>
+        </ul>
+    </section>
+</body>

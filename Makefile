@@ -7,6 +7,7 @@ MANAGE_PY   := $(PYTHON) manage.py
 PYTHON_PIP  := /usr/bin/env pip3
 PIP_COMPILE := /usr/bin/env pip-compile
 PART := patch
+PACKAGE_VERSION = $(shell $(PYTHON) setup.py --version)
 
 # Put it first so that "make" without argument is like "make help".
 help:
@@ -48,18 +49,38 @@ update-requirements:  ## Updates the requirement.txt adding missing package depe
 	@echo "Syncing the package requirements.txt..."
 	@$(PIP_COMPILE)
 
-release-to-pypi: clean-build increase-version  ## Release project to pypi
-	@$(PYTHON_PIP) install -U twine pypandoc
+tag-build:
+	@git tag v$(PACKAGE_VERSION)
+
+release-to-pypi: clean-build increase-version tag-build  ## Release project to pypi
+	@$(PYTHON_PIP) install -U twine
 	@$(PYTHON) setup.py sdist bdist_wheel
 	@twine upload dist/*
+
+
+# ----------------------------------------------------------
+# --------- Django manage.py commands ----------------------
+# ----------------------------------------------------------
+run:  ## Run the run_server using default host and port
+	@$(MANAGE_PY) runserver 127.0.0.1:8090
+
+migrate:  ## Run the migrations
+	@$(MANAGE_PY) migrate
 
 # ----------------------------------------------------------
 # ---------- Upgrade project version (bumpversion)  --------
 # ----------------------------------------------------------
 increase-version: clean-build guard-PART  ## Bump the project version (using the $PART env: defaults to 'patch').
+	@git checkout master
+	@git push
 	@echo "Increasing project '$(PART)' version..."
 	@$(PYTHON_PIP) install -q -e .'[deploy]'
 	@bumpversion --verbose $(PART)
+	@git-changelog . > CHANGELOG.md
+	@git add .
+	@[ -z "`git status --porcelain`" ] && echo "No changes found." || git commit -am "Updated CHANGELOG.md."
+	@git push --tags
+	@git push
 
 # ----------------------------------------------------------
 # --------- Run project Test -------------------------------

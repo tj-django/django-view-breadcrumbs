@@ -2,34 +2,37 @@ import os
 from setuptools import setup, find_packages
 
 install_requires = [
-    'Django>=1.11.10,<=2.0.2',
-    'django-bootstrap-breadcrumbs==0.8.2',
+    'Django<=3.1.3',
 ]
 
 test_requires = [
-    'tox==2.9.1',
-    'pytest==3.7.2',
+    'tox==3.20.1',
+    'pytest==6.1.2',
     'pluggy>=0.7',
-    'mock==2.0.0',
-    'codacy-coverage==1.3.10',
+    'mock',
+    'codacy-coverage==1.3.11',
 ]
 
 doc_requires = [
-    'Sphinx==1.6.5',
+    'Sphinx==3.3.1',
 ]
 
 deploy_requires = [
-    'bumpversion==0.5.3',
+    "bump2version",
+    "readme_renderer[md]",
+    "changes",
+    "git-changelog",
+    "twine",
 ]
 
 lint_requires = [
-    'flake8==3.4.1',
-    'yamllint==1.10.0',
-    'isort==4.2.15',
+    'flake8==3.8.4',
+    'yamllint==1.25.0',
+    'isort',
 ]
 
 local_dev_requires = [
-    'pip-tools==2.0.2',
+    'pip-tools==5.4.0',
 ]
 
 extras_require = {
@@ -49,19 +52,14 @@ extras_require = {
 BASE_DIR = os.path.dirname(__file__)
 README_PATH = os.path.join(BASE_DIR, 'README.md')
 
-try:
-    import pypandoc
-    LONG_DESCRIPTION = pypandoc.convert(README_PATH, 'rst')
-    LONG_DESCRIPTION_TYPE = 'text/x-rst; charset=UTF-8'
-except (IOError, ImportError):
-    LONG_DESCRIPTION_TYPE = 'text/markdown'
-    if os.path.isfile(README_PATH):
-        with open(README_PATH) as f:
-            LONG_DESCRIPTION = f.read()
-    else:
-        LONG_DESCRIPTION = ''
+LONG_DESCRIPTION_TYPE = 'text/markdown'
+if os.path.isfile(README_PATH):
+    with open(README_PATH) as f:
+        LONG_DESCRIPTION = f.read()
+else:
+    LONG_DESCRIPTION = ''
 
-VERSION = (0, 0, 1)
+VERSION = (1, 0, 0)
 
 version = '.'.join(map(str, VERSION))
 
@@ -76,14 +74,22 @@ setup(
     long_description_content_type=LONG_DESCRIPTION_TYPE,
     packages=find_packages(exclude=['demo', 'demo.migrations.*']),
     classifiers=[
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 5 - Production/Stable',
+        'Intended Audience :: Developers',
         'Topic :: Internet :: WWW/HTTP',
         'License :: OSI Approved :: BSD License',
+        'Operating System :: OS Independent',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
         'Framework :: Django :: 1.11',
         'Framework :: Django :: 2.0',
         'Framework :: Django :: 2.1',
+        'Framework :: Django :: 2.2',
+        'Framework :: Django :: 3.0',
+        'Framework :: Django :: 3.1',
     ],
     keywords=[
         'django breadcrumbs',

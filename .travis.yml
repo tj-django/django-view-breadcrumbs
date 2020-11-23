@@ -1,18 +1,26 @@
 language: python
 sudo: false
+cache: pip
 
 matrix:
   include:
     - python: 3.5
-      env: TOXENV=py35
+      env: TOXENV=ALL
     - python: 3.5-dev
-      env: TOXENV=py35
+      env: TOXENV=ALL
     - python: 3.6
       env: TOXENV=ALL
     - python: 3.6-dev
       env: TOXENV=ALL
+    - python: 3.9-dev
+      env: TOXENV=ALL
+    - python: 3.8
+      env: TOXENV=ALL
+    - python: 3.7
+      env: TOXENV=ALL
     - python: pypy3
       env: TOXENV=ALL
+
 
 notifications:
   email:
@@ -27,3 +35,11 @@ install:
 
 script:
   - tox
+
+addons:
+  apt:
+    update: true
+    sources:
+      - travis-ci/sqlite3
+    packages:
+      - sqlite3
