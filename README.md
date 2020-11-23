@@ -22,7 +22,7 @@ i.e
 {% load view_breadcrumbs %}
 
 {% block breadcrumbs %}
-    {% render_breadcrumbs %}
+    {% render_breadcrumbs %} {# Optionally provide a template e.g {% render_breadcrumbs "view_breadcrumbs/bootstrap4.html" %} #}
 {% endblock %}
 ```
 
@@ -60,6 +60,12 @@ INSTALLED_APPS = [
     ...,
 ]
 ```
+
+## Settings
+
+| Name                       | Default                                     | Description |    Other options          |
+|----------------------------|---------------------------------------------|-------------|---------------------|
+| `BREADCRUMBS_TEMPLATE`     | `'view_breadcrumbs/bootstrap4.html'`        |  Template used to render breadcrumbs.           |   [Predefined Templates](https://github.com/tj-django/django-view-breadcrumbs/tree/master/view_breadcrumbs/templates/view_breadcrumbs)                 |
 
 ## Usage:
 `django-view-breadcrumbs` includes generic mixins that can be added to a class based view.
