@@ -10,3 +10,4 @@ dist/
 *.db
 
 .DS_Store
+.coverage
