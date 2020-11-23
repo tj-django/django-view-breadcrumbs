@@ -6,6 +6,7 @@ from ..utils import action_view_name
 
 
 class RelatedObjectBreadcrumb(BaseBreadcrumbMixin):
+
     """
     Breadcrumb for related objects.
 
