@@ -21,6 +21,7 @@ matrix:
     - python: pypy3
       env: TOXENV=ALL
 
+
 notifications:
   email:
     recipients:
