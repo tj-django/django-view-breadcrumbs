@@ -63,7 +63,7 @@ INSTALLED_APPS = [
 
 ## Settings
 
-| Name                       | Default                                     | Description |    Other options          |
+| Name                       | Default                                     | Description |    Options          |
 |----------------------------|---------------------------------------------|-------------|---------------------|
 | `BREADCRUMBS_TEMPLATE`     | `'view_breadcrumbs/bootstrap4.html'`        |  Template used to render breadcrumbs.           |   [Predefined Templates](https://github.com/tj-django/django-view-breadcrumbs/tree/master/view_breadcrumbs/templates/view_breadcrumbs)                 |
 
