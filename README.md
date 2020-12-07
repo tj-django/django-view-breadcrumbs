@@ -207,7 +207,7 @@ class TestDetailView(DetailBreadcrumbMixin, DetailView):
      template_name = 'demo/test-detail.html'
 ```
 
-> Refer to the demo app for more examples.
+> Refer to the [demo app](https://github.com/tj-django/django-view-breadcrumbs/tree/master/demo) for more examples.
 
 ## Running locally
 
