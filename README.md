@@ -102,9 +102,9 @@ Renders
 
 |  Actions  |  View Class |  View name  | Sample Breadcrumb |
 |-----------|-------------|-------------|-------------------|  
-| `list`    | `ListView`  | `{model.verbose_name}`_list |  `Home / Posts`  |
-| `change`  | `UpdateView`| `{model.verbose_name}`_change | `Home / Posts / Test - Post / Update Test - Post` |
-| `detail`  | `DetailView`| `{model.verbose_name}`_detail | `Home / Posts / Test - Post` |
+| `list`    | `ListView`  | `{model.verbose_name}_list` |  `Home / Posts`  |
+| `change`  | `UpdateView`| `{model.verbose_name}_change` | `Home / Posts / Test - Post / Update Test - Post` |
+| `detail`  | `DetailView`| `{model.verbose_name}_detail` | `Home / Posts / Test - Post` |
 
 
 #### Sample crumbs:  `Home / Posts / Test - Post`
