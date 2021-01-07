@@ -15,7 +15,7 @@ test_requires = [
 ]
 
 doc_requires = [
-    'Sphinx==3.3.1',
+    'Sphinx==3.4.3',
 ]
 
 deploy_requires = [
