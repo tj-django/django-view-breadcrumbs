@@ -15,13 +15,10 @@
         {% render_breadcrumbs 'view_breadcrumbs/bootstrap4.html' %}
     </main>
     {% endblock %}
-    {% block body %}
+    <section>
         <ul>
-        {% for pathname, path_url in view_paths %}
-            <li>
-                <a href="{{ path_url }}">{{ pathname }}</a>
-            </li>
-        {% endfor %}
+        <li><a href="{% url 'demo:test_view' %}">Custom view</a></li>
+        <li><a href="{% url 'demo:testmodel_list' %}">CRUD views</a></li>
         </ul>
-    {% endblock %}
+    </section>
 </body>

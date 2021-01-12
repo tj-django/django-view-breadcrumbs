@@ -1,10 +1,16 @@
-# django-view-breadcrumbs [![Build Status](https://travis-ci.org/jackton1/django-view-breadcrumbs.svg?branch=master)](https://travis-ci.org/jackton1/django-view-breadcrumbs) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/6b447e364bef4988bda95bd0965bb4bc)](https://www.codacy.com/app/jackton1/django-view-breadcrumbs?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=jackton1/django-view-breadcrumbs&amp;utm_campaign=Badge_Grade) [![PyPI version](https://badge.fury.io/py/django-view-breadcrumbs.svg)](https://badge.fury.io/py/django-view-breadcrumbs)
+# django-view-breadcrumbs 
 
-This extends [django-bootstrap-breadcrumbs](http://django-bootstrap-breadcrumbs.readthedocs.io/en/latest/) providing generic breadcrumb mixin classes.
+[![Build Status](https://travis-ci.org/tj-django/django-view-breadcrumbs.svg?branch=master)](https://travis-ci.org/tj-django/django-view-breadcrumbs) ![PyPI - Django Version](https://img.shields.io/pypi/djversions/django-view-breadcrumbs) ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/django-view-breadcrumbs)
 
-Requires adding ```{% breadcrumb $label $viewname [*args] [**kwargs] %}``` to only the base template.
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/6b447e364bef4988bda95bd0965bb4bc)](https://www.codacy.com/app/tj-django/django-view-breadcrumbs?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=tj-django/django-view-breadcrumbs&amp;utm_campaign=Badge_Grade) [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/537b0ce56e744f078f17cc8ccd4200d8)](https://www.codacy.com/gh/tj-django/django-view-breadcrumbs/dashboard?utm_source=github.com&utm_medium=referral&utm_content=tj-django/django-view-breadcrumbs&utm_campaign=Badge_Coverage) [![PyPI version](https://badge.fury.io/py/django-view-breadcrumbs.svg)](https://badge.fury.io/py/django-view-breadcrumbs) <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section --> [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-) 
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-![Screenshot](breadcrumbs.png)
+
+This provides a generic set of breadcrumb mixin classes.
+
+Requires adding ```{% render_breadcrumbs %}``` to just the base template.
+
+![Screenshot](./breadcrumbs.png)
 
 
 In the `base.html` template simply add the ``render_breadcrumbs`` tag and any template
@@ -14,10 +20,10 @@ i.e
 ```base.html```
 
 ```jinja2
-{% load django_bootstrap_breadcrumbs %}
+{% load view_breadcrumbs %}
 
 {% block breadcrumbs %}
-    {% render_breadcrumbs %}
+    {% render_breadcrumbs %} {# Optionally provide a template e.g {% render_breadcrumbs "view_breadcrumbs/bootstrap4.html" %} #}
 {% endblock %}
 ```
 
@@ -32,10 +38,10 @@ Breadcrumb mixin classes provided.
 ----------------------------------
 
 - `BaseBreadcrumbMixin`    - Base view requires a `crumbs` class property.
-- `CreateBreadcrumbMixin`  - For create views `Home \ Posts \ Add Post`
-- `DetailBreadcrumbMixin`  - For detail views `Home \ Posts \ Post 1`
-- `ListBreadcrumbMixin`    - For list views `Home \ Posts`
-- `UpdateBreadcrumbMixin`  - For Update views `Home \ Posts \ Post 1 \ Update Post 1`
+- `CreateBreadcrumbMixin`  - For create views `Home / Posts / Add Post`
+- `DetailBreadcrumbMixin`  - For detail views `Home / Posts / Post 1`
+- `ListBreadcrumbMixin`    - For list views `Home / Posts`
+- `UpdateBreadcrumbMixin`  - For Update views `Home / Posts / Post 1 / Update Post 1`
 
 
 ## Installation:
@@ -50,12 +56,17 @@ Add app to your INSTALLED_APPS
 ```python
 
 INSTALLED_APPS = [
-    ...
-    'django_bootstrap_breadcrumbs',
+    ...,
     'view_breadcrumbs',
-    ...
+    ...,
 ]
 ```
+
+## Settings
+
+| Name                       | Default                                     | Description |    Options          |
+|----------------------------|---------------------------------------------|-------------|---------------------|
+| `BREADCRUMBS_TEMPLATE`     | `'view_breadcrumbs/bootstrap4.html'`        |  Template used to render breadcrumbs.           |   [Predefined Templates](https://github.com/tj-django/django-view-breadcrumbs/tree/master/view_breadcrumbs/templates/view_breadcrumbs)                 |
 
 ## Usage:
 `django-view-breadcrumbs` includes generic mixins that can be added to a class based view.
@@ -66,17 +77,37 @@ and can be overridden by providing a `crumbs` property.
 
 ### Settings:
 
+To modify the root label site wide use
+
 `BREADCRUMBS_HOME_LABEL` - Sets the root label (default: `Home`)
 
 
-### Sample crumbs:  `Home \ Posts \ Test - Post`
+#### Example 
 
-> NOTE: All url config should use a pattern `view_name=model_verbose_name_{action}` i.e `view_name=post_detail` for detail view. 
+```python
 
-Actions include: 
- - "list" - `ListView`
- - "change" - `UpdateView`
- - "detail" - `DetailView`
+BREADCRUMBS_HOME_LABEL = 'My new home'
+```
+
+Renders
+
+![Screenshot](./custom-root-breadcrumb.png)
+
+
+
+### View Configuration:
+
+> NOTE: All url config should use a pattern `view_name=model_verbose_name_{action}`  
+
+
+|  Actions  |  View Class |  View name  | Sample Breadcrumb |
+|-----------|-------------|-------------|-------------------|  
+| `list`    | `ListView`  | `{model.verbose_name}_list` |  `Home / Posts`  |
+| `change`  | `UpdateView`| `{model.verbose_name}_change` | `Home / Posts / Test - Post / Update Test - Post` |
+| `detail`  | `DetailView`| `{model.verbose_name}_detail` | `Home / Posts / Test - Post` |
+
+
+#### Sample crumbs:  `Home / Posts / Test - Post`
 
 In your `urls.py`
 ```python
@@ -98,10 +129,9 @@ class PostDetail(DetailBreadcrumbMixin, DetailView):
     template_name = 'app/post/detail.html'
 ```
 
+#### Sample crumbs: `Posts`
 
-> All crumbs use the home root path `\` as the base this can be excluded by specifying `add_home = False`
-
-### Sample crumbs: `Posts`
+> All crumbs use the home root path `/` as the base this can be excluded by specifying `add_home = False`
 
 ```python
 from django.views.generic import ListView
@@ -117,7 +147,7 @@ class PostList(ListBreadcrumbMixin, ListView):
 
 > Can also override the view breadcrumb by specifying a list of tuples `[(Label, view path)]`.
 
-### Custom crumbs: `Home \ My Test Breadcrumb`
+### Custom crumbs: `Home / My Test Breadcrumb`
 
 URL conf.
 ```python
@@ -158,9 +188,7 @@ class TestView(ListBreadcrumbMixin, ListView):
 
     @cached_property
     def crumbs(self):
-        return super(TestView, self).crumbs + [
-            (self.object.name , reverse('test_detail_view', kwargs={'pk': self.object.pk})),
-        ]
+        return [('My Test Breadcrumb', reverse('test_list_view'))]
 
 ```
 
@@ -179,8 +207,7 @@ class TestDetailView(DetailBreadcrumbMixin, DetailView):
      template_name = 'demo/test-detail.html'
 ```
 
-
-> Refer to the demo app for more examples.
+> Refer to the [demo app](https://github.com/tj-django/django-view-breadcrumbs/tree/master/demo) for more examples.
 
 ## Running locally
 
@@ -191,4 +218,28 @@ $ make run
 
 Spins up a django server running the demo app.
 
-Visit `http://127.0.0.1:8000`
+Visit `http://127.0.0.1:8090`
+
+
+## Credits
+- [django-bootstrap-breadcrumbs](https://github.com/prymitive/bootstrap-breadcrumbs)
+
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://fansourcedpoisontour.com"><img src="https://avatars3.githubusercontent.com/u/1037197?v=4" width="100px;" alt=""/><br /><sub><b>Derek</b></sub></a><br /><a href="https://github.com/tj-django/django-view-breadcrumbs/commits?author=KrunchMuffin" title="Documentation">📖</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!

@@ -1,9 +1,14 @@
 from django.urls import reverse
-from django.views.generic import ListView, DetailView
 from django.utils.translation import gettext_lazy as _
+from django.views.generic import ListView, DetailView, TemplateView
 
-from view_breadcrumbs import ListBreadcrumbMixin, DetailBreadcrumbMixin
+from view_breadcrumbs import BaseBreadcrumbMixin, ListBreadcrumbMixin, DetailBreadcrumbMixin
 from .models import TestModel
+
+
+class TestHomeView(BaseBreadcrumbMixin, TemplateView):
+    template_name = 'demo/index.html'
+    crumbs = []
 
 
 class TestView(ListBreadcrumbMixin, ListView):
