@@ -67,8 +67,7 @@ class BaseBreadcrumbTestCase(TestCase):
         )
 
         with self.assertRaises(NotImplementedError) as exc:
-            crumbs = TestViewClass().crumbs
-            self.assertIsNone(crumbs)
+            TestViewClass().crumbs
 
         self.assertEqual(
             str(exc.exception),
