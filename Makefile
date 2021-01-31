@@ -94,5 +94,5 @@ clean-test-all: clean-build  ## Clean build and test assets.
 	@rm test.db
 
 lint:
-	black .
+	isort .
 	flake8 .
