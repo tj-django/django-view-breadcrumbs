@@ -2,11 +2,8 @@ from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 from django.views.generic import DetailView, ListView, TemplateView
 
-from view_breadcrumbs import (
-    BaseBreadcrumbMixin,
-    DetailBreadcrumbMixin,
-    ListBreadcrumbMixin,
-)
+from view_breadcrumbs import (BaseBreadcrumbMixin, DetailBreadcrumbMixin,
+                              ListBreadcrumbMixin)
 
 from .models import TestModel
 
