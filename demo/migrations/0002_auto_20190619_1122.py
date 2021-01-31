@@ -4,17 +4,17 @@ from django.db import migrations
 
 
 def forwards_create_dummy_test(apps, schema_editor):
-    TestModel = apps.get_model('demo', 'TestModel')
+    TestModel = apps.get_model("demo", "TestModel")
 
-    TestModel.objects.bulk_create([
-        TestModel(name='new test {}'.format(i)) for i in range(5)
-    ])
+    TestModel.objects.bulk_create(
+        [TestModel(name="new test {}".format(i)) for i in range(5)]
+    )
 
 
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('demo', '0001_initial'),
+        ("demo", "0001_initial"),
     ]
 
     operations = [

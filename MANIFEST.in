@@ -1,2 +1,20 @@
 recursive-include view_breadcrumbs *.py *.html *.css *.js
 recursive-include django_view_breadcrumbs *.py
+exclude *.json
+include *.md
+exclude *.png
+exclude *.py
+exclude *.txt
+exclude *.pypirc
+exclude *.all-contributorsrc
+include *.yml
+exclude *.pyup.yml
+exclude *.travis.yml
+exclude .bumpversion.cfg
+exclude .coveragerc
+include LICENSE
+exclude Makefile
+exclude pytest.ini
+exclude tox.ini
+prune view_breadcrumbs/tests
+prune demo

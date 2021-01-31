@@ -12,10 +12,10 @@ def _update_view_label(instance, format_string):
 
 class UpdateBreadcrumbMixin(DetailBreadcrumbMixin):
     # Home / object List / object / Update object
-    update_format_str = _('Update: {}')
+    update_format_str = _("Update: {}")
 
     @property
     def crumbs(self):
         return super(UpdateBreadcrumbMixin, self).crumbs + [
-            (partial(_update_view_label, format_string=self.update_format_str), '#'),
+            (partial(_update_view_label, format_string=self.update_format_str), "#"),
         ]
