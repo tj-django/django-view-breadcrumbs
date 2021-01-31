@@ -122,7 +122,7 @@ def render_breadcrumbs(context, *args):
     context["breadcrumbs"] = links
     context["breadcrumbs_total"] = len(links)
 
-    return SafeString(render_to_string(template_path, context))
+    return render_to_string(template_path, context)
 
 
 @register.simple_tag(takes_context=True)
