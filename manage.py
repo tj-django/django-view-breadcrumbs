@@ -4,6 +4,7 @@ import sys
 if __name__ == "__main__":
     try:
         from django.core.management import execute_from_command_line
+
         from conftest import pytest_configure
     except ImportError as exc:
         raise ImportError(

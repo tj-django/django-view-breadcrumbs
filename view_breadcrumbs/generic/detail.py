@@ -1,8 +1,8 @@
 from django.urls import reverse
 from django.utils.encoding import force_str
 
-from .list import ListBreadcrumbMixin
 from ..utils import action_view_name
+from .list import ListBreadcrumbMixin
 
 
 def _model_repr(instance):
@@ -18,4 +18,7 @@ class DetailBreadcrumbMixin(ListBreadcrumbMixin):
         ]
 
     def _detail_view_url(self, instance):
-        return reverse(action_view_name(instance, self.detail_view_suffix), kwargs={'pk': instance.pk})
+        return reverse(
+            action_view_name(instance, self.detail_view_suffix),
+            kwargs={"pk": instance.pk},
+        )
