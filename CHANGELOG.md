@@ -4,6 +4,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [v1.1.0](https://github.com/tj-django/django-view-breadcrumbs/releases/tag/v1.1.0) - 2021-01-31
+
+<small>[Compare with v1.0.0](https://github.com/tj-django/django-view-breadcrumbs/compare/v1.0.0...v1.1.0)</small>
+
+### Added
+- Add pypi badge ([5072928](https://github.com/tj-django/django-view-breadcrumbs/commit/50729288065baa52362a92c95ea4e02c707d3717) by Tonye Jack).
+- Added coverage reporting. ([fe93324](https://github.com/tj-django/django-view-breadcrumbs/commit/fe93324713359d8eac67d6db9d05594aebdb1879) by Tonye Jack).
+
+### Fixed
+- Fixed xss vulnerability. ([73c2c23](https://github.com/tj-django/django-view-breadcrumbs/commit/73c2c23b6d697fb5de59bcd1bc74882d38fea608) by Tonye Jack).
+- Fixed isort. ([b4ea18a](https://github.com/tj-django/django-view-breadcrumbs/commit/b4ea18a22c48659891e247827e37f37846410840) by Tonye Jack).
+- Fixed formatting. ([970aebb](https://github.com/tj-django/django-view-breadcrumbs/commit/970aebbcfe6305f91bebb513fc6122c0ba9d6dec) by Tonye Jack).
+- Fixed eof. ([da90d35](https://github.com/tj-django/django-view-breadcrumbs/commit/da90d35f8e82fd46f55261f2a615a6a17ea8c974) by Tonye Jack).
+
+
 ## [v1.0.0](https://github.com/tj-django/django-view-breadcrumbs/releases/tag/v1.0.0) - 2020-09-07
 
 <small>[Compare with v0.1.0](https://github.com/tj-django/django-view-breadcrumbs/compare/v0.1.0...v1.0.0)</small>
