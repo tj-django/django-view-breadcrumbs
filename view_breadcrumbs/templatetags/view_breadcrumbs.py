@@ -15,7 +15,6 @@ from django.conf import settings
 from django.db.models import Model
 from django.template.loader import render_to_string
 from django.utils.encoding import smart_text
-from django.utils.safestring import SafeString
 from six import wraps
 
 if VERSION >= (2, 0):
