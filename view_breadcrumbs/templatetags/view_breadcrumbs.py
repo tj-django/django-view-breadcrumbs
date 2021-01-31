@@ -76,7 +76,7 @@ def render_breadcrumbs(context, *args):
         template_path = args[0]
     except IndexError:
         template_path = getattr(settings, 'BREADCRUMBS_TEMPLATE',
-                                'view_breadcrumbs/bootstrap4.html')
+                                'view_breadcrumbs/bootstrap5.html')
 
     links = []
     for (label, viewname, view_args, view_kwargs) in context['request'].META.get(CONTEXT_KEY, []):
