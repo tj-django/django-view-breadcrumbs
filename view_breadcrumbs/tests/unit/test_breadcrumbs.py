@@ -7,13 +7,11 @@ from django.views.generic.list import MultipleObjectMixin
 
 from demo.models import TestModel
 from demo.views import TestView
-from view_breadcrumbs.generic import (
-    BaseBreadcrumbMixin,
-    CreateBreadcrumbMixin,
-    DetailBreadcrumbMixin,
-    ListBreadcrumbMixin,
-    UpdateBreadcrumbMixin,
-)
+from view_breadcrumbs.generic import (BaseBreadcrumbMixin,
+                                      CreateBreadcrumbMixin,
+                                      DetailBreadcrumbMixin,
+                                      ListBreadcrumbMixin,
+                                      UpdateBreadcrumbMixin)
 from view_breadcrumbs.templatetags.view_breadcrumbs import CONTEXT_KEY
 
 
