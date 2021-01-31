@@ -213,6 +213,7 @@ class TestDetailView(DetailBreadcrumbMixin, DetailView):
 ## Running locally
 
 ```bash
+$ make install-dev
 $ make migrate
 $ make run
 ```
