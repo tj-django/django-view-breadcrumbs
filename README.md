@@ -24,7 +24,7 @@ i.e
 {% load view_breadcrumbs %}
 
 {% block breadcrumbs %}
-    {% render_breadcrumbs %} {# Optionally provide a template e.g {% render_breadcrumbs "view_breadcrumbs/bootstrap4.html" %} #}
+    {% render_breadcrumbs %} {# Optionally provide a template e.g {% render_breadcrumbs "view_breadcrumbs/bootstrap5.html" %} #}
 {% endblock %}
 ```
 
@@ -213,6 +213,7 @@ class TestDetailView(DetailBreadcrumbMixin, DetailView):
 ## Running locally
 
 ```bash
+$ make install-dev
 $ make migrate
 $ make run
 ```

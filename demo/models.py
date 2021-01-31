@@ -13,4 +13,3 @@ class TestModel(models.Model):
         return _(self.name)
 
     __repr__ = __str__
-

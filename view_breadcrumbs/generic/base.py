@@ -5,10 +5,10 @@ from django.urls import reverse
 from django.utils.functional import cached_property
 from django.utils.translation import ugettext_lazy as _
 
-from ..templatetags.view_breadcrumbs import append_breadcrumb, CONTEXT_KEY, clear_breadcrumbs
-from ..utils import (
-    get_app_name, action_view_name, verbose_name_raw, verbose_name_plural_raw,
-)
+from ..templatetags.view_breadcrumbs import (CONTEXT_KEY, append_breadcrumb,
+                                             clear_breadcrumbs)
+from ..utils import (action_view_name, get_app_name, verbose_name_plural_raw,
+                     verbose_name_raw)
 
 log = logging.getLogger(__name__)
 
@@ -21,15 +21,15 @@ class BaseBreadcrumbMixin(object):
     add_home = True
     model = None
 
-    list_view_suffix = 'list'
-    change_view_suffix = 'change'
-    detail_view_suffix = 'detail'
+    list_view_suffix = "list"
+    change_view_suffix = "change"
+    detail_view_suffix = "detail"
 
-    home_path = '/'
+    home_path = "/"
 
     @cached_property
     def home_label(self):
-        return _(getattr(settings, 'BREADCRUMBS_HOME_LABEL', 'Home'))
+        return _(getattr(settings, "BREADCRUMBS_HOME_LABEL", "Home"))
 
     @cached_property
     def app_name(self):
@@ -37,7 +37,9 @@ class BaseBreadcrumbMixin(object):
 
     @property
     def crumbs(self):
-        raise NotImplementedError('{} should have a crumbs property.'.format(type(self).__name__))
+        raise NotImplementedError(
+            "{} should have a crumbs property.".format(type(self).__name__)
+        )
 
     @property
     def model_name_title_plural(self):
@@ -52,7 +54,10 @@ class BaseBreadcrumbMixin(object):
         return reverse(action_view_name(self.model, self.list_view_suffix))
 
     def edit_view_name(self, instance):
-        return reverse(action_view_name(self.model, self.change_view_suffix), kwargs={'pk': instance.pk})
+        return reverse(
+            action_view_name(self.model, self.change_view_suffix),
+            kwargs={"pk": instance.pk},
+        )
 
     def update_breadcrumbs(self, context):
         crumbs = self.crumbs
@@ -62,9 +67,9 @@ class BaseBreadcrumbMixin(object):
             try:
                 label, view_name = crumb
             except (TypeError, ValueError):
-                raise ValueError('Breadcrumb requires a tuple of label and view name.')
+                raise ValueError("Breadcrumb requires a tuple of label and view name.")
             else:
-                if hasattr(self, 'object') and self.object:
+                if hasattr(self, "object") and self.object:
                     if callable(label):
                         label = label(self.object)
                     if callable(view_name):
@@ -72,7 +77,7 @@ class BaseBreadcrumbMixin(object):
                 add_breadcrumb(context, label, view_name)
 
     def get_context_data(self, **kwargs):
-        ctx = {'request': self.request}
+        ctx = {"request": self.request}
         if CONTEXT_KEY in self.request.META:
             clear_breadcrumbs(ctx)
         self.update_breadcrumbs(ctx)

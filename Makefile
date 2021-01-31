@@ -92,3 +92,7 @@ clean-test-all: clean-build  ## Clean build and test assets.
 	@rm -rf .tox/
 	@rm -rf .pytest_cache/
 	@rm test.db
+
+lint:
+	isort .
+	flake8 .
