@@ -3,7 +3,7 @@ import os
 from setuptools import find_packages, setup
 
 install_requires = [
-    "Django<=3.1.5",
+    "Django<=3.1.6",
 ]
 
 test_requires = [
