@@ -32,7 +32,7 @@ jobs:
       uses: wearerequired/lint-action@v1.7.0
       with:
         github_token: ${{ secrets.PAT_TOKEN }}
-        black: true
+        black: ${{ matrix.python-version != '3.5' }}
         flake8: true
         git_email: "github-action[bot]@github.com"
         auto_fix: true
