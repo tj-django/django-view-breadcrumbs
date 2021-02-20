@@ -7,7 +7,7 @@ install_requires = [
 ]
 
 test_requires = [
-    "tox==3.21.3",
+    "tox==3.21.4",
     "coverage",
     "pytest==6.1.2",
     "pluggy>=0.7",
@@ -29,7 +29,7 @@ deploy_requires = [
 
 lint_requires = [
     "flake8==3.8.4",
-    "yamllint==1.25.0",
+    "yamllint==1.26.0",
     "isort",
 ]
 
