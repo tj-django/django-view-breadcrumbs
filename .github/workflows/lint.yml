@@ -27,7 +27,11 @@ jobs:
     - name: Install dependencies
       run: |
         pip install -U pip
-        pip install flake8==3.8.4 black
+        pip install flake8==3.8.4
+    - name: Install black
+      if: ${{ matrix.python-version != '3.5' }}
+      run: |
+        pip install black
     - name: Run Lint
       uses: wearerequired/lint-action@v1.7.0
       with:
