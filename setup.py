@@ -3,7 +3,7 @@ import os
 from setuptools import find_packages, setup
 
 install_requires = [
-    "Django<=3.1.5",
+    "Django<=3.1.7",
 ]
 
 test_requires = [
@@ -16,7 +16,7 @@ test_requires = [
 ]
 
 doc_requires = [
-    "Sphinx==3.4.3",
+    "Sphinx==3.5.1",
 ]
 
 deploy_requires = [
