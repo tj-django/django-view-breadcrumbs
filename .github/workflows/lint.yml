@@ -39,4 +39,4 @@ jobs:
         black: ${{ matrix.python-version != '3.5' }}
         flake8: true
         git_email: "github-action[bot]@github.com"
-        auto_fix: true
+        auto_fix: ${{ matrix.python-version != '3.5' }}
