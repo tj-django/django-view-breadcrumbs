@@ -20,7 +20,9 @@ from six import wraps
 if VERSION >= (2, 0):
     from django.urls import NoReverseMatch, Resolver404, resolve, reverse
 else:
-    from django.core.urlresolvers import NoReverseMatch, Resolver404, resolve, reverse
+    from django.core.urlresolvers import (
+        NoReverseMatch, Resolver404, resolve, reverse
+    )
 
 logger = logging.getLogger(__name__)
 
