@@ -96,3 +96,6 @@ clean-test-all: clean-build  ## Clean build and test assets.
 lint:
 	isort .
 	flake8 .
+
+serve-docs:
+	@npx docsify serve ./docs

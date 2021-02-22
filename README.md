@@ -221,7 +221,6 @@ Spins up a django server running the demo app.
 
 Visit `http://127.0.0.1:8090`
 
-
 ## Credits
 - [django-bootstrap-breadcrumbs](https://github.com/prymitive/bootstrap-breadcrumbs)
 
