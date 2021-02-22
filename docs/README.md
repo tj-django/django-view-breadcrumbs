@@ -10,7 +10,7 @@ This provides a generic set of breadcrumb mixin classes.
 
 Requires adding ```{% render_breadcrumbs %}``` to just the base template.
 
-![Screenshot](./breadcrumbs.png)
+![Screenshot](./static/breadcrumbs.png)
 
 
 In the `base.html` template simply add the ``render_breadcrumbs`` tag and any template
