@@ -97,5 +97,8 @@ lint:
 	isort .
 	flake8 .
 
+create-docs:
+	@npx docsify init ./docs
+
 serve-docs:
 	@npx docsify serve ./docs
