@@ -6,33 +6,8 @@ on:
       - master
 
 jobs:
-  sync-readme:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-
-      - name: Copy README
-        run: |
-          cp -f README.md docs/README.md
-
-      - name: Commit files
-        run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git add README.md
-          git commit -am "Updated README."
-
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ github.token }}
-          branch: ${{ github.ref }}
-
   deploy:
     runs-on: ubuntu-latest
-    needs: [sync-readme]
     steps:
       - uses: actions/checkout@v2
         with:
