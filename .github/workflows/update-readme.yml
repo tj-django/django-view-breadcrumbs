@@ -20,7 +20,6 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
-          token: ${{ secrets.ACCESS_TOKEN }}
           commit-message: Synced README changes to docs
           committer: github-actions[bot] <github-actions[bot]@users.noreply@github.com>
           author: github-actions[bot] <github-actions[bot]@users.noreply.github.com>
