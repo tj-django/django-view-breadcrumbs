@@ -91,7 +91,7 @@ BREADCRUMBS_HOME_LABEL = 'My new home'
 
 Renders
 
-![Screenshot](./custom-root-breadcrumb.png)
+![Screenshot](./static/custom-root-breadcrumb.png)
 
 
 
