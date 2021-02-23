@@ -67,6 +67,9 @@ INSTALLED_APPS = [
 | Name                       | Default                                     | Description |    Options          |
 |----------------------------|---------------------------------------------|-------------|---------------------|
 | `BREADCRUMBS_TEMPLATE`     | `'view_breadcrumbs/bootstrap4.html'`        |  Template used to render breadcrumbs.           |   [Predefined Templates](https://github.com/tj-django/django-view-breadcrumbs/tree/master/view_breadcrumbs/templates/view_breadcrumbs)                 |
+| `BREADCRUMBS_HOME_LABEL`   |  `Home`                                     |  Default label for the root path  |         |
+
+
 
 ## Usage
 `django-view-breadcrumbs` includes generic mixins that can be added to a class based view.
