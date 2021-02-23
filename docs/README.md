@@ -10,7 +10,7 @@ This provides a generic set of breadcrumb mixin classes.
 
 Requires adding ```{% render_breadcrumbs %}``` to just the base template.
 
-![Screenshot](./static/breadcrumbs.png)
+![Screenshot](./breadcrumbs.png)
 
 
 In the `base.html` template simply add the ``render_breadcrumbs`` tag and any template
@@ -67,6 +67,9 @@ INSTALLED_APPS = [
 | Name                       | Default                                     | Description |    Options          |
 |----------------------------|---------------------------------------------|-------------|---------------------|
 | `BREADCRUMBS_TEMPLATE`     | `'view_breadcrumbs/bootstrap4.html'`        |  Template used to render breadcrumbs.           |   [Predefined Templates](https://github.com/tj-django/django-view-breadcrumbs/tree/master/view_breadcrumbs/templates/view_breadcrumbs)                 |
+| `BREADCRUMBS_HOME_LABEL`   |  `Home`                                     |  Default label for the root path  |         |
+
+
 
 ## Usage
 `django-view-breadcrumbs` includes generic mixins that can be added to a class based view.
@@ -91,7 +94,7 @@ BREADCRUMBS_HOME_LABEL = 'My new home'
 
 Renders
 
-![Screenshot](./static/custom-root-breadcrumb.png)
+![Screenshot](./custom-root-breadcrumb.png)
 
 
 
