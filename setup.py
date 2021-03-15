@@ -28,13 +28,13 @@ deploy_requires = [
 ]
 
 lint_requires = [
-    "flake8==3.8.4",
+    "flake8==3.9.0",
     "yamllint==1.26.0",
     "isort",
 ]
 
 local_dev_requires = [
-    "pip-tools==5.5.0",
+    "pip-tools==6.0.0",
 ]
 
 extras_require = {
