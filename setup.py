@@ -16,7 +16,7 @@ test_requires = [
 ]
 
 doc_requires = [
-    "Sphinx==3.5.2",
+    "Sphinx==3.5.3",
 ]
 
 deploy_requires = [
@@ -34,7 +34,7 @@ lint_requires = [
 ]
 
 local_dev_requires = [
-    "pip-tools==6.0.0",
+    "pip-tools==6.0.1",
 ]
 
 extras_require = {
