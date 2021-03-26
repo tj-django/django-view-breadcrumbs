@@ -1,0 +1,103 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-03-25 23:04-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: conftest.py:27
+msgid "English"
+msgstr "Anglaise"
+
+#: conftest.py:28
+msgid "French"
+msgstr "Français"
+
+#: demo/models.py:13
+msgid "test model"
+msgstr "modèle de test"
+
+#: demo/models.py:14
+msgid "test models"
+msgstr "modèles de test"
+
+#: demo/templates/demo/index.html:21
+msgid "Custom view"
+msgstr "Vue personnalisée"
+
+#: demo/templates/demo/index.html:22
+msgid "CRUD views"
+msgstr "Vues CRUD"
+
+#: demo/views.py:22
+msgid "My Test Breadcrumb"
+msgstr "Mon fil d'Ariane de test"
+
+#: demo/views.py:27
+msgid "List tests"
+msgstr "Liste des tests"
+
+#: demo/views.py:53
+msgid "My new home"
+msgstr "Ma nouvelle maison"
+
+#: view_breadcrumbs/generic/base.py:31
+msgid "list"
+msgstr "liste"
+
+#: view_breadcrumbs/generic/base.py:32
+msgid "change"
+msgstr "changement"
+
+#: view_breadcrumbs/generic/base.py:33
+msgid "detail"
+msgstr "détail"
+
+#: view_breadcrumbs/generic/base.py:39
+msgid "Home"
+msgstr "Domicile"
+
+#: view_breadcrumbs/generic/base.py:49
+#, python-format
+msgid "%(class_name)s should have a crumbs property."
+msgstr "%(class_name)s doit avoir une propriété crumbs."
+
+#: view_breadcrumbs/generic/base.py:81
+msgid "Breadcrumb requires a tuple of label and view name."
+msgstr "Le fil d'Ariane nécessite un tuple d'étiquette et de nom de vue."
+
+#: view_breadcrumbs/generic/create.py:8
+#, python-format
+msgid "Add %(model)s"
+msgstr "Ajouter %(model)s"
+
+#: view_breadcrumbs/generic/create.py:13
+msgid "model"
+msgstr "maquette"
+
+#: view_breadcrumbs/generic/update.py:10
+msgid "instance"
+msgstr "exemple"
+
+#: view_breadcrumbs/generic/update.py:15
+#, python-format
+msgid "Update: %(instance)s"
+msgstr "Mise à jour: %(instance)s"
+
+#: view_breadcrumbs/utils.py:28
+#, python-format
+msgid "%(model)s is not installed or missing from the app registry."
+msgstr "%(model)s n'est pas installé ou absent du registre de l'application."

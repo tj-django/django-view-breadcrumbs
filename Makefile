@@ -67,6 +67,9 @@ run:  ## Run the run_server using default host and port
 migrate:  ## Run the migrations
 	@$(MANAGE_PY) migrate
 
+migrations:  ## Generate the migrations
+	@$(MANAGE_PY) makemigrations
+
 # ----------------------------------------------------------
 # ---------- Upgrade project version (bumpversion)  --------
 # ----------------------------------------------------------
