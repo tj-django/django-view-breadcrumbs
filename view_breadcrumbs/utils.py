@@ -26,7 +26,10 @@ def get_app_name(model):
 
     raise AppRegistryNotReady(
         _("%(model)s is not installed or missing from the app registry.")
-        % {"model": getattr(model._meta, "app_label", model.__class__.__name__)}
+        % {
+            "model":
+                getattr(model._meta, "app_label", model.__class__.__name__)
+        }
     )
 
 

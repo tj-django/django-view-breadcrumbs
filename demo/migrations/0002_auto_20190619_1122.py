@@ -18,5 +18,7 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RunPython(forwards_create_dummy_test, migrations.RunPython.noop)
+        migrations.RunPython(
+            forwards_create_dummy_test, migrations.RunPython.noop
+        )
     ]

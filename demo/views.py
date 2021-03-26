@@ -36,7 +36,10 @@ class TestListsView(ListBreadcrumbMixin, ListView):
 
         for test in self.object_list:
             view_paths.append(
-                (test.name, reverse("demo:testmodel_detail", kwargs={"pk": test.pk})),
+                (
+                    test.name,
+                    reverse("demo:testmodel_detail", kwargs={"pk": test.pk}),
+                ),
             )
         context["view_paths"] = view_paths
         return context
