@@ -18,9 +18,7 @@ class UpdateBreadcrumbMixin(DetailBreadcrumbMixin):
     def crumbs(self):
         return super(UpdateBreadcrumbMixin, self).crumbs + [
             (
-                partial(
-                    _update_view_label, format_string=self.update_format_str
-                ),
+                partial(_update_view_label, format_string=self.update_format_str),
                 "#",
             ),
         ]
