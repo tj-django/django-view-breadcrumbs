@@ -28,7 +28,7 @@ def pytest_configure(debug=False):
             ("fr", _("French")),
         ),
         # Set the default language for your site.
-        LANGUAGE_CODE="fr",
+        LANGUAGE_CODE="en",
         # Tell Django where the project's translation files should be.
         LOCALE_PATHS=(os.path.join(BASE_DIR, "locale"),),
         TEMPLATES=[
