@@ -1,5 +1,5 @@
 from django.core.exceptions import AppRegistryNotReady
-from django.utils.encoding import force_text
+from django.utils.encoding import force_str
 from django.utils.translation import override
 
 
@@ -26,9 +26,9 @@ def action_view_name(model, action):
 
 
 def verbose_name_raw(model):
-    return force_text(model._meta.verbose_name_raw)
+    return force_str(model._meta.verbose_name_raw)
 
 
 def verbose_name_plural_raw(model):
     with override(None):
-        return force_text(model._meta.verbose_name_plural)
+        return force_str(model._meta.verbose_name_plural)
