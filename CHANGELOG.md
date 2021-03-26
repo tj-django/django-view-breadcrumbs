@@ -4,6 +4,27 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [v1.2.0](https://github.com/tj-django/django-view-breadcrumbs/releases/tag/v1.2.0) - 2021-03-26
+
+<small>[Compare with v1.1.0](https://github.com/tj-django/django-view-breadcrumbs/compare/v1.1.0...v1.2.0)</small>
+
+### Added
+- Added translation support. ([a1409b4](https://github.com/tj-django/django-view-breadcrumbs/commit/a1409b4c2ac655d6c665dc9b7cfc38c9ce5c6623) by Tonye Jack).
+- Added blank line ([8331c0d](https://github.com/tj-django/django-view-breadcrumbs/commit/8331c0dd0b66af2b850b8586fc868f6fdfa0978d) by Tonye Jack).
+- Add files via upload ([3386d8f](https://github.com/tj-django/django-view-breadcrumbs/commit/3386d8f5f2cd52f9ac4076a39069c0fd6bd3591d) by Tonye Jack).
+- Added support for creating docs. ([aee3be0](https://github.com/tj-django/django-view-breadcrumbs/commit/aee3be0c0d38dc090ae467393dadfb69dea980ee) by Tonye Jack).
+- Added docs. ([0d17467](https://github.com/tj-django/django-view-breadcrumbs/commit/0d174676d8a0f3934a378bca4bc674259c6cc034) by Tonye Jack).
+
+### Fixed
+- Fixed test. ([5828b7c](https://github.com/tj-django/django-view-breadcrumbs/commit/5828b7cfacbc9029a051cee2e08fabac12bfe47e) by Tonye Jack).
+- Fixed translation. ([9270cdd](https://github.com/tj-django/django-view-breadcrumbs/commit/9270cdd90bf778d9bc6391b0b64707ad9a885036) by Tonye Jack).
+- Fixed lint errors. ([593ab22](https://github.com/tj-django/django-view-breadcrumbs/commit/593ab22330353f3e672989154aeafc5138dcfcac) by Tonye Jack).
+- Fix code style issues with black ([e2a3852](https://github.com/tj-django/django-view-breadcrumbs/commit/e2a3852f645acdb8078775f0956b747aae120f00) by Lint Action).
+- Fixed code formatting. ([067056a](https://github.com/tj-django/django-view-breadcrumbs/commit/067056abe74329aaa33e1699da2cae7eae7fd456) by Tonye Jack).
+- Fixed token reference ([2c658c0](https://github.com/tj-django/django-view-breadcrumbs/commit/2c658c0735651d08a2e26eec0444164c3a964e34) by Tonye Jack).
+- Fixed typo. ([d52d97f](https://github.com/tj-django/django-view-breadcrumbs/commit/d52d97f6a9bdc4ce7c35df6d077dd51fc124aa0f) by Tonye Jack).
+
+
 ## [v1.1.0](https://github.com/tj-django/django-view-breadcrumbs/releases/tag/v1.1.0) - 2021-01-31
 
 <small>[Compare with v1.0.1](https://github.com/tj-django/django-view-breadcrumbs/compare/v1.0.1...v1.1.0)</small>
