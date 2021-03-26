@@ -79,9 +79,9 @@ def render_breadcrumbs(context, *args):
         )
 
     links = []
-    for (label, viewname, view_args, view_kwargs) in context[
-        "request"
-    ].META.get(CONTEXT_KEY, []):
+    for (label, viewname, view_args, view_kwargs) in context["request"].META.get(
+        CONTEXT_KEY, []
+    ):
         if (
             isinstance(viewname, Model)
             and hasattr(viewname, "get_absolute_url")
