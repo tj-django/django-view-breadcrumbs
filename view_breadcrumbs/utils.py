@@ -5,19 +5,19 @@ from django.utils.translation import ugettext_lazy as _
 
 
 def get_verbose_name(model):
-    return force_text(model._meta.verbose_name)
+    return force_str(model._meta.verbose_name)
 
 
 def get_verbose_name_plural(model):
-    return force_text(model._meta.verbose_name_plural)
+    return force_str(model._meta.verbose_name_plural)
 
 
 def get_app_label(model):
-    return force_text(model._meta.app_label)
+    return force_str(model._meta.app_label)
 
 
 def get_model_name(model):
-    return force_text(model._meta.model_name)
+    return force_str(model._meta.model_name)
 
 
 def get_app_name(model):

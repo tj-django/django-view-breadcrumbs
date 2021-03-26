@@ -5,17 +5,10 @@ from django.urls import reverse
 from django.utils.functional import cached_property
 from django.utils.translation import ugettext_lazy as _
 
-from ..templatetags.view_breadcrumbs import (
-    CONTEXT_KEY,
-    append_breadcrumb,
-    clear_breadcrumbs,
-)
-from ..utils import (
-    action_view_name,
-    get_app_name,
-    get_verbose_name,
-    get_verbose_name_plural,
-)
+from ..templatetags.view_breadcrumbs import (CONTEXT_KEY, append_breadcrumb,
+                                             clear_breadcrumbs)
+from ..utils import (action_view_name, get_app_name, get_verbose_name,
+                     get_verbose_name_plural)
 
 log = logging.getLogger(__name__)
 
