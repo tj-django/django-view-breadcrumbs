@@ -16,7 +16,7 @@ test_requires = [
 ]
 
 doc_requires = [
-    "Sphinx==3.5.2",
+    "Sphinx==3.5.3",
 ]
 
 deploy_requires = [
@@ -28,13 +28,13 @@ deploy_requires = [
 ]
 
 lint_requires = [
-    "flake8==3.8.4",
+    "flake8==3.9.0",
     "yamllint==1.26.0",
     "isort",
 ]
 
 local_dev_requires = [
-    "pip-tools==5.5.0",
+    "pip-tools==6.0.1",
 ]
 
 extras_require = {
