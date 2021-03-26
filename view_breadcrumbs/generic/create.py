@@ -10,11 +10,5 @@ class CreateBreadcrumbMixin(ListBreadcrumbMixin):
     @property
     def crumbs(self):
         return super(CreateBreadcrumbMixin, self).crumbs + [
-            (
-                _(
-                    self.add_format_string %
-                    {"model": self.model_name_title}
-                ),
-                "#"
-            ),
+            (_(self.add_format_string % {"model": self.model_name_title}), "#"),
         ]
