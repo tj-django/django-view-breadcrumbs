@@ -1,9 +1,6 @@
-from functools import partial
-
 from django.core.exceptions import AppRegistryNotReady
 from django.utils.encoding import force_text
 from django.utils.translation import override
-
 from django.utils.translation import ugettext_lazy as _
 
 

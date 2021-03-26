@@ -1,5 +1,4 @@
 from .base import BaseBreadcrumbMixin
-from django.utils.translation import gettext_lazy as _
 
 
 class ListBreadcrumbMixin(BaseBreadcrumbMixin):
