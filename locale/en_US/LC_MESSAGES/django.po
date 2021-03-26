@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-25 21:59-0400\n"
+"POT-Creation-Date: 2021-03-25 23:04-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: conftest.py:26
+#: conftest.py:27
 msgid "English"
 msgstr ""
 
-#: conftest.py:27
+#: conftest.py:28
 msgid "French"
 msgstr ""
 
@@ -49,7 +49,7 @@ msgstr ""
 msgid "List tests"
 msgstr ""
 
-#: demo/views.py:50
+#: demo/views.py:53
 msgid "My new home"
 msgstr ""
 
@@ -74,26 +74,16 @@ msgstr ""
 msgid "%(class_name)s should have a crumbs property."
 msgstr ""
 
-#: view_breadcrumbs/generic/base.py:57
-#, python-format
-msgid "%(plural_title)s"
-msgstr ""
-
-#: view_breadcrumbs/generic/base.py:63
-#, python-format
-msgid "%(title)s"
-msgstr ""
-
-#: view_breadcrumbs/generic/base.py:84
+#: view_breadcrumbs/generic/base.py:81
 msgid "Breadcrumb requires a tuple of label and view name."
 msgstr ""
 
-#: view_breadcrumbs/generic/create.py:9
+#: view_breadcrumbs/generic/create.py:8
 #, python-format
 msgid "Add %(model)s"
 msgstr ""
 
-#: view_breadcrumbs/generic/create.py:14
+#: view_breadcrumbs/generic/create.py:13
 msgid "model"
 msgstr ""
 
@@ -106,7 +96,7 @@ msgstr ""
 msgid "Update: %(instance)s"
 msgstr ""
 
-#: view_breadcrumbs/utils.py:35
+#: view_breadcrumbs/utils.py:28
 #, python-format
 msgid "%(model)s is not installed or missing from the app registry."
 msgstr ""

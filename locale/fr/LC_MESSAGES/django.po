@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-25 22:23-0400\n"
+"POT-Creation-Date: 2021-03-25 23:04-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,13 +18,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: conftest.py:26
+#: conftest.py:27
 msgid "English"
 msgstr "Anglaise"
 
-#: conftest.py:27
+#: conftest.py:28
 msgid "French"
-msgstr "français"
+msgstr "Français"
 
 #: demo/models.py:13
 msgid "test model"
@@ -50,7 +50,7 @@ msgstr "Mon fil d'Ariane de test"
 msgid "List tests"
 msgstr "Liste des tests"
 
-#: demo/views.py:50
+#: demo/views.py:53
 msgid "My new home"
 msgstr "Ma nouvelle maison"
 
@@ -68,7 +68,7 @@ msgstr "détail"
 
 #: view_breadcrumbs/generic/base.py:39
 msgid "Home"
-msgstr "domicile"
+msgstr "Domicile"
 
 #: view_breadcrumbs/generic/base.py:49
 #, python-format
@@ -79,12 +79,12 @@ msgstr "%(class_name)s doit avoir une propriété crumbs."
 msgid "Breadcrumb requires a tuple of label and view name."
 msgstr "Le fil d'Ariane nécessite un tuple d'étiquette et de nom de vue."
 
-#: view_breadcrumbs/generic/create.py:9
+#: view_breadcrumbs/generic/create.py:8
 #, python-format
 msgid "Add %(model)s"
 msgstr "Ajouter %(model)s"
 
-#: view_breadcrumbs/generic/create.py:14
+#: view_breadcrumbs/generic/create.py:13
 msgid "model"
 msgstr "maquette"
 
@@ -97,10 +97,7 @@ msgstr "exemple"
 msgid "Update: %(instance)s"
 msgstr "Mise à jour: %(instance)s"
 
-#: view_breadcrumbs/utils.py:31
+#: view_breadcrumbs/utils.py:28
 #, python-format
 msgid "%(model)s is not installed or missing from the app registry."
 msgstr "%(model)s n'est pas installé ou absent du registre de l'application."
-
-#~ msgid "new test"
-#~ msgstr "nouveau test"
