@@ -4,9 +4,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [v1.2.0](https://github.com/tj-django/django-view-breadcrumbs/releases/tag/v1.2.0) - 2021-03-26
+## [v2.0.1](https://github.com/tj-django/django-view-breadcrumbs/releases/tag/v2.0.1) - 2021-03-26
 
-<small>[Compare with v1.1.0](https://github.com/tj-django/django-view-breadcrumbs/compare/v1.1.0...v1.2.0)</small>
+<small>[Compare with v2.0.0](https://github.com/tj-django/django-view-breadcrumbs/compare/v2.0.0...v2.0.1)</small>
+
+
+## [v2.0.0](https://github.com/tj-django/django-view-breadcrumbs/releases/tag/v2.0.0) - 2021-03-26
+
+<small>[Compare with v1.1.0](https://github.com/tj-django/django-view-breadcrumbs/compare/v1.1.0...v2.0.0)</small>
 
 ### Added
 - Added translation support. ([a1409b4](https://github.com/tj-django/django-view-breadcrumbs/commit/a1409b4c2ac655d6c665dc9b7cfc38c9ce5c6623) by Tonye Jack).
