@@ -67,6 +67,9 @@ run:  ## Run the run_server using default host and port
 migrate:  ## Run the migrations
 	@$(MANAGE_PY) migrate
 
+migrations:  ## Generate the migrations
+	@$(MANAGE_PY) makemigrations
+
 # ----------------------------------------------------------
 # ---------- Upgrade project version (bumpversion)  --------
 # ----------------------------------------------------------
@@ -85,6 +88,9 @@ increase-version: clean-build guard-PART  ## Bump the project version (using the
 # ----------------------------------------------------------
 # --------- Run project Test -------------------------------
 # ----------------------------------------------------------
+test: install-test
+	@pytest -v
+
 tox: install-test  ## Run tox test
 	@tox
 

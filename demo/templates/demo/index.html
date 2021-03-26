@@ -1,3 +1,4 @@
+{% load i18n %}
 {% load view_breadcrumbs %}
 <!DOCTYPE html>
 <html lang="en">
@@ -17,8 +18,8 @@
     {% endblock %}
     <section>
         <ul>
-        <li><a href="{% url 'demo:test_view' %}">Custom view</a></li>
-        <li><a href="{% url 'demo:testmodel_list' %}">CRUD views</a></li>
+        <li><a href="{% url 'demo:test_view' %}">{%  trans "Custom view" %}</a></li>
+        <li><a href="{% url 'demo:testmodel_list' %}">{% trans "CRUD views" %}</a></li>
         </ul>
     </section>
 </body>

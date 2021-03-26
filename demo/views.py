@@ -19,12 +19,12 @@ class TestHomeView(BaseBreadcrumbMixin, TemplateView):
 class TestView(ListBreadcrumbMixin, ListView):
     model = TestModel
     template_name = "demo/test-custom.html"
-    crumbs = [("My Test Breadcrumb", "test_view")]
+    crumbs = [(_("My Test Breadcrumb"), "test_view")]
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["view_paths"] = [
-            ("List tests", reverse("demo:testmodel_list")),
+            (_("List tests"), reverse("demo:testmodel_list")),
         ]
         return context
 
@@ -39,7 +39,10 @@ class TestListsView(ListBreadcrumbMixin, ListView):
 
         for test in self.object_list:
             view_paths.append(
-                (test.name, reverse("demo:testmodel_detail", kwargs={"pk": test.pk})),
+                (
+                    test.name,
+                    reverse("demo:testmodel_detail", kwargs={"pk": test.pk}),
+                ),
             )
         context["view_paths"] = view_paths
         return context
