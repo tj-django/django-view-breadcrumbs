@@ -92,11 +92,14 @@ To modify the root label site wide use
 BREADCRUMBS_HOME_LABEL = 'My new home'
 ```
 
-Renders
+*Renders*
 
 ![Screenshot](./custom-root-breadcrumb.png)
 
 
+*Using django's [translation](https://docs.djangoproject.com/en/3.1/topics/i18n/translation/) support*
+
+![Translated Screenshot](./translated-crumbs.png)
 
 ### View Configuration
 
