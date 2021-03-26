@@ -3,8 +3,10 @@ import sys
 
 from django import setup
 from django.conf import settings
+from django.utils.translation import ugettext_lazy as _
 
-TEST_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "demo", "templates")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+TEST_DIR = os.path.join(BASE_DIR, "demo", "templates")
 
 
 def pytest_configure(debug=False):
@@ -18,6 +20,17 @@ def pytest_configure(debug=False):
         },
         INSTALLED_APPS=["view_breadcrumbs", "demo"],
         ROOT_URLCONF="demo.urls",
+        USE_I18N=True,
+        USE_L10N=True,
+        # Provide a lists of languages which your site supports.
+        LANGUAGES=(
+            ("en", _("English")),
+            ("fr", _("French")),
+        ),
+        # Set the default language for your site.
+        LANGUAGE_CODE="fr",
+        # Tell Django where the project's translation files should be.
+        LOCALE_PATHS=(os.path.join(BASE_DIR, "locale"),),
         TEMPLATES=[
             {
                 "BACKEND": "django.template.backends.django.DjangoTemplates",

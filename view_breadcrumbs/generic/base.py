@@ -13,8 +13,8 @@ from ..templatetags.view_breadcrumbs import (
 from ..utils import (
     action_view_name,
     get_app_name,
-    verbose_name_plural_raw,
-    verbose_name_raw,
+    get_verbose_name_plural,
+    get_verbose_name,
 )
 
 log = logging.getLogger(__name__)
@@ -28,15 +28,15 @@ class BaseBreadcrumbMixin(object):
     add_home = True
     model = None
 
-    list_view_suffix = "list"
-    change_view_suffix = "change"
-    detail_view_suffix = "detail"
+    list_view_suffix = _("list")
+    change_view_suffix = _("change")
+    detail_view_suffix = _("detail")
 
     home_path = "/"
 
     @cached_property
     def home_label(self):
-        return _(getattr(settings, "BREADCRUMBS_HOME_LABEL", "Home"))
+        return _(getattr(settings, "BREADCRUMBS_HOME_LABEL", _("Home")))
 
     @cached_property
     def app_name(self):
@@ -45,16 +45,19 @@ class BaseBreadcrumbMixin(object):
     @property
     def crumbs(self):
         raise NotImplementedError(
-            "{} should have a crumbs property.".format(type(self).__name__)
+            _(
+                "%(class_name)s should have a crumbs property."
+                % {"class_name": type(self).__name__}
+            )
         )
 
     @property
     def model_name_title_plural(self):
-        return verbose_name_plural_raw(self.model).title()
+        return get_verbose_name_plural(self.model).title()
 
     @property
     def model_name_title(self):
-        return verbose_name_raw(self.model).title()
+        return get_verbose_name(self.model).title()
 
     @property
     def list_view_name(self):
@@ -74,7 +77,9 @@ class BaseBreadcrumbMixin(object):
             try:
                 label, view_name = crumb
             except (TypeError, ValueError):
-                raise ValueError("Breadcrumb requires a tuple of label and view name.")
+                raise ValueError(
+                    _("Breadcrumb requires a tuple of label and view name.")
+                )
             else:
                 if hasattr(self, "object") and self.object:
                     if callable(label):

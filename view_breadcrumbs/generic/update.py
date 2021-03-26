@@ -7,12 +7,12 @@ from .detail import DetailBreadcrumbMixin
 
 
 def _update_view_label(instance, format_string):
-    return _(force_str(format_string).format(force_str(instance)))
+    return _(force_str(format_string) % {"instance": force_str(instance)})
 
 
 class UpdateBreadcrumbMixin(DetailBreadcrumbMixin):
     # Home / object List / object / Update object
-    update_format_str = _("Update: {}")
+    update_format_str = _("Update: %(instance)s")
 
     @property
     def crumbs(self):
