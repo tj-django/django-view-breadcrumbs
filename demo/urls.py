@@ -5,8 +5,7 @@ Examples:
         path('test/', views.TestListsView.as_view(), name='test_list'),
         path('test/add/', views.TestCreateView.as_view(), name='test_add'),
         path('test/<int:pk>/change', views.TestUpdateView.as_view(), name='test_change'),
-        path('test/<int:pk>/delete', views.TestDeleteView.as_view(), name='test_delete'),
-        path('test/<int:pk>/delete_error', views.TestDeleteErrorView.as_view(), name='test_delete_error'),
+        ...
     ]
 """
 try:
