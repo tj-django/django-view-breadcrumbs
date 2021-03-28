@@ -135,6 +135,15 @@ class PostDetail(DetailBreadcrumbMixin, DetailView):
 
 #### Sample crumbs: `Posts`
 
+In your urls.py
+```python
+  urlpatterns = [
+      ...
+      path('posts', views.PostList.as_view(), name='post_list'),
+      ...
+  ]
+```
+
 > All crumbs use the home root path `/` as the base this can be excluded by specifying `add_home = False`
 
 ```python
@@ -149,17 +158,18 @@ class PostList(ListBreadcrumbMixin, ListView):
 ```
 
 
-> Can also override the view breadcrumb by specifying a list of tuples `[(label, view path)]`.
-
 #### Custom crumbs: `Home / My Test Breadcrumb`
 
-URL conf.
+URL configuration.
+
 ```python
-urlpatterns = [
-   path('my-test-list-view/', views.TestView.as_view(), name='test_list_view'),
-   path('my-test-detail-view/<int:pk>/', views.TestView.as_view(), name='test_detail_view'),
-]
+    urlpatterns = [
+       path('my-test-list-view/', views.TestView.as_view(), name='test_list_view'),
+       path('my-test-detail-view/<int:pk>/', views.TestView.as_view(), name='test_detail_view'),
+    ]
 ```
+
+> Can override the view breadcrumb by specifying a list of tuples `[(label, view path)]`.
 
 views.py
 
