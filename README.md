@@ -70,22 +70,12 @@ INSTALLED_APPS = [
 | `BREADCRUMBS_HOME_LABEL`   |  `Home`                                     |  Default label for the root path  |         |
 
 
-
-## Usage
-`django-view-breadcrumbs` includes generic mixins that can be added to a class based view.
-
-Using the generic breadcrumb mixin each breadcrumb will be added to the view dynamically
-and can be overridden by providing a `crumbs` property.
-
-
-### Settings
-
 To modify the root label site wide use
 
 `BREADCRUMBS_HOME_LABEL` - Sets the root label (default: `Home`)
 
 
-#### Example 
+### Example 
 
 ```python
 
@@ -100,6 +90,14 @@ BREADCRUMBS_HOME_LABEL = 'My new home'
 *Using django's [translation](https://docs.djangoproject.com/en/3.1/topics/i18n/translation/) support*
 
 ![Translated Screenshot](./translated-crumbs.png)
+
+
+## Usage
+`django-view-breadcrumbs` includes generic mixins that can be added to a class based view.
+
+Using the generic breadcrumb mixin each breadcrumb will be added to the view dynamically
+and can be overridden by providing a `crumbs` property.
+
 
 ### View Configuration
 
