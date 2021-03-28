@@ -70,22 +70,12 @@ INSTALLED_APPS = [
 | `BREADCRUMBS_HOME_LABEL`   |  `Home`                                     |  Default label for the root path  |         |
 
 
-
-## Usage
-`django-view-breadcrumbs` includes generic mixins that can be added to a class based view.
-
-Using the generic breadcrumb mixin each breadcrumb will be added to the view dynamically
-and can be overridden by providing a `crumbs` property.
-
-
-### Settings
-
 To modify the root label site wide use
 
 `BREADCRUMBS_HOME_LABEL` - Sets the root label (default: `Home`)
 
 
-#### Example 
+### Example 
 
 ```python
 
@@ -100,6 +90,14 @@ BREADCRUMBS_HOME_LABEL = 'My new home'
 *Using django's [translation](https://docs.djangoproject.com/en/3.1/topics/i18n/translation/) support*
 
 ![Translated Screenshot](./translated-crumbs.png)
+
+
+## Usage
+`django-view-breadcrumbs` includes generic mixins that can be added to a class based view.
+
+Using the generic breadcrumb mixin each breadcrumb will be added to the view dynamically
+and can be overridden by providing a `crumbs` property.
+
 
 ### View Configuration
 
@@ -137,6 +135,15 @@ class PostDetail(DetailBreadcrumbMixin, DetailView):
 
 #### Sample crumbs: `Posts`
 
+In your urls.py
+```python
+  urlpatterns = [
+      ...
+      path('posts', views.PostList.as_view(), name='post_list'),
+      ...
+  ]
+```
+
 > All crumbs use the home root path `/` as the base this can be excluded by specifying `add_home = False`
 
 ```python
@@ -151,17 +158,18 @@ class PostList(ListBreadcrumbMixin, ListView):
 ```
 
 
-> Can also override the view breadcrumb by specifying a list of tuples `[(label, view path)]`.
-
 #### Custom crumbs: `Home / My Test Breadcrumb`
 
-URL conf.
+URL configuration.
+
 ```python
-urlpatterns = [
-   path('my-test-list-view/', views.TestView.as_view(), name='test_list_view'),
-   path('my-test-detail-view/<int:pk>/', views.TestView.as_view(), name='test_detail_view'),
-]
+    urlpatterns = [
+       path('my-test-list-view/', views.TestView.as_view(), name='test_list_view'),
+       path('my-test-detail-view/<int:pk>/', views.TestView.as_view(), name='test_detail_view'),
+    ]
 ```
+
+> Can override the view breadcrumb by specifying a list of tuples `[(label, view path)]`.
 
 views.py
 
