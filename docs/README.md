@@ -101,7 +101,8 @@ and can be overridden by providing a `crumbs` property.
 
 ### View Configuration
 
-> NOTE: All url config should use a pattern `view_name=model_verbose_name_{action}`  
+> NOTE: 
+> * Only ListView, UpdateView, DetailView url's should use a pattern `view_name=model_verbose_name_{action}`  
 
 
 |  Actions  |  View Class |  View name  | Sample Breadcrumb |
