@@ -6,7 +6,7 @@
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 
-This provides a generic set of breadcrumb mixin classes.
+Provides a generic set of breadcrumb mixin classes.
 
 Requires adding ```{% render_breadcrumbs %}``` to just the base template.
 
