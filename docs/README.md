@@ -6,7 +6,7 @@
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 
-This provides a generic set of breadcrumb mixin classes.
+Provides a generic set of breadcrumb mixin classes.
 
 Requires adding ```{% render_breadcrumbs %}``` to just the base template.
 
@@ -51,7 +51,7 @@ $ pip install django-view-breadcrumbs
 
 ```
 
-Add app to your INSTALLED_APPS
+#### Add `'view_breadcrumbs'` to your INSTALLED_APPS
 
 ```python
 
@@ -62,7 +62,30 @@ INSTALLED_APPS = [
 ]
 ```
 
+
 ## Settings
+
+> NOTE :warning:
+> * Make sure that `"django.template.context_processors.request"` is added to your TEMPLATE OPTIONS setting.
+
+```python
+TEMPLATES  = [
+    {
+        "BACKEND": "django.template.backends.django.DjangoTemplates",
+        "APP_DIRS": True,
+        "OPTIONS": {
+            "context_processors": [
+                "django.template.context_processors.debug",
+                "django.template.context_processors.request", # <- This context processors is required
+                "django.contrib.auth.context_processors.auth",
+                "django.contrib.messages.context_processors.messages",
+            ],
+        },
+    },
+]
+```
+
+Modify the defaults using the following:
 
 | Name                       | Default                                     | Description |    Options          |
 |----------------------------|---------------------------------------------|-------------|---------------------|
