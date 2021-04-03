@@ -7,6 +7,6 @@
     <a class="btn btn-primary" href="{% url 'demo:testmodel_update' pk=object.pk %}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> {% trans "Edit" %}</a>
     <form method="post" action="{% url 'demo:testmodel_delete' pk=object.pk %}" style="display: inline">
         {% csrf_token %}
-        <button type="submit" class="btn btn-primary"><i class="fa fa-remove" aria-hidden="true"></i> {% trans "Delete" %}</button>
+        <button type="submit" class="btn btn-danger"><i class="fa fa-remove" aria-hidden="true"></i> {% trans "Delete" %}</button>
     </form>
 {% endblock %}

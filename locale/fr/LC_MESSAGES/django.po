@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-02 21:00-0400\n"
+"POT-Creation-Date: 2021-04-03 17:38-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -47,10 +47,8 @@ msgid "Table views"
 msgstr "Vues de table"
 
 #: demo/templates/demo/index.html:27
-#, fuzzy
-#| msgid "Table views"
 msgid "Multi Table views"
-msgstr "Vues de table"
+msgstr "Vues multi-tables"
 
 #: demo/templates/demo/test-create.html:7
 msgid "Submit"
@@ -125,30 +123,30 @@ msgstr "effacer"
 msgid "detail"
 msgstr "détail"
 
-#: view_breadcrumbs/generic/create.py:11
+#: view_breadcrumbs/generic/create.py:10
 #, python-format
 msgid "Add %(model)s"
 msgstr "Ajouter %(model)s"
 
-#: view_breadcrumbs/generic/create.py:29
+#: view_breadcrumbs/generic/create.py:28
 msgid "model"
 msgstr ""
 
-#: view_breadcrumbs/generic/detail.py:13 view_breadcrumbs/generic/update.py:13
+#: view_breadcrumbs/generic/detail.py:12 view_breadcrumbs/generic/update.py:12
 msgid "instance"
 msgstr ""
 
-#: view_breadcrumbs/generic/detail.py:18
+#: view_breadcrumbs/generic/detail.py:17
 #, python-format
 msgid "%(instance)s"
 msgstr ""
 
-#: view_breadcrumbs/generic/update.py:18
+#: view_breadcrumbs/generic/update.py:17
 #, python-format
 msgid "Update: %(instance)s"
 msgstr "Mise à jour: %(instance)s"
 
-#: view_breadcrumbs/utils.py:28
+#: view_breadcrumbs/utils.py:44
 #, python-format
 msgid "%(model)s is not installed or missing from the app registry."
 msgstr "%(model)s n'est pas installé ou absent du registre de l'application."
