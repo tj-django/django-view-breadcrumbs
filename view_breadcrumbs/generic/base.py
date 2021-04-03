@@ -2,7 +2,7 @@ import logging
 
 from django.conf import settings
 from django.urls import reverse
-from django.utils.functional import cached_property, classproperty
+from django.utils.functional import cached_property
 from django.utils.translation import gettext_lazy as _
 
 from ..templatetags.view_breadcrumbs import (
@@ -10,7 +10,7 @@ from ..templatetags.view_breadcrumbs import (
     append_breadcrumb,
     clear_breadcrumbs,
 )
-from ..utils import get_verbose_name_plural, get_verbose_name, action_view_name
+from ..utils import get_verbose_name_plural, get_verbose_name, action_view_name, classproperty
 
 log = logging.getLogger(__name__)
 

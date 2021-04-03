@@ -4,6 +4,22 @@ from django.utils.translation import override
 from django.utils.translation import gettext_lazy as _
 
 
+class classproperty:
+    """
+    Decorator that converts a method with a single cls argument into a property
+    that can be accessed directly from the class.
+    """
+    def __init__(self, method=None):
+        self.fget = method
+
+    def __get__(self, instance, cls=None):
+        return self.fget(cls)
+
+    def getter(self, method):
+        self.fget = method
+        return self
+
+
 def get_verbose_name(model):
     return force_str(model._meta.verbose_name)
 
