@@ -3,7 +3,7 @@ import sys
 
 from django import setup
 from django.conf import settings
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 TEST_DIR = os.path.join(BASE_DIR, "demo", "templates")
