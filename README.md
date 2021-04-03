@@ -51,7 +51,7 @@ $ pip install django-view-breadcrumbs
 
 ```
 
-#### Add `'view_breadcrumbs'` to your INSTALLED_APPS
+### Add `view_breadcrumbs` to your INSTALLED_APPS
 
 ```python
 
