@@ -35,6 +35,9 @@ lint_requires = [
 
 local_dev_requires = [
     "pip-tools",
+    "django_tables2",
+    "django-bootstrap3",
+    "django-filter",
 ]
 
 extras_require = {

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-25 23:04-0400\n"
+"POT-Creation-Date: 2021-04-02 20:35-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -34,65 +34,110 @@ msgstr "modèle de test"
 msgid "test models"
 msgstr "modèles de test"
 
-#: demo/templates/demo/index.html:21
+#: demo/templates/demo/index.html:24
 msgid "Custom view"
 msgstr "Vue personnalisée"
 
-#: demo/templates/demo/index.html:22
+#: demo/templates/demo/index.html:25
 msgid "CRUD views"
 msgstr "Vues CRUD"
 
-#: demo/views.py:22
+#: demo/templates/demo/index.html:26
+msgid "Table views"
+msgstr "Vues de table"
+
+#: demo/templates/demo/test-create.html:7
+msgid "Submit"
+msgstr "Nous faire parvenir"
+
+#: demo/templates/demo/test-detail.html:4
+msgid "Name"
+msgstr "Nom"
+
+#: demo/templates/demo/test-detail.html:5
+msgid "Created at"
+msgstr "Créé à"
+
+#: demo/templates/demo/test-detail.html:6
+msgid "Updated at"
+msgstr "Mis à jour à"
+
+#: demo/templates/demo/test-detail.html:7
+msgid "Edit"
+msgstr "Éditer"
+
+#: demo/templates/demo/test-detail.html:10
+msgid "Delete"
+msgstr "Effacer"
+
+#: demo/templates/demo/test-list.html:5
+msgid "Create"
+msgstr "Créer"
+
+#: demo/views.py:33
 msgid "My Test Breadcrumb"
 msgstr "Mon fil d'Ariane de test"
 
-#: demo/views.py:27
+#: demo/views.py:38
 msgid "List tests"
 msgstr "Liste des tests"
 
-#: demo/views.py:53
+#: demo/views.py:73
 msgid "My new home"
 msgstr "Ma nouvelle maison"
 
-#: view_breadcrumbs/generic/base.py:31
-msgid "list"
-msgstr "liste"
-
-#: view_breadcrumbs/generic/base.py:32
-msgid "change"
-msgstr "changement"
-
-#: view_breadcrumbs/generic/base.py:33
-msgid "detail"
-msgstr "détail"
-
-#: view_breadcrumbs/generic/base.py:39
+#: view_breadcrumbs/generic/base.py:29
 msgid "Home"
 msgstr "Domicile"
 
-#: view_breadcrumbs/generic/base.py:49
+#: view_breadcrumbs/generic/base.py:35
 #, python-format
 msgid "%(class_name)s should have a crumbs property."
 msgstr "%(class_name)s doit avoir une propriété crumbs."
 
-#: view_breadcrumbs/generic/base.py:81
+#: view_breadcrumbs/generic/base.py:49
 msgid "Breadcrumb requires a tuple of label and view name."
 msgstr "Le fil d'Ariane nécessite un tuple d'étiquette et de nom de vue."
 
-#: view_breadcrumbs/generic/create.py:8
+#: view_breadcrumbs/generic/base.py:69
+msgid "list"
+msgstr "liste"
+
+#: view_breadcrumbs/generic/base.py:70
+msgid "create"
+msgstr "créer"
+
+#: view_breadcrumbs/generic/base.py:71
+msgid "update"
+msgstr "mettre à jour"
+
+#: view_breadcrumbs/generic/base.py:72
+msgid "delete"
+msgstr "effacer"
+
+#: view_breadcrumbs/generic/base.py:73
+msgid "detail"
+msgstr "détail"
+
+#: view_breadcrumbs/generic/create.py:11
 #, python-format
 msgid "Add %(model)s"
 msgstr "Ajouter %(model)s"
 
-#: view_breadcrumbs/generic/create.py:13
+#: view_breadcrumbs/generic/create.py:28
 msgid "model"
-msgstr "maquette"
+msgstr ""
 
-#: view_breadcrumbs/generic/update.py:10
+#: view_breadcrumbs/generic/detail.py:13 view_breadcrumbs/generic/update.py:13
 msgid "instance"
-msgstr "exemple"
+msgstr ""
 
-#: view_breadcrumbs/generic/update.py:15
+#: view_breadcrumbs/generic/detail.py:18
+#, python-format
+msgid "%(instance)s"
+msgstr ""
+
+#: view_breadcrumbs/generic/update.py:18
 #, python-format
 msgid "Update: %(instance)s"
 msgstr "Mise à jour: %(instance)s"
