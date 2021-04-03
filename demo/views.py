@@ -5,7 +5,7 @@ from django.views.generic import (
     DetailView, ListView, TemplateView,
     UpdateView, CreateView, DeleteView,
 )
-from django_tables2 import SingleTableMixin
+from django_tables2 import SingleTableMixin, MultiTableMixin
 from django_filters.views import FilterView
 
 from demo.filterset import TestModelFilterSet
@@ -99,3 +99,19 @@ class TestModelSingleTableView(BaseModelBreadcrumbMixin, SingleTableMixin, Filte
     @cached_property
     def crumbs(self):
         return [(self.model_name_title_plural, '/')]
+
+
+class TestModelMultiTableView(BaseBreadcrumbMixin, MultiTableMixin, TemplateView):
+    template_name = "demo/test-multi-table.html"
+    tables = [
+        TestModelTable(TestModel.objects.all()),
+        TestModelTable(TestModel.objects.all(), exclude=("id", ))
+    ]
+
+    table_pagination = {
+        "per_page": 10
+    }
+    
+    @cached_property
+    def crumbs(self):
+        return [('Multi Tables', '/')]

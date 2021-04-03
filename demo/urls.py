@@ -16,7 +16,8 @@ except ImportError:
 
 from .views import (
     TestHomeView, TestView, TestListsView, TestDetailView,
-    TestUpdateView, TestModelSingleTableView, TestCreateView, TestDeleteView
+    TestUpdateView, TestModelSingleTableView, TestCreateView, TestDeleteView,
+    TestModelMultiTableView,
 )
 
 app_name = "demo"
@@ -34,7 +35,8 @@ test_patterns = (
         path("^tests/(?P<pk>[0-9]+)/$", TestDetailView.as_view(), name=TestDetailView.detail_view_name),
         path("^tests/(?P<pk>[0-9]+)/update/$", TestUpdateView.as_view(), name=TestUpdateView.update_view_name),
         path("^tests/(?P<pk>[0-9]+)/delete/$", TestDeleteView.as_view(), name=TestDeleteView.delete_view_name),
-        path("^tests/lists$", TestModelSingleTableView.as_view(), name='test_model_table')
+        path("^tests/lists$", TestModelSingleTableView.as_view(), name='test_model_table'),
+        path("^tests/lists/multiple$", TestModelMultiTableView.as_view(), name='test_model_multi_table'),
     ],
     app_name,
 )
