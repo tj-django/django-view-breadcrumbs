@@ -20,16 +20,19 @@ class DetailBreadcrumbMixin(ListBreadcrumbMixin):
     @classproperty
     def detail_view_name(self):
         return action_view_name(self.model, self.detail_view_suffix, full=False)
-    
+
     @property
     def __detail_view_name(self):
         return action_view_name(self.model, self.detail_view_suffix)
-    
+
     def detail_view_url(self, instance):
         return reverse(self.__detail_view_name, kwargs={"pk": instance.pk})
-    
+
     @property
     def crumbs(self):
         return super(DetailBreadcrumbMixin, self).crumbs + [
-            (partial(_detail_view_label, format_string=self.detail_format_string), self.detail_view_url),
+            (
+                partial(_detail_view_label, format_string=self.detail_format_string),
+                self.detail_view_url,
+            ),
         ]

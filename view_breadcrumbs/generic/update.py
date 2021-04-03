@@ -16,7 +16,7 @@ def _update_view_label(instance, format_string):
 class UpdateBreadcrumbMixin(DetailBreadcrumbMixin):
     # Home / object List / object / Update object
     update_format_str = _("Update: %(instance)s")
-    
+
     @classproperty
     def update_view_name(self):
         return action_view_name(self.model, self.update_view_suffix, full=False)

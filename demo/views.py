@@ -2,8 +2,12 @@ from django.urls import reverse
 from django.utils.functional import classproperty, cached_property
 from django.utils.translation import gettext_lazy as _
 from django.views.generic import (
-    DetailView, ListView, TemplateView,
-    UpdateView, CreateView, DeleteView,
+    DetailView,
+    ListView,
+    TemplateView,
+    UpdateView,
+    CreateView,
+    DeleteView,
 )
 from django_tables2 import SingleTableMixin
 from django_filters.views import FilterView
@@ -62,8 +66,8 @@ class TestListsView(ListBreadcrumbMixin, ListView):
 class TestCreateView(CreateBreadcrumbMixin, CreateView):
     model = TestModel
     template_name = "demo/test-create.html"
-    fields = ['name']
-    
+    fields = ["name"]
+
     def get_success_url(self) -> str:
         return self.list_view_url
 
@@ -77,15 +81,15 @@ class TestDetailView(DetailBreadcrumbMixin, DetailView):
 class TestUpdateView(UpdateBreadcrumbMixin, UpdateView):
     model = TestModel
     template_name = "demo/test-update.html"
-    fields = ['name']
-    
+    fields = ["name"]
+
     def get_success_url(self) -> str:
         return self.detail_view_url(self.object)
 
 
 class TestDeleteView(DetailBreadcrumbMixin, DeleteView):
     model = TestModel
-    
+
     def get_success_url(self) -> str:
         return self.list_view_url
 
@@ -95,7 +99,7 @@ class TestModelSingleTableView(BaseModelBreadcrumbMixin, SingleTableMixin, Filte
     table_class = TestModelTable
     filterset_class = TestModelFilterSet
     template_name = "demo/test-table-list.html"
-    
+
     @cached_property
     def crumbs(self):
-        return [(self.model_name_title_plural, '/')]
+        return [(self.model_name_title_plural, "/")]
