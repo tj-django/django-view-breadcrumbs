@@ -10,7 +10,7 @@ class TestModelTable(Table):
         model = TestModel
         template_name = "django_tables2/bootstrap.html"
         fields = ("id", "name")
-    
+
     @staticmethod
     def render_name(value, record):
         return format_html(
