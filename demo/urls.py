@@ -60,7 +60,11 @@ test_patterns = (
         path(
             "^tests/lists$", TestModelSingleTableView.as_view(), name="test_model_table"
         ),
-        path("^tests/lists/multiple$", TestModelMultiTableView.as_view(), name='test_model_multi_table'),
+        path(
+            "^tests/lists/multiple$",
+            TestModelMultiTableView.as_view(),
+            name="test_model_multi_table",
+        ),
     ],
     app_name,
 )

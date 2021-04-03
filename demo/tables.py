@@ -11,7 +11,8 @@ class TestModelTable(Table):
         template_name = "django_tables2/bootstrap.html"
         fields = ("id", "name")
 
-    def render_name(self, value, record):
+    @staticmethod
+    def render_name(value, record):
         return format_html(
             "<a href={}>{}</b>",
             reverse("demo:testmodel_detail", kwargs={"pk": record.pk}),
