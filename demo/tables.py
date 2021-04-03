@@ -12,5 +12,8 @@ class TestModelTable(Table):
         fields = ("id", "name")
 
     def render_name(self, value, record):
-        return format_html("<a href={}>{}</b>", reverse("demo:testmodel_detail", kwargs={"pk": record.pk}), value)
-
+        return format_html(
+            "<a href={}>{}</b>",
+            reverse("demo:testmodel_detail", kwargs={"pk": record.pk}),
+            value,
+        )
