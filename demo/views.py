@@ -109,13 +109,11 @@ class TestModelMultiTableView(BaseBreadcrumbMixin, MultiTableMixin, TemplateView
     template_name = "demo/test-multi-table.html"
     tables = [
         TestModelTable(TestModel.objects.all()),
-        TestModelTable(TestModel.objects.all(), exclude=("id", ))
+        TestModelTable(TestModel.objects.all(), exclude=("id",)),
     ]
 
-    table_pagination = {
-        "per_page": 10
-    }
-    
+    table_pagination = {"per_page": 10}
+
     @cached_property
     def crumbs(self):
-        return [('Multi Tables', '/')]
+        return [("Multi Tables", "/")]
