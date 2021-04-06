@@ -19,6 +19,7 @@ from view_breadcrumbs import (
     DetailBreadcrumbMixin,
     ListBreadcrumbMixin,
     UpdateBreadcrumbMixin,
+    DeleteBreadcrumbMixin,
 )
 
 from demo.models import TestModel
@@ -87,7 +88,7 @@ class TestUpdateView(UpdateBreadcrumbMixin, UpdateView):
         return self.detail_view_url(self.object)
 
 
-class TestDeleteView(DetailBreadcrumbMixin, DeleteView):
+class TestDeleteView(ListBreadcrumbMixin, DeleteBreadcrumbMixin, DeleteView):
     model = TestModel
 
     def get_success_url(self) -> str:

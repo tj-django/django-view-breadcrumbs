@@ -4,6 +4,7 @@ from .generic import (
     DetailBreadcrumbMixin,
     ListBreadcrumbMixin,
     UpdateBreadcrumbMixin,
+    DeleteBreadcrumbMixin,
 )
 
 __all__ = [
@@ -12,4 +13,5 @@ __all__ = [
     "DetailBreadcrumbMixin",
     "ListBreadcrumbMixin",
     "UpdateBreadcrumbMixin",
+    "DeleteBreadcrumbMixin",
 ]
