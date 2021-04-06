@@ -4,7 +4,7 @@
 #
 #    pip-compile
 #
-asgiref==3.3.1
+asgiref==3.3.3
     # via django
 django==3.1.7
     # via django-view-breadcrumbs (setup.py)
