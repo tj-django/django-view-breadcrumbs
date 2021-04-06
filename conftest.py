@@ -30,7 +30,7 @@ def pytest_configure(debug=False):
         # Set the default language for your site.
         LANGUAGE_CODE="en",
         # Tell Django where the project's translation files should be.
-        LOCALE_PATHS=(os.path.join(BASE_DIR, "locale"),),
+        LOCALE_PATHS=(os.path.join(BASE_DIR, 'view_breadcrumbs', "locale"),),
         TEMPLATES=[
             {
                 "BACKEND": "django.template.backends.django.DjangoTemplates",

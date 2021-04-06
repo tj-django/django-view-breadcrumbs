@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-06 09:58-0400\n"
+"POT-Creation-Date: 2021-04-06 10:21-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,117 +16,116 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: conftest.py:27
 msgid "English"
-msgstr "Anglaise"
+msgstr ""
 
 #: conftest.py:28
 msgid "French"
-msgstr "Français"
+msgstr ""
 
 #: demo/models.py:13
 msgid "test model"
-msgstr "modèle de test"
+msgstr ""
 
 #: demo/models.py:14
 msgid "test models"
-msgstr "modèles de test"
+msgstr ""
 
 #: demo/templates/demo/index.html:24
 msgid "Custom view"
-msgstr "Vue personnalisée"
+msgstr ""
 
 #: demo/templates/demo/index.html:25
 msgid "CRUD views"
-msgstr "Vues CRUD"
+msgstr ""
 
 #: demo/templates/demo/index.html:26
 msgid "Table views"
-msgstr "Vues de table"
+msgstr ""
 
 #: demo/templates/demo/index.html:27
 msgid "Multi Table views"
-msgstr "Vues multi-tables"
+msgstr ""
 
 #: demo/templates/demo/test-create.html:7
 msgid "Submit"
-msgstr "Nous faire parvenir"
+msgstr ""
 
 #: demo/templates/demo/test-detail.html:4
 msgid "Name"
-msgstr "Nom"
+msgstr ""
 
 #: demo/templates/demo/test-detail.html:5
 msgid "Created at"
-msgstr "Créé à"
+msgstr ""
 
 #: demo/templates/demo/test-detail.html:6
 msgid "Updated at"
-msgstr "Mis à jour à"
+msgstr ""
 
 #: demo/templates/demo/test-detail.html:7
 msgid "Edit"
-msgstr "Éditer"
+msgstr ""
 
 #: demo/templates/demo/test-detail.html:10
 msgid "Delete"
-msgstr "Effacer"
+msgstr ""
 
 #: demo/templates/demo/test-list.html:5
 msgid "Create"
-msgstr "Créer"
+msgstr ""
 
 #: demo/views.py:38
 msgid "My Test Breadcrumb"
-msgstr "Mon fil d'Ariane de test"
+msgstr ""
 
 #: demo/views.py:43
 msgid "List tests"
-msgstr "Liste des tests"
+msgstr ""
 
 #: demo/views.py:78
 msgid "My new home"
-msgstr "Ma nouvelle maison"
+msgstr ""
 
 #: view_breadcrumbs/generic/base.py:34
 msgid "Home"
-msgstr "Domicile"
+msgstr ""
 
 #: view_breadcrumbs/generic/base.py:40
 #, python-format
 msgid "%(class_name)s should have a crumbs property."
-msgstr "%(class_name)s doit avoir une propriété crumbs."
+msgstr ""
 
 #: view_breadcrumbs/generic/base.py:54
 msgid "Breadcrumb requires a tuple of label and view name."
-msgstr "Le fil d'Ariane nécessite un tuple d'étiquette et de nom de vue."
+msgstr ""
 
 #: view_breadcrumbs/generic/base.py:74
 msgid "list"
-msgstr "liste"
+msgstr ""
 
 #: view_breadcrumbs/generic/base.py:75
 msgid "create"
-msgstr "créer"
+msgstr ""
 
 #: view_breadcrumbs/generic/base.py:76
 msgid "update"
-msgstr "mettre à jour"
+msgstr ""
 
 #: view_breadcrumbs/generic/base.py:77
 msgid "delete"
-msgstr "effacer"
+msgstr ""
 
 #: view_breadcrumbs/generic/base.py:78
 msgid "detail"
-msgstr "détail"
+msgstr ""
 
 #: view_breadcrumbs/generic/create.py:10
 #, python-format
 msgid "Add %(model)s"
-msgstr "Ajouter %(model)s"
+msgstr ""
 
 #: view_breadcrumbs/generic/create.py:28
 msgid "model"
@@ -144,9 +143,9 @@ msgstr ""
 #: view_breadcrumbs/generic/update.py:17
 #, python-format
 msgid "Update: %(instance)s"
-msgstr "Mise à jour: %(instance)s"
+msgstr ""
 
 #: view_breadcrumbs/utils.py:45
 #, python-format
 msgid "%(model)s is not installed or missing from the app registry."
-msgstr "%(model)s n'est pas installé ou absent du registre de l'application."
+msgstr ""
