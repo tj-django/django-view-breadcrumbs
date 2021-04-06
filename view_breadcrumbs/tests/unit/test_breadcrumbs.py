@@ -129,4 +129,5 @@ class UpdateBreadcrumbMixinTestCase(ActionTestMixin, BaseBreadcrumbTestCase):
     def setUpTestData(cls):
         cls.crumbs = []
 
+
 # TODO: Add test for the DeleteBreadcrumbMixin
