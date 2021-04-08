@@ -159,6 +159,8 @@ Optionally this can use the class properties instead of hardcoding the paths
 ...
 ```
 
+For more examples see: [demo app](https://github.com/tj-django/django-view-breadcrumbs/tree/master/demo)
+
 
 #### Sample crumbs:  `Home / Posts / Test - Post`
 
