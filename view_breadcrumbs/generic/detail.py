@@ -25,7 +25,15 @@ class DetailBreadcrumbMixin(ListBreadcrumbMixin):
         return action_view_name(self.model, self.detail_view_suffix)
 
     def detail_view_url(self, instance):
-        return reverse(self.__detail_view_name, kwargs={"pk": instance.pk})
+        if self.breadcrumb_use_pk:
+            return reverse(
+                self.__detail_view_name, kwargs={self.pk_url_kwarg: instance.pk}
+            )
+
+        return reverse(
+            self.__detail_view_name,
+            kwargs={self.slug_url_kwarg: getattr(instance, self.slug_field)},
+        )
 
     @property
     def crumbs(self):

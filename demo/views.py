@@ -30,6 +30,7 @@ from view_breadcrumbs.generic.base import BaseModelBreadcrumbMixin
 class TestHomeView(BaseBreadcrumbMixin, TemplateView):
     template_name = "demo/index.html"
     crumbs = []
+    list_models = [TestModel]
 
 
 class TestView(ListBreadcrumbMixin, ListView):
@@ -88,7 +89,7 @@ class TestUpdateView(UpdateBreadcrumbMixin, UpdateView):
         return self.detail_view_url(self.object)
 
 
-class TestDeleteView(ListBreadcrumbMixin, DeleteBreadcrumbMixin, DeleteView):
+class TestDeleteView(DeleteBreadcrumbMixin, DeleteView):
     model = TestModel
 
     def get_success_url(self) -> str:

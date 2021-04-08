@@ -16,6 +16,14 @@ from django.db.models import Model
 from django.template.loader import render_to_string
 from django.utils.encoding import smart_text
 from six import wraps
+from view_breadcrumbs.constants import (
+    CREATE_VIEW_SUFFIX,
+    LIST_VIEW_SUFFIX,
+    UPDATE_VIEW_SUFFIX,
+    DELETE_VIEW_SUFFIX,
+    DETAIL_VIEW_SUFFIX,
+)
+from view_breadcrumbs.utils import action_view_name
 
 if VERSION >= (2, 0):
     from django.urls import NoReverseMatch, Resolver404, resolve, reverse
@@ -132,3 +140,98 @@ def clear_breadcrumbs(context, *args):
 
     context["request"].META.pop(CONTEXT_KEY, None)
     return ""
+
+
+def _view_url(model, suffix):
+    view_name = action_view_name(model, suffix)
+
+    return reverse(view_name)
+
+
+@register.simple_tag()
+def list_view_url(model, suffix=LIST_VIEW_SUFFIX):
+    assert model is not None, 'Invalid model'
+    return _view_url(model=model, suffix=suffix)
+
+
+@register.simple_tag()
+def create_view_url(model, suffix=CREATE_VIEW_SUFFIX):
+    assert model is not None, 'Invalid model'
+    return _view_url(model=model, suffix=suffix)
+
+
+def _object_url(
+    instance,
+    suffix,
+    use_pk=True,
+    pk_url_kwarg="pk",
+    slug_url_kwarg="slug",
+    slug_field="slug",
+):
+    model = instance.__class__
+    view_name = action_view_name(model, suffix)
+
+    if use_pk:
+        return reverse(view_name, kwargs={pk_url_kwarg: instance.pk})
+
+    return reverse(
+        view_name,
+        kwargs={slug_url_kwarg: getattr(instance, slug_field)},
+    )
+
+
+@register.simple_tag(takes_context=True)
+def update_view_url(
+    context,
+    use_pk=True,
+    pk_url_kwarg="pk",
+    slug_url_kwarg="slug",
+    slug_field="slug",
+    suffix=UPDATE_VIEW_SUFFIX,
+):
+    return _object_url(
+        instance=context["object"],
+        use_pk=use_pk,
+        pk_url_kwarg=pk_url_kwarg,
+        slug_url_kwarg=slug_url_kwarg,
+        slug_field=slug_field,
+        suffix=suffix,
+    )
+
+
+@register.simple_tag(takes_context=True)
+def delete_view_url(
+    context,
+    use_pk=True,
+    pk_url_kwarg="pk",
+    slug_url_kwarg="slug",
+    slug_field="slug",
+    suffix=DELETE_VIEW_SUFFIX,
+):
+    return _object_url(
+        instance=context["object"],
+        use_pk=use_pk,
+        pk_url_kwarg=pk_url_kwarg,
+        slug_url_kwarg=slug_url_kwarg,
+        slug_field=slug_field,
+        suffix=suffix,
+    )
+
+
+@register.simple_tag(takes_context=True)
+def detail_view_url(
+    context,
+    use_pk=True,
+    pk_url_kwarg="pk",
+    slug_url_kwarg="slug",
+    slug_field="slug",
+    suffix=DETAIL_VIEW_SUFFIX,
+):
+    return _object_url(
+        instance=context["object"],
+        use_pk=use_pk,
+        pk_url_kwarg=pk_url_kwarg,
+        slug_url_kwarg=slug_url_kwarg,
+        slug_field=slug_field,
+        suffix=suffix,
+    )

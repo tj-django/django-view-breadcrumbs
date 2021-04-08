@@ -3,6 +3,13 @@ import logging
 from django.conf import settings
 from django.utils.functional import cached_property
 from django.utils.translation import gettext_lazy as _
+from view_breadcrumbs.constants import (
+    LIST_VIEW_SUFFIX,
+    CREATE_VIEW_SUFFIX,
+    UPDATE_VIEW_SUFFIX,
+    DELETE_VIEW_SUFFIX,
+    DETAIL_VIEW_SUFFIX,
+)
 
 from ..templatetags.view_breadcrumbs import (
     CONTEXT_KEY,
@@ -68,11 +75,13 @@ class BaseBreadcrumbMixin(object):
 
 
 class BaseModelBreadcrumbMixin(BaseBreadcrumbMixin):
-    list_view_suffix = _("list")
-    create_view_suffix = _("create")
-    update_view_suffix = _("update")
-    delete_view_suffix = _("delete")
-    detail_view_suffix = _("detail")
+    breadcrumb_use_pk = True
+
+    list_view_suffix = LIST_VIEW_SUFFIX
+    create_view_suffix = CREATE_VIEW_SUFFIX
+    update_view_suffix = UPDATE_VIEW_SUFFIX
+    delete_view_suffix = DELETE_VIEW_SUFFIX
+    detail_view_suffix = DETAIL_VIEW_SUFFIX
 
     @property
     def model_name_title(self):

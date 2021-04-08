@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-06 10:21-0400\n"
+"POT-Creation-Date: 2021-04-08 18:50-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -78,50 +78,50 @@ msgstr "Effacer"
 msgid "Create"
 msgstr "Créer"
 
-#: demo/views.py:38
+#: demo/views.py:39
 msgid "My Test Breadcrumb"
 msgstr "Mon fil d'Ariane de test"
 
-#: demo/views.py:43
+#: demo/views.py:44
 msgid "List tests"
 msgstr "Liste des tests"
 
-#: demo/views.py:78
+#: demo/views.py:79
 msgid "My new home"
 msgstr "Ma nouvelle maison"
 
-#: view_breadcrumbs/generic/base.py:34
+#: view_breadcrumbs/constants.py:3
+msgid "list"
+msgstr "liste"
+
+#: view_breadcrumbs/constants.py:4
+msgid "create"
+msgstr "créer"
+
+#: view_breadcrumbs/constants.py:5
+msgid "update"
+msgstr "mettre à jour"
+
+#: view_breadcrumbs/constants.py:6
+msgid "delete"
+msgstr "effacer"
+
+#: view_breadcrumbs/constants.py:7
+msgid "detail"
+msgstr "détail"
+
+#: view_breadcrumbs/generic/base.py:38
 msgid "Home"
 msgstr "Domicile"
 
-#: view_breadcrumbs/generic/base.py:40
+#: view_breadcrumbs/generic/base.py:44
 #, python-format
 msgid "%(class_name)s should have a crumbs property."
 msgstr "%(class_name)s doit avoir une propriété crumbs."
 
-#: view_breadcrumbs/generic/base.py:54
+#: view_breadcrumbs/generic/base.py:58
 msgid "Breadcrumb requires a tuple of label and view name."
 msgstr "Le fil d'Ariane nécessite un tuple d'étiquette et de nom de vue."
-
-#: view_breadcrumbs/generic/base.py:74
-msgid "list"
-msgstr "liste"
-
-#: view_breadcrumbs/generic/base.py:75
-msgid "create"
-msgstr "créer"
-
-#: view_breadcrumbs/generic/base.py:76
-msgid "update"
-msgstr "mettre à jour"
-
-#: view_breadcrumbs/generic/base.py:77
-msgid "delete"
-msgstr "effacer"
-
-#: view_breadcrumbs/generic/base.py:78
-msgid "detail"
-msgstr "détail"
 
 #: view_breadcrumbs/generic/create.py:10
 #, python-format
