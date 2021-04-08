@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-08 18:50-0400\n"
+"POT-Creation-Date: 2021-04-08 19:11-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -77,15 +77,15 @@ msgstr ""
 msgid "Create"
 msgstr ""
 
-#: demo/views.py:39
+#: demo/views.py:40
 msgid "My Test Breadcrumb"
 msgstr ""
 
-#: demo/views.py:44
+#: demo/views.py:45
 msgid "List tests"
 msgstr ""
 
-#: demo/views.py:79
+#: demo/views.py:80
 msgid "My new home"
 msgstr ""
 

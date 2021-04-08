@@ -202,6 +202,24 @@ def update_view_url(
         suffix=suffix,
     )
 
+@register.simple_tag()
+def update_instance_view_url(
+    instance,
+    use_pk=True,
+    pk_url_kwarg="pk",
+    slug_url_kwarg="slug",
+    slug_field="slug",
+    suffix=UPDATE_VIEW_SUFFIX,
+):
+    return _object_url(
+        instance=instance,
+        use_pk=use_pk,
+        pk_url_kwarg=pk_url_kwarg,
+        slug_url_kwarg=slug_url_kwarg,
+        slug_field=slug_field,
+        suffix=suffix,
+    )
+
 
 @register.simple_tag(takes_context=True)
 def delete_view_url(
@@ -222,6 +240,25 @@ def delete_view_url(
     )
 
 
+@register.simple_tag()
+def delete_instance_view_url(
+    instance,
+    use_pk=True,
+    pk_url_kwarg="pk",
+    slug_url_kwarg="slug",
+    slug_field="slug",
+    suffix=DELETE_VIEW_SUFFIX,
+):
+    return _object_url(
+        instance=instance,
+        use_pk=use_pk,
+        pk_url_kwarg=pk_url_kwarg,
+        slug_url_kwarg=slug_url_kwarg,
+        slug_field=slug_field,
+        suffix=suffix,
+    )
+
+
 @register.simple_tag(takes_context=True)
 def detail_view_url(
     context,
@@ -233,6 +270,25 @@ def detail_view_url(
 ):
     return _object_url(
         instance=context["object"],
+        use_pk=use_pk,
+        pk_url_kwarg=pk_url_kwarg,
+        slug_url_kwarg=slug_url_kwarg,
+        slug_field=slug_field,
+        suffix=suffix,
+    )
+
+
+@register.simple_tag()
+def detail_instance_view_url(
+    instance,
+    use_pk=True,
+    pk_url_kwarg="pk",
+    slug_url_kwarg="slug",
+    slug_field="slug",
+    suffix=DETAIL_VIEW_SUFFIX,
+):
+    return _object_url(
+        instance=instance,
         use_pk=use_pk,
         pk_url_kwarg=pk_url_kwarg,
         slug_url_kwarg=slug_url_kwarg,

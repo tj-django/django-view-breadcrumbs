@@ -25,6 +25,7 @@ from view_breadcrumbs import (
 from demo.models import TestModel
 from demo.tables import TestModelTable
 from view_breadcrumbs.generic.base import BaseModelBreadcrumbMixin
+from view_breadcrumbs.templatetags.view_breadcrumbs import detail_instance_view_url
 
 
 class TestHomeView(BaseBreadcrumbMixin, TemplateView):
@@ -54,11 +55,11 @@ class TestListsView(ListBreadcrumbMixin, ListView):
         context = super().get_context_data(**kwargs)
         view_paths = []
 
-        for test in self.object_list:
+        for instance in self.object_list:
             view_paths.append(
                 (
-                    test.name,
-                    reverse("demo:testmodel_detail", kwargs={"pk": test.pk}),
+                    instance.name,
+                    detail_instance_view_url(instance),
                 ),
             )
         context["view_paths"] = view_paths
