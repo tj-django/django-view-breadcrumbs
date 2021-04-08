@@ -42,6 +42,7 @@ Breadcrumb mixin classes provided.
 - `DetailBreadcrumbMixin`  - For detail views `Home / Posts / Post 1`
 - `ListBreadcrumbMixin`    - For list views `Home / Posts`
 - `UpdateBreadcrumbMixin`  - For Update views `Home / Posts / Post 1 / Update Post 1`
+- `DeleteBreadcrumbMixin`  - For Delete views this has a link to the list view to be used as the success URL.
 
 
 ## Installation
@@ -135,13 +136,39 @@ and can be overridden by providing a `crumbs` property.
 | `detail`  | `DetailView`| `{model.verbose_name}_detail` | `Home / Posts / Test - Post` |
 
 
+Optionally this can use the class properties instead of hardcoding the paths
+
+```python
+...
+    path("tests/", TestListsView.as_view(), name=TestListsView.list_view_name),
+    path(
+        "tests/<slug:slug>/", 
+        TestDetailView.as_view(),
+        name=TestDetailView.detail_view_name,
+    ),
+    path(
+        "tests/<slug:slug>/update/",
+        TestUpdateView.as_view(),
+        name=TestUpdateView.update_view_name,
+    ),
+    path(
+        "tests/<slug:slug>/delete/",
+        TestDeleteView.as_view(),
+        name=TestDeleteView.delete_view_name,
+    ),
+...
+```
+
+For more examples see: [demo app](https://github.com/tj-django/django-view-breadcrumbs/tree/master/demo)
+
+
 #### Sample crumbs:  `Home / Posts / Test - Post`
 
 In your `urls.py`
 ```python
   urlpatterns = [
       ...
-      path('posts/<slug:slug>', views.PostDetail.as_view(), name='post_detail'),
+      path('posts/<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),
       ...
   ]
 
@@ -163,7 +190,7 @@ In your urls.py
 ```python
   urlpatterns = [
       ...
-      path('posts', views.PostList.as_view(), name='post_list'),
+      path('posts/', views.PostList.as_view(), name='post_list'),
       ...
   ]
 ```
