@@ -150,13 +150,17 @@ def _view_url(model, suffix):
 
 @register.simple_tag()
 def list_view_url(model, suffix=LIST_VIEW_SUFFIX):
-    assert model is not None, "Invalid model"
+    if model is None:
+        raise ValueError("Invalid model")
+
     return _view_url(model=model, suffix=suffix)
 
 
 @register.simple_tag()
 def create_view_url(model, suffix=CREATE_VIEW_SUFFIX):
-    assert model is not None, "Invalid model"
+    if model is None:
+        raise ValueError("Invalid model")
+
     return _view_url(model=model, suffix=suffix)
 
 
