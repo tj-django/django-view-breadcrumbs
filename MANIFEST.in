@@ -7,7 +7,7 @@ exclude *.py
 exclude *.txt
 exclude *.pypirc
 exclude *.all-contributorsrc
-include *.yml
+exclude *.yml
 exclude *.pyup.yml
 exclude *.travis.yml
 exclude .bumpversion.cfg
