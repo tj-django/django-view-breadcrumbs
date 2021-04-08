@@ -253,7 +253,7 @@ class TestView(ListBreadcrumbMixin, ListView):
 
     @cached_property
     def crumbs(self):
-        return [('My Test Breadcrumb', reverse('test_list_view'))]
+        return [('My Test Breadcrumb', self.list_view_url)]
 
 ```
 
