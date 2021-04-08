@@ -202,6 +202,7 @@ def update_view_url(
         suffix=suffix,
     )
 
+
 @register.simple_tag()
 def update_instance_view_url(
     instance,
