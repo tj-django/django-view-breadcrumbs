@@ -56,6 +56,8 @@ release-to-pypi: clean-build makemessages compilemessages increase-version tag-b
 	@$(PYTHON_PIP) install -U twine
 	@$(PYTHON) setup.py sdist bdist_wheel
 	@twine upload dist/*
+	@git push --tags
+	@git push
 
 
 # ----------------------------------------------------------
@@ -90,8 +92,6 @@ increase-version: clean-build guard-PART  ## Bump the project version (using the
 	@git-changelog . > CHANGELOG.md
 	@git add .
 	@[ -z "`git status --porcelain`" ] && echo "No changes found." || git commit -am "Updated CHANGELOG.md."
-	@git push --tags
-	@git push
 
 # ----------------------------------------------------------
 # --------- Run project Test -------------------------------
