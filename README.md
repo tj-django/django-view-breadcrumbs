@@ -130,10 +130,12 @@ and can be overridden by providing a `crumbs` property.
 
 
 |  Actions  |  View Class |  View name  | Sample Breadcrumb |
-|-----------|-------------|-------------|-------------------|  
+|-----------|-------------|-------------|-------------------| 
 | `list`    | `ListView`  | `{model.verbose_name}_list` |  `Home / Posts`  |
-| `change`  | `UpdateView`| `{model.verbose_name}_change` | `Home / Posts / Test - Post / Update Test - Post` |
+| `create`  | `CreateView`| `{model.verbose_name}_create` | `Home / Posts / Add Post` |
 | `detail`  | `DetailView`| `{model.verbose_name}_detail` | `Home / Posts / Test - Post` |
+| `change`  | `UpdateView`| `{model.verbose_name}_update` | `Home / Posts / Test - Post / Update Test - Post` |
+| `delete`  | `DeleteView`| `{model.verbose_name}_delete` | N/A |
 
 
 Optionally this can use the following class properties instead of hardcoding the view names.
