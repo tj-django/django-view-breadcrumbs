@@ -77,7 +77,7 @@ TEMPLATES  = [
         "OPTIONS": {
             "context_processors": [
                 "django.template.context_processors.debug",
-                "django.template.context_processors.request", # <- This context processors is required
+                "django.template.context_processors.request", # <- This context processor is required
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
             ],
