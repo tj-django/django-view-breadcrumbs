@@ -136,7 +136,7 @@ and can be overridden by providing a `crumbs` property.
 | `detail`  | `DetailView`| `{model.verbose_name}_detail` | `Home / Posts / Test - Post` |
 
 
-Optionally this can use the class properties instead of hardcoding the view names.
+Optionally this can use the following class properties instead of hardcoding the view names.
 
 ```python
 ...
