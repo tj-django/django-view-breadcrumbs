@@ -7,8 +7,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% block styles %}
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    {% endblock %}
 </head>
 <body>
     {% block breadcrumbs %}
@@ -16,10 +18,14 @@
         {% render_breadcrumbs 'view_breadcrumbs/bootstrap5.html' %}
     </main>
     {% endblock %}
+    {% block body %}
     <section>
         <ul>
         <li><a href="{% url 'demo:test_view' %}">{%  trans "Custom view" %}</a></li>
-        <li><a href="{% url 'demo:testmodel_list' %}">{% trans "CRUD views" %}</a></li>
+        <li><a href="{% list_view_url view.list_models.0 %}">{% trans "CRUD views" %}</a></li>
+        <li><a href="{% url 'demo:test_model_table' %}">{% trans "Table views" %}</a></li>
+        <li><a href="{% url 'demo:test_model_multi_table' %}">{% trans "Multi Table views" %}</a></li>
         </ul>
     </section>
+    {% endblock %}
 </body>

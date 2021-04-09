@@ -30,7 +30,7 @@ i.e
 And your ```create.html```.
 
 ```jinja2
-{% extends 'base.html' %}
+{% extends "base.html" %}
 ```
 
 
@@ -42,6 +42,7 @@ Breadcrumb mixin classes provided.
 - `DetailBreadcrumbMixin`  - For detail views `Home / Posts / Post 1`
 - `ListBreadcrumbMixin`    - For list views `Home / Posts`
 - `UpdateBreadcrumbMixin`  - For Update views `Home / Posts / Post 1 / Update Post 1`
+- `DeleteBreadcrumbMixin`  - For Delete views this has a link to the list view to be used as the success URL.
 
 
 ## Installation
@@ -57,7 +58,7 @@ $ pip install django-view-breadcrumbs
 
 INSTALLED_APPS = [
     ...,
-    'view_breadcrumbs',
+    "view_breadcrumbs",
     ...,
 ]
 ```
@@ -89,7 +90,7 @@ Modify the defaults using the following:
 
 | Name                       | Default                                     | Description |    Options          |
 |----------------------------|---------------------------------------------|-------------|---------------------|
-| `BREADCRUMBS_TEMPLATE`     | `'view_breadcrumbs/bootstrap4.html'`        |  Template used to render breadcrumbs.           |   [Predefined Templates](https://github.com/tj-django/django-view-breadcrumbs/tree/master/view_breadcrumbs/templates/view_breadcrumbs)                 |
+| `BREADCRUMBS_TEMPLATE`     | `"view_breadcrumbs/bootstrap4.html"`        |  Template used to render breadcrumbs.           |   [Predefined Templates](https://github.com/tj-django/django-view-breadcrumbs/tree/master/view_breadcrumbs/templates/view_breadcrumbs)                 |
 | `BREADCRUMBS_HOME_LABEL`   |  `Home`                                     |  Default label for the root path  |         |
 
 
@@ -102,7 +103,7 @@ To modify the root label site wide use
 
 ```python
 
-BREADCRUMBS_HOME_LABEL = 'My new home'
+BREADCRUMBS_HOME_LABEL = "My new home"
 ```
 
 *Renders*
@@ -135,13 +136,43 @@ and can be overridden by providing a `crumbs` property.
 | `detail`  | `DetailView`| `{model.verbose_name}_detail` | `Home / Posts / Test - Post` |
 
 
+Optionally this can use the class properties instead of hardcoding the view names.
+
+```python
+...
+    path("tests/", TestListsView.as_view(), name=TestListsView.list_view_name),
+    path(
+        "tests/<slug:slug>/", 
+        TestDetailView.as_view(),
+        name=TestDetailView.detail_view_name,
+    ),
+    path(
+        "tests/<slug:slug>/update/",
+        TestUpdateView.as_view(),
+        name=TestUpdateView.update_view_name,
+    ),
+    path(
+        "tests/<slug:slug>/delete/",
+        TestDeleteView.as_view(),
+        name=TestDeleteView.delete_view_name,
+    ),
+...
+```
+
+For more examples see: [demo app](https://github.com/tj-django/django-view-breadcrumbs/tree/master/demo)
+
+
 #### Sample crumbs:  `Home / Posts / Test - Post`
 
 In your `urls.py`
 ```python
   urlpatterns = [
       ...
-      path('posts/<slug:slug>', views.PostDetail.as_view(), name='post_detail'),
+      path("posts/<slug:slug>/", views.PostDetail.as_view(), name="post_detail"),
+      ...
+      # OR
+      ...
+      path("posts/<slug:slug>/", views.PostDetail.as_view(), name=views.PostDetail.detail_view_name),
       ...
   ]
 
@@ -154,7 +185,8 @@ from view_breadcrumbs import DetailBreadcrumbMixin
 
 class PostDetail(DetailBreadcrumbMixin, DetailView):
     model = Post
-    template_name = 'app/post/detail.html'
+    template_name = "app/post/detail.html"
+    breadcrumb_use_pk = False
 ```
 
 #### Sample crumbs: `Posts`
@@ -163,7 +195,11 @@ In your urls.py
 ```python
   urlpatterns = [
       ...
-      path('posts', views.PostList.as_view(), name='post_list'),
+      path("posts/", views.PostList.as_view(), name="post_list"),
+      ...
+      # OR
+      ...
+      path("posts/", views.PostList.as_view(), name=views.PostList.list_view_name),
       ...
   ]
 ```
@@ -177,7 +213,7 @@ from view_breadcrumbs import ListBreadcrumbMixin
 
 class PostList(ListBreadcrumbMixin, ListView):
     model = Post
-    template_name = 'app/post/list.html'
+    template_name = "app/post/list.html"
     add_home = False
 ```
 
@@ -188,8 +224,8 @@ URL configuration.
 
 ```python
     urlpatterns = [
-       path('my-test-list-view/', views.TestView.as_view(), name='test_list_view'),
-       path('my-test-detail-view/<int:pk>/', views.TestView.as_view(), name='test_detail_view'),
+       path("my-test-list-view/", views.TestView.as_view(), name="test_list_view"),
+       path("my-test-detail-view/<int:pk>/", views.TestView.as_view(), name="test_detail_view"),
     ]
 ```
 
@@ -206,8 +242,8 @@ from demo.models import TestModel
 
 class TestView(ListBreadcrumbMixin, ListView):
     model = TestModel
-    template_name = 'app/test/test-list.html'
-    crumbs = [('My Test Breadcrumb', reverse('test_list_view'))]  # OR reverse_lazy
+    template_name = "app/test/test-list.html"
+    crumbs = [("My Test Breadcrumb", reverse("test_list_view"))]  # OR reverse_lazy
 ```
 
 OR
@@ -222,11 +258,11 @@ from django.utils.functional import cached_property
 
 class TestView(ListBreadcrumbMixin, ListView):
     model = TestModel
-    template_name = 'app/test/test-list.html'
+    template_name = "app/test/test-list.html"
 
     @cached_property
     def crumbs(self):
-        return [('My Test Breadcrumb', reverse('test_list_view'))]
+        return [("My Test Breadcrumb", self.list_view_url)]
 
 ```
 
@@ -241,8 +277,8 @@ from demo.models import TestModel
 
 class TestDetailView(DetailBreadcrumbMixin, DetailView):
      model = TestModel
-     home_label = _('My custom home')
-     template_name = 'demo/test-detail.html'
+     home_label = _("My custom home")
+     template_name = "demo/test-detail.html"
 ```
 
 > Refer to the [demo app](https://github.com/tj-django/django-view-breadcrumbs/tree/master/demo) for more examples.

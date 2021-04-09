@@ -1,27 +1,10 @@
-{% load view_breadcrumbs %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Test app</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body>
-    {% block breadcrumbs %}
-    <main>
-        {% render_breadcrumbs 'view_breadcrumbs/bootstrap4.html' %}
-    </main>
-    {% endblock %}
-    {% block body %}
-        <ul>
-        {% for pathname, path_url in view_paths %}
-            <li>
-                <a href="{{ path_url }}">{{ pathname }}</a>
-            </li>
-        {% endfor %}
-        </ul>
-    {% endblock %}
-</body>
+{% extends "demo/index.html" %}
+{% block body %}
+    <ul>
+    {% for pathname, path_url in view_paths %}
+        <li>
+            <a href="{{ path_url }}">{{ pathname }}</a>
+        </li>
+    {% endfor %}
+    </ul>
+{% endblock %}

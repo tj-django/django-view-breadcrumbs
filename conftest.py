@@ -3,7 +3,7 @@ import sys
 
 from django import setup
 from django.conf import settings
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 TEST_DIR = os.path.join(BASE_DIR, "demo", "templates")
@@ -30,7 +30,7 @@ def pytest_configure(debug=False):
         # Set the default language for your site.
         LANGUAGE_CODE="en",
         # Tell Django where the project's translation files should be.
-        LOCALE_PATHS=(os.path.join(BASE_DIR, "locale"),),
+        LOCALE_PATHS=(os.path.join(BASE_DIR, "view_breadcrumbs", "locale"),),
         TEMPLATES=[
             {
                 "BACKEND": "django.template.backends.django.DjangoTemplates",
@@ -58,6 +58,9 @@ def pytest_configure(debug=False):
                     "django.contrib.sessions",
                     "view_breadcrumbs",
                     "demo",
+                    "django_tables2",
+                    "bootstrap3",
+                    "django_filters",
                 ],
             }
         )

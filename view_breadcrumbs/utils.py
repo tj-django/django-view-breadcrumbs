@@ -1,7 +1,24 @@
 from django.core.exceptions import AppRegistryNotReady
 from django.utils.encoding import force_str
 from django.utils.translation import override
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
+
+
+class classproperty:
+    """
+    Decorator that converts a method with a single cls argument into a property
+    that can be accessed directly from the class.
+    """
+
+    def __init__(self, method=None):
+        self.fget = method
+
+    def __get__(self, instance, cls=None):
+        return self.fget(cls)
+
+    def getter(self, method):
+        self.fget = method
+        return self
 
 
 def get_verbose_name(model):
@@ -38,12 +55,18 @@ def get_app_name(model):
     )
 
 
-def action_view_name(model, action):
+def action_view_name(model, action, full=True):
     app_label, model_name = get_app_name(model)
 
     with override(None):
-        return "%(app_label)s:%(model_name)s_%(action)s" % {
-            "app_label": app_label,
+        if full:
+            return "%(app_label)s:%(model_name)s_%(action)s" % {
+                "app_label": app_label,
+                "model_name": model_name.lower().replace(" ", "_"),
+                "action": action,
+            }
+
+        return "%(model_name)s_%(action)s" % {
             "model_name": model_name.lower().replace(" ", "_"),
             "action": action,
         }

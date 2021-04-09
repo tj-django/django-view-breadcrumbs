@@ -1,1 +1,12 @@
 {% extends 'demo/test-custom.html' %}
+{% load i18n l10n view_breadcrumbs %}
+{% block body %}
+    <p><b>{% trans "Name" %}: </b>{% trans object.name %}</p>
+    <p><b>{% trans "Created at" %}: </b> {{ object.created_at|localize }}</p>
+    <p><b>{% trans "Updated at" %}: </b> {{ object.update_at|localize }}</p>
+    <a class="btn btn-primary" href="{% update_view_url %}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> {% trans "Edit" %}</a>
+    <form method="post" action="{% delete_view_url %}" style="display: inline">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger"><i class="fa fa-remove" aria-hidden="true"></i> {% trans "Delete" %}</button>
+    </form>
+{% endblock %}

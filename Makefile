@@ -52,7 +52,7 @@ update-requirements:  ## Updates the requirement.txt adding missing package depe
 tag-build:
 	@git tag v$(PACKAGE_VERSION)
 
-release-to-pypi: clean-build increase-version tag-build  ## Release project to pypi
+release-to-pypi: clean-build makemessages compilemessages increase-version tag-build  ## Release project to pypi
 	@$(PYTHON_PIP) install -U twine
 	@$(PYTHON) setup.py sdist bdist_wheel
 	@twine upload dist/*
@@ -61,7 +61,7 @@ release-to-pypi: clean-build increase-version tag-build  ## Release project to p
 # ----------------------------------------------------------
 # --------- Django manage.py commands ----------------------
 # ----------------------------------------------------------
-run:  ## Run the run_server using default host and port
+run: makemessages compilemessages  ## Run the run_server using default host and port
 	@$(MANAGE_PY) runserver 127.0.0.1:8090
 
 migrate:  ## Run the migrations
@@ -69,6 +69,13 @@ migrate:  ## Run the migrations
 
 migrations:  ## Generate the migrations
 	@$(MANAGE_PY) makemigrations
+
+makemessages:
+	@$(MANAGE_PY) makemessages --locale=en_US
+	@$(MANAGE_PY) makemessages --locale=fr
+
+compilemessages:
+	@$(MANAGE_PY) compilemessages --ignore=.tox
 
 # ----------------------------------------------------------
 # ---------- Upgrade project version (bumpversion)  --------

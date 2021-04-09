@@ -1,0 +1,9 @@
+{% extends "demo/index.html" %}
+{% load django_tables2 %}
+
+{% block body %}
+{% for table in tables %}
+    <h3>Table {{ forloop.counter }}</h3>
+    {% render_table table %}
+{% endfor %}
+{% endblock %}

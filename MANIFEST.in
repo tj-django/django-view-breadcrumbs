@@ -1,4 +1,4 @@
-recursive-include view_breadcrumbs *.py *.html *.css *.js
+recursive-include view_breadcrumbs *.py *.html *.css *.js *.po *.mo
 recursive-include django_view_breadcrumbs *.py
 exclude *.json
 include *.md
@@ -7,7 +7,7 @@ exclude *.py
 exclude *.txt
 exclude *.pypirc
 exclude *.all-contributorsrc
-include *.yml
+exclude *.yml
 exclude *.pyup.yml
 exclude *.travis.yml
 exclude .bumpversion.cfg
@@ -18,3 +18,9 @@ exclude pytest.ini
 exclude tox.ini
 prune view_breadcrumbs/tests
 prune demo
+
+# added by check-manifest
+recursive-include docs *.html
+recursive-include docs *.md
+recursive-exclude docs *.nojekyll
+recursive-include docs *.png
