@@ -4,9 +4,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## [v2.0.1](https://github.com/tj-django/django-view-breadcrumbs/releases/tag/v2.0.1) - 2021-03-26
+## [v2.1.0](https://github.com/tj-django/django-view-breadcrumbs/releases/tag/v2.1.0) - 2021-04-09
 
-<small>[Compare with v2.0.0](https://github.com/tj-django/django-view-breadcrumbs/compare/v2.0.0...v2.0.1)</small>
+<small>[Compare with v2.0.0](https://github.com/tj-django/django-view-breadcrumbs/compare/v2.0.0...v2.1.0)</small>
+
+### Added
+- Added .github/workflows/release.yml ([89e5a6f](https://github.com/tj-django/django-view-breadcrumbs/commit/89e5a6fb75b774109bda7a7000715e5850289b81) by Tonye Jack).
+- Added .github/workflows/sync-release-version.yml ([11a7a0b](https://github.com/tj-django/django-view-breadcrumbs/commit/11a7a0b51fd7ed9b3fa3071b3ee897c6b4b5e0a0) by Tonye Jack).
+- Added .github/issue_template/bug_report.md ([310af36](https://github.com/tj-django/django-view-breadcrumbs/commit/310af36ee6b18cfc213190905a10587274818b1f) by Tonye Jack).
+- Added .github/issue_template/feature_request.md ([947568d](https://github.com/tj-django/django-view-breadcrumbs/commit/947568df369eeeb55115b42b8f7cc1949eb44f07) by Tonye Jack).
+- Added .github/auto-approve.yml ([e710f70](https://github.com/tj-django/django-view-breadcrumbs/commit/e710f7032466c7b1eea0fd51a12d98141bcd3e6b) by Tonye Jack).
+- Added .github/workflows/auto-approve.yml ([cae0f52](https://github.com/tj-django/django-view-breadcrumbs/commit/cae0f5200431389c39ccab4b9e136b2f8505f68d) by Tonye Jack).
+
+### Fixed
+- Fixed bumpversion. ([8e0a0ab](https://github.com/tj-django/django-view-breadcrumbs/commit/8e0a0ab79e584bfd569c8df117a7d4e885cf17c5) by Tonye Jack).
 
 
 ## [v2.0.0](https://github.com/tj-django/django-view-breadcrumbs/releases/tag/v2.0.0) - 2021-03-26
