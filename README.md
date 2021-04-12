@@ -137,6 +137,8 @@ and can be overridden by providing a `crumbs` property.
 | `change`  | `UpdateView`| `{model.verbose_name}_update` | `Home / Posts / Test - Post / Update Test - Post` |
 | `delete`  | `DeleteView`| `{model.verbose_name}_delete` | N/A |
 
+For custom views See: [Custom View](#custom-crumbs-home--my-test-breadcrumb)
+
 
 Optionally this can use the following class properties instead of hardcoding the view names.
 
@@ -226,45 +228,41 @@ URL configuration.
 
 ```python
     urlpatterns = [
-       path("my-test-list-view/", views.TestView.as_view(), name="test_list_view"),
-       path("my-test-detail-view/<int:pk>/", views.TestView.as_view(), name="test_detail_view"),
+       path("my-custom-view/", views.CustomView.as_view(), name="custom_view"),
     ]
 ```
-
-> Can override the view breadcrumb by specifying a list of tuples `[(label, view path)]`.
 
 views.py
 
 ```python
 from django.urls import reverse
-from django.views.generic import ListView
-from view_breadcrumbs import ListBreadcrumbMixin
+from django.views.generic import View
+from view_breadcrumbs import BaseBreadcrumbMixin
 from demo.models import TestModel
 
 
-class TestView(ListBreadcrumbMixin, ListView):
+class CustomView(BaseBreadcrumbMixin, View):
     model = TestModel
-    template_name = "app/test/test-list.html"
-    crumbs = [("My Test Breadcrumb", reverse("test_list_view"))]  # OR reverse_lazy
+    template_name = "app/test/custom.html"
+    crumbs = [("My Test Breadcrumb", reverse("custom_view"))]  # OR reverse_lazy
 ```
 
 OR
 
 ```python
 from django.urls import reverse
-from django.views.generic import ListView
-from view_breadcrumbs import ListBreadcrumbMixin
+from django.views.generic import View
+from view_breadcrumbs import BaseBreadcrumbMixin
 from demo.models import TestModel
 from django.utils.functional import cached_property
 
 
-class TestView(ListBreadcrumbMixin, ListView):
-    model = TestModel
-    template_name = "app/test/test-list.html"
+class CustomView(BaseBreadcrumbMixin, View):
+    template_name = "app/test/custom.html"
 
     @cached_property
     def crumbs(self):
-        return [("My Test Breadcrumb", self.list_view_url)]
+        return [("My Test Breadcrumb", reverse("custom_view"))]
 
 ```
 
