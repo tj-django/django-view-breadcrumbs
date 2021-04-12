@@ -137,8 +137,13 @@ and can be overridden by providing a `crumbs` property.
 | `change`  | `UpdateView`| `{model.verbose_name}_update` | `Home / Posts / Test - Post / Update Test - Post` |
 | `delete`  | `DeleteView`| `{model.verbose_name}_delete` | N/A |
 
-For custom views See: [Custom View](#custom-crumbs-home--my-test-breadcrumb)
+For views classes like: `TemplateView` | `AboutView` | `View`
 
+> See: [Custom View](#custom-crumbs-home--my-test-breadcrumb)
+
+For usage with [django tables 2](https://django-tables2.readthedocs.io/en/latest/index.html#)
+
+> See: [demo](https://github.com/tj-django/django-view-breadcrumbs/blob/update-readme-to-highlight-usage-of-custom-views/demo/views.py#L100)
 
 Optionally this can use the following class properties instead of hardcoding the view names.
 
