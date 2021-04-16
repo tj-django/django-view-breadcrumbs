@@ -166,7 +166,7 @@ For views classes like: `TemplateView` | `AboutView` | `View`
 
 For usage with [django tables 2](https://django-tables2.readthedocs.io/en/latest/index.html#)
 
-> See: [demo](https://github.com/tj-django/django-view-breadcrumbs/blob/update-readme-to-highlight-usage-of-custom-views/demo/views.py#L100)
+> See: [demo table view](https://github.com/tj-django/django-view-breadcrumbs/blob/master/demo/views.py#L100)
 
 For more examples see: [demo app](https://github.com/tj-django/django-view-breadcrumbs/tree/master/demo)
 
