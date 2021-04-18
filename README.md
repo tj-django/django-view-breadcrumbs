@@ -111,7 +111,9 @@ BREADCRUMBS_HOME_LABEL = "My new home"
 ![Screenshot](./custom-root-breadcrumb.png)
 
 
-*Using django's [translation](https://docs.djangoproject.com/en/3.1/topics/i18n/translation/) support*
+## [Translation support](https://docs.djangoproject.com/en/3.1/topics/i18n/translation/)
+
+### Example
 
 ![Translated Screenshot](./translated-crumbs.png)
 
