@@ -94,17 +94,35 @@ Modify the defaults using the following:
 | `BREADCRUMBS_HOME_LABEL`   |  `Home`                                     |  Default label for the root path  |         |
 
 
-To modify the root label site wide use
+### Customization
 
-`BREADCRUMBS_HOME_LABEL` - Sets the root label (default: `Home`)
+#### BREADCRUMBS_TEMPLATE
 
-
-### Example 
+**Site wide:**
 
 ```python
+BREADCRUMBS_TEMPLATE = "my_app/breadcrumbs.html"
+```
 
+**For just the base template:**
+
+Update the `base.html`
+
+```jinja2
+{% render_breadcrumbs "my_app/breadcrumbs.html" %}
+```
+
+#### BREADCRUMBS_HOME_LABEL
+
+**Site wide:**
+
+```python
 BREADCRUMBS_HOME_LABEL = "My new home"
 ```
+
+**For just a single view:**
+
+See: [Overriding the Home label for a specific view](https://github.com/tj-django/django-view-breadcrumbs#overriding-the-home-label-for-a-specific-view)
 
 *Renders*
 
