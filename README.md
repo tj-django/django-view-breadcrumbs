@@ -1,8 +1,8 @@
-# django-view-breadcrumbs 
+# django-view-breadcrumbs
 
 [![Build Status](https://travis-ci.org/tj-django/django-view-breadcrumbs.svg?branch=master)](https://travis-ci.org/tj-django/django-view-breadcrumbs) ![PyPI - Django Version](https://img.shields.io/pypi/djversions/django-view-breadcrumbs) ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/django-view-breadcrumbs) [![Downloads](https://pepy.tech/badge/django-view-breadcrumbs)](https://pepy.tech/project/django-view-breadcrumbs)
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/6b447e364bef4988bda95bd0965bb4bc)](https://www.codacy.com/app/tj-django/django-view-breadcrumbs?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=tj-django/django-view-breadcrumbs&amp;utm_campaign=Badge_Grade) [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/537b0ce56e744f078f17cc8ccd4200d8)](https://www.codacy.com/gh/tj-django/django-view-breadcrumbs/dashboard?utm_source=github.com&utm_medium=referral&utm_content=tj-django/django-view-breadcrumbs&utm_campaign=Badge_Coverage) [![PyPI version](https://badge.fury.io/py/django-view-breadcrumbs.svg)](https://badge.fury.io/py/django-view-breadcrumbs) [![Updates](https://pyup.io/repos/github/tj-django/django-view-breadcrumbs/shield.svg)](https://pyup.io/repos/github/tj-django/django-view-breadcrumbs/)  <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section --> [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-) 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/6b447e364bef4988bda95bd0965bb4bc)](https://www.codacy.com/app/tj-django/django-view-breadcrumbs?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=tj-django/django-view-breadcrumbs&amp;utm_campaign=Badge_Grade) [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/537b0ce56e744f078f17cc8ccd4200d8)](https://www.codacy.com/gh/tj-django/django-view-breadcrumbs/dashboard?utm_source=github.com&utm_medium=referral&utm_content=tj-django/django-view-breadcrumbs&utm_campaign=Badge_Coverage) [![PyPI version](https://badge.fury.io/py/django-view-breadcrumbs.svg)](https://badge.fury.io/py/django-view-breadcrumbs) [![Updates](https://pyup.io/repos/github/tj-django/django-view-breadcrumbs/shield.svg)](https://pyup.io/repos/github/tj-django/django-view-breadcrumbs/)  <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section --> [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 
@@ -15,7 +15,7 @@ Requires adding ```{% render_breadcrumbs %}``` to just the base template.
 
 In the `base.html` template simply add the ``render_breadcrumbs`` tag and any template
 that inherits the base should have breadcrumbs included.
-i.e  
+i.e
 
 ```base.html```
 
@@ -146,11 +146,11 @@ and can be overridden by providing a `crumbs` property.
 ### View Configuration
 
 > NOTE: :warning:
-> * Model based views should use a pattern `view_name=model_verbose_name_{action}`  
+> * Model based views should use a pattern `view_name=model_verbose_name_{action}`
 
 
 |  Actions  |  View Class |  View name  | Sample Breadcrumb |
-|-----------|-------------|-------------|-------------------| 
+|-----------|-------------|-------------|-------------------|
 | `list`    | `ListView`  | `{model.verbose_name}_list` |  `Home / Posts`  |
 | `create`  | `CreateView`| `{model.verbose_name}_create` | `Home / Posts / Add Post` |
 | `detail`  | `DetailView`| `{model.verbose_name}_detail` | `Home / Posts / Test - Post` |
@@ -163,7 +163,7 @@ Optionally this can use the following class properties instead of hardcoding the
 ...
     path("tests/", TestListsView.as_view(), name=TestListsView.list_view_name),
     path(
-        "tests/<slug:slug>/", 
+        "tests/<slug:slug>/",
         TestDetailView.as_view(),
         name=TestDetailView.detail_view_name,
     ),
