@@ -6,7 +6,7 @@
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 
-Provides a generic set of breadcrumb mixin classes.
+Provides a set of breadcrumb mixin classes that can be added to any django view.
 
 Requires adding ```{% render_breadcrumbs %}``` to just the base template.
 
