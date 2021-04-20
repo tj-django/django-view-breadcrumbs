@@ -272,7 +272,7 @@ class CustomView(BaseBreadcrumbMixin, View):
     crumbs = [("My Test Breadcrumb", reverse("custom_view"))]  # OR reverse_lazy
 ```
 
-OR
+**OR**
 
 ```python
 from django.urls import reverse
