@@ -211,5 +211,3 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Removed unversioned files ([82530a1](https://github.com/tj-django/django-view-breadcrumbs/commit/82530a161e6f0287cf7750154adec4d5a7c1b631) by Tonye Jack).
 - Removed egg.info ([5527f6a](https://github.com/tj-django/django-view-breadcrumbs/commit/5527f6a09426fc05414186a5b70eecaf7b48eaff) by Tonye Jack).
 - Removed untracked files ([21e77f2](https://github.com/tj-django/django-view-breadcrumbs/commit/21e77f2e6677907e8cddc05900695eaadfac4ce7) by Tonye Jack).
-
-
