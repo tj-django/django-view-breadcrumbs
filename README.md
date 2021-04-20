@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/tj-django/django-view-breadcrumbs.svg?branch=master)](https://travis-ci.org/tj-django/django-view-breadcrumbs) ![PyPI - Django Version](https://img.shields.io/pypi/djversions/django-view-breadcrumbs) ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/django-view-breadcrumbs) [![Downloads](https://pepy.tech/badge/django-view-breadcrumbs)](https://pepy.tech/project/django-view-breadcrumbs)
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/6b447e364bef4988bda95bd0965bb4bc)](https://www.codacy.com/app/tj-django/django-view-breadcrumbs?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=tj-django/django-view-breadcrumbs&amp;utm_campaign=Badge_Grade) [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/537b0ce56e744f078f17cc8ccd4200d8)](https://www.codacy.com/gh/tj-django/django-view-breadcrumbs/dashboard?utm_source=github.com&utm_medium=referral&utm_content=tj-django/django-view-breadcrumbs&utm_campaign=Badge_Coverage) [![PyPI version](https://badge.fury.io/py/django-view-breadcrumbs.svg)](https://badge.fury.io/py/django-view-breadcrumbs) [![Updates](https://pyup.io/repos/github/tj-django/django-view-breadcrumbs/shield.svg)](https://pyup.io/repos/github/tj-django/django-view-breadcrumbs/)  <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section --> [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/6b447e364bef4988bda95bd0965bb4bc)](https://www.codacy.com/app/tj-django/django-view-breadcrumbs?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=tj-django/django-view-breadcrumbs&amp;utm_campaign=Badge_Grade) [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/tj-django/django-view-breadcrumbs/master.svg)](https://results.pre-commit.ci/latest/github/tj-django/django-view-breadcrumbs/master) [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/537b0ce56e744f078f17cc8ccd4200d8)](https://www.codacy.com/gh/tj-django/django-view-breadcrumbs/dashboard?utm_source=github.com&utm_medium=referral&utm_content=tj-django/django-view-breadcrumbs&utm_campaign=Badge_Coverage) [![PyPI version](https://badge.fury.io/py/django-view-breadcrumbs.svg)](https://badge.fury.io/py/django-view-breadcrumbs) [![Updates](https://pyup.io/repos/github/tj-django/django-view-breadcrumbs/shield.svg)](https://pyup.io/repos/github/tj-django/django-view-breadcrumbs/)  <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section --> [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 
@@ -272,7 +272,7 @@ class CustomView(BaseBreadcrumbMixin, View):
     crumbs = [("My Test Breadcrumb", reverse("custom_view"))]  # OR reverse_lazy
 ```
 
-OR
+**OR**
 
 ```python
 from django.urls import reverse
