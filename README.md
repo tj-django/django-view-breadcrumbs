@@ -2,22 +2,21 @@
 
 [![Build Status](https://travis-ci.org/tj-django/django-view-breadcrumbs.svg?branch=main)](https://travis-ci.org/tj-django/django-view-breadcrumbs) ![PyPI - Django Version](https://img.shields.io/pypi/djversions/django-view-breadcrumbs) ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/django-view-breadcrumbs) [![Downloads](https://pepy.tech/badge/django-view-breadcrumbs)](https://pepy.tech/project/django-view-breadcrumbs)
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/6b447e364bef4988bda95bd0965bb4bc)](https://www.codacy.com/app/tj-django/django-view-breadcrumbs?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=tj-django/django-view-breadcrumbs&amp;utm_campaign=Badge_Grade) [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/tj-django/django-view-breadcrumbs/main.svg)](https://results.pre-commit.ci/latest/github/tj-django/django-view-breadcrumbs/main) [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/537b0ce56e744f078f17cc8ccd4200d8)](https://www.codacy.com/gh/tj-django/django-view-breadcrumbs/dashboard?utm_source=github.com&utm_medium=referral&utm_content=tj-django/django-view-breadcrumbs&utm_campaign=Badge_Coverage) [![PyPI version](https://badge.fury.io/py/django-view-breadcrumbs.svg)](https://badge.fury.io/py/django-view-breadcrumbs) [![Updates](https://pyup.io/repos/github/tj-django/django-view-breadcrumbs/shield.svg)](https://pyup.io/repos/github/tj-django/django-view-breadcrumbs/)  <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section --> [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/6b447e364bef4988bda95bd0965bb4bc)](https://www.codacy.com/app/tj-django/django-view-breadcrumbs?utm_source=github.com\&utm_medium=referral\&utm_content=tj-django/django-view-breadcrumbs\&utm_campaign=Badge_Grade) [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/tj-django/django-view-breadcrumbs/main.svg)](https://results.pre-commit.ci/latest/github/tj-django/django-view-breadcrumbs/main) [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/537b0ce56e744f078f17cc8ccd4200d8)](https://www.codacy.com/gh/tj-django/django-view-breadcrumbs/dashboard?utm_source=github.com\&utm_medium=referral\&utm_content=tj-django/django-view-breadcrumbs\&utm_campaign=Badge_Coverage) [![PyPI version](https://badge.fury.io/py/django-view-breadcrumbs.svg)](https://badge.fury.io/py/django-view-breadcrumbs) [![Updates](https://pyup.io/repos/github/tj-django/django-view-breadcrumbs/shield.svg)](https://pyup.io/repos/github/tj-django/django-view-breadcrumbs/)  <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section --> [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
 
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 Provides a set of breadcrumb mixin classes that can be added to any django view.
 
-Requires adding ```{% render_breadcrumbs %}``` to just the base template.
+Requires adding `{% render_breadcrumbs %}` to just the base template.
 
 ![Screenshot](./breadcrumbs.png)
 
-
-In the `base.html` template simply add the ``render_breadcrumbs`` tag and any template
+In the `base.html` template simply add the `render_breadcrumbs` tag and any template
 that inherits the base should have breadcrumbs included.
 i.e
 
-```base.html```
+`base.html`
 
 ```jinja2
 {% load view_breadcrumbs %}
@@ -27,23 +26,20 @@ i.e
 {% endblock %}
 ```
 
-And your ```create.html```.
+And your `create.html`.
 
 ```jinja2
 {% extends "base.html" %}
 ```
 
+## Breadcrumb mixin classes provided.
 
-Breadcrumb mixin classes provided.
-----------------------------------
-
-- `BaseBreadcrumbMixin`    - Base view requires a `crumbs` class property.
-- `CreateBreadcrumbMixin`  - For create views `Home / Posts / Add Post`
-- `DetailBreadcrumbMixin`  - For detail views `Home / Posts / Post 1`
-- `ListBreadcrumbMixin`    - For list views `Home / Posts`
-- `UpdateBreadcrumbMixin`  - For Update views `Home / Posts / Post 1 / Update Post 1`
-- `DeleteBreadcrumbMixin`  - For Delete views this has a link to the list view to be used as the success URL.
-
+*   `BaseBreadcrumbMixin`    - Base view requires a `crumbs` class property.
+*   `CreateBreadcrumbMixin`  - For create views `Home / Posts / Add Post`
+*   `DetailBreadcrumbMixin`  - For detail views `Home / Posts / Post 1`
+*   `ListBreadcrumbMixin`    - For list views `Home / Posts`
+*   `UpdateBreadcrumbMixin`  - For Update views `Home / Posts / Post 1 / Update Post 1`
+*   `DeleteBreadcrumbMixin`  - For Delete views this has a link to the list view to be used as the success URL.
 
 ## Installation
 
@@ -63,11 +59,11 @@ INSTALLED_APPS = [
 ]
 ```
 
-
 ## Settings
 
 > NOTE :warning:
-> * Make sure that `"django.template.context_processors.request"` is added to your TEMPLATE OPTIONS setting.
+>
+> *   Make sure that `"django.template.context_processors.request"` is added to your TEMPLATE OPTIONS setting.
 
 ```python
 TEMPLATES  = [
@@ -92,7 +88,6 @@ Modify the defaults using the following:
 |----------------------------|---------------------------------------------|-------------|---------------------|
 | `BREADCRUMBS_TEMPLATE`     | `"view_breadcrumbs/bootstrap4.html"`        |  Template used to render breadcrumbs.           |   [Predefined Templates](https://github.com/tj-django/django-view-breadcrumbs/tree/main/view_breadcrumbs/templates/view_breadcrumbs)                 |
 | `BREADCRUMBS_HOME_LABEL`   |  `Home`                                     |  Default label for the root path  |         |
-
 
 ### Customization
 
@@ -128,26 +123,24 @@ See: [Overriding the Home label for a specific view](https://github.com/tj-djang
 
 ![Screenshot](./custom-root-breadcrumb.png)
 
-
 ## [Translation support](https://docs.djangoproject.com/en/3.1/topics/i18n/translation/)
 
 ### Example
 
 ![Translated Screenshot](./translated-crumbs.png)
 
-
 ## Usage
+
 `django-view-breadcrumbs` includes generic mixins that can be added to a class based view.
 
 Using the generic breadcrumb mixin each breadcrumb will be added to the view dynamically
 and can be overridden by providing a `crumbs` property.
 
-
 ### View Configuration
 
 > NOTE: :warning:
-> * Model based views should use a pattern `view_name=model_verbose_name_{action}`
-
+>
+> *   Model based views should use a pattern `view_name=model_verbose_name_{action}`
 
 |  Actions  |  View Class |  View name  | Sample Breadcrumb |
 |-----------|-------------|-------------|-------------------|
@@ -190,10 +183,10 @@ For usage with [django tables 2](https://django-tables2.readthedocs.io/en/latest
 
 For more examples see: [demo app](https://github.com/tj-django/django-view-breadcrumbs/tree/main/demo)
 
-
 #### Sample crumbs:  `Home / Posts / Test - Post`
 
 In your `urls.py`
+
 ```python
   urlpatterns = [
       ...
@@ -206,7 +199,9 @@ In your `urls.py`
   ]
 
 ```
+
 `views.py`
+
 ```python
 from django.views.generic import DetailView
 from view_breadcrumbs import DetailBreadcrumbMixin
@@ -221,6 +216,7 @@ class PostDetail(DetailBreadcrumbMixin, DetailView):
 #### Sample crumbs: `Posts`
 
 In your urls.py
+
 ```python
   urlpatterns = [
       ...
@@ -245,7 +241,6 @@ class PostList(ListBreadcrumbMixin, ListView):
     template_name = "app/post/list.html"
     add_home = False
 ```
-
 
 #### Custom crumbs: `Home / My Test Breadcrumb`
 
@@ -321,16 +316,19 @@ Spins up a django server running the demo app.
 Visit `http://127.0.0.1:8090`
 
 ## Credits
-- [django-bootstrap-breadcrumbs](https://github.com/prymitive/bootstrap-breadcrumbs)
 
+*   [django-bootstrap-breadcrumbs](https://github.com/prymitive/bootstrap-breadcrumbs)
 
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+
 <!-- prettier-ignore-start -->
+
 <!-- markdownlint-disable -->
+
 <table>
   <tr>
     <td align="center"><a href="https://fansourcedpoisontour.com"><img src="https://avatars3.githubusercontent.com/u/1037197?v=4" width="100px;" alt=""/><br /><sub><b>Derek</b></sub></a><br /><a href="https://github.com/tj-django/django-view-breadcrumbs/commits?author=KrunchMuffin" title="Documentation">📖</a></td>
@@ -338,7 +336,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 </table>
 
 <!-- markdownlint-enable -->
+
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
