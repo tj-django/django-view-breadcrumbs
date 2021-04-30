@@ -80,7 +80,7 @@ compilemessages:
 # ---------- Upgrade project version (bumpversion)  --------
 # ----------------------------------------------------------
 increase-version: clean-build guard-PART  ## Bump the project version (using the $PART env: defaults to 'patch').
-	@git checkout master
+	@git checkout main
 	@git pull
 	@[ -z "`git status --porcelain`" ] && echo "No changes found." || git commit -am "Updated translations."
 	@echo "Increasing project '$(PART)' version..."

@@ -1,8 +1,8 @@
 # django-view-breadcrumbs
 
-[![Build Status](https://travis-ci.org/tj-django/django-view-breadcrumbs.svg?branch=master)](https://travis-ci.org/tj-django/django-view-breadcrumbs) ![PyPI - Django Version](https://img.shields.io/pypi/djversions/django-view-breadcrumbs) ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/django-view-breadcrumbs) [![Downloads](https://pepy.tech/badge/django-view-breadcrumbs)](https://pepy.tech/project/django-view-breadcrumbs)
+[![Build Status](https://travis-ci.org/tj-django/django-view-breadcrumbs.svg?branch=main)](https://travis-ci.org/tj-django/django-view-breadcrumbs) ![PyPI - Django Version](https://img.shields.io/pypi/djversions/django-view-breadcrumbs) ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/django-view-breadcrumbs) [![Downloads](https://pepy.tech/badge/django-view-breadcrumbs)](https://pepy.tech/project/django-view-breadcrumbs)
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/6b447e364bef4988bda95bd0965bb4bc)](https://www.codacy.com/app/tj-django/django-view-breadcrumbs?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=tj-django/django-view-breadcrumbs&amp;utm_campaign=Badge_Grade) [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/tj-django/django-view-breadcrumbs/master.svg)](https://results.pre-commit.ci/latest/github/tj-django/django-view-breadcrumbs/master) [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/537b0ce56e744f078f17cc8ccd4200d8)](https://www.codacy.com/gh/tj-django/django-view-breadcrumbs/dashboard?utm_source=github.com&utm_medium=referral&utm_content=tj-django/django-view-breadcrumbs&utm_campaign=Badge_Coverage) [![PyPI version](https://badge.fury.io/py/django-view-breadcrumbs.svg)](https://badge.fury.io/py/django-view-breadcrumbs) [![Updates](https://pyup.io/repos/github/tj-django/django-view-breadcrumbs/shield.svg)](https://pyup.io/repos/github/tj-django/django-view-breadcrumbs/)  <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section --> [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/6b447e364bef4988bda95bd0965bb4bc)](https://www.codacy.com/app/tj-django/django-view-breadcrumbs?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=tj-django/django-view-breadcrumbs&amp;utm_campaign=Badge_Grade) [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/tj-django/django-view-breadcrumbs/main.svg)](https://results.pre-commit.ci/latest/github/tj-django/django-view-breadcrumbs/main) [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/537b0ce56e744f078f17cc8ccd4200d8)](https://www.codacy.com/gh/tj-django/django-view-breadcrumbs/dashboard?utm_source=github.com&utm_medium=referral&utm_content=tj-django/django-view-breadcrumbs&utm_campaign=Badge_Coverage) [![PyPI version](https://badge.fury.io/py/django-view-breadcrumbs.svg)](https://badge.fury.io/py/django-view-breadcrumbs) [![Updates](https://pyup.io/repos/github/tj-django/django-view-breadcrumbs/shield.svg)](https://pyup.io/repos/github/tj-django/django-view-breadcrumbs/)  <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section --> [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 
@@ -90,7 +90,7 @@ Modify the defaults using the following:
 
 | Name                       | Default                                     | Description |    Options          |
 |----------------------------|---------------------------------------------|-------------|---------------------|
-| `BREADCRUMBS_TEMPLATE`     | `"view_breadcrumbs/bootstrap4.html"`        |  Template used to render breadcrumbs.           |   [Predefined Templates](https://github.com/tj-django/django-view-breadcrumbs/tree/master/view_breadcrumbs/templates/view_breadcrumbs)                 |
+| `BREADCRUMBS_TEMPLATE`     | `"view_breadcrumbs/bootstrap4.html"`        |  Template used to render breadcrumbs.           |   [Predefined Templates](https://github.com/tj-django/django-view-breadcrumbs/tree/main/view_breadcrumbs/templates/view_breadcrumbs)                 |
 | `BREADCRUMBS_HOME_LABEL`   |  `Home`                                     |  Default label for the root path  |         |
 
 
@@ -186,9 +186,9 @@ For views classes like: `TemplateView` | `AboutView` | `View`
 
 For usage with [django tables 2](https://django-tables2.readthedocs.io/en/latest/index.html#)
 
-> See: [demo table view](https://github.com/tj-django/django-view-breadcrumbs/blob/master/demo/views.py#L100)
+> See: [demo table view](https://github.com/tj-django/django-view-breadcrumbs/blob/main/demo/views.py#L100)
 
-For more examples see: [demo app](https://github.com/tj-django/django-view-breadcrumbs/tree/master/demo)
+For more examples see: [demo app](https://github.com/tj-django/django-view-breadcrumbs/tree/main/demo)
 
 
 #### Sample crumbs:  `Home / Posts / Test - Post`
@@ -306,7 +306,7 @@ class TestDetailView(DetailBreadcrumbMixin, DetailView):
      template_name = "demo/test-detail.html"
 ```
 
-> Refer to the [demo app](https://github.com/tj-django/django-view-breadcrumbs/tree/master/demo) for more examples.
+> Refer to the [demo app](https://github.com/tj-django/django-view-breadcrumbs/tree/main/demo) for more examples.
 
 ## Running locally
 
