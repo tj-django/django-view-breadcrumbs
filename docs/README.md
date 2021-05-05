@@ -15,6 +15,7 @@ Requires adding ```{% render_breadcrumbs %}``` to just the base template.
 
 In the `base.html` template simply add the ``render_breadcrumbs`` tag and any template
 that inherits the base should have breadcrumbs included.
+
 i.e
 
 ```base.html```
