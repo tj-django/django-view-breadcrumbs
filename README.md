@@ -32,6 +32,27 @@ And your `create.html`.
 {% extends "base.html" %}
 ```
 
+## Table of Contents
+
+*   [Breadcrumb mixin classes provided.](#breadcrumb-mixin-classes-provided)
+*   [Installation](#installation)
+    *   [Add `view_breadcrumbs` to your INSTALLED_APPS](#add-view_breadcrumbs-to-your-installed_apps)
+*   [Settings](#settings)
+    *   [Customization](#customization)
+        *   [BREADCRUMBS_TEMPLATE](#breadcrumbs_template)
+        *   [BREADCRUMBS_HOME_LABEL](#breadcrumbs_home_label)
+*   [Translation support](#translation-support)
+    *   [Example](#example)
+*   [Usage](#usage)
+    *   [View Configuration](#view-configuration)
+        *   [Sample crumbs:  `Home / Posts / Test - Post`](#sample-crumbs--home--posts--test---post)
+        *   [Sample crumbs: `Posts`](#sample-crumbs-posts)
+        *   [Custom crumbs: `Home / My Test Breadcrumb`](#custom-crumbs-home--my-test-breadcrumb)
+    *   [Overriding the Home label for a specific view](#overriding-the-home-label-for-a-specific-view)
+*   [Running locally](#running-locally)
+*   [Credits](#credits)
+*   [Contributors ✨](#contributors-)
+
 ## Breadcrumb mixin classes provided.
 
 *   `BaseBreadcrumbMixin`    - Base view requires a `crumbs` class property.
