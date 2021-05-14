@@ -164,15 +164,33 @@ and can be overridden by providing a `crumbs` property.
 >
 > *   Model based views should use a pattern `view_name=model_verbose_name_{action}`
 
-|  Actions  |  View Class |  View name  | Sample Breadcrumb |
-|-----------|-------------|-------------|-------------------|
-| `list`    | `ListView`  | `{model.verbose_name}_list` |  `Home / Posts`  |
-| `create`  | `CreateView`| `{model.verbose_name}_create` | `Home / Posts / Add Post` |
-| `detail`  | `DetailView`| `{model.verbose_name}_detail` | `Home / Posts / Test - Post` |
-| `change`  | `UpdateView`| `{model.verbose_name}_update` | `Home / Posts / Test - Post / Update Test - Post` |
+|  Actions  |  View Class |  View name  | Sample Breadcrumb | Example  |
+|-----------|-------------|-------------|-------------------|----------|
+| `list`    | `ListView`  | `{model.verbose_name}_list` |  `Home / Posts`  |  |
+| `create`  | `CreateView`| `{model.verbose_name}_create` | `Home / Posts / Add Post` |  |
+| `detail`  | `DetailView`| `{model.verbose_name}_detail` | `Home / Posts / Test - Post` |  |
+| `change`  | `UpdateView`| `{model.verbose_name}_update` | `Home / Posts / Test - Post / Update Test - Post` |  |
 | `delete`  | `DeleteView`| `{model.verbose_name}_delete` | N/A |
+|   N/A     | `TemplateView`| N/A  | N/A |  See: [Custom View](#custom-crumbs-home--my-test-breadcrumb) |
+|   N/A     | `AboutView`| N/A  | N/A |  See: [Custom View](#custom-crumbs-home--my-test-breadcrumb) |
+|   N/A     | `View`| N/A  | N/A |  See: [Custom View](#custom-crumbs-home--my-test-breadcrumb) |
 
-Optionally this can use the following class properties instead of hardcoding the view names.
+
+#### [django-tables-2](https://django-tables2.readthedocs.io/en/latest/index.html#)
+
+|  Actions  |  View Class |  View name  | Sample Breadcrumb | Example  |
+|-----------|-------------|-------------|-------------------|----------|
+|   N/A     | `SingleTableMixin`| N/A  | N/A |  See: [demo table view](https://github.com/tj-django/django-view-breadcrumbs/blob/main/demo/views.py#L100) |
+|   N/A     | `MultiTableMixin`| N/A  | N/A |  See: [demo table view](https://github.com/tj-django/django-view-breadcrumbs/blob/main/demo/views.py#L100) |
+|   N/A     | `SingleTableView`| N/A  | N/A |  Same implementation as `SingleTableMixin` |
+
+For more examples see: [demo app](https://github.com/tj-django/django-view-breadcrumbs/tree/main/demo)
+
+### URL Configuration
+
+Based on the table of actions listed above there's a strict `view_name` requirement that needs to be adhered to in order for breadcrumbs to work. 
+
+This can be manually entered in your `urls.py` or you can optionally use the following class properties instead of hardcoding the `view_name`.
 
 ```python
 ...
@@ -195,15 +213,36 @@ Optionally this can use the following class properties instead of hardcoding the
 ...
 ```
 
-For views classes like: `TemplateView` | `AboutView` | `View`
+### Examples
 
-> See: [Custom View](#custom-crumbs-home--my-test-breadcrumb)
+#### Sample crumbs: `Posts`
 
-For usage with [django tables 2](https://django-tables2.readthedocs.io/en/latest/index.html#)
+In your urls.py
 
-> See: [demo table view](https://github.com/tj-django/django-view-breadcrumbs/blob/main/demo/views.py#L100)
+```python
+  urlpatterns = [
+      ...
+      path("posts/", views.PostList.as_view(), name="post_list"),
+      ...
+      # OR
+      ...
+      path("posts/", views.PostList.as_view(), name=views.PostList.list_view_name),
+      ...
+  ]
+```
 
-For more examples see: [demo app](https://github.com/tj-django/django-view-breadcrumbs/tree/main/demo)
+> All crumbs use the home root path `/` as the base this can be excluded by specifying `add_home = False`
+
+```python
+from django.views.generic import ListView
+from view_breadcrumbs import ListBreadcrumbMixin
+
+
+class PostList(ListBreadcrumbMixin, ListView):
+    model = Post
+    template_name = "app/post/list.html"
+    add_home = False
+```
 
 #### Sample crumbs:  `Home / Posts / Test - Post`
 
@@ -233,35 +272,6 @@ class PostDetail(DetailBreadcrumbMixin, DetailView):
     model = Post
     template_name = "app/post/detail.html"
     breadcrumb_use_pk = False
-```
-
-#### Sample crumbs: `Posts`
-
-In your urls.py
-
-```python
-  urlpatterns = [
-      ...
-      path("posts/", views.PostList.as_view(), name="post_list"),
-      ...
-      # OR
-      ...
-      path("posts/", views.PostList.as_view(), name=views.PostList.list_view_name),
-      ...
-  ]
-```
-
-> All crumbs use the home root path `/` as the base this can be excluded by specifying `add_home = False`
-
-```python
-from django.views.generic import ListView
-from view_breadcrumbs import ListBreadcrumbMixin
-
-
-class PostList(ListBreadcrumbMixin, ListView):
-    model = Post
-    template_name = "app/post/list.html"
-    add_home = False
 ```
 
 #### Custom crumbs: `Home / My Test Breadcrumb`
