@@ -1,0 +1,58 @@
+name: Test
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+      - '**'
+
+jobs:
+  build:
+    runs-on: ${{ matrix.platform }}
+    strategy:
+      fail-fast: true
+      matrix:
+        platform: [ubuntu-latest, macos-latest, windows-latest]
+        python-version: [2.7, 3.5, 3.6, 3.7, 3.8, 3.9]
+
+    steps:
+      - uses: actions/checkout@v2.3.4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2.2.2
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - uses: actions/cache@v2.1.5
+        id: pip-cache
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ matrix.python-version }}-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-${{ matrix.python-version }}-
+      - uses: actions/cache@v2.1.5
+        id: tox-cache
+        with:
+          path: |
+            .tox
+            .pytest_cache
+          key: ${{ runner.os }}-tox-${{ matrix.python-version }}-${{ hashFiles('requirements.txt') }}-{{ hashFiles('tox.ini') }}
+          restore-keys: |
+            ${{ runner.os }}-tox-${{ matrix.python-version }}-
+      - name: Install dependencies
+        run: |
+          make install-test
+      - name: Run test
+        run: make tox
+        env:
+          CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
+          PLATFORM: ${{ matrix.platform }}
+
+      - name: "Upload coverage to Codecov"
+        uses: codecov/codecov-action@v1.5.0
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          fail_ci_if_error: true
