@@ -38,7 +38,6 @@ jobs:
         id: pytest-cache
         with:
           path: |
-            .tox
             .pytest_cache
           key: ${{ runner.os }}-pytest-${{ matrix.python-version }}-${{ hashFiles('requirements.txt') }}-{{ hashFiles('pytest.ini') }}
           restore-keys: |
