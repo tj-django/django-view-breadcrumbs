@@ -36,22 +36,42 @@ And your `create.html`.
 ## Table of Contents
 
 *   [Breadcrumb mixin classes provided.](#breadcrumb-mixin-classes-provided)
+
 *   [Installation](#installation)
+
     *   [Add `view_breadcrumbs` to your INSTALLED_APPS](#add-view_breadcrumbs-to-your-installed_apps)
+
 *   [Settings](#settings)
+
     *   [Customization](#customization)
+
         *   [BREADCRUMBS_TEMPLATE](#breadcrumbs_template)
         *   [BREADCRUMBS_HOME_LABEL](#breadcrumbs_home_label)
+
 *   [Translation support](#translation-support)
+
     *   [Example](#example)
+
 *   [Usage](#usage)
+
     *   [View Configuration](#view-configuration)
-        *   [Sample crumbs:  `Home / Posts / Test - Post`](#sample-crumbs--home--posts--test---post)
+
+        *   [django-tables-2](#django-tables-2)
+
+    *   [URL Configuration](#url-configuration)
+
+    *   [Examples](#examples)
+
         *   [Sample crumbs: `Posts`](#sample-crumbs-posts)
+        *   [Sample crumbs:  `Home / Posts / Test - Post`](#sample-crumbs--home--posts--test---post)
         *   [Custom crumbs: `Home / My Test Breadcrumb`](#custom-crumbs-home--my-test-breadcrumb)
+
     *   [Overriding the Home label for a specific view](#overriding-the-home-label-for-a-specific-view)
+
 *   [Running locally](#running-locally)
+
 *   [Credits](#credits)
+
 *   [Contributors ✨](#contributors-)
 
 ## Breadcrumb mixin classes provided.
@@ -175,7 +195,6 @@ and can be overridden by providing a `crumbs` property.
 |   N/A     | `AboutView`| N/A  | N/A |  See: [Custom View](#custom-crumbs-home--my-test-breadcrumb) |
 |   N/A     | `View`| N/A  | N/A |  See: [Custom View](#custom-crumbs-home--my-test-breadcrumb) |
 
-
 #### [django-tables-2](https://django-tables2.readthedocs.io/en/latest/index.html#)
 
 |  Actions  |  View Class |  View name  | Sample Breadcrumb | Example  |
@@ -188,7 +207,7 @@ For more examples see: [demo app](https://github.com/tj-django/django-view-bread
 
 ### URL Configuration
 
-Based on the table of actions listed above there's a strict `view_name` requirement that needs to be adhered to in order for breadcrumbs to work. 
+Based on the table of actions listed above there's a strict `view_name` requirement that needs to be adhered to in order for breadcrumbs to work.
 
 This can be manually entered in your `urls.py` or you can optionally use the following class properties instead of hardcoding the `view_name`.
 

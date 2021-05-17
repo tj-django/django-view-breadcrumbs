@@ -30,21 +30,24 @@ jobs:
         id: pip-cache
         with:
           path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ matrix.python-version }}-${{ hashFiles('requirements.txt') }}
+          key: ${{ runner.os }}-${{ matrix.platform }}-pip-${{ matrix.python-version }}-${{ hashFiles('requirements.txt') }}
           restore-keys: |
-            ${{ runner.os }}-pip-${{ matrix.python-version }}-
+            ${{ runner.os }}-${{ matrix.platform }}-pip-${{ matrix.python-version }}-
+
       - uses: actions/cache@v2.1.5
         id: tox-cache
         with:
           path: |
             .tox
             .pytest_cache
-          key: ${{ runner.os }}-tox-${{ matrix.python-version }}-${{ hashFiles('requirements.txt') }}-{{ hashFiles('tox.ini') }}
+          key: ${{ runner.os }}-tox-${{ matrix.platform }}-${{ matrix.python-version }}-${{ hashFiles('requirements.txt') }}-{{ hashFiles('tox.ini') }}
           restore-keys: |
-            ${{ runner.os }}-tox-${{ matrix.python-version }}-
+            ${{ runner.os }}-tox-${{ matrix.platform }}-${{ matrix.python-version }}-
+
       - name: Install dependencies
         run: |
           make install-test
+
       - name: Run test
         run: make tox
         env:
