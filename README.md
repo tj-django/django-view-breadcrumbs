@@ -186,22 +186,23 @@ and can be overridden by providing a `crumbs` property.
 
 |  Actions  |  View Class |  View name  | Sample Breadcrumb | Example  |
 |-----------|-------------|-------------|-------------------|----------|
-| `list`    | `ListView`  | `{model.verbose_name}_list` |  `Home / Posts`  |  |
-| `create`  | `CreateView`| `{model.verbose_name}_create` | `Home / Posts / Add Post` |  |
-| `detail`  | `DetailView`| `{model.verbose_name}_detail` | `Home / Posts / Test - Post` |  |
-| `change`  | `UpdateView`| `{model.verbose_name}_update` | `Home / Posts / Test - Post / Update Test - Post` |  |
-| `delete`  | `DeleteView`| `{model.verbose_name}_delete` | N/A |
-|   N/A     | `TemplateView`| N/A  | N/A |  See: [Custom View](#custom-crumbs-home--my-test-breadcrumb) |
-|   N/A     | `AboutView`| N/A  | N/A |  See: [Custom View](#custom-crumbs-home--my-test-breadcrumb) |
-|   N/A     | `View`| N/A  | N/A |  See: [Custom View](#custom-crumbs-home--my-test-breadcrumb) |
+| `list`    | [`ListView`](https://docs.djangoproject.com/en/3.2/ref/class-based-views/generic-display/#listview)  | `{model.verbose_name}_list` |  `Home / Posts`  |  |
+| `create`  | [`CreateView`](https://docs.djangoproject.com/en/3.2/ref/class-based-views/generic-editing/#createview) | `{model.verbose_name}_create` | `Home / Posts / Add Post` |  |
+| `detail`  | [`DetailView`](https://docs.djangoproject.com/en/3.2/ref/class-based-views/generic-display/#detailview) | `{model.verbose_name}_detail` | `Home / Posts / Test - Post` |  |
+| `change`  | [`UpdateView`](https://docs.djangoproject.com/en/3.2/ref/class-based-views/generic-editing/#updateview) | `{model.verbose_name}_update` | `Home / Posts / Test - Post / Update Test - Post` |  |
+| `delete`  | [`DeleteView`](https://docs.djangoproject.com/en/3.2/ref/class-based-views/generic-editing/#deleteview) | `{model.verbose_name}_delete` | N/A |
+|   N/A     | [`TemplateView`](https://docs.djangoproject.com/en/3.2/ref/class-based-views/base/#templateview) | N/A  | N/A |  See: [Custom View](#custom-crumbs-home--my-test-breadcrumb) |
+|   N/A     | [`FormView`](https://docs.djangoproject.com/en/3.2/ref/class-based-views/generic-editing/#formview) | N/A  | N/A |  See: [Custom View](#custom-crumbs-home--my-test-breadcrumb) |
+|   N/A     | [`AboutView`](https://docs.djangoproject.com/en/3.2/topics/class-based-views/#subclassing-generic-views) | N/A  | N/A |  See: [Custom View](#custom-crumbs-home--my-test-breadcrumb) |
+|   N/A     | [`View`](https://docs.djangoproject.com/en/3.2/ref/class-based-views/base/#view) | N/A  | N/A |  See: [Custom View](#custom-crumbs-home--my-test-breadcrumb) |
 
 #### [django-tables-2](https://django-tables2.readthedocs.io/en/latest/index.html#)
 
 |  Actions  |  View Class |  View name  | Sample Breadcrumb | Example  |
 |-----------|-------------|-------------|-------------------|----------|
-|   N/A     | `SingleTableMixin`| N/A  | N/A |  See: [demo table view](https://github.com/tj-django/django-view-breadcrumbs/blob/main/demo/views.py#L100) |
-|   N/A     | `MultiTableMixin`| N/A  | N/A |  See: [demo table view](https://github.com/tj-django/django-view-breadcrumbs/blob/main/demo/views.py#L100) |
-|   N/A     | `SingleTableView`| N/A  | N/A |  Same implementation as `SingleTableMixin` |
+|   N/A     | [`SingleTableMixin`](https://django-tables2.readthedocs.io/en/latest/pages/generic-mixins.html?highlight=SingleTableMixin#a-single-table-using-singletablemixin) | N/A  | N/A |  See: [demo table view](https://github.com/tj-django/django-view-breadcrumbs/blob/main/demo/views.py#L100) |
+|   N/A     | [`MultiTableMixin`](https://django-tables2.readthedocs.io/en/latest/pages/generic-mixins.html?highlight=SingleTableMixin#multiple-tables-using-multitablemixin) | N/A  | N/A |  See: [demo table view](https://github.com/tj-django/django-view-breadcrumbs/blob/main/demo/views.py#L100) |
+|   N/A     | [`SingleTableView`](https://django-tables2.readthedocs.io/en/latest/pages/api-reference.html?highlight=SingleTableView#singletableview) | N/A  | N/A |  Same implementation as `SingleTableMixin` |
 
 For more examples see: [demo app](https://github.com/tj-django/django-view-breadcrumbs/tree/main/demo)
 
