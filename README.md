@@ -200,9 +200,9 @@ and can be overridden by providing a `crumbs` property.
 
 |  Actions  |  View Class |  View name  | Sample Breadcrumb | Example  |
 |-----------|-------------|-------------|-------------------|----------|
-|   N/A     | `SingleTableMixin`| N/A  | N/A |  See: [demo table view](https://github.com/tj-django/django-view-breadcrumbs/blob/main/demo/views.py#L100) |
-|   N/A     | `MultiTableMixin`| N/A  | N/A |  See: [demo table view](https://github.com/tj-django/django-view-breadcrumbs/blob/main/demo/views.py#L100) |
-|   N/A     | `SingleTableView`| N/A  | N/A |  Same implementation as `SingleTableMixin` |
+|   N/A     | [`SingleTableMixin`](https://django-tables2.readthedocs.io/en/latest/pages/generic-mixins.html?highlight=SingleTableMixin#a-single-table-using-singletablemixin) | N/A  | N/A |  See: [demo table view](https://github.com/tj-django/django-view-breadcrumbs/blob/main/demo/views.py#L100) |
+|   N/A     | [`MultiTableMixin`](https://django-tables2.readthedocs.io/en/latest/pages/generic-mixins.html?highlight=SingleTableMixin#multiple-tables-using-multitablemixin) | N/A  | N/A |  See: [demo table view](https://github.com/tj-django/django-view-breadcrumbs/blob/main/demo/views.py#L100) |
+|   N/A     | [`SingleTableView`](https://django-tables2.readthedocs.io/en/latest/pages/api-reference.html?highlight=SingleTableView#singletableview) | N/A  | N/A |  Same implementation as `SingleTableMixin` |
 
 For more examples see: [demo app](https://github.com/tj-django/django-view-breadcrumbs/tree/main/demo)
 
