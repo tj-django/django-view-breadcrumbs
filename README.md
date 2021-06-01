@@ -371,7 +371,6 @@ Visit `http://127.0.0.1:8090`
 
 *   [django-bootstrap-breadcrumbs](https://github.com/prymitive/bootstrap-breadcrumbs)
 
-
 To file a bug or submit a patch, please head over to [django-view-breadcrumbs on github](https://github.com/tj-django/django-view-breadcrumbs/issues).
 
 ## Contributors ✨
