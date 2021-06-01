@@ -103,7 +103,7 @@ setup(
     install_requires=install_requires,
     tests_require=test_requires,
     extras_require=extras_require,
-    url="https://github.com/jackton1/django-view-breadcrumbs",
+    url="https://github.com/tj-django/django-view-breadcrumbs",
     description="Django generic view breadcrumbs",
     zip_safe=False,
 )
