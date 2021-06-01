@@ -16,12 +16,13 @@ from django.db.models import Model
 from django.template.loader import render_to_string
 from django.utils.encoding import smart_text
 from six import wraps
+
 from view_breadcrumbs.constants import (
     CREATE_VIEW_SUFFIX,
-    LIST_VIEW_SUFFIX,
-    UPDATE_VIEW_SUFFIX,
     DELETE_VIEW_SUFFIX,
     DETAIL_VIEW_SUFFIX,
+    LIST_VIEW_SUFFIX,
+    UPDATE_VIEW_SUFFIX,
 )
 from view_breadcrumbs.utils import action_view_name
 

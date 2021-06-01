@@ -1,8 +1,8 @@
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _
 
-from .list import ListBreadcrumbMixin
 from ..utils import action_view_name, classproperty
+from .list import ListBreadcrumbMixin
 
 
 class CreateBreadcrumbMixin(ListBreadcrumbMixin):
