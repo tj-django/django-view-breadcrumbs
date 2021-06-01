@@ -4,8 +4,8 @@ from django.urls import reverse
 from django.utils.encoding import force_str
 from django.utils.translation import gettext_lazy as _
 
-from .detail import DetailBreadcrumbMixin
 from ..utils import action_view_name, classproperty
+from .detail import DetailBreadcrumbMixin
 
 
 def _update_view_label(instance, format_string):

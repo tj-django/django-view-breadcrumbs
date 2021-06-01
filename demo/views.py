@@ -2,28 +2,27 @@ from django.urls import reverse
 from django.utils.functional import cached_property
 from django.utils.translation import gettext_lazy as _
 from django.views.generic import (
+    CreateView,
+    DeleteView,
     DetailView,
     ListView,
     TemplateView,
     UpdateView,
-    CreateView,
-    DeleteView,
 )
-from django_tables2 import SingleTableMixin, MultiTableMixin
 from django_filters.views import FilterView
+from django_tables2 import MultiTableMixin, SingleTableMixin
 
 from demo.filterset import TestModelFilterSet
+from demo.models import TestModel
+from demo.tables import TestModelTable
 from view_breadcrumbs import (
     BaseBreadcrumbMixin,
     CreateBreadcrumbMixin,
+    DeleteBreadcrumbMixin,
     DetailBreadcrumbMixin,
     ListBreadcrumbMixin,
     UpdateBreadcrumbMixin,
-    DeleteBreadcrumbMixin,
 )
-
-from demo.models import TestModel
-from demo.tables import TestModelTable
 from view_breadcrumbs.generic.base import BaseModelBreadcrumbMixin
 from view_breadcrumbs.templatetags.view_breadcrumbs import detail_instance_view_url
 

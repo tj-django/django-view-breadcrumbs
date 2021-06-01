@@ -1,7 +1,7 @@
 from django.urls import reverse
 
-from .list import ListBreadcrumbMixin
 from ..utils import action_view_name, classproperty
+from .list import ListBreadcrumbMixin
 
 
 class DeleteBreadcrumbMixin(ListBreadcrumbMixin):

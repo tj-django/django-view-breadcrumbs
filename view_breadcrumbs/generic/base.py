@@ -3,12 +3,13 @@ import logging
 from django.conf import settings
 from django.utils.functional import cached_property
 from django.utils.translation import gettext_lazy as _
+
 from view_breadcrumbs.constants import (
-    LIST_VIEW_SUFFIX,
     CREATE_VIEW_SUFFIX,
-    UPDATE_VIEW_SUFFIX,
     DELETE_VIEW_SUFFIX,
     DETAIL_VIEW_SUFFIX,
+    LIST_VIEW_SUFFIX,
+    UPDATE_VIEW_SUFFIX,
 )
 
 from ..templatetags.view_breadcrumbs import (
@@ -16,10 +17,7 @@ from ..templatetags.view_breadcrumbs import (
     append_breadcrumb,
     clear_breadcrumbs,
 )
-from ..utils import (
-    get_verbose_name_plural,
-    get_verbose_name,
-)
+from ..utils import get_verbose_name, get_verbose_name_plural
 
 log = logging.getLogger(__name__)
 

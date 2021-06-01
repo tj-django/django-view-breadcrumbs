@@ -1,7 +1,7 @@
 from django.urls import reverse
 
-from .base import BaseModelBreadcrumbMixin
 from ..utils import action_view_name, classproperty
+from .base import BaseModelBreadcrumbMixin
 
 
 class ListBreadcrumbMixin(BaseModelBreadcrumbMixin):

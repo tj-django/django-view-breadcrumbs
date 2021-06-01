@@ -15,15 +15,15 @@ except ImportError:
     from django.conf.urls import url as path, include
 
 from .views import (
-    TestHomeView,
-    TestView,
-    TestListsView,
-    TestDetailView,
-    TestUpdateView,
-    TestModelSingleTableView,
     TestCreateView,
     TestDeleteView,
+    TestDetailView,
+    TestHomeView,
+    TestListsView,
     TestModelMultiTableView,
+    TestModelSingleTableView,
+    TestUpdateView,
+    TestView,
 )
 
 app_name = "demo"

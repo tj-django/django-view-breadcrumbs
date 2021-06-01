@@ -7,10 +7,10 @@ __version__ = "2.0.0"
 from .generic import (
     BaseBreadcrumbMixin,
     CreateBreadcrumbMixin,
+    DeleteBreadcrumbMixin,
     DetailBreadcrumbMixin,
     ListBreadcrumbMixin,
     UpdateBreadcrumbMixin,
-    DeleteBreadcrumbMixin,
 )
 
 __all__ = [
