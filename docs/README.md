@@ -23,7 +23,7 @@ that inherits the base should have breadcrumbs included.
 {% load view_breadcrumbs %}
 
 {% block breadcrumbs %}
-    {% render_breadcrumbs %} {# Optionally provide a template e.g {% render_breadcrumbs "view_breadcrumbs/bootstrap5.html" %} #}
+    {% render_breadcrumbs %} {# Optionally provide a custom template e.g {% render_breadcrumbs "view_breadcrumbs/bootstrap5.html" %} #}
 {% endblock %}
 ```
 
