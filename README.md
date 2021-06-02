@@ -358,6 +358,7 @@ class TestDetailView(DetailBreadcrumbMixin, DetailView):
 ## Running locally
 
 ```bash
+$ git clone git@github.com:tj-django/django-view-breadcrumbs.git
 $ make install-dev
 $ make migrate
 $ make run
