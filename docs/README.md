@@ -23,7 +23,7 @@ that inherits the base should have breadcrumbs included.
 {% load view_breadcrumbs %}
 
 {% block breadcrumbs %}
-    {% render_breadcrumbs %} {# Optionally provide a template e.g {% render_breadcrumbs "view_breadcrumbs/bootstrap5.html" %} #}
+    {% render_breadcrumbs %} {# Optionally provide a custom template e.g {% render_breadcrumbs "view_breadcrumbs/bootstrap5.html" %} #}
 {% endblock %}
 ```
 
@@ -358,6 +358,7 @@ class TestDetailView(DetailBreadcrumbMixin, DetailView):
 ## Running locally
 
 ```bash
+$ git clone git@github.com:tj-django/django-view-breadcrumbs.git
 $ make install-dev
 $ make migrate
 $ make run
@@ -370,6 +371,8 @@ Visit `http://127.0.0.1:8090`
 ## Credits
 
 *   [django-bootstrap-breadcrumbs](https://github.com/prymitive/bootstrap-breadcrumbs)
+
+To file a bug or submit a patch, please head over to [django-view-breadcrumbs on github](https://github.com/tj-django/django-view-breadcrumbs/issues).
 
 ## Contributors ✨
 
