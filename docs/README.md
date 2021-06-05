@@ -374,6 +374,14 @@ Visit `http://127.0.0.1:8090`
 
 To file a bug or submit a patch, please head over to [django-view-breadcrumbs on github](https://github.com/tj-django/django-view-breadcrumbs/issues).
 
+If you feel generous and want to show some extra appreciation:
+
+[![Buy me a coffee][buymeacoffee-shield]][buymeacoffee]
+
+[buymeacoffee]: https://www.buymeacoffee.com/jackton1
+
+[buymeacoffee-shield]: https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png
+
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
