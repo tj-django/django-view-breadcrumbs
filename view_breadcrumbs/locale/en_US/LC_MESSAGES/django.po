@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-09 06:37-0400\n"
+"POT-Creation-Date: 2021-06-05 15:16+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -77,15 +77,15 @@ msgstr ""
 msgid "Create"
 msgstr ""
 
-#: demo/views.py:40
+#: demo/views.py:39
 msgid "My Test Breadcrumb"
 msgstr ""
 
-#: demo/views.py:45
+#: demo/views.py:44
 msgid "List tests"
 msgstr ""
 
-#: demo/views.py:80
+#: demo/views.py:79
 msgid "My new home"
 msgstr ""
 
@@ -109,16 +109,16 @@ msgstr ""
 msgid "detail"
 msgstr ""
 
-#: view_breadcrumbs/generic/base.py:38
+#: view_breadcrumbs/generic/base.py:36
 msgid "Home"
 msgstr ""
 
-#: view_breadcrumbs/generic/base.py:44
+#: view_breadcrumbs/generic/base.py:42
 #, python-format
 msgid "%(class_name)s should have a crumbs property."
 msgstr ""
 
-#: view_breadcrumbs/generic/base.py:58
+#: view_breadcrumbs/generic/base.py:56
 msgid "Breadcrumb requires a tuple of label and view name."
 msgstr ""
 
