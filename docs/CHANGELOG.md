@@ -4,6 +4,26 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [v2.1.2](https://github.com/tj-django/django-view-breadcrumbs/releases/tag/v2.1.2) - 2021-06-05
+
+<small>[Compare with v2.1.1](https://github.com/tj-django/django-view-breadcrumbs/compare/v2.1.1...v2.1.2)</small>
+
+### Added
+- Added extra space ([1ec3606](https://github.com/tj-django/django-view-breadcrumbs/commit/1ec3606ba188fa4e60cc1cc34d20cab8800d7987) by Tonye Jack).
+- Added .github/workflow/auto-merge.yml ([742f713](https://github.com/tj-django/django-view-breadcrumbs/commit/742f71302ae8c8bfaf167852b206db4f7d3d68e3) by Tonye Jack).
+- Added .github/workflow/auto-approve.yml ([ef35b95](https://github.com/tj-django/django-view-breadcrumbs/commit/ef35b959144bc9873647ccecea814a0ac1d75f4f) by Tonye Jack).
+- Added .github/workflows/auto-merge.yml ([f787ac2](https://github.com/tj-django/django-view-breadcrumbs/commit/f787ac2eab113bc5126906ff16f0c00004f6bae6) by Tonye Jack).
+- Added .github/workspace/automerge.yml ([e2d19e0](https://github.com/tj-django/django-view-breadcrumbs/commit/e2d19e04349fd2fb1c7b5020aed0c1194834358d) by Tonye Jack).
+- Added .github/automerge.yml ([793bf99](https://github.com/tj-django/django-view-breadcrumbs/commit/793bf99d56b6b5a9d5eed6179f443a59ea169761) by Tonye Jack).
+- Added pre-commit-config.yaml ([5ed1046](https://github.com/tj-django/django-view-breadcrumbs/commit/5ed1046b9c51e5cb8f2a431e87cff89444ef46c6) by Tonye Jack).
+- Added .github/workflows/greetings.yml ([5358cc6](https://github.com/tj-django/django-view-breadcrumbs/commit/5358cc6bf0597fe7d19a0be97f4b57f3f7ca034d) by Tonye Jack).
+- Added .editorconfig ([c3e25c0](https://github.com/tj-django/django-view-breadcrumbs/commit/c3e25c0a3fbed7abdfd83aaea15b9681e6a065e9) by Tonye Jack).
+- Added .pre-commit-config.yaml ([8c68be5](https://github.com/tj-django/django-view-breadcrumbs/commit/8c68be514fa8183c0d82a0701e704822f80ebd44) by Tonye Jack).
+
+### Removed
+- Remove pinned django version (#334) ([51ee5a5](https://github.com/tj-django/django-view-breadcrumbs/commit/51ee5a50e5338f5f91b8e3426cc834f841559c2f) by Tonye Jack).
+
+
 ## [v2.1.1](https://github.com/tj-django/django-view-breadcrumbs/releases/tag/v2.1.1) - 2021-04-09
 
 <small>[Compare with v2.1.0](https://github.com/tj-django/django-view-breadcrumbs/compare/v2.1.0...v2.1.1)</small>
@@ -211,3 +231,5 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Removed unversioned files ([82530a1](https://github.com/tj-django/django-view-breadcrumbs/commit/82530a161e6f0287cf7750154adec4d5a7c1b631) by Tonye Jack).
 - Removed egg.info ([5527f6a](https://github.com/tj-django/django-view-breadcrumbs/commit/5527f6a09426fc05414186a5b70eecaf7b48eaff) by Tonye Jack).
 - Removed untracked files ([21e77f2](https://github.com/tj-django/django-view-breadcrumbs/commit/21e77f2e6677907e8cddc05900695eaadfac4ce7) by Tonye Jack).
+
+
