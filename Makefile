@@ -49,7 +49,7 @@ update-requirements:  ## Updates the requirement.txt adding missing package depe
 	@echo "Syncing the package requirements.txt..."
 	@$(PIP_COMPILE)
 
-release-to-pypi: clean-build makemessages compilemessages increase-version  ## Release project to pypi
+release-to-pypi: makemessages compilemessages increase-version  ## Release project to pypi
 	@$(PYTHON_PIP) install -U twine
 	@$(PYTHON) setup.py sdist bdist_wheel
 	@twine upload dist/*
