@@ -69,11 +69,11 @@ migrate:  ## Run the migrations
 migrations:  ## Generate the migrations
 	@$(MANAGE_PY) makemigrations
 
-makemessages:
+makemessages: clean-build  ## Runs over the entire source tree of the current directory and pulls out all strings marked for translation.
 	@$(MANAGE_PY) makemessages --locale=en_US
 	@$(MANAGE_PY) makemessages --locale=fr
 
-compilemessages:
+compilemessages: clean-build  ## Compiles .po files created by makemessages to .mo files for use with the built-in gettext support.
 	@$(MANAGE_PY) compilemessages --ignore=.tox
 
 # ----------------------------------------------------------
