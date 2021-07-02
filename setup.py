@@ -69,7 +69,7 @@ else:
 
 setup(
     name="django-view-breadcrumbs",
-    python_requires=">=3.5",
+    python_requires=">=3.6",
     version="2.1.2",
     author="Tonye Jack",
     author_email="jtonye@ymail.com",
@@ -82,7 +82,6 @@ setup(
         "Topic :: Internet :: WWW/HTTP",
         "License :: OSI Approved :: BSD License",
         "Operating System :: OS Independent",
-        "Programming Language :: Python :: 3.5",
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
