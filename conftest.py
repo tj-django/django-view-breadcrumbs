@@ -11,6 +11,7 @@ TEST_DIR = os.path.join(BASE_DIR, "demo", "templates")
 
 def pytest_configure(debug=False):
     base_settings = dict(
+        SECRET_KEY='rprowrjp4293u2904u290422;jk4l',
         DEBUG=debug,
         DATABASES={
             "default": {
@@ -59,7 +60,7 @@ def pytest_configure(debug=False):
                     "view_breadcrumbs",
                     "demo",
                     "django_tables2",
-                    "bootstrap3",
+                    "django_bootstrap5",
                     "django_filters",
                 ],
             }

@@ -58,10 +58,10 @@ test_patterns = (
             name=TestDeleteView.delete_view_name,
         ),
         path(
-            "^tests/lists$", TestModelSingleTableView.as_view(), name="test_model_table"
+            "^tests/lists/$", TestModelSingleTableView.as_view(), name="test_model_table"
         ),
         path(
-            "^tests/lists/multiple$",
+            "^tests/lists/multiple/$",
             TestModelMultiTableView.as_view(),
             name="test_model_multi_table",
         ),
