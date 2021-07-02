@@ -11,7 +11,7 @@ TEST_DIR = os.path.join(BASE_DIR, "demo", "templates")
 
 def pytest_configure(debug=False):
     base_settings = dict(
-        SECRET_KEY='rprowrjp4293u2904u290422;jk4l',
+        SECRET_KEY="rprowrjp4293u2904u290422;jk4l",
         DEBUG=debug,
         DATABASES={
             "default": {
