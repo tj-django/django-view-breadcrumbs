@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [v2.2.0](https://github.com/tj-django/django-view-breadcrumbs/releases/tag/v2.2.0) - 2021-07-02
+
+<small>[Compare with v2.1.2](https://github.com/tj-django/django-view-breadcrumbs/compare/v2.1.2...v2.2.0)</small>
+
+### Added
+- Added .whitesource ([eed8b34](https://github.com/tj-django/django-view-breadcrumbs/commit/eed8b340372609d9d0487b179caf813701bc4d15) by Tonye Jack).
+
+### Fixed
+- Fix security vulnerability. (#354) ([95eab80](https://github.com/tj-django/django-view-breadcrumbs/commit/95eab8014bc27e58ad36f42306cbfa6d1fca49cc) by Tonye Jack).
+
+
 ## [v2.1.2](https://github.com/tj-django/django-view-breadcrumbs/releases/tag/v2.1.2) - 2021-06-05
 
 <small>[Compare with v2.1.1](https://github.com/tj-django/django-view-breadcrumbs/compare/v2.1.1...v2.1.2)</small>
