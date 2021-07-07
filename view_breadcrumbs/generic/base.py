@@ -30,10 +30,7 @@ class BaseBreadcrumbMixin(object):
     add_home = True
     model = None
     home_path = "/"
-
-    @cached_property
-    def home_label(self):
-        return _(getattr(settings, "BREADCRUMBS_HOME_LABEL", _("Home")))
+    home_label = _(getattr(settings, "BREADCRUMBS_HOME_LABEL", _("Home")))
 
     @property
     def crumbs(self):
