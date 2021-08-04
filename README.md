@@ -369,6 +369,7 @@ INSTALLED_APPS =  [
 ]
 ````
 
+`demo/views.py`
 ```python
 class LibraryDetailView(DetailBreadcrumbMixin, DetailView):
     model = Library
