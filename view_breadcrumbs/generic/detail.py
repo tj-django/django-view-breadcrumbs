@@ -18,11 +18,18 @@ class DetailBreadcrumbMixin(ListBreadcrumbMixin):
 
     @classproperty
     def detail_view_name(self):
-        return action_view_name(model=self.model, action=self.detail_view_suffix, app_name=self.app_name, full=False)
+        return action_view_name(
+            model=self.model,
+            action=self.detail_view_suffix,
+            app_name=self.app_name,
+            full=False,
+        )
 
     @property
     def __detail_view_name(self):
-        return action_view_name(model=self.model, action=self.detail_view_suffix, app_name=self.app_name)
+        return action_view_name(
+            model=self.model, action=self.detail_view_suffix, app_name=self.app_name
+        )
 
     def detail_view_url(self, instance):
         if self.breadcrumb_use_pk:

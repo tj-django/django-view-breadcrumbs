@@ -149,13 +149,16 @@ def _get_model(model):
 
     if isinstance(model, str):
         from django.apps import apps
+
         model = apps.get_model(model)
 
     return model
 
 
 def _view_url(model, suffix, app_name=None):
-    view_name = action_view_name(model=_get_model(model), app_name=app_name, action=suffix)
+    view_name = action_view_name(
+        model=_get_model(model), app_name=app_name, action=suffix
+    )
     return reverse(view_name)
 
 

@@ -15,6 +15,11 @@ except ImportError:
     from django.conf.urls import url as path, include
 
 from .views import (
+    LibraryCreateView,
+    LibraryDeleteView,
+    LibraryDetailView,
+    LibraryListsView,
+    LibraryUpdateView,
     TestCreateView,
     TestDeleteView,
     TestDetailView,
@@ -23,7 +28,7 @@ from .views import (
     TestModelMultiTableView,
     TestModelSingleTableView,
     TestUpdateView,
-    TestView, LibraryListsView, LibraryDetailView, LibraryCreateView, LibraryUpdateView, LibraryDeleteView,
+    TestView,
 )
 
 app_name = "demo"
@@ -57,7 +62,11 @@ test_patterns = (
             TestDeleteView.as_view(),
             name=TestDeleteView.delete_view_name,
         ),
-        path("^libraryies/$", LibraryListsView.as_view(), name=LibraryListsView.list_view_name),
+        path(
+            "^libraryies/$",
+            LibraryListsView.as_view(),
+            name=LibraryListsView.list_view_name,
+        ),
         path(
             "^libraryies/(?P<pk>[0-9]+)/$",
             LibraryDetailView.as_view(),

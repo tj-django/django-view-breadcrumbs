@@ -1,7 +1,6 @@
 import logging
 
 from django.conf import settings
-from django.utils.functional import cached_property
 from django.utils.translation import gettext_lazy as _
 
 from view_breadcrumbs.constants import (
@@ -17,7 +16,7 @@ from ..templatetags.view_breadcrumbs import (
     append_breadcrumb,
     clear_breadcrumbs,
 )
-from ..utils import get_verbose_name, get_verbose_name_plural, classproperty, get_model_info
+from ..utils import get_verbose_name, get_verbose_name_plural
 
 log = logging.getLogger(__name__)
 

@@ -132,6 +132,7 @@ class LibraryCreateView(CreateBreadcrumbMixin, CreateView):
     def get_success_url(self) -> str:
         return self.list_view_url
 
+
 class LibraryUpdateView(UpdateBreadcrumbMixin, UpdateView):
     model = Library
     template_name = "demo/test-update.html"

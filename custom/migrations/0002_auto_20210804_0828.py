@@ -17,6 +17,4 @@ class Migration(migrations.Migration):
         ("custom", "0001_initial"),
     ]
 
-    operations = [
-        migrations.RunPython(forwards_func, migrations.RunPython.noop)
-    ]
+    operations = [migrations.RunPython(forwards_func, migrations.RunPython.noop)]
