@@ -60,7 +60,6 @@ def action_view_name(*, model, action, app_name=None, full=True):
         app_name, model_name = get_model_info(model)
     else:
         model_name = get_model_name(model)
-        app_name = app_name
 
     with override(None):
         if full:
