@@ -43,7 +43,9 @@ class BaseBreadcrumbMixin(object):
     def update_breadcrumbs(self, context):
         crumbs = self.crumbs
         if self.add_home:
-            home_label = self.home_label or _(getattr(settings, "BREADCRUMBS_HOME_LABEL", _("Home")))
+            home_label = self.home_label or _(
+                getattr(settings, "BREADCRUMBS_HOME_LABEL", _("Home"))
+            )
             crumbs = [(home_label, self.home_path)] + crumbs
         for crumb in crumbs:
             try:
