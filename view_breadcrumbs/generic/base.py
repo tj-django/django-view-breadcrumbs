@@ -17,7 +17,7 @@ from ..templatetags.view_breadcrumbs import (
     append_breadcrumb,
     clear_breadcrumbs,
 )
-from ..utils import get_verbose_name, get_verbose_name_plural
+from ..utils import get_verbose_name, get_verbose_name_plural, classproperty, get_model_info
 
 log = logging.getLogger(__name__)
 
@@ -30,10 +30,7 @@ class BaseBreadcrumbMixin(object):
     add_home = True
     model = None
     home_path = "/"
-
-    @cached_property
-    def home_label(self):
-        return _(getattr(settings, "BREADCRUMBS_HOME_LABEL", _("Home")))
+    home_label = _(getattr(settings, "BREADCRUMBS_HOME_LABEL", _("Home")))
 
     @property
     def crumbs(self):
@@ -74,6 +71,7 @@ class BaseBreadcrumbMixin(object):
 
 class BaseModelBreadcrumbMixin(BaseBreadcrumbMixin):
     breadcrumb_use_pk = True
+    app_name = None
 
     list_view_suffix = LIST_VIEW_SUFFIX
     create_view_suffix = CREATE_VIEW_SUFFIX

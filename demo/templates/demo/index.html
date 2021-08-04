@@ -22,7 +22,8 @@
     <section>
         <ul>
         <li><a href="{% url 'demo:test_view' %}">{%  trans "Custom view" %}</a></li>
-        <li><a href="{% list_view_url view.list_models.0 %}">{% trans "CRUD views" %}</a></li>
+        <li><a href="{% list_view_url 'demo.TestModel' %}">{% trans "CRUD views" %}</a></li>
+        <li><a href="{% list_view_url model='custom.Library' app_name='demo' %}">{% trans "Libraries" %}</a></li>
         <li><a href="{% url 'demo:test_model_table' %}">{% trans "Table views" %}</a></li>
         <li><a href="{% url 'demo:test_model_multi_table' %}">{% trans "Multi Table views" %}</a></li>
         </ul>

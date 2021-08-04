@@ -59,6 +59,7 @@ def pytest_configure(debug=False):
                     "django.contrib.sessions",
                     "view_breadcrumbs",
                     "demo",
+                    "custom",
                     "django_tables2",
                     "django_bootstrap5",
                     "django_filters",

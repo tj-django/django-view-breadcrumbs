@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-02 16:05-0400\n"
+"POT-Creation-Date: 2021-08-04 11:27-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,6 +25,14 @@ msgstr "Anglaise"
 #: conftest.py:29
 msgid "French"
 msgstr "Français"
+
+#: custom/models.py:10
+msgid "library"
+msgstr ""
+
+#: custom/models.py:11
+msgid "libraries"
+msgstr ""
 
 #: demo/models.py:13
 msgid "test model"
@@ -43,10 +51,14 @@ msgid "CRUD views"
 msgstr "Vues CRUD"
 
 #: demo/templates/demo/index.html:26
+msgid "Libraries"
+msgstr ""
+
+#: demo/templates/demo/index.html:27
 msgid "Table views"
 msgstr "Vues de table"
 
-#: demo/templates/demo/index.html:27
+#: demo/templates/demo/index.html:28
 msgid "Multi Table views"
 msgstr "Vues multi-tables"
 
@@ -86,7 +98,7 @@ msgstr "Mon fil d'Ariane de test"
 msgid "List tests"
 msgstr "Liste des tests"
 
-#: demo/views.py:79
+#: demo/views.py:79 demo/views.py:121
 msgid "My new home"
 msgstr "Ma nouvelle maison"
 
@@ -110,16 +122,16 @@ msgstr "effacer"
 msgid "detail"
 msgstr "détail"
 
-#: view_breadcrumbs/generic/base.py:36
+#: view_breadcrumbs/generic/base.py:33
 msgid "Home"
 msgstr "Domicile"
 
-#: view_breadcrumbs/generic/base.py:42
+#: view_breadcrumbs/generic/base.py:39
 #, python-format
 msgid "%(class_name)s should have a crumbs property."
 msgstr "%(class_name)s doit avoir une propriété crumbs."
 
-#: view_breadcrumbs/generic/base.py:56
+#: view_breadcrumbs/generic/base.py:53
 msgid "Breadcrumb requires a tuple of label and view name."
 msgstr "Le fil d'Ariane nécessite un tuple d'étiquette et de nom de vue."
 

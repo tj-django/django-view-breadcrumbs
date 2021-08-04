@@ -355,6 +355,27 @@ class TestDetailView(DetailBreadcrumbMixin, DetailView):
 
 > Refer to the [demo app](https://github.com/tj-django/django-view-breadcrumbs/tree/main/demo) for more examples.
 
+
+### Using multiple apps 
+
+To reference models from a different application you need to provide override the `app_name` class attribute.
+
+Example:
+Using a `Library` model that is imported from a `custom` application.
+````python
+INSTALLED_APPS =  [
+    "demo",
+    "custom",
+]
+````
+
+```python
+class LibraryDetailView(DetailBreadcrumbMixin, DetailView):
+    model = Library
+    app_name = "demo"
+    ...
+```
+
 ## Running locally
 
 ```bash

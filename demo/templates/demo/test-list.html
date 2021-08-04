@@ -2,5 +2,5 @@
 {% load i18n l10n view_breadcrumbs %}
 {% block body %}
     {{ block.super }}
-    <a class="btn btn-primary" href="{% create_view_url view.model %}"><i class="fa fa-plus-square-o" aria-hidden="true"></i> {% trans "Create" %}</a>
+    <a class="btn btn-primary" href="{% create_view_url view.model view.app_name %}"><i class="fa fa-plus-square-o" aria-hidden="true"></i> {% trans "Create" %}</a>
 {% endblock %}

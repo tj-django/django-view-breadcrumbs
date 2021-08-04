@@ -23,7 +23,7 @@ from .views import (
     TestModelMultiTableView,
     TestModelSingleTableView,
     TestUpdateView,
-    TestView,
+    TestView, LibraryListsView, LibraryDetailView, LibraryCreateView, LibraryUpdateView, LibraryDeleteView,
 )
 
 app_name = "demo"
@@ -36,12 +36,12 @@ test_patterns = (
         # Custom view
         path("^test/custom/$", TestView.as_view(), name="test_view"),
         # CRUD views.
+        path("^tests/$", TestListsView.as_view(), name=TestListsView.list_view_name),
         path(
             "^tests/add/$",
             TestCreateView.as_view(),
             name=TestCreateView.create_view_name,
         ),
-        path("^tests/$", TestListsView.as_view(), name=TestListsView.list_view_name),
         path(
             "^tests/(?P<pk>[0-9]+)/$",
             TestDetailView.as_view(),
@@ -56,6 +56,27 @@ test_patterns = (
             "^tests/(?P<pk>[0-9]+)/delete/$",
             TestDeleteView.as_view(),
             name=TestDeleteView.delete_view_name,
+        ),
+        path("^libraryies/$", LibraryListsView.as_view(), name=LibraryListsView.list_view_name),
+        path(
+            "^libraryies/(?P<pk>[0-9]+)/$",
+            LibraryDetailView.as_view(),
+            name=LibraryDetailView.detail_view_name,
+        ),
+        path(
+            "^libraries/add/$",
+            LibraryCreateView.as_view(),
+            name=LibraryCreateView.create_view_name,
+        ),
+        path(
+            "^libraries/(?P<pk>[0-9]+)/update/$",
+            LibraryUpdateView.as_view(),
+            name=LibraryUpdateView.update_view_name,
+        ),
+        path(
+            "^libraries/(?P<pk>[0-9]+)/delete/$",
+            LibraryDeleteView.as_view(),
+            name=LibraryDeleteView.delete_view_name,
         ),
         path(
             "^tests/lists/$",
