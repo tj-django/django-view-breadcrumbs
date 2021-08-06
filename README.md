@@ -361,7 +361,8 @@ class TestDetailView(DetailBreadcrumbMixin, DetailView):
 To reference models from a different application you need to override the `app_name` class attribute.
 
 Example:
-Using a `Library` model that is imported from a `custom` application.
+Using a `Library` model that is imported from a `custom` application that you want to render in a `demo` app view.
+
 ````python
 INSTALLED_APPS =  [
     "demo",
