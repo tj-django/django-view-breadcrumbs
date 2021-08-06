@@ -68,6 +68,8 @@ And your `create.html`.
 
     *   [Overriding the Home label for a specific view](#overriding-the-home-label-for-a-specific-view)
 
+    *   [Using multiple apps](#using-multiple-apps)
+
 *   [Running locally](#running-locally)
 
 *   [Credits](#credits)
@@ -355,22 +357,22 @@ class TestDetailView(DetailBreadcrumbMixin, DetailView):
 
 > Refer to the [demo app](https://github.com/tj-django/django-view-breadcrumbs/tree/main/demo) for more examples.
 
-
-### Using multiple apps 
+### Using multiple apps
 
 To reference models from a different application you need to override the `app_name` class attribute.
 
 Example:
 Using a `Library` model that is imported from a `custom` application that you want to render in a `demo` app view.
 
-````python
+```python
 INSTALLED_APPS =  [
     "demo",
     "custom",
 ]
-````
+```
 
 `demo/views.py`
+
 ```python
 class LibraryDetailView(DetailBreadcrumbMixin, DetailView):
     model = Library
