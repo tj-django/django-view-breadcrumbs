@@ -1,3 +1,5 @@
 [run]
 source = view_breadcrumbs
-omit = view_breadcrumbs/test*
+omit =
+    view_breadcrumbs/test*,
+    view_breadcrumbs/templatetags/*
