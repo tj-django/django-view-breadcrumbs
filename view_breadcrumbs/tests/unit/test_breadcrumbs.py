@@ -7,6 +7,7 @@ from django.views.generic.list import MultipleObjectMixin
 
 from demo.models import TestModel
 from demo.views import TestView
+from view_breadcrumbs import DeleteBreadcrumbMixin
 from view_breadcrumbs.generic import (
     BaseBreadcrumbMixin,
     CreateBreadcrumbMixin,
@@ -130,4 +131,11 @@ class UpdateBreadcrumbMixinTestCase(ActionTestMixin, BaseBreadcrumbTestCase):
         cls.crumbs = []
 
 
-# TODO: Add test for the DeleteBreadcrumbMixin
+class DeleteBreadcrumbMixinTestCase(ActionTestMixin, BaseBreadcrumbTestCase):
+    breadcrumb_mixin_cls = DeleteBreadcrumbMixin
+    view_attrs = {"model": TestModel}
+    object_mixin = SingleObjectMixin
+
+    @classmethod
+    def setUpTestData(cls):
+        cls.crumbs = []
