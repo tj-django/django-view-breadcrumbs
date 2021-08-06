@@ -55,6 +55,15 @@ class ActionTestMixin(object):
 
         self.assertIsNotNone(getattr(view, "{}_view_name".format(self.view_name)))
 
+    def test_valid_view_url(self):
+        view = self._get_view()
+        view_url = getattr(view, '{}_view_url'.format(self.view_name))
+
+        if isinstance(view_url, str):
+            self.assertIsNotNone(view_url)
+        else:
+            self.assertIsNotNone(view_url(view.object))
+
 
 class BaseBreadcrumbTestCase(TestCase):
     breadcrumb_mixin_cls = BaseBreadcrumbMixin
