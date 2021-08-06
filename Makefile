@@ -33,7 +33,7 @@ install: clean-build  ## Install project dependencies.
 	@echo "Installing project in dependencies..."
 	@$(PYTHON_PIP) install -r requirements.txt
 
-install-lint: pipconf clean-build  ## Install lint extra dependencies.
+install-lint: clean-build  ## Install lint extra dependencies.
 	@echo "Installing lint extra requirements..."
 	@$(PYTHON_PIP) install -e .'[lint]'
 

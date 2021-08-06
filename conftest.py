@@ -19,7 +19,7 @@ def pytest_configure(debug=False):
                 "NAME": "test.db",
             }
         },
-        INSTALLED_APPS=["view_breadcrumbs", "demo"],
+        INSTALLED_APPS=["view_breadcrumbs", "demo", "custom"],
         ROOT_URLCONF="demo.urls",
         USE_I18N=True,
         USE_L10N=True,
@@ -59,6 +59,7 @@ def pytest_configure(debug=False):
                     "django.contrib.sessions",
                     "view_breadcrumbs",
                     "demo",
+                    "custom",
                     "django_tables2",
                     "django_bootstrap5",
                     "django_filters",

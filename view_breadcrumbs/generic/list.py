@@ -9,11 +9,18 @@ class ListBreadcrumbMixin(BaseModelBreadcrumbMixin):
 
     @classproperty
     def list_view_name(self):
-        return action_view_name(self.model, self.list_view_suffix, full=False)
+        return action_view_name(
+            model=self.model,
+            action=self.list_view_suffix,
+            app_name=self.app_name,
+            full=False,
+        )
 
     @property
     def __list_view_name(self):
-        return action_view_name(self.model, self.list_view_suffix)
+        return action_view_name(
+            model=self.model, action=self.list_view_suffix, app_name=self.app_name
+        )
 
     @property
     def list_view_url(self):

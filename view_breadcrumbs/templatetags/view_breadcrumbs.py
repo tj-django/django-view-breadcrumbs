@@ -143,26 +143,33 @@ def clear_breadcrumbs(context, *args):
     return ""
 
 
-def _view_url(model, suffix):
-    view_name = action_view_name(model, suffix)
+def _get_model(model):
+    if model is None:
+        raise ValueError("Invalid model")
 
+    if isinstance(model, str):
+        from django.apps import apps
+
+        model = apps.get_model(model)
+
+    return model
+
+
+def _view_url(model, suffix, app_name=None):
+    view_name = action_view_name(
+        model=_get_model(model), app_name=app_name, action=suffix
+    )
     return reverse(view_name)
 
 
 @register.simple_tag()
-def list_view_url(model, suffix=LIST_VIEW_SUFFIX):
-    if model is None:
-        raise ValueError("Invalid model")
-
-    return _view_url(model=model, suffix=suffix)
+def list_view_url(model, app_name=None, suffix=LIST_VIEW_SUFFIX):
+    return _view_url(model=model, app_name=app_name, suffix=suffix)
 
 
 @register.simple_tag()
-def create_view_url(model, suffix=CREATE_VIEW_SUFFIX):
-    if model is None:
-        raise ValueError("Invalid model")
-
-    return _view_url(model=model, suffix=suffix)
+def create_view_url(model, app_name=None, suffix=CREATE_VIEW_SUFFIX):
+    return _view_url(model=model, app_name=app_name, suffix=suffix)
 
 
 def _object_url(
@@ -171,10 +178,11 @@ def _object_url(
     use_pk=True,
     pk_url_kwarg="pk",
     slug_url_kwarg="slug",
+    app_name=None,
     slug_field="slug",
 ):
     model = instance.__class__
-    view_name = action_view_name(model, suffix)
+    view_name = action_view_name(model=model, action=suffix, app_name=app_name)
 
     if use_pk:
         return reverse(view_name, kwargs={pk_url_kwarg: instance.pk})
@@ -192,6 +200,7 @@ def update_view_url(
     pk_url_kwarg="pk",
     slug_url_kwarg="slug",
     slug_field="slug",
+    app_name=None,
     suffix=UPDATE_VIEW_SUFFIX,
 ):
     return _object_url(
@@ -200,6 +209,7 @@ def update_view_url(
         pk_url_kwarg=pk_url_kwarg,
         slug_url_kwarg=slug_url_kwarg,
         slug_field=slug_field,
+        app_name=app_name or getattr(context["view"], "app_name", None),
         suffix=suffix,
     )
 
@@ -211,6 +221,7 @@ def update_instance_view_url(
     pk_url_kwarg="pk",
     slug_url_kwarg="slug",
     slug_field="slug",
+    app_name=None,
     suffix=UPDATE_VIEW_SUFFIX,
 ):
     return _object_url(
@@ -219,6 +230,7 @@ def update_instance_view_url(
         pk_url_kwarg=pk_url_kwarg,
         slug_url_kwarg=slug_url_kwarg,
         slug_field=slug_field,
+        app_name=app_name,
         suffix=suffix,
     )
 
@@ -231,6 +243,7 @@ def delete_view_url(
     slug_url_kwarg="slug",
     slug_field="slug",
     suffix=DELETE_VIEW_SUFFIX,
+    app_name=None,
 ):
     return _object_url(
         instance=context["object"],
@@ -238,6 +251,7 @@ def delete_view_url(
         pk_url_kwarg=pk_url_kwarg,
         slug_url_kwarg=slug_url_kwarg,
         slug_field=slug_field,
+        app_name=app_name or getattr(context["view"], "app_name", None),
         suffix=suffix,
     )
 
@@ -250,6 +264,7 @@ def delete_instance_view_url(
     slug_url_kwarg="slug",
     slug_field="slug",
     suffix=DELETE_VIEW_SUFFIX,
+    app_name=None,
 ):
     return _object_url(
         instance=instance,
@@ -257,6 +272,7 @@ def delete_instance_view_url(
         pk_url_kwarg=pk_url_kwarg,
         slug_url_kwarg=slug_url_kwarg,
         slug_field=slug_field,
+        app_name=app_name,
         suffix=suffix,
     )
 
@@ -269,6 +285,7 @@ def detail_view_url(
     slug_url_kwarg="slug",
     slug_field="slug",
     suffix=DETAIL_VIEW_SUFFIX,
+    app_name=None,
 ):
     return _object_url(
         instance=context["object"],
@@ -277,6 +294,7 @@ def detail_view_url(
         slug_url_kwarg=slug_url_kwarg,
         slug_field=slug_field,
         suffix=suffix,
+        app_name=app_name or getattr(context["view"], "app_name", None),
     )
 
 
@@ -288,6 +306,7 @@ def detail_instance_view_url(
     slug_url_kwarg="slug",
     slug_field="slug",
     suffix=DETAIL_VIEW_SUFFIX,
+    app_name=None,
 ):
     return _object_url(
         instance=instance,
@@ -296,4 +315,5 @@ def detail_instance_view_url(
         slug_url_kwarg=slug_url_kwarg,
         slug_field=slug_field,
         suffix=suffix,
+        app_name=app_name,
     )

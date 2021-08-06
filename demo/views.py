@@ -12,6 +12,7 @@ from django.views.generic import (
 from django_filters.views import FilterView
 from django_tables2 import MultiTableMixin, SingleTableMixin
 
+from custom.models import Library
 from demo.filterset import TestModelFilterSet
 from demo.models import TestModel
 from demo.tables import TestModelTable
@@ -30,7 +31,6 @@ from view_breadcrumbs.templatetags.view_breadcrumbs import detail_instance_view_
 class TestHomeView(BaseBreadcrumbMixin, TemplateView):
     template_name = "demo/index.html"
     crumbs = []
-    list_models = [TestModel]
 
 
 class TestView(ListBreadcrumbMixin, ListView):
@@ -91,6 +91,61 @@ class TestUpdateView(UpdateBreadcrumbMixin, UpdateView):
 
 class TestDeleteView(DeleteBreadcrumbMixin, DeleteView):
     model = TestModel
+
+    def get_success_url(self) -> str:
+        return self.list_view_url
+
+
+class LibraryListsView(ListBreadcrumbMixin, ListView):
+    model = Library
+    template_name = "demo/test-list.html"
+    app_name = "demo"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        view_paths = []
+
+        for instance in self.object_list:
+            view_paths.append(
+                (
+                    instance.name,
+                    detail_instance_view_url(instance, app_name=self.app_name),
+                ),
+            )
+        context["view_paths"] = view_paths
+        return context
+
+
+class LibraryDetailView(DetailBreadcrumbMixin, DetailView):
+    model = Library
+    home_label = _("My new home")
+    app_name = "demo"
+    template_name = "demo/test-detail.html"
+
+
+class LibraryCreateView(CreateBreadcrumbMixin, CreateView):
+    model = Library
+    template_name = "demo/test-create.html"
+    app_name = "demo"
+    fields = ["name"]
+
+    def get_success_url(self) -> str:
+        return self.list_view_url
+
+
+class LibraryUpdateView(UpdateBreadcrumbMixin, UpdateView):
+    model = Library
+    template_name = "demo/test-update.html"
+    app_name = "demo"
+    fields = ["name"]
+
+    def get_success_url(self) -> str:
+        return self.detail_view_url(self.object)
+
+
+class LibraryDeleteView(DeleteBreadcrumbMixin, DeleteView):
+    model = Library
+    app_name = "demo"
 
     def get_success_url(self) -> str:
         return self.list_view_url

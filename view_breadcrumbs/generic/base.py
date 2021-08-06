@@ -1,7 +1,6 @@
 import logging
 
 from django.conf import settings
-from django.utils.functional import cached_property
 from django.utils.translation import gettext_lazy as _
 
 from view_breadcrumbs.constants import (
@@ -30,10 +29,7 @@ class BaseBreadcrumbMixin(object):
     add_home = True
     model = None
     home_path = "/"
-
-    @cached_property
-    def home_label(self):
-        return _(getattr(settings, "BREADCRUMBS_HOME_LABEL", _("Home")))
+    home_label = None
 
     @property
     def crumbs(self):
@@ -47,7 +43,10 @@ class BaseBreadcrumbMixin(object):
     def update_breadcrumbs(self, context):
         crumbs = self.crumbs
         if self.add_home:
-            crumbs = [(self.home_label, self.home_path)] + crumbs
+            home_label = self.home_label or _(
+                getattr(settings, "BREADCRUMBS_HOME_LABEL", _("Home"))
+            )
+            crumbs = [(home_label, self.home_path)] + crumbs
         for crumb in crumbs:
             try:
                 label, view_name = crumb
@@ -74,6 +73,7 @@ class BaseBreadcrumbMixin(object):
 
 class BaseModelBreadcrumbMixin(BaseBreadcrumbMixin):
     breadcrumb_use_pk = True
+    app_name = None
 
     list_view_suffix = LIST_VIEW_SUFFIX
     create_view_suffix = CREATE_VIEW_SUFFIX

@@ -37,7 +37,7 @@ def get_model_name(model):
     return force_str(model._meta.model_name)
 
 
-def get_app_name(model):
+def get_model_info(model):
     if model._meta.installed:
         return get_app_label(model), get_model_name(model)
 
@@ -55,13 +55,16 @@ def get_app_name(model):
     )
 
 
-def action_view_name(model, action, full=True):
-    app_label, model_name = get_app_name(model)
+def action_view_name(*, model, action, app_name=None, full=True):
+    if app_name is None:
+        app_name, model_name = get_model_info(model)
+    else:
+        model_name = get_model_name(model)
 
     with override(None):
         if full:
-            return "%(app_label)s:%(model_name)s_%(action)s" % {
-                "app_label": app_label,
+            return "%(app_name)s:%(model_name)s_%(action)s" % {
+                "app_name": app_name,
                 "model_name": model_name.lower().replace(" ", "_"),
                 "action": action,
             }

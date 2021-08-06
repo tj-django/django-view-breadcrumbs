@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-02 16:05-0400\n"
+"POT-Creation-Date: 2021-08-04 11:27-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,6 +23,14 @@ msgstr ""
 
 #: conftest.py:29
 msgid "French"
+msgstr ""
+
+#: custom/models.py:10
+msgid "library"
+msgstr ""
+
+#: custom/models.py:11
+msgid "libraries"
 msgstr ""
 
 #: demo/models.py:13
@@ -42,10 +50,14 @@ msgid "CRUD views"
 msgstr ""
 
 #: demo/templates/demo/index.html:26
-msgid "Table views"
+msgid "Libraries"
 msgstr ""
 
 #: demo/templates/demo/index.html:27
+msgid "Table views"
+msgstr ""
+
+#: demo/templates/demo/index.html:28
 msgid "Multi Table views"
 msgstr ""
 
@@ -85,7 +97,7 @@ msgstr ""
 msgid "List tests"
 msgstr ""
 
-#: demo/views.py:79
+#: demo/views.py:79 demo/views.py:121
 msgid "My new home"
 msgstr ""
 
@@ -109,16 +121,16 @@ msgstr ""
 msgid "detail"
 msgstr ""
 
-#: view_breadcrumbs/generic/base.py:36
+#: view_breadcrumbs/generic/base.py:33
 msgid "Home"
 msgstr ""
 
-#: view_breadcrumbs/generic/base.py:42
+#: view_breadcrumbs/generic/base.py:39
 #, python-format
 msgid "%(class_name)s should have a crumbs property."
 msgstr ""
 
-#: view_breadcrumbs/generic/base.py:56
+#: view_breadcrumbs/generic/base.py:53
 msgid "Breadcrumb requires a tuple of label and view name."
 msgstr ""
 
