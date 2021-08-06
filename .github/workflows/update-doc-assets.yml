@@ -44,7 +44,6 @@ jobs:
         run: |
           cp -f README.md docs/README.md
           cp -f CHANGELOG.md docs/CHANGELOG.md
-          cp -f *.png docs
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3.10.0
