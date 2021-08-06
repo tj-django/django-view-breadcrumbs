@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [v2.2.1](https://github.com/tj-django/django-view-breadcrumbs/releases/tag/v2.2.1) - 2021-08-06
+
+<small>[Compare with v2.2.0](https://github.com/tj-django/django-view-breadcrumbs/compare/v2.2.0...v2.2.1)</small>
+
+### Added
+- Added support for a custom app_name and resolved bug with retrieving the model class from the template tags. (#372) ([ecd3145](https://github.com/tj-django/django-view-breadcrumbs/commit/ecd31459699da2e36fe1ae92d6c73f34707c7e92) by Tonye Jack).
+- Added .pre-commit-config.yaml ([be9a2e6](https://github.com/tj-django/django-view-breadcrumbs/commit/be9a2e67c841874172d0549067fb1584e8518fd9) by Tonye Jack).
+- Added .github/workflows/codacy-analysis.yml ([9fe4e38](https://github.com/tj-django/django-view-breadcrumbs/commit/9fe4e3808c78c54f1b497d2a3bbef9e39a16772c) by Tonye Jack).
+- Added .github/issue_template/bug_report.yaml ([b0724da](https://github.com/tj-django/django-view-breadcrumbs/commit/b0724da0527703d788bf99b9e5890575f162003f) by Tonye Jack).
+- Added code_of_conduct.md ([e30b8e7](https://github.com/tj-django/django-view-breadcrumbs/commit/e30b8e7f62c0ffe1eeeea8d8d2c873ae3abffc99) by Tonye Jack).
+- Added .github/issue_template/feature_request.yaml ([997078b](https://github.com/tj-django/django-view-breadcrumbs/commit/997078be75e2d5219abb31aa2962563b0d859496) by Tonye Jack).
+
+
 ## [v2.2.0](https://github.com/tj-django/django-view-breadcrumbs/releases/tag/v2.2.0) - 2021-07-02
 
 <small>[Compare with v2.1.2](https://github.com/tj-django/django-view-breadcrumbs/compare/v2.1.2...v2.2.0)</small>
