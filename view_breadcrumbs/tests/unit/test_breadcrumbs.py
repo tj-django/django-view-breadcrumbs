@@ -45,9 +45,7 @@ class ActionTestMixin(object):
         view = self._get_view()
         view.get_context_data()
 
-        labels = [
-            force_str(paths[0]) for paths in view.request.META[CONTEXT_KEY]
-        ]
+        labels = [force_str(paths[0]) for paths in view.request.META[CONTEXT_KEY]]
 
         self.assertEqual(settings.BREADCRUMBS_HOME_LABEL, "Custom Home")
         self.assertIn("Custom Home", labels)
@@ -55,9 +53,7 @@ class ActionTestMixin(object):
     def test_valid_view_name(self):
         view = self._get_view()
 
-        self.assertIsNotNone(
-            getattr(view, '{}_view_name'.format(self.view_name))
-        )
+        self.assertIsNotNone(getattr(view, "{}_view_name".format(self.view_name)))
 
 
 class BaseBreadcrumbTestCase(TestCase):
@@ -115,14 +111,14 @@ class ListViewBreadcrumbTestCase(ActionTestMixin, BaseBreadcrumbTestCase):
     breadcrumb_mixin_cls = ListBreadcrumbMixin
     view_attrs = {"model": TestModel}
     object_mixin = MultipleObjectMixin
-    view_name = 'list'
+    view_name = "list"
 
 
 class DetailViewBreadcrumbTestCase(ActionTestMixin, BaseBreadcrumbTestCase):
     breadcrumb_mixin_cls = DetailBreadcrumbMixin
     view_attrs = {"model": TestModel}
     object_mixin = SingleObjectMixin
-    view_name = 'detail'
+    view_name = "detail"
 
     @classmethod
     def setUpTestData(cls):
@@ -133,7 +129,7 @@ class CreateBreadcrumbMixinTestCase(ActionTestMixin, BaseBreadcrumbTestCase):
     breadcrumb_mixin_cls = CreateBreadcrumbMixin
     view_attrs = {"model": TestModel}
     object_mixin = SingleObjectMixin
-    view_name = 'create'
+    view_name = "create"
 
     @classmethod
     def setUpTestData(cls):
@@ -144,7 +140,7 @@ class UpdateBreadcrumbMixinTestCase(ActionTestMixin, BaseBreadcrumbTestCase):
     breadcrumb_mixin_cls = UpdateBreadcrumbMixin
     view_attrs = {"model": TestModel}
     object_mixin = SingleObjectMixin
-    view_name = 'update'
+    view_name = "update"
 
     @classmethod
     def setUpTestData(cls):
@@ -155,7 +151,7 @@ class DeleteBreadcrumbMixinTestCase(ActionTestMixin, BaseBreadcrumbTestCase):
     breadcrumb_mixin_cls = DeleteBreadcrumbMixin
     view_attrs = {"model": TestModel}
     object_mixin = SingleObjectMixin
-    view_name = 'delete'
+    view_name = "delete"
 
     @classmethod
     def setUpTestData(cls):
