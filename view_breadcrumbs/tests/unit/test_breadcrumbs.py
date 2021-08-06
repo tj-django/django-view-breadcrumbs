@@ -57,7 +57,7 @@ class ActionTestMixin(object):
 
     def test_valid_view_url(self):
         view = self._get_view()
-        view_url = getattr(view, '{}_view_url'.format(self.view_name))
+        view_url = getattr(view, "{}_view_url".format(self.view_name))
 
         if isinstance(view_url, str):
             self.assertIsNotNone(view_url)
