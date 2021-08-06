@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-04 11:27-0400\n"
+"POT-Creation-Date: 2021-08-06 05:48-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,11 +26,11 @@ msgstr "Anglaise"
 msgid "French"
 msgstr "Français"
 
-#: custom/models.py:10
+#: custom/models.py:11
 msgid "library"
 msgstr ""
 
-#: custom/models.py:11
+#: custom/models.py:12
 msgid "libraries"
 msgstr ""
 
@@ -70,19 +70,19 @@ msgstr "Nous faire parvenir"
 msgid "Name"
 msgstr "Nom"
 
-#: demo/templates/demo/test-detail.html:5
+#: demo/templates/demo/test-detail.html:6
 msgid "Created at"
 msgstr "Créé à"
 
-#: demo/templates/demo/test-detail.html:6
+#: demo/templates/demo/test-detail.html:9
 msgid "Updated at"
 msgstr "Mis à jour à"
 
-#: demo/templates/demo/test-detail.html:7
+#: demo/templates/demo/test-detail.html:11
 msgid "Edit"
 msgstr "Éditer"
 
-#: demo/templates/demo/test-detail.html:10
+#: demo/templates/demo/test-detail.html:14
 msgid "Delete"
 msgstr "Effacer"
 
@@ -122,16 +122,16 @@ msgstr "effacer"
 msgid "detail"
 msgstr "détail"
 
-#: view_breadcrumbs/generic/base.py:33
-msgid "Home"
-msgstr "Domicile"
-
-#: view_breadcrumbs/generic/base.py:39
+#: view_breadcrumbs/generic/base.py:38
 #, python-format
 msgid "%(class_name)s should have a crumbs property."
 msgstr "%(class_name)s doit avoir une propriété crumbs."
 
-#: view_breadcrumbs/generic/base.py:53
+#: view_breadcrumbs/generic/base.py:47
+msgid "Home"
+msgstr "Domicile"
+
+#: view_breadcrumbs/generic/base.py:55
 msgid "Breadcrumb requires a tuple of label and view name."
 msgstr "Le fil d'Ariane nécessite un tuple d'étiquette et de nom de vue."
 
@@ -140,7 +140,7 @@ msgstr "Le fil d'Ariane nécessite un tuple d'étiquette et de nom de vue."
 msgid "Add %(model)s"
 msgstr "Ajouter %(model)s"
 
-#: view_breadcrumbs/generic/create.py:28
+#: view_breadcrumbs/generic/create.py:35
 msgid "model"
 msgstr ""
 

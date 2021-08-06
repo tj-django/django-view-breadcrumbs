@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-04 11:27-0400\n"
+"POT-Creation-Date: 2021-08-06 05:48-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,11 +25,11 @@ msgstr ""
 msgid "French"
 msgstr ""
 
-#: custom/models.py:10
+#: custom/models.py:11
 msgid "library"
 msgstr ""
 
-#: custom/models.py:11
+#: custom/models.py:12
 msgid "libraries"
 msgstr ""
 
@@ -69,19 +69,19 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: demo/templates/demo/test-detail.html:5
+#: demo/templates/demo/test-detail.html:6
 msgid "Created at"
 msgstr ""
 
-#: demo/templates/demo/test-detail.html:6
+#: demo/templates/demo/test-detail.html:9
 msgid "Updated at"
 msgstr ""
 
-#: demo/templates/demo/test-detail.html:7
+#: demo/templates/demo/test-detail.html:11
 msgid "Edit"
 msgstr ""
 
-#: demo/templates/demo/test-detail.html:10
+#: demo/templates/demo/test-detail.html:14
 msgid "Delete"
 msgstr ""
 
@@ -121,16 +121,16 @@ msgstr ""
 msgid "detail"
 msgstr ""
 
-#: view_breadcrumbs/generic/base.py:33
-msgid "Home"
-msgstr ""
-
-#: view_breadcrumbs/generic/base.py:39
+#: view_breadcrumbs/generic/base.py:38
 #, python-format
 msgid "%(class_name)s should have a crumbs property."
 msgstr ""
 
-#: view_breadcrumbs/generic/base.py:53
+#: view_breadcrumbs/generic/base.py:47
+msgid "Home"
+msgstr ""
+
+#: view_breadcrumbs/generic/base.py:55
 msgid "Breadcrumb requires a tuple of label and view name."
 msgstr ""
 
@@ -139,7 +139,7 @@ msgstr ""
 msgid "Add %(model)s"
 msgstr ""
 
-#: view_breadcrumbs/generic/create.py:28
+#: view_breadcrumbs/generic/create.py:35
 msgid "model"
 msgstr ""
 
