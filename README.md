@@ -10,7 +10,8 @@ Provides a set of breadcrumb mixin classes that can be added to any django view.
 
 Requires adding `{% render_breadcrumbs %}` to just the base template.
 
-![Screenshot](./breadcrumbs.png)
+<img width="1438" alt="breadcrumbs" src="https://user-images.githubusercontent.com/17484350/128493747-776706bf-d46c-4b57-ba54-c64fcc71ada7.png">
+
 
 In the `base.html` template simply add the `render_breadcrumbs` tag and any template
 that inherits the base should have breadcrumbs included.
@@ -165,13 +166,15 @@ See: [Overriding the Home label for a specific view](https://github.com/tj-djang
 
 *Renders*
 
-![Screenshot](./custom-root-breadcrumb.png)
+<img width="436" alt="custom-root-breadcrumb" src="https://user-images.githubusercontent.com/17484350/128493798-c71a8071-e913-4875-80b6-c7b414ac4e24.png">
+
 
 ## [Translation support](https://docs.djangoproject.com/en/3.1/topics/i18n/translation/)
 
 ### Example
 
-![Translated Screenshot](./translated-crumbs.png)
+![translated-crumbs](https://user-images.githubusercontent.com/17484350/128493830-7e50a6a9-3648-48cb-b198-4646ee2b03cf.png)
+
 
 ## Usage
 
