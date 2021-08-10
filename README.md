@@ -366,8 +366,10 @@ Using a `Library` model that is imported from a `custom` application that you wa
 
 ```python
 INSTALLED_APPS =  [
+    ...
     "demo",
     "custom",
+    ...
 ]
 ```
 
