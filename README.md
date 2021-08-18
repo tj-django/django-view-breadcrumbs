@@ -46,7 +46,14 @@ And your `create.html`.
     *   [Customization](#customization)
 
         *   [BREADCRUMBS_TEMPLATE](#breadcrumbs_template)
+
+            *   [Site wide](#site-wide)
+            *   [Overriding the breadcrumb template for a single view](#overriding-the-breadcrumb-template-for-a-single-view)
+
         *   [BREADCRUMBS_HOME_LABEL](#breadcrumbs_home_label)
+
+            *   [Site wide](#site-wide-1)
+            *   [Overriding the Home label for a specific view](#overriding-the-home-label-for-a-specific-view)
 
 *   [Translation support](#translation-support)
 
@@ -65,8 +72,6 @@ And your `create.html`.
         *   [Sample crumbs: `Posts`](#sample-crumbs-posts)
         *   [Sample crumbs:  `Home / Posts / Test - Post`](#sample-crumbs--home--posts--test---post)
         *   [Custom crumbs: `Home / My Test Breadcrumb`](#custom-crumbs-home--my-test-breadcrumb)
-
-    *   [Overriding the Home label for a specific view](#overriding-the-home-label-for-a-specific-view)
 
     *   [Using multiple apps](#using-multiple-apps)
 
@@ -137,13 +142,13 @@ Modify the defaults using the following:
 
 #### BREADCRUMBS_TEMPLATE
 
-**Site wide:**
+##### Site wide
 
 ```python
 BREADCRUMBS_TEMPLATE = "my_app/breadcrumbs.html"
 ```
 
-**For just the base template:**
+##### Overriding the breadcrumb template for a single view
 
 Update the `base.html`
 
@@ -153,15 +158,26 @@ Update the `base.html`
 
 #### BREADCRUMBS_HOME_LABEL
 
-**Site wide:**
+##### Site wide
 
 ```python
 BREADCRUMBS_HOME_LABEL = "My new home"
 ```
 
-**For just a single view:**
+##### Overriding the Home label for a specific view
 
-See: [Overriding the Home label for a specific view](https://github.com/tj-django/django-view-breadcrumbs#overriding-the-home-label-for-a-specific-view)
+```python
+from django.utils.translation import gettext_lazy as _
+from view_breadcrumbs import DetailBreadcrumbMixin
+from django.views.generic import DetailView
+from demo.models import TestModel
+
+
+class TestDetailView(DetailBreadcrumbMixin, DetailView):
+     model = TestModel
+     home_label = _("My new home")
+     template_name = "demo/test-detail.html"
+```
 
 *Renders*
 
@@ -338,21 +354,6 @@ class CustomView(BaseBreadcrumbMixin, View):
     def crumbs(self):
         return [("My Test Breadcrumb", reverse("custom_view"))]
 
-```
-
-### Overriding the Home label for a specific view
-
-```python
-from django.utils.translation import gettext_lazy as _
-from view_breadcrumbs import DetailBreadcrumbMixin
-from django.views.generic import DetailView
-from demo.models import TestModel
-
-
-class TestDetailView(DetailBreadcrumbMixin, DetailView):
-     model = TestModel
-     home_label = _("My custom home")
-     template_name = "demo/test-detail.html"
 ```
 
 > Refer to the [demo app](https://github.com/tj-django/django-view-breadcrumbs/tree/main/demo) for more examples.
