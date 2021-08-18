@@ -46,7 +46,14 @@ And your `create.html`.
     *   [Customization](#customization)
 
         *   [BREADCRUMBS_TEMPLATE](#breadcrumbs_template)
+
+            *   [Site wide](#site-wide)
+            *   [Overriding the breadcrumb template for a single view](#overriding-the-breadcrumb-template-for-a-single-view)
+
         *   [BREADCRUMBS_HOME_LABEL](#breadcrumbs_home_label)
+
+            *   [Site wide](#site-wide-1)
+            *   [Overriding the Home label for a specific view](#overriding-the-home-label-for-a-specific-view)
 
 *   [Translation support](#translation-support)
 
@@ -65,8 +72,6 @@ And your `create.html`.
         *   [Sample crumbs: `Posts`](#sample-crumbs-posts)
         *   [Sample crumbs:  `Home / Posts / Test - Post`](#sample-crumbs--home--posts--test---post)
         *   [Custom crumbs: `Home / My Test Breadcrumb`](#custom-crumbs-home--my-test-breadcrumb)
-
-    *   [Overriding the Home label for a specific view](#overriding-the-home-label-for-a-specific-view)
 
     *   [Using multiple apps](#using-multiple-apps)
 
