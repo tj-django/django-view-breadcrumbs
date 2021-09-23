@@ -1,8 +1,8 @@
 # django-view-breadcrumbs
 
-[![Test](https://github.com/tj-django/django-view-breadcrumbs/actions/workflows/test.yml/badge.svg)](https://github.com/tj-django/django-view-breadcrumbs/actions/workflows/test.yml) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/537b0ce56e744f078f17cc8ccd4200d8)](https://www.codacy.com/gh/tj-django/django-view-breadcrumbs/dashboard?utm_source=github.com\&utm_medium=referral\&utm_content=tj-django/django-view-breadcrumbs\&utm_campaign=Badge_Grade) [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/tj-django/django-view-breadcrumbs/main.svg)](https://results.pre-commit.ci/latest/github/tj-django/django-view-breadcrumbs/main) [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/537b0ce56e744f078f17cc8ccd4200d8)](https://www.codacy.com/gh/tj-django/django-view-breadcrumbs/dashboard?utm_source=github.com\&utm_medium=referral\&utm_content=tj-django/django-view-breadcrumbs\&utm_campaign=Badge_Coverage) [![PyPI version](https://badge.fury.io/py/django-view-breadcrumbs.svg)](https://badge.fury.io/py/django-view-breadcrumbs) [![Updates](https://pyup.io/repos/github/tj-django/django-view-breadcrumbs/shield.svg)](https://pyup.io/repos/github/tj-django/django-view-breadcrumbs/)
+[![Test](https://github.com/tj-django/django-view-breadcrumbs/actions/workflows/test.yml/badge.svg)](https://github.com/tj-django/django-view-breadcrumbs/actions/workflows/test.yml) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/537b0ce56e744f078f17cc8ccd4200d8)](https://www.codacy.com/gh/tj-django/django-view-breadcrumbs/dashboard?utm\_source=github.com\&utm\_medium=referral\&utm\_content=tj-django/django-view-breadcrumbs\&utm\_campaign=Badge\_Grade) [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/tj-django/django-view-breadcrumbs/main.svg)](https://results.pre-commit.ci/latest/github/tj-django/django-view-breadcrumbs/main) [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/537b0ce56e744f078f17cc8ccd4200d8)](https://www.codacy.com/gh/tj-django/django-view-breadcrumbs/dashboard?utm\_source=github.com\&utm\_medium=referral\&utm\_content=tj-django/django-view-breadcrumbs\&utm\_campaign=Badge\_Coverage) [![PyPI version](https://badge.fury.io/py/django-view-breadcrumbs.svg)](https://badge.fury.io/py/django-view-breadcrumbs) [![Updates](https://pyup.io/repos/github/tj-django/django-view-breadcrumbs/shield.svg)](https://pyup.io/repos/github/tj-django/django-view-breadcrumbs/)
 
-![PyPI - Django Version](https://img.shields.io/pypi/djversions/django-view-breadcrumbs) ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/django-view-breadcrumbs) [![Downloads](https://pepy.tech/badge/django-view-breadcrumbs)](https://pepy.tech/project/django-view-breadcrumbs) <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section --> [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+![PyPI - Django Version](https://img.shields.io/pypi/djversions/django-view-breadcrumbs) ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/django-view-breadcrumbs) [![Downloads](https://pepy.tech/badge/django-view-breadcrumbs)](https://pepy.tech/project/django-view-breadcrumbs) <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section --> [![All Contributors](https://img.shields.io/badge/all\_contributors-1-orange.svg?style=flat-square)](#contributors-)
 
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
@@ -16,6 +16,11 @@ In the `base.html` template simply add the `render_breadcrumbs` tag and any temp
 that inherits the base should have breadcrumbs included.
 
 **For example:**
+
+    my_app
+       |--templates
+                |--base.html
+                |--create.html
 
 `base.html`
 
@@ -35,22 +40,22 @@ And your `create.html`.
 
 ## Table of Contents
 
-*   [Breadcrumb mixin classes provided.](#breadcrumb-mixin-classes-provided)
-
 *   [Installation](#installation)
 
-    *   [Add `view_breadcrumbs` to your INSTALLED_APPS](#add-view_breadcrumbs-to-your-installed_apps)
+    *   [Add `view_breadcrumbs` to your INSTALLED\_APPS](#add-view\_breadcrumbs-to-your-installed\_apps)
+
+*   [Breadcrumb mixin classes provided.](#breadcrumb-mixin-classes-provided)
 
 *   [Settings](#settings)
 
     *   [Customization](#customization)
 
-        *   [BREADCRUMBS_TEMPLATE](#breadcrumbs_template)
+        *   [BREADCRUMBS\_TEMPLATE](#breadcrumbs\_template)
 
             *   [Site wide](#site-wide)
             *   [Overriding the breadcrumb template for a single view](#overriding-the-breadcrumb-template-for-a-single-view)
 
-        *   [BREADCRUMBS_HOME_LABEL](#breadcrumbs_home_label)
+        *   [BREADCRUMBS\_HOME\_LABEL](#breadcrumbs\_home\_label)
 
             *   [Site wide](#site-wide-1)
             *   [Overriding the Home label for a specific view](#overriding-the-home-label-for-a-specific-view)
@@ -81,15 +86,6 @@ And your `create.html`.
 
 *   [Contributors ✨](#contributors-)
 
-## Breadcrumb mixin classes provided.
-
-*   `BaseBreadcrumbMixin`    - Base view requires a `crumbs` class property.
-*   `CreateBreadcrumbMixin`  - For create views `Home / Posts / Add Post`
-*   `DetailBreadcrumbMixin`  - For detail views `Home / Posts / Post 1`
-*   `ListBreadcrumbMixin`    - For list views `Home / Posts`
-*   `UpdateBreadcrumbMixin`  - For Update views `Home / Posts / Post 1 / Update Post 1`
-*   `DeleteBreadcrumbMixin`  - For Delete views this has a link to the list view to be used as the success URL.
-
 ## Installation
 
 ```bash
@@ -97,7 +93,7 @@ $ pip install django-view-breadcrumbs
 
 ```
 
-### Add `view_breadcrumbs` to your INSTALLED_APPS
+### Add `view_breadcrumbs` to your INSTALLED\_APPS
 
 ```python
 
@@ -107,6 +103,15 @@ INSTALLED_APPS = [
     ...,
 ]
 ```
+
+## Breadcrumb mixin classes provided.
+
+*   `BaseBreadcrumbMixin`    - Base view requires a `crumbs` class property.
+*   `CreateBreadcrumbMixin`  - For create views `Home / Posts / Add Post`
+*   `DetailBreadcrumbMixin`  - For detail views `Home / Posts / Post 1`
+*   `ListBreadcrumbMixin`    - For list views `Home / Posts`
+*   `UpdateBreadcrumbMixin`  - For Update views `Home / Posts / Post 1 / Update Post 1`
+*   `DeleteBreadcrumbMixin`  - For Delete views this has a link to the list view to be used as the success URL.
 
 ## Settings
 
@@ -135,12 +140,12 @@ Modify the defaults using the following:
 
 | Name                       | Default                                     | Description |    Options          |
 |----------------------------|---------------------------------------------|-------------|---------------------|
-| `BREADCRUMBS_TEMPLATE`     | `"view_breadcrumbs/bootstrap5.html"`        |  Template used to render breadcrumbs.           |   [Predefined Templates](https://github.com/tj-django/django-view-breadcrumbs/tree/main/view_breadcrumbs/templates/view_breadcrumbs)                 |
+| `BREADCRUMBS_TEMPLATE`     | `"view_breadcrumbs/bootstrap5.html"`        |  Template used to render breadcrumbs.           |   [Predefined Templates](https://github.com/tj-django/django-view-breadcrumbs/tree/main/view\_breadcrumbs/templates/view\_breadcrumbs)                 |
 | `BREADCRUMBS_HOME_LABEL`   |  `Home`                                     |  Default label for the root path  |         |
 
 ### Customization
 
-#### BREADCRUMBS_TEMPLATE
+#### BREADCRUMBS\_TEMPLATE
 
 ##### Site wide
 
@@ -156,7 +161,7 @@ Update the `base.html`
 {% render_breadcrumbs "my_app/breadcrumbs.html" %}
 ```
 
-#### BREADCRUMBS_HOME_LABEL
+#### BREADCRUMBS\_HOME\_LABEL
 
 ##### Site wide
 
@@ -218,8 +223,8 @@ and can be overridden by providing a `crumbs` property.
 
 |  Actions  |  View Class |  View name  | Sample Breadcrumb | Example  |
 |-----------|-------------|-------------|-------------------|----------|
-|   N/A     | [`SingleTableMixin`](https://django-tables2.readthedocs.io/en/latest/pages/generic-mixins.html?highlight=SingleTableMixin#a-single-table-using-singletablemixin) | N/A  | N/A |  See: [demo table view](https://github.com/tj-django/django-view-breadcrumbs/blob/main/demo/views.py#L100) |
-|   N/A     | [`MultiTableMixin`](https://django-tables2.readthedocs.io/en/latest/pages/generic-mixins.html?highlight=SingleTableMixin#multiple-tables-using-multitablemixin) | N/A  | N/A |  See: [demo table view](https://github.com/tj-django/django-view-breadcrumbs/blob/main/demo/views.py#L100) |
+|   N/A     | [`SingleTableMixin`](https://django-tables2.readthedocs.io/en/latest/pages/generic-mixins.html?highlight=SingleTableMixin#a-single-table-using-singletablemixin) | N/A  | N/A |  See: [demo table view](https://github.com/tj-django/django-view-breadcrumbs/blob/main/demo/views.py#L154-L162) |
+|   N/A     | [`MultiTableMixin`](https://django-tables2.readthedocs.io/en/latest/pages/generic-mixins.html?highlight=SingleTableMixin#multiple-tables-using-multitablemixin) | N/A  | N/A |  See: [demo table view](https://github.com/tj-django/django-view-breadcrumbs/blob/main/demo/views.py#L166-L173) |
 |   N/A     | [`SingleTableView`](https://django-tables2.readthedocs.io/en/latest/pages/api-reference.html?highlight=SingleTableView#singletableview) | N/A  | N/A |  Same implementation as `SingleTableMixin` |
 
 For more examples see: [demo app](https://github.com/tj-django/django-view-breadcrumbs/tree/main/demo)
