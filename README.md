@@ -40,11 +40,11 @@ And your `create.html`.
 
 ## Table of Contents
 
-*   [Breadcrumb mixin classes provided.](#breadcrumb-mixin-classes-provided)
-
 *   [Installation](#installation)
 
     *   [Add `view_breadcrumbs` to your INSTALLED\_APPS](#add-view\_breadcrumbs-to-your-installed\_apps)
+
+*   [Breadcrumb mixin classes provided.](#breadcrumb-mixin-classes-provided)
 
 *   [Settings](#settings)
 
