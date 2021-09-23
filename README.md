@@ -17,12 +17,10 @@ that inherits the base should have breadcrumbs included.
 
 **For example:**
 
-```
-my_app
-   |--templates
-            |--base.html
-            |--create.html
-```
+    my_app
+       |--templates
+                |--base.html
+                |--create.html
 
 `base.html`
 
