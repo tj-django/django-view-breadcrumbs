@@ -88,15 +88,6 @@ And your `create.html`.
 
 *   [Contributors ✨](#contributors-)
 
-## Breadcrumb mixin classes provided.
-
-*   `BaseBreadcrumbMixin`    - Base view requires a `crumbs` class property.
-*   `CreateBreadcrumbMixin`  - For create views `Home / Posts / Add Post`
-*   `DetailBreadcrumbMixin`  - For detail views `Home / Posts / Post 1`
-*   `ListBreadcrumbMixin`    - For list views `Home / Posts`
-*   `UpdateBreadcrumbMixin`  - For Update views `Home / Posts / Post 1 / Update Post 1`
-*   `DeleteBreadcrumbMixin`  - For Delete views this has a link to the list view to be used as the success URL.
-
 ## Installation
 
 ```bash
@@ -114,6 +105,15 @@ INSTALLED_APPS = [
     ...,
 ]
 ```
+
+## Breadcrumb mixin classes provided.
+
+*   `BaseBreadcrumbMixin`    - Base view requires a `crumbs` class property.
+*   `CreateBreadcrumbMixin`  - For create views `Home / Posts / Add Post`
+*   `DetailBreadcrumbMixin`  - For detail views `Home / Posts / Post 1`
+*   `ListBreadcrumbMixin`    - For list views `Home / Posts`
+*   `UpdateBreadcrumbMixin`  - For Update views `Home / Posts / Post 1 / Update Post 1`
+*   `DeleteBreadcrumbMixin`  - For Delete views this has a link to the list view to be used as the success URL.
 
 ## Settings
 
