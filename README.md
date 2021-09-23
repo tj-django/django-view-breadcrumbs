@@ -17,6 +17,9 @@ that inherits the base should have breadcrumbs included.
 
 **For example:**
 
+
+
+
 `base.html`
 
 ```jinja2
