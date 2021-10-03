@@ -70,16 +70,9 @@ class BaseBreadcrumbTestCase(TestCase):
     view_attrs = {}
 
     @classmethod
-    def setUpTestData(cls):
-        cls.crumbs = []
-
-    @classmethod
     def make_crumb_cls(cls, class_name, bases, attrs):
         attrs["request"] = RequestFactory().request()
         return type(class_name, bases, attrs)
-
-    def test_empty_crumbs(self):
-        self.assertEqual(0, len(self.crumbs))
 
     def test_no_crumbs_property_raise_exception(self):
         TestViewClass = self.make_crumb_cls(
@@ -129,20 +122,12 @@ class DetailViewBreadcrumbTestCase(ActionTestMixin, BaseBreadcrumbTestCase):
     object_mixin = SingleObjectMixin
     view_name = "detail"
 
-    @classmethod
-    def setUpTestData(cls):
-        cls.crumbs = []
-
 
 class CreateBreadcrumbMixinTestCase(ActionTestMixin, BaseBreadcrumbTestCase):
     breadcrumb_mixin_cls = CreateBreadcrumbMixin
     view_attrs = {"model": TestModel}
     object_mixin = SingleObjectMixin
     view_name = "create"
-
-    @classmethod
-    def setUpTestData(cls):
-        cls.crumbs = []
 
 
 class UpdateBreadcrumbMixinTestCase(ActionTestMixin, BaseBreadcrumbTestCase):
@@ -151,17 +136,9 @@ class UpdateBreadcrumbMixinTestCase(ActionTestMixin, BaseBreadcrumbTestCase):
     object_mixin = SingleObjectMixin
     view_name = "update"
 
-    @classmethod
-    def setUpTestData(cls):
-        cls.crumbs = []
-
 
 class DeleteBreadcrumbMixinTestCase(ActionTestMixin, BaseBreadcrumbTestCase):
     breadcrumb_mixin_cls = DeleteBreadcrumbMixin
     view_attrs = {"model": TestModel}
     object_mixin = SingleObjectMixin
     view_name = "delete"
-
-    @classmethod
-    def setUpTestData(cls):
-        cls.crumbs = []
