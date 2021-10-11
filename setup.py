@@ -29,7 +29,7 @@ deploy_requires = [
 ]
 
 lint_requires = [
-    "flake8==4.0.0",
+    "flake8==4.0.1",
     "yamllint==1.26.3",
     "isort",
 ]
