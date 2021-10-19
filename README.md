@@ -106,7 +106,7 @@ INSTALLED_APPS = [
 
 ## Breadcrumb mixin classes provided.
 
-*   `BaseBreadcrumbMixin`    - Base view requires a `crumbs` class property.
+*   `BaseBreadcrumbMixin`    - Subclasses requires a `crumbs` class property.
 *   `CreateBreadcrumbMixin`  - For create views `Home / Posts / Add Post`
 *   `DetailBreadcrumbMixin`  - For detail views `Home / Posts / Post 1`
 *   `ListBreadcrumbMixin`    - For list views `Home / Posts`
