@@ -1,8 +1,8 @@
 # django-view-breadcrumbs
 
-[![Test](https://github.com/tj-django/django-view-breadcrumbs/actions/workflows/test.yml/badge.svg)](https://github.com/tj-django/django-view-breadcrumbs/actions/workflows/test.yml) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/537b0ce56e744f078f17cc8ccd4200d8)](https://www.codacy.com/gh/tj-django/django-view-breadcrumbs/dashboard?utm\_source=github.com\&utm\_medium=referral\&utm\_content=tj-django/django-view-breadcrumbs\&utm\_campaign=Badge\_Grade) [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/tj-django/django-view-breadcrumbs/main.svg)](https://results.pre-commit.ci/latest/github/tj-django/django-view-breadcrumbs/main) [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/537b0ce56e744f078f17cc8ccd4200d8)](https://www.codacy.com/gh/tj-django/django-view-breadcrumbs/dashboard?utm\_source=github.com\&utm\_medium=referral\&utm\_content=tj-django/django-view-breadcrumbs\&utm\_campaign=Badge\_Coverage) [![PyPI version](https://badge.fury.io/py/django-view-breadcrumbs.svg)](https://badge.fury.io/py/django-view-breadcrumbs) [![Updates](https://pyup.io/repos/github/tj-django/django-view-breadcrumbs/shield.svg)](https://pyup.io/repos/github/tj-django/django-view-breadcrumbs/)
+[![Test](https://github.com/tj-django/django-view-breadcrumbs/actions/workflows/test.yml/badge.svg)](https://github.com/tj-django/django-view-breadcrumbs/actions/workflows/test.yml) [![Codacy Badge](https://app.codacy.com/project/badge/Grade/537b0ce56e744f078f17cc8ccd4200d8)](https://www.codacy.com/gh/tj-django/django-view-breadcrumbs/dashboard?utm_source=github.com\&utm_medium=referral\&utm_content=tj-django/django-view-breadcrumbs\&utm_campaign=Badge_Grade) [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/tj-django/django-view-breadcrumbs/main.svg)](https://results.pre-commit.ci/latest/github/tj-django/django-view-breadcrumbs/main) [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/537b0ce56e744f078f17cc8ccd4200d8)](https://www.codacy.com/gh/tj-django/django-view-breadcrumbs/dashboard?utm_source=github.com\&utm_medium=referral\&utm_content=tj-django/django-view-breadcrumbs\&utm_campaign=Badge_Coverage) [![PyPI version](https://badge.fury.io/py/django-view-breadcrumbs.svg)](https://badge.fury.io/py/django-view-breadcrumbs) [![Updates](https://pyup.io/repos/github/tj-django/django-view-breadcrumbs/shield.svg)](https://pyup.io/repos/github/tj-django/django-view-breadcrumbs/)
 
-![PyPI - Django Version](https://img.shields.io/pypi/djversions/django-view-breadcrumbs) ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/django-view-breadcrumbs) [![Downloads](https://pepy.tech/badge/django-view-breadcrumbs)](https://pepy.tech/project/django-view-breadcrumbs) <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section --> [![All Contributors](https://img.shields.io/badge/all\_contributors-1-orange.svg?style=flat-square)](#contributors-)
+![PyPI - Django Version](https://img.shields.io/pypi/djversions/django-view-breadcrumbs) ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/django-view-breadcrumbs) [![Downloads](https://pepy.tech/badge/django-view-breadcrumbs)](https://pepy.tech/project/django-view-breadcrumbs) <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section --> [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
 
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
@@ -42,7 +42,7 @@ And your `create.html`.
 
 *   [Installation](#installation)
 
-    *   [Add `view_breadcrumbs` to your INSTALLED\_APPS](#add-view\_breadcrumbs-to-your-installed\_apps)
+    *   [Add `view_breadcrumbs` to your INSTALLED\_APPS](#add-view_breadcrumbs-to-your-installed_apps)
 
 *   [Breadcrumb mixin classes provided.](#breadcrumb-mixin-classes-provided)
 
@@ -50,12 +50,12 @@ And your `create.html`.
 
     *   [Customization](#customization)
 
-        *   [BREADCRUMBS\_TEMPLATE](#breadcrumbs\_template)
+        *   [BREADCRUMBS\_TEMPLATE](#breadcrumbs_template)
 
             *   [Site wide](#site-wide)
             *   [Overriding the breadcrumb template for a single view](#overriding-the-breadcrumb-template-for-a-single-view)
 
-        *   [BREADCRUMBS\_HOME\_LABEL](#breadcrumbs\_home\_label)
+        *   [BREADCRUMBS\_HOME\_LABEL](#breadcrumbs_home_label)
 
             *   [Site wide](#site-wide-1)
             *   [Overriding the Home label for a specific view](#overriding-the-home-label-for-a-specific-view)
@@ -140,7 +140,7 @@ Modify the defaults using the following:
 
 | Name                       | Default                                     | Description |    Options          |
 |----------------------------|---------------------------------------------|-------------|---------------------|
-| `BREADCRUMBS_TEMPLATE`     | `"view_breadcrumbs/bootstrap5.html"`        |  Template used to render breadcrumbs.           |   [Predefined Templates](https://github.com/tj-django/django-view-breadcrumbs/tree/main/view\_breadcrumbs/templates/view\_breadcrumbs)                 |
+| `BREADCRUMBS_TEMPLATE`     | `"view_breadcrumbs/bootstrap5.html"`        |  Template used to render breadcrumbs.           |   [Predefined Templates](https://github.com/tj-django/django-view-breadcrumbs/tree/main/view_breadcrumbs/templates/view_breadcrumbs)                 |
 | `BREADCRUMBS_HOME_LABEL`   |  `Home`                                     |  Default label for the root path  |         |
 
 ### Customization
