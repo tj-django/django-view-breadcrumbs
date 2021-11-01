@@ -20,11 +20,11 @@ msgstr ""
 
 #: conftest.py:28
 msgid "English"
-msgstr "Anglaise"
+msgstr ""
 
 #: conftest.py:29
 msgid "French"
-msgstr "Français"
+msgstr ""
 
 #: custom/models.py:11
 msgid "library"
