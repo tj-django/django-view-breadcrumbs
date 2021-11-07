@@ -69,7 +69,7 @@ else:
 setup(
     name="django-view-breadcrumbs",
     python_requires=">=3.6",
-    version="2.2.3",
+    version="2.2.2",
     author="Tonye Jack",
     author_email="jtonye@ymail.com",
     long_description=LONG_DESCRIPTION,
