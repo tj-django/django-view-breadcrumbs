@@ -3,7 +3,6 @@ import sys
 
 from django import setup
 from django.conf import settings
-from django.utils.translation import gettext_lazy as _
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 TEST_DIR = os.path.join(BASE_DIR, "demo", "templates")
@@ -25,8 +24,8 @@ def pytest_configure(debug=False):
         USE_L10N=True,
         # Provide a lists of languages which your site supports.
         LANGUAGES=(
-            ("en", _("English")),
-            ("fr", _("French")),
+            ("en", "English"),
+            ("fr", "French"),
         ),
         # Set the default language for your site.
         LANGUAGE_CODE="en",

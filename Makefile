@@ -21,7 +21,6 @@ guard-%: ## Checks that env var is set else exits with non 0 mainly used in CI;
 # --------------------------------------------------------
 # ------- Python package (pip) management commands -------
 # --------------------------------------------------------
-
 clean-build: ## Clean project build artifacts.
 	@echo "Removing build assets..."
 	@$(PYTHON) setup.py clean
@@ -70,11 +69,11 @@ migrations:  ## Generate the migrations
 	@$(MANAGE_PY) makemigrations
 
 makemessages: clean-build  ## Runs over the entire source tree of the current directory and pulls out all strings marked for translation.
-	@$(MANAGE_PY) makemessages --locale=en_US
-	@$(MANAGE_PY) makemessages --locale=fr
+	@$(MANAGE_PY) makemessages --locale=en_US --ignore=".tox*" --ignore="venv*"
+	@$(MANAGE_PY) makemessages --locale=fr --ignore=".tox*" --ignore="venv*"
 
 compilemessages: clean-build  ## Compiles .po files created by makemessages to .mo files for use with the built-in gettext support.
-	@$(MANAGE_PY) compilemessages --ignore=.tox
+	@$(MANAGE_PY) compilemessages --ignore=".tox*" --ignore="venv*"
 
 # ----------------------------------------------------------
 # ---------- Upgrade project version (bumpversion)  --------
