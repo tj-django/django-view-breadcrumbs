@@ -15,7 +15,7 @@ from django.conf import settings
 from django.db.models import Model
 from django.template.loader import render_to_string
 from django.utils.encoding import smart_text
-from six import wraps
+from functools import wraps
 
 from view_breadcrumbs.constants import (
     CREATE_VIEW_SUFFIX,
