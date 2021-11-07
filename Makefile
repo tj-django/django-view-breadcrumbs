@@ -48,7 +48,7 @@ update-requirements:  ## Updates the requirement.txt adding missing package depe
 	@echo "Syncing the package requirements.txt..."
 	@$(PIP_COMPILE)
 
-release-to-pypi: makemessages compilemessages increase-version  ## Release project to pypi
+release-to-pypi: makemessages increase-version  ## Release project to pypi
 	@$(PYTHON_PIP) install -U twine
 	@$(PYTHON) setup.py sdist bdist_wheel
 	@twine upload dist/*
@@ -59,7 +59,7 @@ release-to-pypi: makemessages compilemessages increase-version  ## Release proje
 # ----------------------------------------------------------
 # --------- Django manage.py commands ----------------------
 # ----------------------------------------------------------
-run: makemessages compilemessages  ## Run the run_server using default host and port
+run: compilemessages makemessages  ## Run the run_server using default host and port
 	@$(MANAGE_PY) runserver 127.0.0.1:8090
 
 migrate:  ## Run the migrations
