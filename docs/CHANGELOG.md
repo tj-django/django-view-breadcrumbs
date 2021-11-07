@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [v2.2.4](https://github.com/tj-django/django-view-breadcrumbs/releases/tag/v2.2.4) - 2021-11-07
+
+<small>[Compare with v2.2.3](https://github.com/tj-django/django-view-breadcrumbs/compare/v2.2.3...v2.2.4)</small>
+
+### Added
+- Added requirements-dev.txt ([ce66abb](https://github.com/tj-django/django-view-breadcrumbs/commit/ce66abb1e7dcf084b0002eaa151e53efc580a740) by Tonye Jack).
+
+
+## [v2.2.3](https://github.com/tj-django/django-view-breadcrumbs/releases/tag/v2.2.3) - 2021-10-03
+
+<small>[Compare with v2.2.2](https://github.com/tj-django/django-view-breadcrumbs/compare/v2.2.2...v2.2.3)</small>
+
+### Added
+- Add support for python 3.10 (#403) ([15d604a](https://github.com/tj-django/django-view-breadcrumbs/commit/15d604af7fa7df5d64e1a0cf11f4472b899753c2) by Tonye Jack).
+
+
 ## [v2.2.2](https://github.com/tj-django/django-view-breadcrumbs/releases/tag/v2.2.2) - 2021-08-06
 
 <small>[Compare with v2.2.1](https://github.com/tj-django/django-view-breadcrumbs/compare/v2.2.1...v2.2.2)</small>
