@@ -8,6 +8,7 @@
 from __future__ import unicode_literals
 
 import logging
+from functools import wraps
 from inspect import ismethod
 
 from django import VERSION, template
@@ -15,7 +16,6 @@ from django.conf import settings
 from django.db.models import Model
 from django.template.loader import render_to_string
 from django.utils.encoding import smart_text
-from functools import wraps
 
 from view_breadcrumbs.constants import (
     CREATE_VIEW_SUFFIX,
