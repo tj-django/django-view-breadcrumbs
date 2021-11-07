@@ -52,7 +52,7 @@ pyparsing==2.4.7
 pytest==6.2.5
 python-magic==0.4.24
 pytz==2021.3
-PyYAML==5.4
+PyYAML==6.0
 readme-renderer==30.0
 regex==2021.11.2
 requests==2.26.0
@@ -73,9 +73,9 @@ toml==0.10.2
 tomli==1.2.2
 tox==3.24.4
 tox-gh-actions==2.8.1
-twine==1.3.1
+twine==3.5.0
 typing-extensions==3.10.0.2
-uritemplate==0.6
+uritemplate==4.1.1
 urllib3==1.26.7
 virtualenv==20.10.0
 webencodings==0.5.1
