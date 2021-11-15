@@ -2,7 +2,6 @@ name: automerge
 on:
   check_suite:
     types:
-      - rerequested
       - completed
 
 jobs:
