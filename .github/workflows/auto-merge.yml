@@ -20,7 +20,7 @@ jobs:
       - uses: rokroskar/workflow-run-cleanup-action@v0.3.3
         env:
           GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
-  
+
   automerge:
     runs-on: ubuntu-latest
     if: |
