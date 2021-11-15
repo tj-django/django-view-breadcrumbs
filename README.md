@@ -191,6 +191,7 @@ class TestDetailView(DetailBreadcrumbMixin, DetailView):
 
 ## [Translation support](https://docs.djangoproject.com/en/3.1/topics/i18n/translation/)
 
+
 ### Example
 
 ![translated-crumbs](https://user-images.githubusercontent.com/17484350/128493830-7e50a6a9-3648-48cb-b198-4646ee2b03cf.png)
