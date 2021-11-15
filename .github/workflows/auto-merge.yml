@@ -5,6 +5,22 @@ on:
       - completed
 
 jobs:
+  cleanup-runs:
+    runs-on: ubuntu-latest
+    if: |
+      (
+        github.actor == 'dependabot[bot]' ||
+        github.actor == 'dependabot' ||
+        github.actor == 'dependabot-preview[bot]' ||
+        github.actor == 'dependabot-preview' ||
+        github.actor == 'renovate[bot]' ||
+        github.actor == 'renovate'
+      )
+    steps:
+      - uses: rokroskar/workflow-run-cleanup-action@v0.3.3
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
+  
   automerge:
     runs-on: ubuntu-latest
     if: |
