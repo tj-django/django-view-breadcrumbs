@@ -54,7 +54,7 @@ python-magic==0.4.24
 pytz==2021.3
 PyYAML==6.0
 readme-renderer==30.0
-regex==2021.11.2
+regex==2021.11.10
 requests==2.26.0
 semantic-version==2.8.5
 simplejson==3.17.5
