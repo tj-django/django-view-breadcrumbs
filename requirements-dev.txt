@@ -19,7 +19,7 @@ Django==3.2.9
 django-bootstrap5==21.1
 django-filter==21.1
 django-tables2==2.4.1
-docutils==0.18
+docutils==0.18.1
 filelock==3.4.0
 flake8==4.0.1
 future==0.18.2
