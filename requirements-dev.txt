@@ -42,7 +42,7 @@ pip-tools==6.4.0
 pkginfo==1.8.1
 platformdirs==2.4.0
 pluggy==1.0.0
-plumbum==1.7.0
+plumbum==1.7.1
 py==1.11.0
 pycodestyle==2.8.0
 pycparser==2.21
