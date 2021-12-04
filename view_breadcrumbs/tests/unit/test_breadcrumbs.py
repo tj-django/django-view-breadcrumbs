@@ -18,6 +18,50 @@ from view_breadcrumbs.generic import (
 from view_breadcrumbs.templatetags.view_breadcrumbs import CONTEXT_KEY
 
 
+class BaseBreadcrumbTestCase(TestCase):
+    breadcrumb_mixin_cls = BaseBreadcrumbMixin
+    view_attrs = {}
+
+    @classmethod
+    def make_crumb_cls(cls, class_name, bases, attrs):
+        attrs["request"] = RequestFactory().request()
+        return type(class_name, bases, attrs)
+
+    def test_no_crumbs_property_raise_exception(self):
+        TestViewClass = self.make_crumb_cls(
+            "CustomView",
+            (self.breadcrumb_mixin_cls, View),
+            {**self.view_attrs, "crumbs": BaseBreadcrumbMixin.crumbs},
+        )
+
+        with self.assertRaises(NotImplementedError) as exc:
+            crumbs = TestViewClass().crumbs
+            self.assertIsNone(crumbs)
+
+        self.assertEqual(
+            str(exc.exception),
+            "{} should have a crumbs property.".format(TestViewClass.__name__),
+        )
+
+    def test_custom_crumbs_property_is_valid(self):
+        expected_crumbs = [("My Test Breadcrumb", "/")]
+
+        TestViewClass = self.make_crumb_cls(
+            "CustomView",
+            (self.breadcrumb_mixin_cls, View),
+            {"crumbs": expected_crumbs},
+        )
+        crumbs = TestViewClass().crumbs
+
+        self.assertEqual(crumbs, expected_crumbs)
+
+    def test_view_crumbs_is_valid(self):
+        expected_crumbs = [("My Test Breadcrumb", "test_view")]
+        crumbs = TestView().crumbs
+
+        self.assertEqual(crumbs, expected_crumbs)
+
+
 class ActionTestMixin(object):
     object_mixin = None
     view_name = None
@@ -63,50 +107,6 @@ class ActionTestMixin(object):
             self.assertIsNotNone(view_url)
         else:
             self.assertIsNotNone(view_url(view.object))
-
-
-class BaseBreadcrumbTestCase(TestCase):
-    breadcrumb_mixin_cls = BaseBreadcrumbMixin
-    view_attrs = {}
-
-    @classmethod
-    def make_crumb_cls(cls, class_name, bases, attrs):
-        attrs["request"] = RequestFactory().request()
-        return type(class_name, bases, attrs)
-
-    def test_no_crumbs_property_raise_exception(self):
-        TestViewClass = self.make_crumb_cls(
-            "CustomView",
-            (self.breadcrumb_mixin_cls, View),
-            {**self.view_attrs, "crumbs": BaseBreadcrumbMixin.crumbs},
-        )
-
-        with self.assertRaises(NotImplementedError) as exc:
-            crumbs = TestViewClass().crumbs
-            self.assertIsNone(crumbs)
-
-        self.assertEqual(
-            str(exc.exception),
-            "{} should have a crumbs property.".format(TestViewClass.__name__),
-        )
-
-    def test_custom_crumbs_property_is_valid(self):
-        expected_crumbs = [("My Test Breadcrumb", "/")]
-
-        TestViewClass = self.make_crumb_cls(
-            "CustomView",
-            (self.breadcrumb_mixin_cls, View),
-            {"crumbs": expected_crumbs},
-        )
-        crumbs = TestViewClass().crumbs
-
-        self.assertEqual(crumbs, expected_crumbs)
-
-    def test_view_crumbs_is_valid(self):
-        expected_crumbs = [("My Test Breadcrumb", "test_view")]
-        crumbs = TestView().crumbs
-
-        self.assertEqual(crumbs, expected_crumbs)
 
 
 class ListViewBreadcrumbTestCase(ActionTestMixin, BaseBreadcrumbTestCase):
