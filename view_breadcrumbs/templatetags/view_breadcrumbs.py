@@ -15,7 +15,7 @@ from django import VERSION, template
 from django.conf import settings
 from django.db.models import Model
 from django.template.loader import render_to_string
-from django.utils.encoding import smart_text
+from django.utils.encoding import smart_str
 
 from view_breadcrumbs.constants import (
     CREATE_VIEW_SUFFIX,
@@ -116,7 +116,7 @@ def render_breadcrumbs(context, *args):
                 )
             except NoReverseMatch:
                 url = viewname
-        links.append((url, smart_text(label) if label else label))
+        links.append((url, smart_str(label) if label else label))
 
     if not links:
         return ""
