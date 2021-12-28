@@ -77,6 +77,6 @@ twine==3.7.1
 typing-extensions==4.0.1
 uritemplate==4.1.1
 urllib3==1.26.7
-virtualenv==20.10.0
+virtualenv==20.11.0
 webencodings==0.5.1
 yamllint==1.26.3
