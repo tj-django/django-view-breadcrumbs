@@ -1,0 +1,46 @@
+#This is an example webapp.io configuration for Django!
+FROM vm/ubuntu:18.04
+
+# To note: Layerfiles create entire VMs, *not* containers!
+
+# Install python 3 & postgresql
+RUN apt-get update && \
+    apt-get install python3-pip python3-dev libpq-dev \
+            postgresql postgresql-contrib nginx curl
+
+# Install django & postgresql python driver
+RUN pip3 install Django psycopg2
+
+# Set up database
+RUN sudo -u postgres -H -- psql -t -c "CREATE DATABASE mydb;"
+RUN sudo -u postgres -H -- psql -t -c "\
+    CREATE USER myuser WITH PASSWORD 'password'; \
+    ALTER ROLE myuser SET client_encoding TO 'utf8'; \
+    ALTER ROLE myuser SET default_transaction_isolation TO 'read committed'; \
+    ALTER ROLE myuser SET timezone TO 'UTC'; \
+    GRANT ALL PRIVILEGES ON DATABASE mydb TO myuser;"
+
+# Copy project files
+COPY . .
+
+# Install development dependencies
+RUN make install-dev
+
+# Tell Django how to talk to the database
+RUN echo 'DATABASES={"default": {\
+    "ENGINE": "django.db.backends.postgresql_psycopg2", \
+    "NAME": "mydb", \
+    "USER": "myuser", \
+    "PASSWORD": "password", \
+    "HOST": "localhost", \
+    "PORT": ""}}' >> settings.py
+
+# Allow local connections to the site
+RUN echo "ALLOWED_HOSTS = ['localhost']" >> settings.py
+
+# Run migrations (implicitly checks that they work)
+RUN python3 manage.py makemigrations && python3 manage.py migrate
+
+# Start the server
+RUN BACKGROUND python3 manage.py runserver 0.0.0.0:8000
+EXPOSE WEBSITE localhost:8000
