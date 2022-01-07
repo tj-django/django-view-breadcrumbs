@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [v2.2.5](https://github.com/tj-django/django-view-breadcrumbs/releases/tag/v2.2.5) - 2022-01-07
+
+<small>[Compare with v2.2.4](https://github.com/tj-django/django-view-breadcrumbs/compare/v2.2.4...v2.2.5)</small>
+
+### Added
+- Added github/workflows/auto-merge.yml ([e19a64e](https://github.com/tj-django/django-view-breadcrumbs/commit/e19a64e352d7bf2d63b94ddca7304242e6882872) by Tonye Jack).
+
+### Fixed
+- Fixed usage of deprecated smart_text. (#489) ([8eb3ad4](https://github.com/tj-django/django-view-breadcrumbs/commit/8eb3ad4536cbc4a13a41f666e6f374b33e10f9e1) by Tonye Jack).
+
+
 ## [v2.2.4](https://github.com/tj-django/django-view-breadcrumbs/releases/tag/v2.2.4) - 2021-11-07
 
 <small>[Compare with v2.2.3](https://github.com/tj-django/django-view-breadcrumbs/compare/v2.2.3...v2.2.4)</small>
