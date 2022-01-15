@@ -4,6 +4,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [v2.2.6](https://github.com/tj-django/django-view-breadcrumbs/releases/tag/v2.2.6) - 2022-01-15
+
+<small>[Compare with v2.2.5](https://github.com/tj-django/django-view-breadcrumbs/compare/v2.2.5...v2.2.6)</small>
+
+
 ## [v2.2.5](https://github.com/tj-django/django-view-breadcrumbs/releases/tag/v2.2.5) - 2022-01-07
 
 <small>[Compare with v2.2.4](https://github.com/tj-django/django-view-breadcrumbs/compare/v2.2.4...v2.2.5)</small>
@@ -212,15 +217,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [v0.0.7](https://github.com/tj-django/django-view-breadcrumbs/releases/tag/v0.0.7) - 2018-11-17
 
-<small>[Compare with v0.0.6](https://github.com/tj-django/django-view-breadcrumbs/compare/v0.0.6...v0.0.7)</small>
-
-
-## [v0.0.6](https://github.com/tj-django/django-view-breadcrumbs/releases/tag/v0.0.6) - 2018-11-17
-
-<small>[Compare with v0.0.4](https://github.com/tj-django/django-view-breadcrumbs/compare/v0.0.4...v0.0.6)</small>
+<small>[Compare with v0.0.5](https://github.com/tj-django/django-view-breadcrumbs/compare/v0.0.5...v0.0.7)</small>
 
 ### Fixed
 - Fix test app. ([febc4e0](https://github.com/tj-django/django-view-breadcrumbs/commit/febc4e0fc6de27d7f2b45e2dfeb011ae2702b4ce) by Tonye Jack).
+
+
+## [v0.0.5](https://github.com/tj-django/django-view-breadcrumbs/releases/tag/v0.0.5) - 2018-09-06
+
+<small>[Compare with v0.0.4](https://github.com/tj-django/django-view-breadcrumbs/compare/v0.0.4...v0.0.5)</small>
 
 
 ## [v0.0.4](https://github.com/tj-django/django-view-breadcrumbs/releases/tag/v0.0.4) - 2018-09-03
