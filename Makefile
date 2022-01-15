@@ -101,7 +101,7 @@ tox: install-test  ## Run tox test
 clean-test-all: clean-build  ## Clean build and test assets.
 	@rm -rf .tox/
 	@rm -rf .pytest_cache/
-	@rm test.db
+	@rm -f test.db
 
 lint:
 	isort .
@@ -112,3 +112,5 @@ create-docs:
 
 serve-docs:
 	@npx docsify serve ./docs
+
+clean: clean-test-all clean-build
