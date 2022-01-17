@@ -32,23 +32,23 @@ install-wheel: clean-build  ## Install wheel
 	@echo "Installing wheel"
 	@$(PYTHON_PIP) install wheel
 
-install: clean-build  ## Install project dependencies.
+install: clean-build install-wheel  ## Install project dependencies.
 	@echo "Installing project in dependencies..."
 	@$(PYTHON_PIP) install -r requirements.txt
 
-install-deploy: clean-build  ## Install deploy extra dependencies.
+install-deploy: clean-build install-wheel  ## Install deploy extra dependencies.
 	@echo "Installing deploy extra requirements..."
 	@$(PYTHON_PIP) install -e .'[deploy]'
 
-install-lint: clean-build  ## Install lint extra dependencies.
+install-lint: clean-build install-wheel  ## Install lint extra dependencies.
 	@echo "Installing lint extra requirements..."
 	@$(PYTHON_PIP) install -e .'[lint]'
 
-install-test: clean-build  ## Install test extra dependencies.
+install-test: clean-build install-wheel  ## Install test extra dependencies.
 	@echo "Installing test extra requirements..."
 	@$(PYTHON_PIP) install -e .'[test]'
 
-install-dev: clean-build  ## Install development extra dependencies.
+install-dev: clean-build install-wheel  ## Install development extra dependencies.
 	@echo "Installing development requirements..."
 	@$(PYTHON_PIP) install -e .'[development]' -r requirements.txt
 
