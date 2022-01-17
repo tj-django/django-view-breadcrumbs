@@ -23,6 +23,7 @@ doc_requires = [
 deploy_requires = [
     "bump2version",
     "readme_renderer[md]",
+    "changes",
     "git-changelog",
     "twine",
 ]
