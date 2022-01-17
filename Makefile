@@ -28,6 +28,10 @@ clean-build: ## Clean project build artifacts.
 	@rm -rf dist/
 	@rm -rf *.egg-info
 
+install-wheel: clean-build  ## Install wheel
+	@echo "Installing wheel"
+	@$(PYTHON_PIP) install wheel
+
 install: clean-build  ## Install project dependencies.
 	@echo "Installing project in dependencies..."
 	@$(PYTHON_PIP) install -r requirements.txt
