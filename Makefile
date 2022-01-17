@@ -32,6 +32,10 @@ install: clean-build  ## Install project dependencies.
 	@echo "Installing project in dependencies..."
 	@$(PYTHON_PIP) install -r requirements.txt
 
+install-deploy: clean-build  ## Install deploy extra dependencies.
+	@echo "Installing deploy extra requirements..."
+	@$(PYTHON_PIP) install -e .'[deploy]'
+
 install-lint: clean-build  ## Install lint extra dependencies.
 	@echo "Installing lint extra requirements..."
 	@$(PYTHON_PIP) install -e .'[lint]'
@@ -47,14 +51,6 @@ install-dev: clean-build  ## Install development extra dependencies.
 update-requirements:  ## Updates the requirement.txt adding missing package dependencies
 	@echo "Syncing the package requirements.txt..."
 	@$(PIP_COMPILE)
-
-release-to-pypi: makemessages increase-version  ## Release project to pypi
-	@$(PYTHON_PIP) install -U twine
-	@$(PYTHON) setup.py sdist bdist_wheel
-	@twine upload dist/*
-	@git push --tags
-	@git push
-
 
 # ----------------------------------------------------------
 # --------- Django manage.py commands ----------------------
@@ -76,18 +72,18 @@ compilemessages: clean-build  ## Compiles .po files created by makemessages to .
 	@$(MANAGE_PY) compilemessages --ignore=".tox*" --ignore="venv*"
 
 # ----------------------------------------------------------
-# ---------- Upgrade project version (bumpversion)  --------
+# ---------- Release the project to PyPI -------------------
 # ----------------------------------------------------------
-increase-version: clean-build guard-PART  ## Bump the project version (using the $PART env: defaults to 'patch').
-	@git checkout main
-	@git pull
-	@[ -z "`git status --porcelain`" ] && echo "No changes found." || git commit -am "Updated translations."
-	@echo "Increasing project '$(PART)' version..."
-	@$(PYTHON_PIP) install -q -e .'[deploy]'
-	@bumpversion --verbose $(PART)
-	@git-changelog . > CHANGELOG.md
-	@git add .
-	@[ -z "`git status --porcelain`" ] && echo "No changes found." || git commit -am "Updated CHANGELOG.md."
+increase-version: guard-PART  ## Increase project version
+	@bump2version $(PART)
+	@git switch -c main
+
+dist: clean install-deploy  ## builds source and wheel package
+	@pip install twine==3.4.1
+	@python setup.py sdist bdist_wheel
+
+release: dist  ## package and upload a release
+	@twine upload dist/*
 
 # ----------------------------------------------------------
 # --------- Run project Test -------------------------------
