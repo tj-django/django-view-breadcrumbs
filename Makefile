@@ -32,6 +32,11 @@ install: clean-build  ## Install project dependencies.
 	@echo "Installing project in dependencies..."
 	@$(PYTHON_PIP) install -r requirements.txt
 
+install-deploy: clean-build  ## Install deploy extra dependencies.
+	@echo "Installing deploy extra requirements..."
+	@$(PYTHON_PIP) install -e .'[deploy]'
+
+
 install-lint: clean-build  ## Install lint extra dependencies.
 	@echo "Installing lint extra requirements..."
 	@$(PYTHON_PIP) install -e .'[lint]'
