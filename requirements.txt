@@ -6,7 +6,7 @@
 #
 asgiref==3.5.0
     # via django
-django==4.0.2
+django==4.0.3
     # via django-view-breadcrumbs (setup.py)
 pytz==2021.3
     # via django
