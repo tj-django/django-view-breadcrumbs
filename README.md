@@ -13,51 +13,30 @@
 ## Table of Contents
 
 *   [Background](#background)
-
 *   [Installation](#installation)
-
     *   [Add `view_breadcrumbs` to your INSTALLED\_APPS](#add-view_breadcrumbs-to-your-installed_apps)
-
 *   [Breadcrumb mixin classes provided.](#breadcrumb-mixin-classes-provided)
-
 *   [Settings](#settings)
-
     *   [Customization](#customization)
-
         *   [BREADCRUMBS\_TEMPLATE](#breadcrumbs_template)
-
             *   [Site wide](#site-wide)
             *   [Overriding the breadcrumb template for a single view](#overriding-the-breadcrumb-template-for-a-single-view)
-
         *   [BREADCRUMBS\_HOME\_LABEL](#breadcrumbs_home_label)
-
             *   [Site wide](#site-wide-1)
             *   [Overriding the Home label for a specific view](#overriding-the-home-label-for-a-specific-view)
-
 *   [Translation support](#translation-support)
-
     *   [Example](#example)
-
 *   [Usage](#usage)
-
     *   [View Configuration](#view-configuration)
-
         *   [django-tables-2](#django-tables-2)
-
     *   [URL Configuration](#url-configuration)
-
     *   [Examples](#examples)
-
         *   [Sample crumbs: `Posts`](#sample-crumbs-posts)
         *   [Sample crumbs:  `Home / Posts / Test - Post`](#sample-crumbs--home--posts--test---post)
         *   [Custom crumbs: `Home / My Test Breadcrumb`](#custom-crumbs-home--my-test-breadcrumb)
-
     *   [Using multiple apps](#using-multiple-apps)
-
 *   [Running locally](#running-locally)
-
 *   [Credits](#credits)
-
 *   [Contributors ✨](#contributors-)
 
 ## Background
