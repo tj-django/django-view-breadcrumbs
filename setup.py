@@ -17,7 +17,7 @@ test_requires = [
 ]
 
 doc_requires = [
-    "Sphinx==4.3.2",
+    "Sphinx",
 ]
 
 deploy_requires = [
@@ -28,9 +28,10 @@ deploy_requires = [
 ]
 
 lint_requires = [
-    "flake8==4.0.1",
-    "yamllint==1.26.3",
+    "flake8",
+    "yamllint",
     "isort",
+    "black",
 ]
 
 local_dev_requires = [
@@ -48,7 +49,6 @@ extras_require = {
         doc_requires,
         lint_requires,
     ],
-    "development:python_version >= '3.6'": ["black"],
     "docs": doc_requires,
     "test": test_requires,
     "lint": lint_requires,
