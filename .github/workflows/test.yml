@@ -26,7 +26,7 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
 
-      - uses: actions/cache@v3.0.0
+      - uses: actions/cache@v3.0.1
         id: pip-cache
         with:
           path: ~/.cache/pip
@@ -34,7 +34,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-${{ matrix.platform }}-pip-${{ matrix.python-version }}-
 
-      - uses: actions/cache@v3.0.0
+      - uses: actions/cache@v3.0.1
         id: pytest-cache
         with:
           path: |
