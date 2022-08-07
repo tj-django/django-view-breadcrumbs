@@ -1,6 +1,4 @@
-from django.core.exceptions import AppRegistryNotReady
 from django.utils.encoding import force_str
-from django.utils.translation import gettext_lazy as _
 from django.utils.translation import override
 
 
@@ -38,21 +36,7 @@ def get_model_name(model):
 
 
 def get_model_info(model):
-    if model._meta.installed:
-        return get_app_label(model), get_model_name(model)
-
-    raise AppRegistryNotReady(
-        _("%(model)s is not installed or missing from the app registry.")
-        % {
-            "model": (
-                getattr(
-                    model._meta,
-                    "app_label",
-                    model.__class__.__name__,
-                )
-            )
-        }
-    )
+    return get_app_label(model), get_model_name(model)
 
 
 def action_view_name(*, model, action, app_name=None, full=True):
