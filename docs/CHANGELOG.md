@@ -1,5 +1,34 @@
 # Changelog
 
+## [Unreleased](https://github.com/tj-django/django-view-breadcrumbs/tree/HEAD)
+
+[Full Changelog](https://github.com/tj-django/django-view-breadcrumbs/compare/v2.4.0...HEAD)
+
+**Closed issues:**
+
+- Error on Django 4 project when using deprecated ifequal templatetag in bootstrap3 templates [\#589](https://github.com/tj-django/django-view-breadcrumbs/issues/589)
+
+## [v2.4.0](https://github.com/tj-django/django-view-breadcrumbs/tree/v2.4.0) (2022-08-28)
+
+[Full Changelog](https://github.com/tj-django/django-view-breadcrumbs/compare/v2.3.0...v2.4.0)
+
+**Closed issues:**
+
+- Dependency Dashboard [\#281](https://github.com/tj-django/django-view-breadcrumbs/issues/281)
+
+**Merged pull requests:**
+
+- feat: remove deprecated ifequal templatetag [\#597](https://github.com/tj-django/django-view-breadcrumbs/pull/597) ([jackton1](https://github.com/jackton1))
+- Update tj-actions/verify-changed-files action to v11 [\#596](https://github.com/tj-django/django-view-breadcrumbs/pull/596) ([renovate[bot]](https://github.com/apps/renovate))
+- Update actions/cache action to v3.0.8 [\#595](https://github.com/tj-django/django-view-breadcrumbs/pull/595) ([renovate[bot]](https://github.com/apps/renovate))
+- Update peter-evans/create-pull-request action to v4.1.1 [\#594](https://github.com/tj-django/django-view-breadcrumbs/pull/594) ([renovate[bot]](https://github.com/apps/renovate))
+- Update peter-evans/create-pull-request action to v4.1.0 [\#593](https://github.com/tj-django/django-view-breadcrumbs/pull/593) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency pytz to v2022.2.1 [\#592](https://github.com/tj-django/django-view-breadcrumbs/pull/592) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency pytz to v2022.2 [\#591](https://github.com/tj-django/django-view-breadcrumbs/pull/591) ([renovate[bot]](https://github.com/apps/renovate))
+- Update actions/cache action to v3.0.7 [\#590](https://github.com/tj-django/django-view-breadcrumbs/pull/590) ([renovate[bot]](https://github.com/apps/renovate))
+- Updated docs [\#588](https://github.com/tj-django/django-view-breadcrumbs/pull/588) ([github-actions[bot]](https://github.com/apps/github-actions))
+- Upgraded v2.2.8 → v2.3.0 [\#587](https://github.com/tj-django/django-view-breadcrumbs/pull/587) ([jackton1](https://github.com/jackton1))
+
 ## [v2.3.0](https://github.com/tj-django/django-view-breadcrumbs/tree/v2.3.0) (2022-08-07)
 
 [Full Changelog](https://github.com/tj-django/django-view-breadcrumbs/compare/v2.2.8...v2.3.0)
@@ -7,7 +36,6 @@
 **Closed issues:**
 
 - CVE-2022-36359 \(High\) detected in Django-3.2.14-py3-none-any.whl - autoclosed [\#583](https://github.com/tj-django/django-view-breadcrumbs/issues/583)
-- Dependency Dashboard [\#281](https://github.com/tj-django/django-view-breadcrumbs/issues/281)
 
 **Merged pull requests:**
 
