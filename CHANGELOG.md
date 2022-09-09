@@ -1,20 +1,26 @@
 # Changelog
 
-## [Unreleased](https://github.com/tj-django/django-view-breadcrumbs/tree/HEAD)
+## [v2.4.1](https://github.com/tj-django/django-view-breadcrumbs/tree/v2.4.1) (2022-09-09)
 
-[Full Changelog](https://github.com/tj-django/django-view-breadcrumbs/compare/v2.4.0...HEAD)
+[Full Changelog](https://github.com/tj-django/django-view-breadcrumbs/compare/v2.4.0...v2.4.1)
 
 **Closed issues:**
 
 - Error on Django 4 project when using deprecated ifequal templatetag in bootstrap3 templates [\#589](https://github.com/tj-django/django-view-breadcrumbs/issues/589)
+- Dependency Dashboard [\#281](https://github.com/tj-django/django-view-breadcrumbs/issues/281)
+
+**Merged pull requests:**
+
+- Update dependency tox to v3.26.0 [\#603](https://github.com/tj-django/django-view-breadcrumbs/pull/603) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency django to v4.1.1 [\#602](https://github.com/tj-django/django-view-breadcrumbs/pull/602) ([renovate[bot]](https://github.com/apps/renovate))
+- Bump wearerequired/lint-action from 2.0.1 to 2.1.0 [\#601](https://github.com/tj-django/django-view-breadcrumbs/pull/601) ([dependabot[bot]](https://github.com/apps/dependabot))
+- \[pre-commit.ci\] pre-commit autoupdate [\#600](https://github.com/tj-django/django-view-breadcrumbs/pull/600) ([pre-commit-ci[bot]](https://github.com/apps/pre-commit-ci))
+- Updated docs [\#599](https://github.com/tj-django/django-view-breadcrumbs/pull/599) ([github-actions[bot]](https://github.com/apps/github-actions))
+- Upgraded v2.3.0 → v2.4.0 [\#598](https://github.com/tj-django/django-view-breadcrumbs/pull/598) ([jackton1](https://github.com/jackton1))
 
 ## [v2.4.0](https://github.com/tj-django/django-view-breadcrumbs/tree/v2.4.0) (2022-08-28)
 
 [Full Changelog](https://github.com/tj-django/django-view-breadcrumbs/compare/v2.3.0...v2.4.0)
-
-**Closed issues:**
-
-- Dependency Dashboard [\#281](https://github.com/tj-django/django-view-breadcrumbs/issues/281)
 
 **Merged pull requests:**
 
