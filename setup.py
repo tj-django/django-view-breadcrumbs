@@ -27,13 +27,6 @@ deploy_requires = [
     "twine",
 ]
 
-lint_requires = [
-    "flake8",
-    "yamllint",
-    "isort",
-    "black",
-]
-
 local_dev_requires = [
     "pip-tools",
     "django_tables2",
@@ -47,11 +40,9 @@ extras_require = {
         install_requires,
         test_requires,
         doc_requires,
-        lint_requires,
     ],
     "docs": doc_requires,
     "test": test_requires,
-    "lint": lint_requires,
     "deploy": deploy_requires,
 }
 
