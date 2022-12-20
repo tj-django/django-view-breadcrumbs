@@ -7,7 +7,7 @@ install_requires = [
 ]
 
 test_requires = [
-    "tox==3.27.1",
+    "tox==3.28.0",
     "tox-gh-actions",
     "coverage",
     "pytest",
