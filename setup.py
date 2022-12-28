@@ -2,18 +2,16 @@ import os
 
 from setuptools import find_packages, setup
 
-install_requires = [
-    "Django",
-]
+install_requires = ["Django"]
 
 test_requires = [
-    "tox==3.28.0",
+    "tox",
     "tox-gh-actions",
     "coverage",
     "pytest",
     "pluggy>=0.7",
     "mock",
-    "codacy-coverage==1.3.11",
+    "codacy-coverage",
 ]
 
 doc_requires = [
