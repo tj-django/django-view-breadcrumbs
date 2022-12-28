@@ -7,13 +7,13 @@ install_requires = [
 ]
 
 test_requires = [
-    "tox==4.0.19",
+    "tox",
     "tox-gh-actions",
     "coverage",
     "pytest",
     "pluggy>=0.7",
     "mock",
-    "codacy-coverage==1.3.11",
+    "codacy-coverage",
 ]
 
 doc_requires = [
