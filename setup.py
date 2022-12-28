@@ -2,9 +2,7 @@ import os
 
 from setuptools import find_packages, setup
 
-install_requires = [
-    "Django"
-]
+install_requires = ["Django"]
 
 test_requires = [
     "tox",
