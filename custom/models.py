@@ -1,9 +1,7 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
-from six import python_2_unicode_compatible
 
 
-@python_2_unicode_compatible
 class Library(models.Model):
     name = models.CharField(max_length=255)
 
