@@ -12,7 +12,6 @@ def forwards_create_dummy_test(apps, schema_editor):
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
         ("demo", "0001_initial"),
     ]
