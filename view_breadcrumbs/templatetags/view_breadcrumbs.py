@@ -88,7 +88,7 @@ def render_breadcrumbs(context, *args):
         )
 
     links = []
-    for (label, viewname, view_args, view_kwargs) in context["request"].META.get(
+    for label, viewname, view_args, view_kwargs in context["request"].META.get(
         CONTEXT_KEY, []
     ):
         if (
