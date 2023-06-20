@@ -193,7 +193,7 @@ and can be overridden by providing a `crumbs` property.
 
 |  Actions  |  View Class |  View name  | Sample Breadcrumb | Example  |
 |-----------|-------------|-------------|-------------------|----------|
-| `list`    | [`ListView`](https://docs.djangoproject.com/en/3.2/ref/class-based-views/generic-display/#listview)  | `{model.verbose_name}_list` |  `Home / Posts`  |  |
+| `list`    | [`ListView`](https://docs.djangoproject.com/en/3.2/ref/class-based-views/generic-display/#listview)  | `{model.verbose_name}_list` |  `Home / Posts`  |  [Posts Example](https://github.com/tj-django/django-view-breadcrumbs#sample-crumbs-posts) |
 | `create`  | [`CreateView`](https://docs.djangoproject.com/en/3.2/ref/class-based-views/generic-editing/#createview) | `{model.verbose_name}_create` | `Home / Posts / Add Post` |  |
 | `detail`  | [`DetailView`](https://docs.djangoproject.com/en/3.2/ref/class-based-views/generic-display/#detailview) | `{model.verbose_name}_detail` | `Home / Posts / Test - Post` |  |
 | `change`  | [`UpdateView`](https://docs.djangoproject.com/en/3.2/ref/class-based-views/generic-editing/#updateview) | `{model.verbose_name}_update` | `Home / Posts / Test - Post / Update Test - Post` |  |
