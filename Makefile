@@ -96,7 +96,7 @@ test: install-test
 	@pytest -v
 
 tox: install-test  ## Run tox test
-	@tox
+	@tox -p
 
 clean-test-all: clean-build  ## Clean build and test assets.
 	@rm -rf .tox/
