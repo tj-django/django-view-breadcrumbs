@@ -1,0 +1,20 @@
+name: Pre-commit auto-merge
+on:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  dependabot:
+    runs-on: ubuntu-latest
+    if: ${{ github.head_ref == 'pre-commit-ci-update-config' }}
+    steps:
+      - name: Enable auto-merge for Pre-commit PRs
+        run: gh pr merge --auto --squash "$PR_URL"
+        env:
+          PR_URL: ${{github.event.pull_request.html_url}}
+          GITHUB_TOKEN: ${{secrets.PAT_TOKEN}}
