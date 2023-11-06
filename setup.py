@@ -9,6 +9,7 @@ test_requires = [
     "tox-gh-actions",
     "coverage",
     "pytest",
+    "pytest-cov",
     "pluggy>=0.7",
     "mock",
     "codacy-coverage",
