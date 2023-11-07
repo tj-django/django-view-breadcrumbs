@@ -46,7 +46,7 @@ jobs:
       - name: Run git-cliff
         uses: tj-actions/git-cliff@v1
         with:
-          output: CHNAGELOG.md
+          output: CHANGELOG.md
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
