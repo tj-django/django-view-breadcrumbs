@@ -1,5 +1,151 @@
 # Changelog
 
+## [v2.4.3](https://github.com/tj-django/django-view-breadcrumbs/tree/v2.4.3) (2023-11-06)
+
+[Full Changelog](https://github.com/tj-django/django-view-breadcrumbs/compare/v2.4.2...v2.4.3)
+
+**Fixed bugs:**
+
+- Namespace Issue [\#714](https://github.com/tj-django/django-view-breadcrumbs/issues/714)
+
+**Closed issues:**
+
+- CVE-2023-43665 \(Medium\) detected in Django-3.2.21-py3-none-any.whl - autoclosed [\#740](https://github.com/tj-django/django-view-breadcrumbs/issues/740)
+- CVE-2023-46695 \(High\) detected in Django-3.2.21-py3-none-any.whl - autoclosed [\#739](https://github.com/tj-django/django-view-breadcrumbs/issues/739)
+- Dependency Dashboard [\#281](https://github.com/tj-django/django-view-breadcrumbs/issues/281)
+
+**Merged pull requests:**
+
+- Revert "chore\(deps\): update codecov/codecov-action action to v4" [\#737](https://github.com/tj-django/django-view-breadcrumbs/pull/737) ([jackton1](https://github.com/jackton1))
+- chore\(deps\): update dependency django to v4.2.7 \[security\] [\#736](https://github.com/tj-django/django-view-breadcrumbs/pull/736) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update actions/checkout action to v4.1.1 [\#729](https://github.com/tj-django/django-view-breadcrumbs/pull/729) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update codecov/codecov-action action to v4 [\#728](https://github.com/tj-django/django-view-breadcrumbs/pull/728) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update actions/cache action to v3.3.2 [\#727](https://github.com/tj-django/django-view-breadcrumbs/pull/727) ([renovate[bot]](https://github.com/apps/renovate))
+- \[pre-commit.ci\] pre-commit autoupdate [\#724](https://github.com/tj-django/django-view-breadcrumbs/pull/724) ([pre-commit-ci[bot]](https://github.com/apps/pre-commit-ci))
+- chore\(deps\): update dependency pytz to v2023.3.post1 [\#723](https://github.com/tj-django/django-view-breadcrumbs/pull/723) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update actions/checkout action to v4 [\#722](https://github.com/tj-django/django-view-breadcrumbs/pull/722) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update dependency django to v4.2.5 [\#720](https://github.com/tj-django/django-view-breadcrumbs/pull/720) ([renovate[bot]](https://github.com/apps/renovate))
+- Updated docs [\#719](https://github.com/tj-django/django-view-breadcrumbs/pull/719) ([github-actions[bot]](https://github.com/apps/github-actions))
+- Updated README.md [\#718](https://github.com/tj-django/django-view-breadcrumbs/pull/718) ([jackton1](https://github.com/jackton1))
+- chore\(deps\): update actions/checkout action to v3.6.0 [\#717](https://github.com/tj-django/django-view-breadcrumbs/pull/717) ([renovate[bot]](https://github.com/apps/renovate))
+- Bump django from 4.2.3 to 4.2.4 [\#716](https://github.com/tj-django/django-view-breadcrumbs/pull/716) ([dependabot[bot]](https://github.com/apps/dependabot))
+- chore\(deps\): update dependency django to v4.2.3 [\#713](https://github.com/tj-django/django-view-breadcrumbs/pull/713) ([renovate[bot]](https://github.com/apps/renovate))
+- \[pre-commit.ci\] pre-commit autoupdate [\#712](https://github.com/tj-django/django-view-breadcrumbs/pull/712) ([pre-commit-ci[bot]](https://github.com/apps/pre-commit-ci))
+- chore\(deps\): update tj-actions/verify-changed-files action to v16 [\#711](https://github.com/tj-django/django-view-breadcrumbs/pull/711) ([renovate[bot]](https://github.com/apps/renovate))
+- Updated docs [\#710](https://github.com/tj-django/django-view-breadcrumbs/pull/710) ([github-actions[bot]](https://github.com/apps/github-actions))
+- chore\(deps\): update peter-evans/create-pull-request action to v5.0.2 [\#709](https://github.com/tj-django/django-view-breadcrumbs/pull/709) ([renovate[bot]](https://github.com/apps/renovate))
+- chore\(deps\): update tj-actions/verify-changed-files action to v15 [\#708](https://github.com/tj-django/django-view-breadcrumbs/pull/708) ([renovate[bot]](https://github.com/apps/renovate))
+- feat: update supported Django versions [\#707](https://github.com/tj-django/django-view-breadcrumbs/pull/707) ([jackton1](https://github.com/jackton1))
+- Update actions/checkout action to v3.5.3 [\#706](https://github.com/tj-django/django-view-breadcrumbs/pull/706) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency django to v4.2.2 [\#705](https://github.com/tj-django/django-view-breadcrumbs/pull/705) ([renovate[bot]](https://github.com/apps/renovate))
+- Update tj-actions/github-changelog-generator action to v1.19 [\#703](https://github.com/tj-django/django-view-breadcrumbs/pull/703) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency asgiref to v3.7.2 [\#702](https://github.com/tj-django/django-view-breadcrumbs/pull/702) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency asgiref to v3.7.1 [\#701](https://github.com/tj-django/django-view-breadcrumbs/pull/701) ([renovate[bot]](https://github.com/apps/renovate))
+- \[pre-commit.ci\] pre-commit autoupdate [\#700](https://github.com/tj-django/django-view-breadcrumbs/pull/700) ([pre-commit-ci[bot]](https://github.com/apps/pre-commit-ci))
+- Bump django from 4.2 to 4.2.1 [\#699](https://github.com/tj-django/django-view-breadcrumbs/pull/699) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Update peter-evans/create-pull-request action to v5.0.1 [\#698](https://github.com/tj-django/django-view-breadcrumbs/pull/698) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency sqlparse to v0.4.4 [\#697](https://github.com/tj-django/django-view-breadcrumbs/pull/697) ([renovate[bot]](https://github.com/apps/renovate))
+- \[pre-commit.ci\] pre-commit autoupdate [\#696](https://github.com/tj-django/django-view-breadcrumbs/pull/696) ([pre-commit-ci[bot]](https://github.com/apps/pre-commit-ci))
+- Update actions/checkout action to v3.5.2 [\#695](https://github.com/tj-django/django-view-breadcrumbs/pull/695) ([renovate[bot]](https://github.com/apps/renovate))
+- Update actions/checkout action to v3.5.1 [\#694](https://github.com/tj-django/django-view-breadcrumbs/pull/694) ([renovate[bot]](https://github.com/apps/renovate))
+- Update peter-evans/create-pull-request action to v5 [\#693](https://github.com/tj-django/django-view-breadcrumbs/pull/693) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency django to v4.2 [\#692](https://github.com/tj-django/django-view-breadcrumbs/pull/692) ([renovate[bot]](https://github.com/apps/renovate))
+- Update peaceiris/actions-gh-pages action to v3.9.3 [\#691](https://github.com/tj-django/django-view-breadcrumbs/pull/691) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency pytz to v2023.3 [\#690](https://github.com/tj-django/django-view-breadcrumbs/pull/690) ([renovate[bot]](https://github.com/apps/renovate))
+- \[pre-commit.ci\] pre-commit autoupdate [\#689](https://github.com/tj-django/django-view-breadcrumbs/pull/689) ([pre-commit-ci[bot]](https://github.com/apps/pre-commit-ci))
+
+## [v2.4.2](https://github.com/tj-django/django-view-breadcrumbs/tree/v2.4.2) (2023-03-25)
+
+[Full Changelog](https://github.com/tj-django/django-view-breadcrumbs/compare/v2.4.1...v2.4.2)
+
+**Fixed bugs:**
+
+- \[BUG\] ListView - 'main' is not a registered namespace [\#665](https://github.com/tj-django/django-view-breadcrumbs/issues/665)
+
+**Closed issues:**
+
+- Breadcrumbs on complex view.  [\#639](https://github.com/tj-django/django-view-breadcrumbs/issues/639)
+- CVE-2022-41323 \(Medium\) detected in Django-3.2.15-py3-none-any.whl - autoclosed [\#624](https://github.com/tj-django/django-view-breadcrumbs/issues/624)
+
+**Merged pull requests:**
+
+- Update dependency pytz to v2023 [\#688](https://github.com/tj-django/django-view-breadcrumbs/pull/688) ([renovate[bot]](https://github.com/apps/renovate))
+- Update actions/checkout action to v3.5.0 [\#687](https://github.com/tj-django/django-view-breadcrumbs/pull/687) ([renovate[bot]](https://github.com/apps/renovate))
+- Update tj-actions/verify-changed-files action to v14 [\#686](https://github.com/tj-django/django-view-breadcrumbs/pull/686) ([renovate[bot]](https://github.com/apps/renovate))
+- Update actions/checkout action to v3.4.0 [\#685](https://github.com/tj-django/django-view-breadcrumbs/pull/685) ([renovate[bot]](https://github.com/apps/renovate))
+- Update peter-evans/create-pull-request action to v4.2.4 [\#684](https://github.com/tj-django/django-view-breadcrumbs/pull/684) ([renovate[bot]](https://github.com/apps/renovate))
+- \[pre-commit.ci\] pre-commit autoupdate [\#683](https://github.com/tj-django/django-view-breadcrumbs/pull/683) ([pre-commit-ci[bot]](https://github.com/apps/pre-commit-ci))
+- Update actions/cache action to v3.3.1 [\#682](https://github.com/tj-django/django-view-breadcrumbs/pull/682) ([renovate[bot]](https://github.com/apps/renovate))
+- Update tj-actions/github-changelog-generator action to v1.18 [\#681](https://github.com/tj-django/django-view-breadcrumbs/pull/681) ([renovate[bot]](https://github.com/apps/renovate))
+- Update actions/cache action to v3.3.0 [\#680](https://github.com/tj-django/django-view-breadcrumbs/pull/680) ([renovate[bot]](https://github.com/apps/renovate))
+- Bump actions/cache from 3.2.6 to 3.3.0 [\#679](https://github.com/tj-django/django-view-breadcrumbs/pull/679) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Update codacy/codacy-analysis-cli-action action to v4.3.0 [\#678](https://github.com/tj-django/django-view-breadcrumbs/pull/678) ([renovate[bot]](https://github.com/apps/renovate))
+- Update actions/cache action to v3.2.6 [\#677](https://github.com/tj-django/django-view-breadcrumbs/pull/677) ([renovate[bot]](https://github.com/apps/renovate))
+- Update pascalgn/automerge-action action to v0.15.6 [\#676](https://github.com/tj-django/django-view-breadcrumbs/pull/676) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency django to v4.1.7 [\#675](https://github.com/tj-django/django-view-breadcrumbs/pull/675) ([renovate[bot]](https://github.com/apps/renovate))
+- Update actions/cache action to v3.2.5 [\#674](https://github.com/tj-django/django-view-breadcrumbs/pull/674) ([renovate[bot]](https://github.com/apps/renovate))
+- \[pre-commit.ci\] pre-commit autoupdate \(\#673\)Co-authored-by: pre-commit-ci\[bot\] \<66853113+pre-commit-ci\[bot\]@users.noreply.github.com\> [\#673](https://github.com/tj-django/django-view-breadcrumbs/pull/673) ([pre-commit-ci[bot]](https://github.com/apps/pre-commit-ci))
+- Updated docs [\#672](https://github.com/tj-django/django-view-breadcrumbs/pull/672) ([github-actions[bot]](https://github.com/apps/github-actions))
+- Update dependency django to v4.1.6 [\#671](https://github.com/tj-django/django-view-breadcrumbs/pull/671) ([renovate[bot]](https://github.com/apps/renovate))
+- \[pre-commit.ci\] pre-commit autoupdate [\#670](https://github.com/tj-django/django-view-breadcrumbs/pull/670) ([pre-commit-ci[bot]](https://github.com/apps/pre-commit-ci))
+- Update actions/cache action to v3.2.4 [\#669](https://github.com/tj-django/django-view-breadcrumbs/pull/669) ([renovate[bot]](https://github.com/apps/renovate))
+- Bump peaceiris/actions-gh-pages from 3.9.1 to 3.9.2 [\#667](https://github.com/tj-django/django-view-breadcrumbs/pull/667) ([dependabot[bot]](https://github.com/apps/dependabot))
+- \[pre-commit.ci\] pre-commit autoupdate [\#666](https://github.com/tj-django/django-view-breadcrumbs/pull/666) ([pre-commit-ci[bot]](https://github.com/apps/pre-commit-ci))
+- Update dependency pytz to v2022.7.1 [\#664](https://github.com/tj-django/django-view-breadcrumbs/pull/664) ([renovate[bot]](https://github.com/apps/renovate))
+- Update tj-actions/semver-diff action to v2.4.1 [\#663](https://github.com/tj-django/django-view-breadcrumbs/pull/663) ([renovate[bot]](https://github.com/apps/renovate))
+- Update tj-actions/semver-diff action to v2.4.0 [\#662](https://github.com/tj-django/django-view-breadcrumbs/pull/662) ([renovate[bot]](https://github.com/apps/renovate))
+- Update tj-actions/semver-diff action to v2.2.0 [\#661](https://github.com/tj-django/django-view-breadcrumbs/pull/661) ([renovate[bot]](https://github.com/apps/renovate))
+- Update actions/cache action to v3.2.3 [\#660](https://github.com/tj-django/django-view-breadcrumbs/pull/660) ([renovate[bot]](https://github.com/apps/renovate))
+- Update actions/checkout action to v3.3.0 [\#659](https://github.com/tj-django/django-view-breadcrumbs/pull/659) ([renovate[bot]](https://github.com/apps/renovate))
+- Update peaceiris/actions-gh-pages action to v3.9.1 [\#658](https://github.com/tj-django/django-view-breadcrumbs/pull/658) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency django to v4.1.5 [\#657](https://github.com/tj-django/django-view-breadcrumbs/pull/657) ([renovate[bot]](https://github.com/apps/renovate))
+- Update tj-actions/github-changelog-generator action to v1.17 [\#656](https://github.com/tj-django/django-view-breadcrumbs/pull/656) ([renovate[bot]](https://github.com/apps/renovate))
+- Update actions/cache action to v3.2.2 [\#655](https://github.com/tj-django/django-view-breadcrumbs/pull/655) ([renovate[bot]](https://github.com/apps/renovate))
+- Update actions/cache action to v3.2.1 [\#654](https://github.com/tj-django/django-view-breadcrumbs/pull/654) ([renovate[bot]](https://github.com/apps/renovate))
+- Update actions/cache action to v3.2.0 [\#653](https://github.com/tj-django/django-view-breadcrumbs/pull/653) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency asgiref to v3.6.0 [\#652](https://github.com/tj-django/django-view-breadcrumbs/pull/652) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency pytz to v2022.7 [\#649](https://github.com/tj-django/django-view-breadcrumbs/pull/649) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency tox to v3.28.0 [\#648](https://github.com/tj-django/django-view-breadcrumbs/pull/648) ([renovate[bot]](https://github.com/apps/renovate))
+- Update tj-actions/verify-changed-files action to v13 [\#646](https://github.com/tj-django/django-view-breadcrumbs/pull/646) ([renovate[bot]](https://github.com/apps/renovate))
+- \[pre-commit.ci\] pre-commit autoupdate [\#645](https://github.com/tj-django/django-view-breadcrumbs/pull/645) ([pre-commit-ci[bot]](https://github.com/apps/pre-commit-ci))
+- Update actions/checkout action to v3.2.0 [\#644](https://github.com/tj-django/django-view-breadcrumbs/pull/644) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency tox to v4 [\#643](https://github.com/tj-django/django-view-breadcrumbs/pull/643) ([renovate[bot]](https://github.com/apps/renovate))
+- Add CodeQL workflow for GitHub code scanning [\#642](https://github.com/tj-django/django-view-breadcrumbs/pull/642) ([lgtm-com[bot]](https://github.com/apps/lgtm-com))
+- Bump django from 4.1.3 to 4.1.4 [\#641](https://github.com/tj-django/django-view-breadcrumbs/pull/641) ([dependabot[bot]](https://github.com/apps/dependabot))
+- \[pre-commit.ci\] pre-commit autoupdate [\#638](https://github.com/tj-django/django-view-breadcrumbs/pull/638) ([pre-commit-ci[bot]](https://github.com/apps/pre-commit-ci))
+- Update peter-evans/create-pull-request action to v4.2.3 [\#637](https://github.com/tj-django/django-view-breadcrumbs/pull/637) ([renovate[bot]](https://github.com/apps/renovate))
+- Update peter-evans/create-pull-request action to v4.2.2 [\#636](https://github.com/tj-django/django-view-breadcrumbs/pull/636) ([renovate[bot]](https://github.com/apps/renovate))
+- Update peter-evans/create-pull-request action to v4.2.1 [\#635](https://github.com/tj-django/django-view-breadcrumbs/pull/635) ([renovate[bot]](https://github.com/apps/renovate))
+- Bump hmarr/auto-approve-action from 2 to 3 [\#634](https://github.com/tj-django/django-view-breadcrumbs/pull/634) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Update dependency tox to v3.27.1 [\#633](https://github.com/tj-django/django-view-breadcrumbs/pull/633) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency django to v4.1.3 [\#632](https://github.com/tj-django/django-view-breadcrumbs/pull/632) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency pytz to v2022.6 [\#631](https://github.com/tj-django/django-view-breadcrumbs/pull/631) ([renovate[bot]](https://github.com/apps/renovate))
+- \[pre-commit.ci\] pre-commit autoupdate [\#630](https://github.com/tj-django/django-view-breadcrumbs/pull/630) ([pre-commit-ci[bot]](https://github.com/apps/pre-commit-ci))
+- Update dependency tox to v3.27.0 [\#629](https://github.com/tj-django/django-view-breadcrumbs/pull/629) ([renovate[bot]](https://github.com/apps/renovate))
+- Update peaceiris/actions-gh-pages action to v3.9.0 [\#628](https://github.com/tj-django/django-view-breadcrumbs/pull/628) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency pytz to v2022.5 [\#626](https://github.com/tj-django/django-view-breadcrumbs/pull/626) ([renovate[bot]](https://github.com/apps/renovate))
+- Update peter-evans/create-pull-request action to v4.2.0 [\#625](https://github.com/tj-django/django-view-breadcrumbs/pull/625) ([renovate[bot]](https://github.com/apps/renovate))
+- Update pascalgn/automerge-action action to v0.15.5 [\#623](https://github.com/tj-django/django-view-breadcrumbs/pull/623) ([renovate[bot]](https://github.com/apps/renovate))
+- Update peter-evans/create-pull-request action to v4.1.4 [\#622](https://github.com/tj-django/django-view-breadcrumbs/pull/622) ([renovate[bot]](https://github.com/apps/renovate))
+- Update tj-actions/verify-changed-files action to v12 [\#621](https://github.com/tj-django/django-view-breadcrumbs/pull/621) ([renovate[bot]](https://github.com/apps/renovate))
+- Update actions/cache action to v3.0.11 [\#620](https://github.com/tj-django/django-view-breadcrumbs/pull/620) ([renovate[bot]](https://github.com/apps/renovate))
+- Update actions/first-interaction action to v1.1.1 [\#619](https://github.com/tj-django/django-view-breadcrumbs/pull/619) ([renovate[bot]](https://github.com/apps/renovate))
+- Update actions/checkout action to v3.1.0 [\#618](https://github.com/tj-django/django-view-breadcrumbs/pull/618) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency django to v4.1.2 [\#617](https://github.com/tj-django/django-view-breadcrumbs/pull/617) ([renovate[bot]](https://github.com/apps/renovate))
+- Update actions/cache action to v3.0.10 [\#616](https://github.com/tj-django/django-view-breadcrumbs/pull/616) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency pytz to v2022.4 [\#615](https://github.com/tj-django/django-view-breadcrumbs/pull/615) ([renovate[bot]](https://github.com/apps/renovate))
+- Update actions/cache action to v3.0.9 [\#614](https://github.com/tj-django/django-view-breadcrumbs/pull/614) ([renovate[bot]](https://github.com/apps/renovate))
+- Update peter-evans/create-pull-request action to v4.1.3 [\#613](https://github.com/tj-django/django-view-breadcrumbs/pull/613) ([renovate[bot]](https://github.com/apps/renovate))
+- \[pre-commit.ci\] pre-commit autoupdate [\#612](https://github.com/tj-django/django-view-breadcrumbs/pull/612) ([pre-commit-ci[bot]](https://github.com/apps/pre-commit-ci))
+- Update dependency sqlparse to v0.4.3 [\#611](https://github.com/tj-django/django-view-breadcrumbs/pull/611) ([renovate[bot]](https://github.com/apps/renovate))
+- Update peter-evans/create-pull-request action to v4.1.2 [\#610](https://github.com/tj-django/django-view-breadcrumbs/pull/610) ([renovate[bot]](https://github.com/apps/renovate))
+- Update codacy/codacy-analysis-cli-action action to v4.2.0 [\#609](https://github.com/tj-django/django-view-breadcrumbs/pull/609) ([renovate[bot]](https://github.com/apps/renovate))
+- \[pre-commit.ci\] pre-commit autoupdate [\#608](https://github.com/tj-django/django-view-breadcrumbs/pull/608) ([pre-commit-ci[bot]](https://github.com/apps/pre-commit-ci))
+- Update tj-actions/semver-diff action to v2.1.0 [\#607](https://github.com/tj-django/django-view-breadcrumbs/pull/607) ([renovate[bot]](https://github.com/apps/renovate))
+- Update tj-actions/github-changelog-generator action to v1.15 [\#606](https://github.com/tj-django/django-view-breadcrumbs/pull/606) ([renovate[bot]](https://github.com/apps/renovate))
+- Updated docs [\#605](https://github.com/tj-django/django-view-breadcrumbs/pull/605) ([github-actions[bot]](https://github.com/apps/github-actions))
+- Upgraded v2.4.0 → v2.4.1 [\#604](https://github.com/tj-django/django-view-breadcrumbs/pull/604) ([jackton1](https://github.com/jackton1))
+
 ## [v2.4.1](https://github.com/tj-django/django-view-breadcrumbs/tree/v2.4.1) (2022-09-09)
 
 [Full Changelog](https://github.com/tj-django/django-view-breadcrumbs/compare/v2.4.0...v2.4.1)
@@ -7,7 +153,6 @@
 **Closed issues:**
 
 - Error on Django 4 project when using deprecated ifequal templatetag in bootstrap3 templates [\#589](https://github.com/tj-django/django-view-breadcrumbs/issues/589)
-- Dependency Dashboard [\#281](https://github.com/tj-django/django-view-breadcrumbs/issues/281)
 
 **Merged pull requests:**
 
