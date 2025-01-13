@@ -27,5 +27,9 @@ class ListBreadcrumbMixin(BaseModelBreadcrumbMixin):
         return reverse(self.__list_view_name)
 
     @property
+    def list_view_label(self):
+        return self.model_name_title_plural
+
+    @property
     def crumbs(self):
-        return [(self.model_name_title_plural, self.list_view_url)]
+        return [(self.list_view_label, self.list_view_url)]

@@ -29,10 +29,16 @@ class CreateBreadcrumbMixin(ListBreadcrumbMixin):
         return reverse(self.__create_view_name)
 
     @property
+    def create_view_label(self):
+        if self.add_format_string:
+            return self.add_format_string % {"model": self.model_name_title}
+        return _("Add %(model)s") % {"model": self.model_name_title}
+
+    @property
     def crumbs(self):
         return super(CreateBreadcrumbMixin, self).crumbs + [
             (
-                _(self.add_format_string % {"model": self.model_name_title}),
+                self.create_view_label,
                 self.create_view_url,
             ),
         ]

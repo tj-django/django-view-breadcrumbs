@@ -1,3 +1,5 @@
+import inspect
+
 from django.conf import settings
 from django.test import RequestFactory, TestCase, override_settings
 from django.utils.encoding import force_str
@@ -68,6 +70,9 @@ class ActionTestMixin(object):
 
     def _get_view(self):
         # TODO: Move this to use the default django client.
+        TestModel = self.view_attrs["model"]
+        TestModel.get_absolute_url = lambda self: "test_model/%d" % self.pk
+
         instance = TestModel.objects.create(name="Test")
 
         TestViewClass = self.make_crumb_cls(
@@ -107,6 +112,59 @@ class ActionTestMixin(object):
             self.assertIsNotNone(view_url)
         else:
             self.assertIsNotNone(view_url(view.object))
+
+    def test_valid_view_label(self):
+        view = self._get_view()
+        view_label_name = "{}_view_label".format(self.view_name)
+        view_label_func = getattr(view, view_label_name)
+
+        kwargs = {}
+
+        # check if it's a property and get the actual function
+        if isinstance(view_label_func, property):
+            view_label_func = view_label_func.fget
+
+        # use inspect to get the function signature if callable
+        if callable(view_label_func):
+            signature = inspect.signature(view_label_func)
+            if "instance" in signature.parameters:
+                kwargs = {"instance": view.object}
+
+        label = (
+            view_label_func(**kwargs) if callable(view_label_func) else view_label_func
+        )
+
+        match self.view_name:
+            case "list":
+                self.assertEqual(label, view.model_name_title_plural)
+            case "detail":
+                self.assertEqual(
+                    label, view.detail_format_string % force_str(view.object)
+                )
+            case "create":
+                self.assertEqual(
+                    label, view.add_format_string % {"model": view.model_name_title}
+                )
+            case "update":
+                self.assertEqual(
+                    label,
+                    view.update_format_string % {"instance": force_str(view.object)},
+                )
+            case "delete":
+                self.assertEqual(
+                    label,
+                    view.delete_format_string % {"instance": force_str(view.object)},
+                )
+
+        new_label = "TEST"
+
+        @property
+        def new_label_method(self, instance=None):
+            return new_label
+
+        # monkey patch view class method to override
+        setattr(type(view), view_label_name, new_label_method)
+        self.assertEqual(getattr(view, view_label_name), new_label)
 
 
 class ListViewBreadcrumbTestCase(ActionTestMixin, BaseBreadcrumbTestCase):

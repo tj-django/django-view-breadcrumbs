@@ -1,5 +1,3 @@
-from functools import partial
-
 from django.urls import reverse
 from django.utils.encoding import force_str
 from django.utils.translation import gettext_lazy as _
@@ -14,7 +12,7 @@ def _update_view_label(instance, format_string):
 
 class UpdateBreadcrumbMixin(DetailBreadcrumbMixin):
     # Home / object List / object / Update object
-    update_format_str = _("Update: %(instance)s")
+    update_format_string = _("Update %(instance)s")
 
     @classproperty
     def update_view_name(self):
@@ -42,11 +40,16 @@ class UpdateBreadcrumbMixin(DetailBreadcrumbMixin):
             kwargs={self.slug_url_kwarg: getattr(instance, self.slug_field)},
         )
 
+    def update_view_label(self, instance):
+        if self.update_format_string:
+            return self.update_format_string % {"instance": force_str(instance)}
+        return _("Update %(instance)s") % {"instance": force_str(instance)}
+
     @property
     def crumbs(self):
         return super(UpdateBreadcrumbMixin, self).crumbs + [
             (
-                partial(_update_view_label, format_string=self.update_format_str),
+                self.update_view_label,
                 self.update_view_url,
             ),
         ]

@@ -2,12 +2,14 @@
 .idea/
 __pycache__
 .pytest_cache
+*.pytest-deps
 *.pyc
 .tox/
 build/
 dist/
 
 *.db
+*.log
 
 .DS_Store
 .coverage
