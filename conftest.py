@@ -76,8 +76,7 @@ def create_db():
         from django.db import connection
 
         with connection.cursor() as c:
-            c.executescript(
-                """
+            c.executescript("""
             BEGIN;
             --
             -- Create model TestModel
@@ -90,5 +89,4 @@ def create_db():
                 "name" varchar(50) NOT NULL
             );
             COMMIT;
-            """
-            )
+            """)
